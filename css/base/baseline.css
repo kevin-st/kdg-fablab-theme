@@ -1,0 +1,41 @@
+/*
+  To define different values for each screensize,
+  add following rules to CSS:
+
+  @mixin "name mixin" {
+    CSS code...
+  }
+
+  -> e.g.
+  @mixin phone {
+    .p-top-sm { padding-top: 5px; }
+    .p-bottom-sm { padding-bottom: 5px; }
+  }
+
+  @mixin tablet {
+    .p-top-med { padding-top: 10px; }
+    .p-bottom-med { padding-bottom: 10px; }
+  }
+
+  @mixin pc {
+    .p-top-lg { padding-top: 15px; }
+    .p-bottom-lg { padding-bottom: 15px; }
+  }
+*/
+@define-mixin phone /* of een andere naam */ {
+  @media (min-width: /* breedte in te vullen*/) {
+    @mixin-content;
+  }
+}
+
+@define-mixin tablet /* of een andere naam */ {
+  @media (min-width: /* breedte in te vullen */) {
+    @mixin-content;
+  }
+}
+
+@define-mixin pc /* of een andere naam */ {
+  @media (min-width: /* breedte in te vullen */) {
+    @mixin-content;
+  }
+}

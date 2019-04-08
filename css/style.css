@@ -1,0 +1,22 @@
+/*
+ import all CSS from base and modules here
+*/
+/* DON'T REMOVE NEXT COMMENT */
+/*
+  Theme Name: KdG Fablab
+  Author: K3
+  Description: The most awesome theme for KdG Fablab.
+  Version: 1.0.0
+  License: MIT
+ */
+
+/* base stuff needed */
+@import "base/variables";
+@import "base/baseline";
+@import "base/utility-classes";
+@import "modules/header";
+
+/* modules */
+/* example module:
+  @import "modules/btn"
+*/

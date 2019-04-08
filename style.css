@@ -1,0 +1,93 @@
+/*
+ import all CSS from base and modules here
+*/
+/* DON'T REMOVE NEXT COMMENT */
+/*
+  Theme Name: KdG Fablab
+  Author: K3
+  Description: The most awesome theme for KdG Fablab.
+  Version: 1.0.0
+  License: MIT
+ */
+/* base stuff needed */
+/*
+  define variables:
+  $variable name: value
+    -> e.g. $mainBtnColor: #000;
+*/
+/*
+  To define different values for each screensize,
+  add following rules to CSS:
+
+  @mixin "name mixin" {
+    CSS code...
+  }
+
+  -> e.g.
+  @mixin phone {
+    .p-top-sm { padding-top: 5px; }
+    .p-bottom-sm { padding-bottom: 5px; }
+  }
+
+  @mixin tablet {
+    .p-top-med { padding-top: 10px; }
+    .p-bottom-med { padding-bottom: 10px; }
+  }
+
+  @mixin pc {
+    .p-top-lg { padding-top: 15px; }
+    .p-bottom-lg { padding-bottom: 15px; }
+  }
+*/
+/*
+  add css classes which can be used frequently:
+
+  -> e.g.
+    .no-margin { margin: 0; }
+    .container { ... }
+    .t-left { text-align: left; }
+    .t-right { text-align: right; }
+    ...
+*/
+.header {
+  background-color: black;
+  top: 0px;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 80px;
+}
+.header > h1 {
+  color: white;
+  font-family: KdG;
+  font-size: 4vw;
+  margin-left: 200px;
+}
+#vormgeving {
+  width: 110%;
+  height: 100px;
+  background-color: black;
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+  z-index: 900;
+  position: fixed;
+  top: 20px;
+  left: -10px;
+  box-shadow: 4px 6px 19px -4px rgba(0, 0, 0, 0.75);
+}
+#vormgeving2 {
+  position: fixed;
+  width: 100px;
+  height: 1000px;
+  background-color: black;
+  right: -80px;
+  top: 0;
+  -webkit-transform: rotate(-4deg);
+          transform: rotate(-4deg);
+}
+/* modules */
+/* example module:
+  @import "modules/btn"
+*/
