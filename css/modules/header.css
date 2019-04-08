@@ -1,15 +1,13 @@
 #menu-custom-projontw-menu{
 width: 80%;
-background-color: black;
 position: fixed;
 top: 0;
-right: 0;
-margin: 0;
+right: 60px;
+margin: 10px 0 0 0;
 padding: 0;
 }
 
 .menu{
-
   height: 80px;
   line-height: 80px;
   width: 100%;
@@ -30,22 +28,34 @@ padding: 0;
 
 }
 
-#menu-item-29{
-  background-image: url('../img/KdG_icon-functioneel-vrouw.jpg');
-    background-position: left center;
-    background-repeat: no-repeat;
-    padding-left: 20px; /* Adjust according to image size to push text across. */
+#logonaam a{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  margin: 20px;
 }
 
-/*
+#logonaam img{
+  height: 70px;
+}
+
+#logonaam h1{
+  font-family: 'KdG';
+  color: white;
+}
+
+
 #vormgeving {
   width: 110%;
-  height: 100px;
+  height: 200px;
   background-color: black;
   transform: rotate(-2deg);
-  z-index: 900;
   position: fixed;
-  top: 20px;
+  top: -100px;
   left: -10px;
   -webkit-box-shadow: 4px 6px 19px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 4px 6px 19px -4px rgba(0, 0, 0, 0.75);
@@ -60,7 +70,7 @@ padding: 0;
   top: 0;
   transform: rotate(-4deg);
 }
-*/
+
 
 .current-menu-item a{
   color: #34bedc;

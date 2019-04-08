@@ -7,15 +7,20 @@
   </head>
   <body class="<?php body_class(); ?>">
     <header>
-      <div>
-        <img src="img/KdG_icon-functioneel-diverse_vormen.svg" alt="fablab icon">
-        <h1>FabLab</h1>
+      <div id="vormgeving"></div>
+      <div id="vormgeving2"></div>
+      <div id="logonaam">
+        <a href="http://localhost:3000/wordpress/">
+          <img src="<?php echo get_theme_file_uri("img/logowit.png"); ?>" alt="fablab icon">
+          <h1>FabLab</h1>
+        </a>
       </div>
       <?php
          wp_nav_menu([
            'theme_location' => 'main_navigation'
          ]);
       ?>
+
 
 
     </header>
