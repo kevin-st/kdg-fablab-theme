@@ -8,6 +8,12 @@
     */
   ?>
   <h1> MAIN TEKST </h1>
+  <h1> MAIN TEKST </h1>
+  <h1> MAIN TEKST </h1>
+  <h1> MAIN TEKST </h1>
+  <h1> MAIN TEKST </h1>
+  <h1> MAIN TEKST </h1>
+  <h1> MAIN TEKST </h1>
 <?php
   get_footer();
 
