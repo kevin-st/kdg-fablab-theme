@@ -49,15 +49,23 @@
     .t-right { text-align: right; }
     ...
 */
-#menu-custom-projontw-menu{
-width: 80%;
-position: fixed;
-top: 0;
-right: 60px;
-margin: 10px 0 0 0;
-padding: 0;
+#menu-custom-projontw-menu /* Voorzie een andere manier om dit aan te spreken. Wat als de klant een ander menu maakt met een andere naam?*/ {
+  width: 80%;
+  position: fixed;
+  top: 0;
+  right: 60px;
+  margin: 10px 0 0 0;
+  padding: 0;
 }
-.menu{
+#menu-custom-projontw-menu li:last-child:before {
+      background-image: url("img/login-icon.png");
+      background-size: 20px 20px;
+      content: "";
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+    }
+.menu {
   height: 80px;
   line-height: 80px;
   width: 100%;
@@ -71,12 +79,11 @@ padding: 0;
   font-family: KdG;
   font-size: 35px;
 }
-.menu-item a{
+.menu-item a {
   text-decoration: none;
   color: white;
-
 }
-#logonaam a{
+#logonaam a {
   display: flex;
   flex-wrap: nowrap;
   width: 20%;
@@ -86,11 +93,11 @@ padding: 0;
   text-decoration: none;
   margin: 20px;
 }
-#logonaam img{
+#logonaam img {
   height: 70px;
 }
-#logonaam h1{
-  font-family: 'KdG';
+#logonaam h1 {
+  font-family: "KdG";
   color: white;
 }
 #vormgeving {
@@ -114,16 +121,16 @@ padding: 0;
   -webkit-transform: rotate(-4deg);
           transform: rotate(-4deg);
 }
-#menu-item-29 a:before{
+#menu-item-29 a:before {
   content: "";
-    display: block;
-    background: url("img/logowit.png") no-repeat;
-    width: 20px;
-    height: 20px;
-    float: left;
-    margin: 0 6px 0 0;
+  display: block;
+  background: url("img/logowit.png") no-repeat;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 0 6px 0 0;
 }
-.current-menu-item a{
+.current-menu-item a {
   color: #34bedc;
 }
 /* modules */
