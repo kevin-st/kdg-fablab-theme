@@ -1,20 +1,15 @@
-.header {
-
-  top: 0px;
-  position: fixed;
-  margin: 0;
-  padding: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 80px;
+#menu-custom-projontw-menu{
+width: 80%;
+background-color: black;
+position: fixed;
+top: 0;
+right: 0;
+margin: 0;
+padding: 0;
 }
 
 .menu{
-  background-color: black;
-  position: fixed;
-  top: 0;
-  margin: 0;
-  padding: 0;
+
   height: 80px;
   line-height: 80px;
   width: 100%;
@@ -35,19 +30,13 @@
 
 }
 
-#menu-item-29:before{
-    content: "";
-    display: block;
-    background: url("../img/KdG_icon-functioneel-vrouw") no-repeat;
-    width: 20px;
-    height: 20px;
-    float: left;
-    margin: 0 6px 0 0;
+#menu-item-29{
+  background-image: url('../img/KdG_icon-functioneel-vrouw.jpg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px; /* Adjust according to image size to push text across. */
 }
 
-body{
-  background-color: grey;
-}
 /*
 #vormgeving {
   width: 110%;

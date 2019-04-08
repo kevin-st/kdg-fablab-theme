@@ -7,17 +7,15 @@
   </head>
   <body class="<?php body_class(); ?>">
     <header>
+      <div>
+        <img src="img/KdG_icon-functioneel-diverse_vormen.svg" alt="fablab icon">
+        <h1>FabLab</h1>
+      </div>
       <?php
-        /*
-          REMOVE THIS COMMENT
-          Header related code goes here
-
-          to define multiple headers: https://codex.wordpress.org/Function_Reference/get_header#Multiple_Headers
-         */
          wp_nav_menu([
            'theme_location' => 'main_navigation'
          ]);
       ?>
-      
+
 
     </header>
