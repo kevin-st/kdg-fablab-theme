@@ -71,6 +71,15 @@ padding: 0;
   transform: rotate(-4deg);
 }
 
+#menu-item-29 a:before{
+  content: "";
+    display: block;
+    background: url("img/logowit.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 6px 0 0;
+}
 
 .current-menu-item a{
   color: #34bedc;
