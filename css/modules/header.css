@@ -8,13 +8,21 @@
   width: 100%;
   height: 80px;
 }
-.header > h1 {
+
+.menu{
+  list-style: none;
+}
+.menu-item {
   color: white;
   font-family: KdG;
-  font-size: 4vw;
-  margin-left: 200px;
+  font-size: 35px;
+  text-decoration: none;
 }
 
+body{
+  text-decoration: none;
+}
+/*
 #vormgeving {
   width: 110%;
   height: 100px;
@@ -36,4 +44,9 @@
   right: -80px;
   top: 0;
   transform: rotate(-4deg);
+}
+*/
+
+.current-menu-item{
+  color: #34bedc;
 }

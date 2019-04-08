@@ -7,13 +7,6 @@
   </head>
   <body class="<?php body_class(); ?>">
     <header>
-      <div id="headerdesign">
-          <div class="header">
-              <h1>Header</h1>
-          </div>
-          <div id="vormgeving"></div>
-          <div id="vormgeving2"></div>
-      </div>
       <?php
         /*
           REMOVE THIS COMMENT
