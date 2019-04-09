@@ -7,13 +7,15 @@
   padding: 0;
 
   li:last-child {
+    font-size: 20px;
+    margin-top: 5px;
     &:before {
       background-image: url("img/login-icon.png");
-      background-size: 20px 20px;
+      background-size: 30px 30px;
       content: "";
       display: inline-block;
-      height: 20px;
-      width: 20px;
+      height: 30px;
+      width: 30px;
     }
   }
 }

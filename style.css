@@ -57,13 +57,17 @@
   margin: 10px 0 0 0;
   padding: 0;
 }
+#menu-custom-projontw-menu li:last-child {
+    font-size: 20px;
+    margin-top: 5px;
+  }
 #menu-custom-projontw-menu li:last-child:before {
       background-image: url("img/login-icon.png");
-      background-size: 20px 20px;
+      background-size: 30px 30px;
       content: "";
       display: inline-block;
-      height: 20px;
-      width: 20px;
+      height: 30px;
+      width: 30px;
     }
 .menu {
   height: 80px;
