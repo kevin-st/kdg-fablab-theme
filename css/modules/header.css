@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   right: 60px;
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
   padding: 0;
   justify-content: space-around;
   flex-wrap: nowrap;
@@ -48,7 +48,7 @@ li:nth-of-type(7) a{
   top: 0;
   left: 0;
   text-decoration: none;
-  margin: 20px;
+  margin: 40px;
 }
 
 #logonaam img {

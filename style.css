@@ -49,12 +49,16 @@
     .t-right { text-align: right; }
     ...
 */
+/* modules */
+/* example module:
+  @import "modules/btn"
+*/
 .menu {
   width: 80%;
   position: fixed;
   top: 0;
   right: 60px;
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
   padding: 0;
   justify-content: space-around;
   flex-wrap: nowrap;
@@ -92,7 +96,7 @@ li:nth-of-type(7) a{
   top: 0;
   left: 0;
   text-decoration: none;
-  margin: 20px;
+  margin: 40px;
 }
 #logonaam img {
   height: 70px;
@@ -134,7 +138,39 @@ li:nth-of-type(7) a{
 .current-menu-item a {
   color: #34bedc;
 }
-/* modules */
-/* example module:
-  @import "modules/btn"
-*/
+html { height: 100%; }
+body {
+    min-height:100%;
+    position:relative;
+    margin: 0;
+    padding: 0;
+}
+footer{
+  width: 100%;
+  min-height: 50px;
+  background-color: black;
+  position: absolute;
+  left: 0 ; right: 0; bottom: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+footer>#adres{
+  margin: 50px 150px;
+  line-height: 10px;
+}
+footer>#adres>h1{
+  font-size: 1.5em;
+}
+footer>#adres>p{
+  font-size: 1.2em;
+}
+footer>#socials{
+  margin: 50px 150px;
+}
+footer>#socials>a>img{
+  height: 50px;
+  padding: 20px;
+}

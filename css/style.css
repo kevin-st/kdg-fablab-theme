@@ -14,9 +14,12 @@
 @import "base/variables";
 @import "base/baseline";
 @import "base/utility-classes";
-@import "modules/header";
+
 
 /* modules */
+
 /* example module:
   @import "modules/btn"
 */
+@import "modules/header";
+@import "modules/footer";
