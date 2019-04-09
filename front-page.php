@@ -7,13 +7,37 @@
         -> in case of KdG Fablab: Nieuws
     */
   ?>
-  <h1> MAIN TEKST </h1>
-  <h1> MAIN TEKST </h1>
-  <h1> MAIN TEKST </h1>
-  <h1> MAIN TEKST </h1>
-  <h1> MAIN TEKST </h1>
-  <h1> MAIN TEKST </h1>
-  <h1> MAIN TEKST </h1>
+  <main>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+    <h1> MAIN TEKST </h1>
+  </main>
+
 <?php
   get_footer();
 
