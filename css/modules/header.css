@@ -23,23 +23,21 @@
     }
   }
 }
-
 li:nth-of-type(7) a{
   font-size: 20px;
   margin-top: 5px;
 }
 
+}
 .menu-item {
   color: white;
   font-family: KdG;
   font-size: 35px;
 }
-
 .menu-item a {
   text-decoration: none;
   color: white;
 }
-
 #logonaam a {
   display: flex;
   flex-wrap: nowrap;
@@ -50,16 +48,13 @@ li:nth-of-type(7) a{
   text-decoration: none;
   margin: 40px;
 }
-
 #logonaam img {
   height: 70px;
 }
-
 #logonaam h1 {
   font-family: "KdG";
   color: white;
 }
-
 #vormgeving {
   width: 110%;
   height: 200px;
@@ -81,7 +76,6 @@ li:nth-of-type(7) a{
   top: 0;
   transform: rotate(-4deg);
 }
-
 #menu-item-29 a:before {
   content: "";
   display: block;
@@ -91,7 +85,35 @@ li:nth-of-type(7) a{
   float: left;
   margin: 0 6px 0 0;
 }
-
 .current-menu-item a {
   color: #34bedc;
 }
+
+@mixin pcbig{
+  .menu-item{
+    font-size: 25px;
+  }
+  .menu{
+    width: 75%;
+  }
+}
+
+@mixin pcmed{
+  .menu-item{
+    font-size: 22px;
+  }
+  .menu{
+    width: 70%;
+  }
+  #logonaam a {
+    width: 20%;
+    margin: 20px;
+  }
+  #logonaam img {
+    height: 50px;
+    margin: 15px 5px;
+  }
+}
+
+
+@mixin tablet{}

@@ -138,6 +138,30 @@ li:nth-of-type(7) a{
 .current-menu-item a {
   color: #34bedc;
 }
+@media (max-width:1300px) {
+  .menu-item{
+    font-size: 25px;
+  }
+  .menu{
+    width: 75%;
+  }
+  }
+@media (max-width:1100px) {
+  .menu-item{
+    font-size: 22px;
+  }
+  .menu{
+    width: 70%;
+  }
+  #logonaam a {
+    width: 20%;
+    margin: 20px;
+  }
+  #logonaam img {
+    height: 50px;
+    margin: 15px 5px;
+  }
+  }
 html { height: 100%; }
 body {
     min-height:100%;

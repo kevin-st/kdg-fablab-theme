@@ -29,13 +29,25 @@
 }
 
 @define-mixin tablet /* of een andere naam */ {
-  @media (min-width: /* breedte in te vullen */) {
+  @media (min-width: 800px) {
     @mixin-content;
   }
 }
 
 @define-mixin pc /* of een andere naam */ {
   @media (min-width: /* breedte in te vullen */) {
+    @mixin-content;
+  }
+}
+
+@define-mixin pcbig /* of een andere naam */ {
+  @media (max-width:1300px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin pcmed /* of een andere naam */ {
+  @media (max-width:1100px) {
     @mixin-content;
   }
 }
