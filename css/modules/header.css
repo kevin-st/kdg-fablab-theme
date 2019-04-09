@@ -1,14 +1,18 @@
-#menu-custom-projontw-menu /* Voorzie een andere manier om dit aan te spreken. Wat als de klant een ander menu maakt met een andere naam?*/ {
+.menu {
   width: 80%;
   position: fixed;
   top: 0;
   right: 60px;
   margin: 10px 0 0 0;
   padding: 0;
-
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  list-style: none;
+  display: flex;
+  height: 80px;
+  line-height: 80px;
   li:last-child {
-    font-size: 20px;
-    margin-top: 5px;
+
     &:before {
       background-image: url("img/login-icon.png");
       background-size: 30px 30px;
@@ -20,15 +24,11 @@
   }
 }
 
-.menu {
-  height: 80px;
-  line-height: 80px;
-  width: 100%;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  list-style: none;
-  display: flex;
+li:nth-of-type(7) a{
+  font-size: 20px;
+  margin-top: 5px;
 }
+
 .menu-item {
   color: white;
   font-family: KdG;
