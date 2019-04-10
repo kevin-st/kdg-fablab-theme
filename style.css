@@ -39,6 +39,12 @@
     .p-bottom-lg { padding-bottom: 15px; }
   }
 */
+@font-face {
+  font-family: "KdG";
+  src: url("fonts/KdG-Regular.ttf") format("truetype")
+    url("fonts/KdG-Regular.woff") format("woff");
+  font-weight: normal;
+}
 /*
   add css classes which can be used frequently:
 
@@ -75,19 +81,23 @@
       height: 30px;
       width: 30px;
     }
-li:nth-of-type(7) a{
+/* Ik denk dat het beter is om te werken met last child. (zoals hierboven)
+   Stel dat Lorenz zegt dat hij geen showcase pagina meer wilt?
+   (Dan werkt deze code niet meer he)
+*/
+li:nth-of-type(7) a {
   font-size: 20px;
   margin-top: 5px;
 }
 .menu-item {
   color: white;
-  font-family: KdG;
+  font-family: "KdG";
   font-size: 35px;
 }
 .menu-item a {
-  text-decoration: none;
-  color: white;
-}
+    text-decoration: none;
+    color: white;
+  }
 #logonaam a {
   display: flex;
   flex-wrap: nowrap;
@@ -126,6 +136,7 @@ li:nth-of-type(7) a{
   -webkit-transform: rotate(-4deg);
           transform: rotate(-4deg);
 }
+/* Wat is menu-item-29? */
 #menu-item-29 a:before {
   content: "";
   display: block;
@@ -139,18 +150,18 @@ li:nth-of-type(7) a{
   color: #34bedc;
 }
 @media (max-width:1300px) {
-  .menu-item{
+  .menu-item {
     font-size: 25px;
   }
-  .menu{
+  .menu {
     width: 75%;
   }
   }
 @media (max-width:1100px) {
-  .menu-item{
+  .menu-item {
     font-size: 22px;
   }
-  .menu{
+  .menu {
     width: 70%;
   }
   #logonaam a {
@@ -161,6 +172,8 @@ li:nth-of-type(7) a{
     height: 50px;
     margin: 15px 5px;
   }
+  }
+@media (min-width: 800px) {
   }
 html { height: 100%; }
 body {

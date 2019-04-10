@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "KdG";
+  src: url("fonts/KdG-Regular.ttf") format("truetype")
+    url("fonts/KdG-Regular.woff") format("woff");
+  font-weight: normal;
+}

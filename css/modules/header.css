@@ -12,7 +12,6 @@
   height: 80px;
   line-height: 80px;
   li:last-child {
-
     &:before {
       background-image: url("img/login-icon.png");
       background-size: 30px 30px;
@@ -23,21 +22,27 @@
     }
   }
 }
-li:nth-of-type(7) a{
+
+/* Ik denk dat het beter is om te werken met last child. (zoals hierboven)
+   Stel dat Lorenz zegt dat hij geen showcase pagina meer wilt?
+   (Dan werkt deze code niet meer he)
+*/
+li:nth-of-type(7) a {
   font-size: 20px;
   margin-top: 5px;
 }
 
-}
 .menu-item {
   color: white;
-  font-family: KdG;
+  font-family: "KdG";
   font-size: 35px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
-.menu-item a {
-  text-decoration: none;
-  color: white;
-}
+
 #logonaam a {
   display: flex;
   flex-wrap: nowrap;
@@ -76,6 +81,8 @@ li:nth-of-type(7) a{
   top: 0;
   transform: rotate(-4deg);
 }
+
+/* Wat is menu-item-29? */
 #menu-item-29 a:before {
   content: "";
   display: block;
@@ -89,20 +96,20 @@ li:nth-of-type(7) a{
   color: #34bedc;
 }
 
-@mixin pcbig{
-  .menu-item{
+@mixin pcbig {
+  .menu-item {
     font-size: 25px;
   }
-  .menu{
+  .menu {
     width: 75%;
   }
 }
 
-@mixin pcmed{
-  .menu-item{
+@mixin pcmed {
+  .menu-item {
     font-size: 22px;
   }
-  .menu{
+  .menu {
     width: 70%;
   }
   #logonaam a {
@@ -115,5 +122,5 @@ li:nth-of-type(7) a{
   }
 }
 
-
-@mixin tablet{}
+@mixin tablet {
+}
