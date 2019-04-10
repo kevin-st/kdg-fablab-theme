@@ -13,15 +13,18 @@
     -> https://developer.wordpress.org/themes/template-files-section/page-template-files/#creating-custom-page-templates-for-global-use
    */
 ?>
-<h1>Dit is een algemene pagina</h1>
-<h1>Dit is een algemene pagina</h1>
-<h1>Dit is een algemene pagina</h1>
-<h1>Dit is een algemene pagina</h1>
-<h1>Dit is een algemene pagina</h1>
-<h1>Dit is een algemene pagina</h1>
-<h1>Dit is een algemene pagina</h1>
-<h1>Dit is een algemene pagina</h1>
-<h1>Dit is een algemene pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
+<h1>Dit is de contact pagina</h1>
 <?php
   get_footer();
 

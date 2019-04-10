@@ -15,6 +15,12 @@
   $variable name: value
     -> e.g. $mainBtnColor: #000;
 */
+@font-face {
+  font-family: "KdG";
+  src: url("http://local.kdg-fablab.test/wp-content/uploads/fonts/KdG-Regular.woff")
+    format("woff");
+  font-weight: normal;
+}
 /*
   To define different values for each screensize,
   add following rules to CSS:
@@ -75,19 +81,23 @@
       height: 30px;
       width: 30px;
     }
-li:nth-of-type(7) a{
+/* Ik denk dat het beter is om te werken met last child. (zoals hierboven)
+   Stel dat Lorenz zegt dat hij geen showcase pagina meer wilt?
+   (Dan werkt deze code niet meer he)
+*/
+li:nth-of-type(7) a {
   font-size: 20px;
   margin-top: 5px;
 }
 .menu-item {
   color: white;
-  font-family: KdG;
+  font-family: "KdG";
   font-size: 35px;
 }
 .menu-item a {
-  text-decoration: none;
-  color: white;
-}
+    text-decoration: none;
+    color: white;
+  }
 #logonaam a {
   display: flex;
   flex-wrap: nowrap;
@@ -126,6 +136,11 @@ li:nth-of-type(7) a{
   -webkit-transform: rotate(-4deg);
           transform: rotate(-4deg);
 }
+/*
+  Wat is menu-item-29?
+  Dit kan voor problemen zorgen.
+  Bij mij is dit de "Nieuws" link in de navigatie, maar is dat ook zo bij jou?
+*/
 #menu-item-29 a:before {
   content: "";
   display: block;
@@ -139,18 +154,18 @@ li:nth-of-type(7) a{
   color: #34bedc;
 }
 @media (max-width:1300px) {
-  .menu-item{
+  .menu-item {
     font-size: 25px;
   }
-  .menu{
+  .menu {
     width: 75%;
   }
   }
 @media (max-width:1100px) {
-  .menu-item{
+  .menu-item {
     font-size: 22px;
   }
-  .menu{
+  .menu {
     width: 70%;
   }
   #logonaam a {
@@ -161,6 +176,8 @@ li:nth-of-type(7) a{
     height: 50px;
     margin: 15px 5px;
   }
+  }
+@media (min-width: 800px) {
   }
 html { height: 100%; }
 body {

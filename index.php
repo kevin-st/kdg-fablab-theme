@@ -7,6 +7,15 @@
     -> in the case of KdG Fablab: Nieuws
    */
 ?>
+<h1>Dit is de nieuwspagina</h1>
+<h1>Dit is de nieuwspagina</h1>
+<h1>Dit is de nieuwspagina</h1>
+<h1>Dit is de nieuwspagina</h1>
+<h1>Dit is de nieuwspagina</h1>
+<h1>Dit is de nieuwspagina</h1>
+<h1>Dit is de nieuwspagina</h1>
+<h1>Dit is de nieuwspagina</h1>
+<h1>Dit is de nieuwspagina</h1>
 <?php
   get_footer();
 

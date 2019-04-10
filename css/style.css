@@ -12,9 +12,9 @@
 
 /* base stuff needed */
 @import "base/variables";
+@import "base/fonts";
 @import "base/baseline";
 @import "base/utility-classes";
-
 
 /* modules */
 
