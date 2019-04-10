@@ -7,6 +7,12 @@
       - create extra .php file -> e.g. archive-machine.php
   */
 ?>
+<h1>Dit is een archief pagina</h1>
+<h1>Dit is een archief pagina</h1>
+<h1>Dit is een archief pagina</h1>
+<h1>Dit is een archief pagina</h1>
+<h1>Dit is een archief pagina</h1>
+<h1>Dit is een archief pagina</h1>
 <?php
   get_footer();
 

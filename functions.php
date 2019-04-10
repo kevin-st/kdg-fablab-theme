@@ -9,6 +9,8 @@
   add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
   add_action('after_setup_theme', 'kdg_fablab_features');
 
+  add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
+
   /**
    * Load recources necessary for the theme.
    */
@@ -48,6 +50,17 @@
             ]);
           ?>"
       */
+    }
+
+    function kdg_fablab_nav_class($classes, $item, $post = null){
+      if ($post !== null)
+        var_dump($post);
+
+      if ((is_post_type_archive('machine') || get_post_type() == 'machine') && strtolower($item->title) == "toestellen"){
+        $classes[] = "current-menu-item";
+      }
+
+     return $classes;
     }
 
     // do not close php tags at the end of a file
