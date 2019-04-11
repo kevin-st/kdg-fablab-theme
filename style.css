@@ -18,7 +18,17 @@
 @font-face {
   font-family: "KdG";
   src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.woff")
-    format("woff");
+      format("woff"),
+    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.ttf")
+      format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "iconfont";
+  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/iconfont.woff")
+      format("woff"),
+    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/iconfont.ttf"),
+    format("truetype");
   font-weight: normal;
 }
 /*
@@ -74,12 +84,8 @@
   line-height: 80px;
 }
 .menu li:last-child:before {
-      background-image: url("img/login-icon.png");
-      background-size: 30px 30px;
-      content: "";
-      display: inline-block;
-      height: 30px;
-      width: 30px;
+      font-family: "iconfont";
+      content: "i";
     }
 /* Ik denk dat het beter is om te werken met last child. (zoals hierboven)
    Stel dat Lorenz zegt dat hij geen showcase pagina meer wilt?
@@ -150,9 +156,10 @@ li:nth-of-type(7) a {
   float: left;
   margin: 0 6px 0 0;
 }
-.current-menu-item a {
-  color: #34bedc;
-}
+.current-menu-item,
+  .current-menu-item a {
+    color: #34bedc;
+  }
 @media (max-width:1300px) {
   .menu-item {
     font-size: 25px;

@@ -1,6 +1,17 @@
 @font-face {
   font-family: "KdG";
   src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.woff")
-    format("woff");
+      format("woff"),
+    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.ttf")
+      format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "iconfont";
+  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/iconfont.woff")
+      format("woff"),
+    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/iconfont.ttf"),
+    format("truetype");
   font-weight: normal;
 }

@@ -14,12 +14,8 @@
 
   li:last-child {
     &:before {
-      background-image: url("img/login-icon.png");
-      background-size: 30px 30px;
-      content: "";
-      display: inline-block;
-      height: 30px;
-      width: 30px;
+      font-family: "iconfont";
+      content: "i";
     }
   }
 }
@@ -97,8 +93,11 @@ li:nth-of-type(7) a {
   float: left;
   margin: 0 6px 0 0;
 }
-.current-menu-item a {
-  color: #34bedc;
+.current-menu-item {
+  &,
+  a {
+    color: $main_accent;
+  }
 }
 
 @mixin pcbig {
