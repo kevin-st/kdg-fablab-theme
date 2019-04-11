@@ -104,6 +104,10 @@ li:nth-of-type(7) a {
     text-decoration: none;
     color: white;
   }
+.current-menu-item,
+  .current-menu-item a {
+    color: #34bedc;
+  }
 #logonaam a {
   display: flex;
   flex-wrap: nowrap;
@@ -156,10 +160,6 @@ li:nth-of-type(7) a {
   float: left;
   margin: 0 6px 0 0;
 }
-.current-menu-item,
-  .current-menu-item a {
-    color: #34bedc;
-  }
 @media (max-width:1300px) {
   .menu-item {
     font-size: 25px;

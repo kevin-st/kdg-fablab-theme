@@ -40,6 +40,13 @@ li:nth-of-type(7) a {
   }
 }
 
+.current-menu-item {
+  &,
+  a {
+    color: $main_accent;
+  }
+}
+
 #logonaam a {
   display: flex;
   flex-wrap: nowrap;
@@ -92,12 +99,6 @@ li:nth-of-type(7) a {
   height: 20px;
   float: left;
   margin: 0 6px 0 0;
-}
-.current-menu-item {
-  &,
-  a {
-    color: $main_accent;
-  }
 }
 
 @mixin pcbig {
