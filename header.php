@@ -15,10 +15,12 @@
           <h1>FabLab</h1>
         </a>
       </div>
-      <?php
-         wp_nav_menu([
-           'theme_location' => 'main_navigation'
-         ]);
-      ?>
-
+      <div class="burgerbtn"></div>
+      <div id="menu-container">
+        <?php
+           wp_nav_menu([
+             'theme_location' => 'main_navigation'
+           ]);
+        ?>
+      </div>
     </header>

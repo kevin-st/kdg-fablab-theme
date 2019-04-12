@@ -67,12 +67,18 @@
 /* example module:
   @import "modules/btn"
 */
+.burgerbtn{
+  display: none;
+}
+.zichtbaarheid{
+  display:none;
+}
 .menu {
   width: 80%;
   position: fixed;
   top: 0;
   right: 60px;
-  margin: 5px 0 0 0;
+  margin: 0;
   padding: 0;
   justify-content: space-around;
   flex-wrap: nowrap;
@@ -81,18 +87,14 @@
   height: 80px;
   line-height: 80px;
 }
+.menu li:last-child {
+    font-size: 20px;
+    margin-top: 5px;
+  }
 .menu li:last-child:before {
       font-family: "iconfont";
       content: "i";
     }
-/* Ik denk dat het beter is om te werken met last child. (zoals hierboven)
-   Stel dat Lorenz zegt dat hij geen showcase pagina meer wilt?
-   (Dan werkt deze code niet meer he)
-*/
-li:nth-of-type(7) a {
-  font-size: 20px;
-  margin-top: 5px;
-}
 .menu-item {
   color: white;
   font-family: "KdG";
@@ -144,20 +146,6 @@ li:nth-of-type(7) a {
   -webkit-transform: rotate(-4deg);
           transform: rotate(-4deg);
 }
-/*
-  Wat is menu-item-29?
-  Dit kan voor problemen zorgen.
-  Bij mij is dit de "Nieuws" link in de navigatie, maar is dat ook zo bij jou?
-*/
-#menu-item-29 a:before {
-  content: "";
-  display: block;
-  background: url("img/logowit.png") no-repeat;
-  width: 20px;
-  height: 20px;
-  float: left;
-  margin: 0 6px 0 0;
-}
 @media (max-width:1300px) {
   .menu-item {
     font-size: 25px;
@@ -165,6 +153,15 @@ li:nth-of-type(7) a {
   .menu {
     width: 75%;
   }
+      .menu li:last-child {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+      .menu li:last-child:before {
+        font-family: "iconfont";
+
+        content: "i";
+      }
   }
 @media (max-width:1100px) {
   .menu-item {
@@ -182,7 +179,46 @@ li:nth-of-type(7) a {
     margin: 15px 5px;
   }
   }
-@media (min-width: 800px) {
+@media (max-width: 960px) {
+  body{
+    background-color: green;
+  }
+
+  .burgerbtn{
+    display: block;
+  }
+
+  #vormgeving2{
+    display: none;
+  }
+
+  .menu{
+    background-color: black;
+    width: 100%;
+    margin: 0 ;
+    padding: 0 80px;
+    left: 0;
+    top: 87px;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    height: 450px;
+  }
+  .menu-item{
+    width: 100%;
+    line-height: 60px;
+  }
+
+
+.burgerbtn{
+  width: 50px;
+  height: 50px;
+  background-color: pink;
+  z-index: 2000;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
   }
 html { height: 100%; }
 body {

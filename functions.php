@@ -27,6 +27,7 @@
      wp_enqueue_style('kdg_fablab_main_styles', get_stylesheet_uri(), NULL, microtime());
 
      wp_enqueue_script('kdg_fablab_js', get_theme_file_uri('js/scripts-bundled.js'), NULL, microtime()/*'1.0'*/, true);
+
    }
 
    /**
