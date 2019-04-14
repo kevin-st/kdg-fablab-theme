@@ -24,16 +24,21 @@ function menuKlik(evt) {
 // some example module
 class Menu {
   constructor() {
-    console.log("Toggle class!");
     var navknop = document.querySelector(".burgerbtn");
     var menureact = document.querySelector("#menu-container");
+    var img = document.querySelector("#menuimg");
+    var img2 = document.querySelector("#menuimg2");
+
 
     navknop.addEventListener("click", menuKlik);
 
+
     function menuKlik(evt) {
-      navknop.innerHTML = "--";
       if (menureact.classList) {
         menureact.classList.toggle("zichtbaarheid");
+        img.classList.toggle("zichtbaarheid");
+        img2.classList.toggle("zichtbaarheid");
+        console.log("Toggle class!");
       } else {
         // For IE9
         var classes = menureact.className.split(" ");
@@ -46,6 +51,7 @@ class Menu {
           menureact.className = classes.join(" ");
       }
     }
+
   }
 }
 

@@ -15,8 +15,11 @@
           <h1>FabLab</h1>
         </a>
       </div>
-      <div class="burgerbtn"></div>
-      <div id="menu-container">
+      <div class="burgerbtn">
+        <img id="menuimg" src="<?php echo get_theme_file_uri("img/onder.png"); ?>" alt="menu icon">
+        <img id="menuimg2" class="zichtbaarheid" src="<?php echo get_theme_file_uri("img/boven.png"); ?>" alt="menu icon">
+      </div>
+      <div id="menu-container" class="zichtbaarheid">
         <?php
            wp_nav_menu([
              'theme_location' => 'main_navigation'

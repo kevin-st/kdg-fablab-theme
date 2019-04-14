@@ -3,11 +3,11 @@
 }
 
 .zichtbaarheid{
-  display:none;
+  display:block;
 }
 
 .menu {
-  width: 80%;
+  width: 78%;
   position: fixed;
   top: 0;
   right: 60px;
@@ -21,11 +21,11 @@
   line-height: 80px;
 
   li:last-child {
-    font-size: 20px;
-    margin-top: 5px;
+    font-size:26px;
     &:before {
       font-family: "iconfont";
       content: "i";
+      font-size: 35px;
     }
   }
 }
@@ -94,14 +94,22 @@
   .menu {
     width: 75%;
       li:last-child {
-      font-size: 18px;
-      margin-top: 5px;
+      font-size: 22px;
+      margin-top: 0px;
       &:before {
         font-family: "iconfont";
-
         content: "i";
+        font-size: 25px;
       }
     }
+  }
+  #logonaam a {
+    width: 20%;
+    margin: 20px;
+  }
+  #logonaam img {
+    height: 50px;
+    margin: 15px 5px;
   }
 }
 
@@ -111,6 +119,13 @@
   }
   .menu {
     width: 70%;
+    li:last-child {
+      margin: 0;
+      font-size: 20px;
+      &:before{
+        font-size: 22px;
+      }
+    }
   }
   #logonaam a {
     width: 20%;
@@ -141,25 +156,42 @@
     margin: 0 ;
     padding: 0 80px;
     left: 0;
-    top: 87px;
+    top: 85px;
     right: 0;
     display: flex;
     flex-wrap: wrap;
     height: 450px;
+    li:last-child {
+      font-size: 22px;
+      margin: 0;
+      &:before{
+        font-size: 26px;
+      }
+    }
   }
   .menu-item{
     width: 100%;
     line-height: 60px;
+    font-size: 26px;
   }
 
+  .burgerbtn{
+    display: block;
+    width: 60px;
+    height: 60px;
+    z-index: 2000;
+    position: fixed;
+    right: 0;
+    top: 30px;
+  }
 
-.burgerbtn{
-  width: 50px;
-  height: 50px;
-  background-color: pink;
-  z-index: 2000;
-  position: fixed;
-  right: 0;
-  top: 0;
-}
+  .burgerbtn img{
+    width: 50px;
+    height: 30px;
+  }
+
+  .zichtbaarheid{
+    display:none;
+  }
+
 }
