@@ -35,6 +35,7 @@
     */
     function kdg_fablab_features() {
       add_theme_support('title-tag');
+      add_theme_support('post-thumbnails');
 
       // function(name_for_wordpress, human_readable_name);
       register_nav_menu('main_navigation', 'Hoofdnavigatie');
