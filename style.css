@@ -287,6 +287,17 @@ footer>#socials>a>img{
   height: 50px;
   padding: 20px;
 }
+footer>#socials>a{
+  text-decoration: none;
+}
+@media (max-width: 960px) {
+  footer>#socials{
+    margin: 5%;
+  }
+  footer>#adres{
+    margin: 5%;
+  }
+  }
 main{
   width: 960px;
   margin: 0 auto;

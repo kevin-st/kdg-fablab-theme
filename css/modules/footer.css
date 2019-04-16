@@ -39,3 +39,16 @@ footer>#socials>a>img{
   height: 50px;
   padding: 20px;
 }
+
+footer>#socials>a{
+  text-decoration: none;
+}
+
+@mixin tablet {
+  footer>#socials{
+    margin: 5%;
+  }
+  footer>#adres{
+    margin: 5%;
+  }
+}
