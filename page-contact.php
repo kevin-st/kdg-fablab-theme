@@ -22,7 +22,7 @@
         <label for="naam">Naam:</label></br>
         <input type="text" placeholder="John Doe" name="naam" required></br>
         
-        <label for="email">E-mailadres:/label></br>
+        <label for="email">E-mailadres:</label></br>
         <input type="text" placeholder="voorbeeld@hotmail.com" name="email" required></br>
         
         <label for="vraag">Vraag:</label></br>
