@@ -18,6 +18,18 @@
 <main>
 
     <h1>Laatste nieuws</h1>
+        
+        <div class="nieuwsItem">
+           <img src="">
+
+           <h2>Workshop lasercutten</h2>
+
+           <p>Altijd al gedroomd om je eigen dino te maken? Een juwelendoos? Kom leren hoe je dat allemaal kan doen met een lasercutter.</p>
+           
+           <a href="page-reserveren.php">Reserveren</a>
+           <a href="page-detailNieuws.php">Meer details</a>
+
+        </div>
 
         <div class="nieuwsItem"> 
            <img src="">
@@ -25,9 +37,10 @@
            <h2>De opening party</h2>
 
            <p>Iedereen is welkom op de opening van fablab.</p>
+           
+           <a href="page-detailNieuws.php">Lees verder</a>
+           <a href="page-nieuws.php">Meer nieuws</a>
 
-           <button>Lees verder</button>
-           <button>Meer nieuws</button>
         </div>
 
         <div class="nieuwsItem">    
@@ -36,20 +49,10 @@
            <h2>Nieuwe 3D printer</h2>
 
            <p>Onze super coole 3D printer model Prusa blue shoe print al je creaties in no time. Kom het uittesten.</p>
+           
+           <a href="page-reserveerDetail.php">Reserveer me</a>
+           <a href="page-toestellen.php">Meer toestellen</a>
 
-           <button>Reserveer me</button>
-           <button>Meer toestellen</button>
-        </div>
-
-        <div class="nieuwsItem">
-           <img src="">
-
-           <h2>Workshop lasercutten</h2>
-
-           <p>Altijd al gedroomd om je eigen dino te maken? Een juwelendoos? Kom leren hoe je dat allemaal kan doen met een lasercutter.</p>
-
-           <button>Schrijf je in</button>
-           <button>Meer details</button>
         </div>
 
         <div class="nieuwsItem">
@@ -58,9 +61,10 @@
            <h2>Win win win</h2>
 
            <p>Doe mee aan onze wedstrijd! KdG zoekt een origineel iets en als jouw ontwerp gekozen wordt win je een gratis...</p>
+           
+           <a href="#">Ik wil winnen</a>
+           <a href="#">Meer info</a>
 
-           <button>Ik wil winnen</button>
-           <button>Meer info</button>
         </div>
 
         <div class="nieuwsItem">
@@ -69,9 +73,10 @@
            <h2>Reserveer je toestel</h2>
 
            <p>Vanaf nu kan je al onze 3D printers, stickermachines, lasercutters, oculus rifts, ... reserveren om er de coolste dingen mee te maken.</p>
+           
+           <a href="page-reserveren.php">Reserveren</a>
+           <a href="page-toestellen.php">Meer toestellen</a>
 
-           <button>Reserveer</button>
-           <button>Meer toestellen</button>
         </div>
 
         <div class="nieuwsItem">
@@ -80,9 +85,10 @@
            <h2>VR corner</h2>
 
            <p>Ben je het saaie uitzicht van de muren op je kot beu? Begeef je in een andere wereld aka onze VR-Corner. Visit to Hawaii? No prob!</p>
+           
+           <a href="page-reserveren.php">Reserveer</a>
+           <a href="#">Meer info</a>
 
-           <button>Reserveer</button>
-           <button>Meer info</button>
         </div>
     
 </main>
