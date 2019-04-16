@@ -13,18 +13,25 @@
     -> https://developer.wordpress.org/themes/template-files-section/page-template-files/#creating-custom-page-templates-for-global-use
    */
 ?>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
-<h1>Dit is de showcase pagina</h1>
+
+<main>
+    
+    <h1>Showcase</h1>
+    
+        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase1.png"); ?>" alt="showcase">
+        
+        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase2.png"); ?>" alt="showcase">
+        
+        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase3.png"); ?>" alt="showcase">
+        
+        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase4.png"); ?>" alt="showcase">
+        
+        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase5.png"); ?>" alt="showcase">
+        
+        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase6.png"); ?>" alt="showcase">
+    
+</main>
+
 <?php
   get_footer();
 
