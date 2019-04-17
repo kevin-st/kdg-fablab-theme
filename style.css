@@ -29,6 +29,14 @@
     format("woff");
   font-weight: normal;
 }
+@font-face {
+  font-family: "proximanova";
+  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.woff")
+      format("woff"),
+    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.ttf")
+      format("truetype");
+  font-weight: normal;
+}
 /*
   To define different values for each screensize,
   add following rules to CSS:
@@ -67,6 +75,9 @@
 /* example module:
   @import "modules/btn"
 */
+header{
+  z-index: 5000;
+}
 .burgerbtn{
   display: none;
 }
@@ -300,3 +311,70 @@ main{
   padding-top: 120px;
   padding-bottom: 205px;
 }
+body{
+  font-family: 'proximanova';
+}
+#frontpageImg{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: -2;
+}
+.thumbnail>img, .thumbnail{
+  width: 100%;
+  height: auto;
+}
+h1{
+  font-family: 'KdG';
+  font-size: 35px;
+}
+.btn{
+  width: 200px;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  font-size: 25px;
+  position:absolute;
+  text-align: center;
+  top:350px;
+  left:45%;
+  right:0;
+  z-index: -1;
+}
+main{
+  display: flex;
+  padding-top: 0;
+  width: 100%;
+}
+section{
+  margin: 5%;
+  width: 50%;
+}
+.contentSection{
+  display: flex;
+  width: 100%;
+}
+.sectionDivide{
+  width: 50%;
+}
+@media (max-width: 700px) {
+  body{
+    background-color: green;
+  }
+  main{
+    width: 100%;
+    margin: 0;
+    padding: 90px 0 200px 0;
+  }
+  }
+@media (max-width: 960px) {
+  main{
+    width: 100%;
+    margin: 0;
+    padding: 90px 0 200px 0;
+  }
+  }

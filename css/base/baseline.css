@@ -23,7 +23,7 @@
   }
 */
 @define-mixin phone /* of een andere naam */ {
-  @media (min-width: /* breedte in te vullen*/) {
+  @media (max-width: 700px) {
     @mixin-content;
   }
 }

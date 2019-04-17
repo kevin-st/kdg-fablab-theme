@@ -13,3 +13,12 @@
     format("woff");
   font-weight: normal;
 }
+
+@font-face {
+  font-family: "proximanova";
+  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.woff")
+      format("woff"),
+    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.ttf")
+      format("truetype");
+  font-weight: normal;
+}
