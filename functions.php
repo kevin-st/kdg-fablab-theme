@@ -55,14 +55,18 @@
     }
 
     function kdg_fablab_nav_class($classes, $item, $post = null){
-      if ($post !== null)
-        var_dump($post);
+      /*if ($post !== null)
+        var_dump($post);*/
 
-      if ((is_post_type_archive('machine') || get_post_type() == 'machine') && strtolower($item->title) == "toestellen"){
+      $current_post_type = get_post_type();
+
+      if ((is_post_type_archive('machine') || $current_post_type == 'machine') && strtolower($item->title) == "toestellen"){
+        $classes[] = "current-menu-item";
+      } else if ((is_archive() || ($current_post_type == 'post' || $current_post_type == 'workshop')) && strtolower($item->title) == "nieuws"){
         $classes[] = "current-menu-item";
       }
 
-     return $classes;
+      return $classes;
     }
 
     // do not close php tags at the end of a file
