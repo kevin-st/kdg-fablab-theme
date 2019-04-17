@@ -195,10 +195,6 @@
   }
   }
 @media (max-width: 960px) {
-  body{
-    background-color: green;
-  }
-
   .burgerbtn{
     display: block;
   }
