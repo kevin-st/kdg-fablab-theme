@@ -138,10 +138,6 @@
 }
 
 @mixin tablet {
-  body{
-    background-color: green;
-  }
-
   .burgerbtn{
     display: block;
   }
