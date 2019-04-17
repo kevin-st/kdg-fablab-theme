@@ -322,7 +322,7 @@ body{
   position: relative;
   z-index: 1;
 }
-.thumbnail>img, .thumbnail{
+.thumbnail>img{
   width: 100%;
   height: auto;
 }
@@ -354,12 +354,21 @@ h1{
 section{
   margin: 5%;
   width: 50%;
-}
-.contentSection{
   display: flex;
+  flex-wrap: wrap;
+}
+section>h1{
   width: 100%;
 }
-.sectionDivide{
+.machine-item{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.machine-item>h2, .machine-item>p{
+  width: 50%;
+}
+.machine-item>.thumbnail{
   width: 50%;
 }
 @media (max-width: 700px) {
