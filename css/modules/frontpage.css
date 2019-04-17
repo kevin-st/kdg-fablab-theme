@@ -35,7 +35,7 @@ h1{
   z-index: -1;
 }
 
-main{
+#mainFrontpage{
   display: flex;
   padding-top: 0;
   width: 100%;
@@ -59,7 +59,7 @@ section{
   body{
     background-color: green;
   }
-  main{
+  #mainFrontpage{
     width: 100%;
     margin: 0;
     padding: 90px 0 200px 0;
@@ -67,7 +67,7 @@ section{
 }
 
 @mixin tablet{
-  main{
+  #mainFrontpage{
     width: 100%;
     margin: 0;
     padding: 90px 0 200px 0;

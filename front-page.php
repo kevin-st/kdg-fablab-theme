@@ -10,7 +10,7 @@
     <img id="frontpageImg" src="<?php echo get_theme_file_uri("img/fablab.PNG"); ?>" alt="fablab workarea">
     <a class="btn" href="<?php echo site_url('login') ?>">Kom Binnen</a>
 
-  <main>
+  <main id="mainFrontpage">
     <section role="news">
       <h1>Laatste nieuws</h1>
       <div class="contentSection">
