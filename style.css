@@ -76,6 +76,7 @@
   @import "modules/btn"
 */
 header{
+  position: relative;
   z-index: 5000;
 }
 .burgerbtn{
@@ -319,7 +320,7 @@ body{
   margin: 0;
   padding: 0;
   position: relative;
-  z-index: -2;
+  z-index: 1;
 }
 .thumbnail>img, .thumbnail{
   width: 100%;
@@ -343,7 +344,7 @@ h1{
   top:350px;
   left:45%;
   right:0;
-  z-index: -1;
+  z-index: 2;
 }
 #mainFrontpage{
   display: flex;
