@@ -8,6 +8,7 @@
   // define hooks -> overzicht hooks: https://codex.wordpress.org/Plugin_API/Action_Reference
   add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
   add_action('after_setup_theme', 'kdg_fablab_features');
+  add_action('pre_get_posts', 'kdg_fablab_cpt_archive_items');
 
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
 
@@ -62,11 +63,17 @@
 
       if ((is_post_type_archive('machine') || $current_post_type == 'machine') && strtolower($item->title) == "toestellen"){
         $classes[] = "current-menu-item";
-      } else if ((is_archive() || ($current_post_type == 'post' || $current_post_type == 'workshop')) && strtolower($item->title) == "nieuws"){
+      } else if ((is_post_type_archive('post')|| ($current_post_type == 'post' || $current_post_type == 'workshop')) && strtolower($item->title) == "nieuws"){
         $classes[] = "current-menu-item";
       }
 
       return $classes;
+    }
+
+    function kdg_fablab_cpt_archive_items($query) {
+      if ($query->is_main_query() && !is_admin() && is_post_type_archive('machine')) {
+  	    $query->set('posts_per_page', '6');
+  	  }
     }
 
     // do not close php tags at the end of a file
