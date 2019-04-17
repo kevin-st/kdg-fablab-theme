@@ -49,7 +49,7 @@
       <h2>Laatste nieuws</h2>
       <?php
         $homepage_news = new WP_Query([
-          "post_per_page" => -1 // control number of posts with this -> -1 is all posts
+          "posts_per_page" => -1 // control number of posts with this -> -1 is all posts
         ]);
 
         while($homepage_news->have_posts()) {
