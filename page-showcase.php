@@ -14,23 +14,51 @@
    */
 ?>
 
+<style>
+
+.imgShowcase1, .imgShowcase2, .imgShowcase3 {
+    display: flex;
+}
+    
+#showcaseImg1, #showcaseImg3, #showcaseImg5 {
+   padding-right: 15px;
+}
+    
+.showcase {
+    padding-bottom: 15px;
+}
+
+</style>
+
 <img id="frontpageImg" src="<?php echo get_theme_file_uri("img/showcase_header.jpg"); ?>">
 
 <main>
     
     <h1>Showcase</h1>
     
-        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase1.png"); ?>" alt="showcase">
+        <div class="imgShowcase1">
+    
+            <img id="showcaseImg1" class="showcase" src="<?php echo get_theme_file_uri("img/showcase1.png"); ?>" alt="showcase">
+
+            <img id="showcaseImg2" class="showcase" src="<?php echo get_theme_file_uri("img/showcase2.png"); ?>" alt="showcase">
+            
+        </div>
+            
+        <div class="imgShowcase2">
+
+            <img id="showcaseImg3" class="showcase" src="<?php echo get_theme_file_uri("img/showcase3.png"); ?>" alt="showcase">
+
+            <img id="showcaseImg4" class="showcase" src="<?php echo get_theme_file_uri("img/showcase4.png"); ?>" alt="showcase">
+            
+        </div>
+            
+        <div class="imgShowcase3">
+
+            <img id="showcaseImg5" class="showcase" src="<?php echo get_theme_file_uri("img/showcase5.png"); ?>" alt="showcase">
+
+            <img id="showcaseImg6" class="showcase" src="<?php echo get_theme_file_uri("img/showcase6.png"); ?>" alt="showcase">
         
-        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase2.png"); ?>" alt="showcase">
-        
-        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase3.png"); ?>" alt="showcase">
-        
-        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase4.png"); ?>" alt="showcase">
-        
-        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase5.png"); ?>" alt="showcase">
-        
-        <img id="showcaseImg" src="<?php echo get_theme_file_uri("img/showcase6.png"); ?>" alt="showcase">
+        </div>
     
 </main>
 
