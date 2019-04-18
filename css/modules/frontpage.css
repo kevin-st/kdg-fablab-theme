@@ -57,13 +57,14 @@ section>h1{
   flex-wrap: wrap;
 }
 
-.machine-item>h2, .machine-item>p{
+.thumbnail{
+  background-color: pink;
+}
+
+.thumbnail, .infocontainer{
   width: 50%;
 }
 
-.machine-item>.thumbnail{
-  width: 50%;
-}
 @mixin phone{
   body{
     background-color: green;
