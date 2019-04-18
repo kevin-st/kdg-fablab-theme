@@ -18,7 +18,7 @@ h1{
   font-size: 35px;
 }
 
-.btn{
+.introbtn{
   width: 200px;
   text-decoration: none;
   background-color: black;
@@ -29,15 +29,35 @@ h1{
   font-size: 25px;
   position:absolute;
   text-align: center;
-  top:350px;
+  top:25%;
   left:45%;
   right:0;
   z-index: 2;
 }
 
+.btn{
+  width: 200px;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  font-size: 20px;
+}
+
+.btnCont{
+
+}
+
+.excerpt{
+  height: 70%;
+}
+
 #mainFrontpage{
   display: flex;
   padding-top: 0;
+  margin-top: -70px;
   width: 100%;
 }
 
@@ -46,6 +66,7 @@ section{
   width: 50%;
   display: flex;
   flex-wrap: wrap;
+  height: 100%;
 }
 section>h1{
   width: 100%;
@@ -61,14 +82,77 @@ section>h1{
   background-color: pink;
 }
 
-.thumbnail, .infocontainer{
+.thumbnail{
   width: 50%;
 }
 
-@mixin phone{
-  body{
-    background-color: green;
+.infocontainer{
+  margin-left:  3%;
+  width: 47%;
+}
+
+.infocontainer>.title{
+  margin: 0;
+}
+
+
+
+@mixin pcXXL{
+  .btnCont{
+    margin-top: 0%;
   }
+
+  .thumbnail{
+    width: 40%;
+  }
+
+  .infocontainer{
+    width: 57%;
+  }
+
+  .introbtn{
+    top:20%;
+  }
+}
+
+@mixin pcXL{
+
+  .introbtn{
+    top:18%;
+  }
+
+  .btnCont{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    width: 100%;
+    text-align: center;
+    margin: 1%;
+  }
+
+  .thumbnail{
+    width: 50%;
+  }
+
+  .infocontainer{
+    width: 47%;
+  }
+
+  .excerpt{
+    height: 60%;
+  }
+}
+
+@mixin pcbig{
+  #mainFrontpage{
+    background-color: pink;
+  }
+}
+
+@mixin tablet{
   #mainFrontpage{
     width: 100%;
     margin: 0;
@@ -76,7 +160,10 @@ section>h1{
   }
 }
 
-@mixin tablet{
+@mixin phone{
+  body{
+    background-color: green;
+  }
   #mainFrontpage{
     width: 100%;
     margin: 0;

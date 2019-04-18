@@ -8,7 +8,7 @@
     */
   ?>
     <img id="frontpageImg" src="<?php echo get_theme_file_uri("img/fablab.PNG"); ?>" alt="fablab workarea">
-    <a class="btn" href="<?php echo site_url('login') ?>">Kom Binnen</a>
+    <a class="introbtn" href="<?php echo site_url('login') ?>">Kom Binnen</a>
 
   <main id="mainFrontpage">
     <section role="news">
@@ -38,12 +38,15 @@
             if (has_excerpt()) {
               echo get_the_excerpt();
             } else {
-              echo wp_trim_words(get_the_content(), 20); // control number of words
+              echo wp_trim_words(get_the_content(), 40); // control number of words
             }
           ?>
          </p>
-         <a href="<?php the_permalink(); ?>">Meer info</a>
-         <a href="<?php echo get_permalink(get_option("page_for_posts")); ?>">Meer nieuws</a>
+         <div class="btnCont">
+           <a class="btn" href="<?php the_permalink(); ?>">Meer info</a>
+           <a class="btn" href="<?php echo get_permalink(get_option("page_for_posts")); ?>">Meer nieuws</a>
+         </div>
+
          </div>
       </div>
       <?php
@@ -54,7 +57,7 @@
       <h1>Onze toestellen</h1>
       <?php
         $last_added_machine = new WP_Query([
-          "posts_per_page" => -1, // control number of posts with this -> -1 is all posts
+          "posts_per_page" => 1, // control number of posts with this -> -1 is all posts
           "post_type" => "machine"
         ]);
 
@@ -79,12 +82,15 @@
             if (has_excerpt()) {
               echo get_the_excerpt();
             } else {
-              echo wp_trim_words(get_the_content(), 20); // control number of words
+              echo wp_trim_words(get_the_content(), 40); // control number of words
             }
           ?>
          </p>
-         <a href="<?php the_permalink(); ?>">Meer info</a>
-         <a href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
+         <div class="btnCont">
+           <a class="btn" href="<?php the_permalink(); ?>">Meer info</a>
+           <a class="btn" href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
+         </div>
+
          </div>
       </div>
       <?php
