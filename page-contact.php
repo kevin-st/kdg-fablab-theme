@@ -14,9 +14,44 @@
    */
 ?>
 
+<style>
+
+#lorenz {
+    width: 300px;
+}
+    
+input[type=text], textarea {
+    background-color: #f5f5f5;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: #34bedb;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  color: #1d1d1b;
+}
+
+
+</style>
+
 <main id="contactMain">
 
-    <img id="" src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
+    <img id="lorenz" src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
 
     <form>
         <label for="naam">Naam:</label></br>
