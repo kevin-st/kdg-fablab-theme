@@ -30,7 +30,8 @@
          <?php } else { ?>
          <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news">
         <?php } ?>
-         <h2 class="title"><?php the_title(); ?></h2>
+        <div class="infocontainer">
+        <h2 class="title"><?php the_title(); ?></h2>
 
          <p class="excerpt">
           <?php
@@ -43,6 +44,7 @@
          </p>
          <a href="<?php the_permalink(); ?>">Meer info</a>
          <a href="<?php echo get_permalink(get_option("page_for_posts")); ?>">Meer nieuws</a>
+         </div>
       </div>
       <?php
         }
@@ -68,6 +70,9 @@
           <?php } else { ?>
           <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
          <?php } ?>
+         <div class="infocontainer">
+
+
          <h2 class="title"><?php the_title(); ?></h2>
          <p class="excerpt">
           <?php
@@ -80,6 +85,7 @@
          </p>
          <a href="<?php the_permalink(); ?>">Meer info</a>
          <a href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
+         </div>
       </div>
       <?php
         }
