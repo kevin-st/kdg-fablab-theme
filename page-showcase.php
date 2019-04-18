@@ -14,6 +14,8 @@
    */
 ?>
 
+<img id="frontpageImg" src="<?php echo get_theme_file_uri("img/showcase_header.jpg"); ?>" alt="fablab workarea">
+
 <main>
     
     <h1>Showcase</h1>

@@ -15,6 +15,8 @@
    */
 ?>
 
+<img id="frontpageImg" src="<?php echo get_theme_file_uri("img/nieuws_header.jpg"); ?>" alt="fablab workarea">
+
 <main>
 
     <h1>Laatste nieuws</h1>
@@ -26,8 +28,8 @@
 
            <p>Altijd al gedroomd om je eigen dino te maken? Een juwelendoos? Kom leren hoe je dat allemaal kan doen met een lasercutter.</p>
            
-           <a href="page-reserveren.php">Reserveren</a>
-           <a href="page-detailNieuws.php">Meer details</a>
+           <a class="" href="<?php echo site_url('reserveren') ?>">Reserveren</a>
+           <a class="" href="<?php echo site_url('detailNieuws') ?>">Meer details</a>
 
         </div>
 

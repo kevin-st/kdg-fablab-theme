@@ -16,7 +16,7 @@
 
 <main>
     
-    <img src="">
+    <img id="" src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
     
     <form>
         <label for="naam">Naam:</label></br>

@@ -14,6 +14,8 @@
    */
 ?>
 
+<img id="frontpageImg" src="<?php echo get_theme_file_uri("img/detailNieuws_header.jpg"); ?>" alt="fablab workarea">
+
 <main>
    
    <img src="">
