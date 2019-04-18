@@ -15,6 +15,25 @@
    */
 ?>
 
+<style>
+
+.nieuwsItem {
+    
+}
+    
+.buttons{
+    width: 200px;
+    text-decoration: none;
+    background-color: #1d1d1b;
+    color: #ffffff;
+    padding: 20px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    font-size: 25px;
+}
+
+</style>
+
 <img id="frontpageImg" src="<?php echo get_theme_file_uri("img/nieuws_header.jpg"); ?>">
 
 <main>
@@ -28,8 +47,8 @@
 
            <p>Altijd al gedroomd om je eigen dino te maken? Een juwelendoos? Kom leren hoe je dat allemaal kan doen met een lasercutter.</p>
            
-           <a class="" href="<?php echo site_url('reserveren') ?>">Reserveren</a>
-           <a class="" href="<?php echo site_url('detailNieuws') ?>">Meer details</a>
+           <a class="buttons" href="<?php echo site_url('reserveren') ?>">Reserveren</a>
+           <a class="buttons" href="<?php echo site_url('detailNieuws') ?>">Meer details</a>
 
         </div>
 
@@ -40,9 +59,8 @@
 
            <p>Iedereen is welkom op de opening van fablab.</p>
            
-           <a href="page-detailNieuws.php">Lees verder</a>
-           <a href="page-nieuws.php">Meer nieuws</a>
-
+           <a class="buttons" href="<?php echo site_url('detailNieuws') ?>">Lees verder</a>
+           <a class="buttons" href="<?php echo site_url('nieuws') ?>">Meer nieuws</a>
         </div>
 
         <div class="nieuwsItem">    
@@ -52,9 +70,8 @@
 
            <p>Onze super coole 3D printer model Prusa blue shoe print al je creaties in no time. Kom het uittesten.</p>
            
-           <a href="page-reserveerDetail.php">Reserveer me</a>
-           <a href="page-toestellen.php">Meer toestellen</a>
-
+           <a class="buttons" href="<?php echo site_url('reserveren') ?>">Reserveer me</a>
+           <a class="buttons" href="<?php echo site_url('toestellen') ?>">Meer toestellen</a>
         </div>
 
         <div class="nieuwsItem">
@@ -63,10 +80,9 @@
            <h2>Win win win</h2>
 
            <p>Doe mee aan onze wedstrijd! KdG zoekt een origineel iets en als jouw ontwerp gekozen wordt win je een gratis...</p>
-           
-           <a href="#">Ik wil winnen</a>
-           <a href="#">Meer info</a>
-
+               
+            <a class="buttons" href="<?php echo site_url('#') ?>">Ik wil winnen</a>
+           <a class="buttons" href="<?php echo site_url('#') ?>">Meer info</a>
         </div>
 
         <div class="nieuwsItem">
@@ -76,9 +92,8 @@
 
            <p>Vanaf nu kan je al onze 3D printers, stickermachines, lasercutters, oculus rifts, ... reserveren om er de coolste dingen mee te maken.</p>
            
-           <a href="page-reserveren.php">Reserveren</a>
-           <a href="page-toestellen.php">Meer toestellen</a>
-
+           <a class="buttons" href="<?php echo site_url('reserveren') ?>">Reserveren</a>
+           <a class="buttons" href="<?php echo site_url('toestellen') ?>">Meer toestellen</a>
         </div>
 
         <div class="nieuwsItem">
@@ -88,9 +103,8 @@
 
            <p>Ben je het saaie uitzicht van de muren op je kot beu? Begeef je in een andere wereld aka onze VR-Corner. Visit to Hawaii? No prob!</p>
            
-           <a href="page-reserveren.php">Reserveer</a>
-           <a href="#">Meer info</a>
-
+           <a class="buttons" href="<?php echo site_url('reserveren') ?>">Reserveer</a>
+           <a class="buttons" href="<?php echo site_url('#') ?>">Meer info</a>
         </div>
     
 </main>
