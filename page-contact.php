@@ -14,11 +14,19 @@
    */
 ?>
 
+<style>
+
+#lorenz {
+    width: 300px;
+}
+    
+</style>
+
 <main>
     
-    <img id="" src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
+    <img id="lorenz" src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
     
-    <form>
+    <form class="contactForm">
         <label for="naam">Naam:</label></br>
         <input type="text" placeholder="John Doe" name="naam" required></br>
         
