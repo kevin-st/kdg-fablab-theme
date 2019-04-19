@@ -8,3 +8,11 @@
     .t-right { text-align: right; }
     ...
 */
+
+.disp-b {
+  display: block;
+}
+
+.disp-n {
+  display: none;
+}

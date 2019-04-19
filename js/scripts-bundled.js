@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./wp-content/themes/kdg-fablab-theme/js/modules/base.js":
+/*!***************************************************************!*\
+  !*** ./wp-content/themes/kdg-fablab-theme/js/modules/base.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar base = function () {\n  return {\n    addClass: function addClass(element, className) {\n      if (element.classList) {\n        element.classList.add(className);\n      }\n    },\n    hassClass: function hassClass(element, className) {\n      if (element.classList) {\n        return element.classList.contains(className);\n      }\n    },\n    removeClass: function removeClass(element, className) {\n      if (element.classList) {\n        element.classList.remove(className);\n      }\n    },\n    toggleClass: function toggleClass(element, className) {\n      if (element.classList) {\n        element.classList.toggle(className);\n      }\n    }\n  };\n}();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (base);\n\n//# sourceURL=webpack:///./wp-content/themes/kdg-fablab-theme/js/modules/base.js?");
+
+/***/ }),
+
 /***/ "./wp-content/themes/kdg-fablab-theme/js/modules/burgermenu.js":
 /*!*********************************************************************!*\
   !*** ./wp-content/themes/kdg-fablab-theme/js/modules/burgermenu.js ***!
@@ -98,15 +110,15 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(inst
 
 /***/ }),
 
-/***/ "./wp-content/themes/kdg-fablab-theme/js/modules/slider.js":
-/*!*****************************************************************!*\
-  !*** ./wp-content/themes/kdg-fablab-theme/js/modules/slider.js ***!
-  \*****************************************************************/
+/***/ "./wp-content/themes/kdg-fablab-theme/js/modules/form-validation.js":
+/*!**************************************************************************!*\
+  !*** ./wp-content/themes/kdg-fablab-theme/js/modules/form-validation.js ***!
+  \**************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n// some example module\nvar Slider = function Slider() {\n  _classCallCheck(this, Slider);\n\n  console.log(\"hello world from slider!\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Slider);\n\n//# sourceURL=webpack:///./wp-content/themes/kdg-fablab-theme/js/modules/slider.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base */ \"./wp-content/themes/kdg-fablab-theme/js/modules/base.js\");\n\n\nvar form = function () {\n  function onError(input_group, input_field) {\n    var error_message = input_group.getElementsByClassName(\"error-message\")[0];\n    _base__WEBPACK_IMPORTED_MODULE_0__[\"default\"].addClass(input_field, \"error\");\n\n    if (_base__WEBPACK_IMPORTED_MODULE_0__[\"default\"].hassClass(error_message, \"disp-n\")) {\n      _base__WEBPACK_IMPORTED_MODULE_0__[\"default\"].removeClass(error_message, \"disp-n\");\n    }\n  }\n\n  function onSuccess(input_group, input_field) {\n    if (_base__WEBPACK_IMPORTED_MODULE_0__[\"default\"].hassClass(input_field, \"error\")) {\n      var error_message = input_group.getElementsByClassName(\"error-message\")[0];\n      _base__WEBPACK_IMPORTED_MODULE_0__[\"default\"].removeClass(input_field, \"error\");\n\n      if (!_base__WEBPACK_IMPORTED_MODULE_0__[\"default\"].hassClass(error_message, \"disp-n\")) {\n        _base__WEBPACK_IMPORTED_MODULE_0__[\"default\"].addClass(error_message, \"disp-n\");\n      }\n    }\n  }\n\n  function get_all_inputs(form) {\n    return Array.prototype.slice.call(document.getElementsByClassName(\"input-group\"), 0);\n  }\n\n  return {\n    validate: function validate(form) {\n      var all_inputs = get_all_inputs(form);\n      var results = all_inputs.map(function (input) {\n        var input_field = input.querySelector(\"input\") || input.querySelector(\"textarea\");\n\n        if (input_field.value === \"\") {\n          onError(input, input_field);\n          return false;\n        } else {\n          onSuccess(input, input_field);\n          return true;\n        }\n      });\n      return !results.includes(false);\n    }\n  };\n}();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (form);\n\n//# sourceURL=webpack:///./wp-content/themes/kdg-fablab-theme/js/modules/form-validation.js?");
 
 /***/ }),
 
@@ -118,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(inst
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ \"./wp-content/themes/kdg-fablab-theme/js/modules/slider.js\");\n/* harmony import */ var _modules_burgermenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/burgermenu */ \"./wp-content/themes/kdg-fablab-theme/js/modules/burgermenu.js\");\n/* imports */\n\n\nvar slider = new _modules_slider__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\nvar menu = new _modules_burgermenu__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n\n//# sourceURL=webpack:///./wp-content/themes/kdg-fablab-theme/js/scripts.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burgermenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgermenu */ \"./wp-content/themes/kdg-fablab-theme/js/modules/burgermenu.js\");\n/* harmony import */ var _modules_form_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/form-validation */ \"./wp-content/themes/kdg-fablab-theme/js/modules/form-validation.js\");\n/* imports */\n//import Slider from \"./modules/slider\";\n\n //var slider = new Slider();\n\nvar menu = new _modules_burgermenu__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n/* CONTACT PAGE */\n\nvar contact_form = document.getElementById(\"contact-form\");\n\nif (contact_form) {\n  contact_form.addEventListener(\"submit\", function (e) {\n    if (!_modules_form_validation__WEBPACK_IMPORTED_MODULE_1__[\"default\"].validate(e.target)) {\n      e.preventDefault();\n    }\n  });\n}\n\n//# sourceURL=webpack:///./wp-content/themes/kdg-fablab-theme/js/scripts.js?");
 
 /***/ })
 

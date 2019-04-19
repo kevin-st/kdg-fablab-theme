@@ -13,79 +13,54 @@
     -> https://developer.wordpress.org/themes/template-files-section/page-template-files/#creating-custom-page-templates-for-global-use
    */
 ?>
-
-<style>
-
-.contactGegevens {
-    display: flex;
-    margin-bottom: 50px;
-}
-    
-.contactForm {
-    padding-left: 145px;
-}
-    
-#lorenz {
-    width: 235px;
-}
-    
-input[type=text], textarea {
-    background-color: #f5f5f5;
-    width: 200%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 200%;
-  background-color: #34bedb;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  color: #1d1d1b;
-}
-
-
-</style>
-
 <main id="contactMain">
-    
+
     <h1>Contacteer ons</h1>
 
     <div class="contactGegevens">
-   
-        <div class="lorenz">
-            <img id="lorenz" src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
+
+        <div class="profile-picture">
+          <img src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
         </div>
 
         <div class="contactForm">
-            <form>
-                <label for="naam">Naam:</label></br>
-                <input type="text" placeholder="John Doe" name="naam" required></br>
+            <form id="contact-form" action="<?php the_permalink(); ?>" method="post">
+                <div class="input-group">
+                  <label for="name">
+                    Naam:
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" placeholder="John Doe" id="name" name="name">
+                  <span class="error-message disp-n">Vul je naam in.</span>
+                </div>
 
-                <label for="email">E-mailadres:</label></br>
-                <input type="text" placeholder="voorbeeld@hotmail.com" name="email" required></br>
+                <div class="input-group">
+                  <label for="email">
+                    E-mailadres:
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" placeholder="voorbeeld@hotmail.com" id="email" name="email">
+                  <span class="error-message disp-n">Vul je email in.</span>
+                </div>
 
-                <label for="vraag">Vraag:</label></br>
-                <textarea type="text" placeholder="Waar kan ik je mee helpen?" name="vraag" required></textarea></br>
+                <div class="input-group">
+                  <label for="question">
+                    Vraag:
+                    <span class="required">*</span>
+                  </label>
+                  <textarea type="text" placeholder="Waar kan ik je mee helpen?" id="question" name="question"></textarea>
+                  <span class="error-message disp-n">Sorry, maar dit begrijp ik niet.</span>
+                </div>
 
-                <input type="submit" value="Versturen">
+                <input class="btn-submit" type="submit" value="Versturen">
             </form>
         </div>
-    
+
     </div>
 
-    <div style="width: 960px;position: relative;"><iframe width="960" height="440" src="https://maps.google.com/maps?width=960&amp;height=440&amp;hl=en&amp;q=Salesianenlaan%2090+(KdG%20Hoboken%20FabLab)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="http://www.googlemapsgenerator.com/zh/">gmapgen zh</a> & <a href="https://huisverkopenervaringen.nl/">www.huisverkopenervaringen.nl/</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br />
+    <div style="width: 960px;position: relative;">
+      <iframe width="960" height="440" src="https://maps.google.com/maps?width=960&amp;height=440&amp;hl=en&amp;q=Salesianenlaan%2090+(KdG%20Hoboken%20FabLab)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    </div>
 
 </main>
 
