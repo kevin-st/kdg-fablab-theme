@@ -316,7 +316,7 @@ main{
   width: 960px;
   margin: 0 auto;
   padding-top: 120px;
-  padding-bottom: 205px;
+  padding-bottom: 230px;
 }
 body{
   font-family: 'proximanova';
@@ -357,13 +357,13 @@ h1{
   text-decoration: none;
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-weight: 500;
   letter-spacing: 1.1px;
   font-size: 20px;
 }
-.btnCont{
-
+#mainFrontpage>section:nth-of-type(2)>.machine-item>.infocontainer>.btnCont>.btn:nth-of-type(1){
+  padding: 10px 5px;
 }
 .excerpt{
   height: 70%;
@@ -390,9 +390,6 @@ section>h1{
   flex-wrap: wrap;
 }
 .thumbnail{
-  background-color: pink;
-}
-.thumbnail{
   width: 50%;
 }
 .infocontainer{
@@ -404,7 +401,7 @@ section>h1{
 }
 @media (max-width:1800px) {
   .btnCont{
-    margin-top: 0%;
+    margin-top: -8%;
   }
 
   .thumbnail{
@@ -417,6 +414,7 @@ section>h1{
 
   .introbtn{
     top:20%;
+    left: 38%;
   }
   }
 @media (max-width:1500px) {
@@ -448,10 +446,38 @@ section>h1{
   .excerpt{
     height: 60%;
   }
+
+  .introbtn{
+    left: 38%;
+  }
   }
 @media (max-width:1300px) {
-  #mainFrontpage{
-    background-color: pink;
+
+  .thumbnail{
+    width: 100%;
+  }
+
+  .infocontainer{
+    margin-left:  0%;
+    margin-top: 2%;
+    width: 100%;
+  }
+
+  .btnCont{
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: -3%;
+  }
+  .btn{
+    width: 39%;
+    text-align: center;
+    margin: 0 1% 0 0;
+  }
+  }
+@media (max-width:1050px) {
+  .btn{
+    width: 100%;
+    margin: 1% 0;
   }
   }
 @media (max-width: 960px) {
@@ -460,15 +486,23 @@ section>h1{
     margin: 0;
     padding: 90px 0 200px 0;
   }
+
+  .introbtn{
+    display: none;
   }
-@media (max-width: 700px) {
-  body{
-    background-color: green;
-  }
+
   #mainFrontpage{
+    flex-wrap: wrap;
+    padding: 0 0 350px 0;
+  }
+
+  section{
     width: 100%;
-    margin: 0;
-    padding: 90px 0 200px 0;
+    padding: 0;
+  }
+
+  #frontpageImg{
+    margin-top: 40px;
   }
   }
 .contactGegevens {
