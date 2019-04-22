@@ -6,11 +6,30 @@
   */
 
   // define hooks -> overzicht hooks: https://codex.wordpress.org/Plugin_API/Action_Reference
+  add_action('init', 'kdg_fablab_start_session', 1);
+  add_action('wp_logout','kdg_fablab_end_session');
+  add_action('wp_login','kdg_fablab_end_session');
   add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
   add_action('after_setup_theme', 'kdg_fablab_features');
   add_action('pre_get_posts', 'kdg_fablab_cpt_archive_items');
 
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
+
+  /**
+   * Start a session.
+   */
+  function kdg_fablab_start_session() {
+    if (!session_id()) {
+      session_start();
+    }
+  }
+
+  /**
+   * End a session.
+   */
+  function kdg_fablab_end_session() {
+    session_destroy();
+  }
 
   /**
    * Load recources necessary for the theme.

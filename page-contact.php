@@ -12,10 +12,83 @@
     creating a custom page:
     -> https://developer.wordpress.org/themes/template-files-section/page-template-files/#creating-custom-page-templates-for-global-use
    */
+   // user variables
+   $user_name = isset($_POST['contact-user-name']) ? esc_attr($_POST['contact-user-name']) : "";
+   $user_email = isset($_POST['contact-user-email']) ? esc_attr($_POST['contact-user-email']) : "";
+   $user_question = isset($_POST['contact-user-question']) ? esc_attr($_POST['contact-user-question']) : "";
+
+   // mail variables
+   $to = get_option("admin_email");
+   $subject = "Iemand diende een vraag in op " . get_bloginfo("name");
+   $headers = "From: " . $user_email . "\r\nReplay-To: " . $user_email . "\r\n";
+
+   // error variables
+   $name_has_error = $email_has_error = $question_has_error = false;
+
+   $username_error = "Vul je naam in.";
+   $user_email_error = "Vul je email in.";
+   $user_question_error = "Sorry, maar dit begrijp ik niet.";
+
+   if (isset($_POST['submit'])) {
+     if (empty($user_name)) {
+       $name_has_error = true;
+     } else if (preg_match('/[^A-Za-z\s]+/', $user_name)) {
+       $name_has_error = true;
+       $username_error = "Een naam kan geen cijfers en/of speciale tekens bevatten.";
+     }
+
+     if (empty($user_email)) {
+       $email_has_error = true;
+     } else if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+       $email_has_error = true;
+       $user_email_error = "De email die je opgaf is niet geldig.";
+     }
+
+     if (empty($user_question)) {
+       $question_has_error = true;
+       $user_question_error = "Gelieve je vraag duidelijk te omschrijven.";
+     }
+
+     if (!$name_has_error && !$email_has_error && !$question_has_error) {
+       // append user credentials to email
+       $user_question .= "\r\n\r\nIngediend op " . date("d-m-Y H:i:s") . " door " . $user_name;
+
+       // send email
+       $sent = wp_mail($to, $subject, strip_tags($user_question), $headers);
+       $_SESSION['sent'] = TRUE;
+
+       if ($sent) {
+         $_SESSION['msg-type'] = "success";
+         $_SESSION['msg'] = "Je vraag is succesvol ingediend. We nemen binnenkort contact met je op.";
+
+         // unset post data
+         $_POST = [];
+         $user_name = $user_email = $user_question = "";
+       } else {
+         $_SESSION['msg-type'] = "error";
+         $_SESSION['msg'] = "Er ging iets mis tijdens het verzenden. Probeer het later nog een keer.";
+       }
+
+       header("Location: $_SERVER[PHP_SELF]");
+     }
+   }
 ?>
 <main id="contactMain">
 
     <h1>Contacteer ons</h1>
+
+    <?php
+      if (isset($_SESSION['sent'])) {
+        if ($_SESSION['sent']) {
+          $_SESSION['sent'] = FALSE;
+    ?>
+      <div class="contact-<?php echo isset($_SESSION['msg-type']) ? $_SESSION['msg-type'] : ""; ?>">
+        <p><?php echo isset($_SESSION['msg']) ? $_SESSION['msg'] : "Er ging iets mis."; ?></p>
+      </div>
+    <?php
+        }
+      }
+    ?>
 
     <div class="contactGegevens">
 
@@ -26,33 +99,33 @@
         <div class="contactForm">
             <form id="contact-form" action="<?php the_permalink(); ?>" method="post">
                 <div class="input-group">
-                  <label for="name">
+                  <label for="contact-user-name">
                     Naam:
                     <span class="required">*</span>
                   </label>
-                  <input type="text" placeholder="John Doe" id="name" name="name">
-                  <span class="error-message disp-n">Vul je naam in.</span>
+                  <input class="<?php echo $name_has_error ? "error" : ""?>" type="text" placeholder="John Doe" id="contact-user-name" name="contact-user-name" value="<?php echo $user_name; ?>">
+                  <span class="error-message <?php echo $name_has_error ? 'disp-b' : 'disp-n'; ?>"><?php echo $username_error; ?></span>
                 </div>
 
                 <div class="input-group">
-                  <label for="email">
+                  <label for="contact-user-email">
                     E-mailadres:
                     <span class="required">*</span>
                   </label>
-                  <input type="text" placeholder="voorbeeld@hotmail.com" id="email" name="email">
-                  <span class="error-message disp-n">Vul je email in.</span>
+                  <input class="<?php echo $email_has_error ? "error" : ""?>" type="text" placeholder="voorbeeld@hotmail.com" id="contact-user-email" name="contact-user-email" value="<?php echo $user_email; ?>">
+                  <span class="error-message <?php echo $email_has_error ? 'disp-b' : 'disp-n'; ?>"><?php echo $user_email_error; ?></span>
                 </div>
 
                 <div class="input-group">
-                  <label for="question">
+                  <label for="contact-user-question">
                     Vraag:
                     <span class="required">*</span>
                   </label>
-                  <textarea type="text" placeholder="Waar kan ik je mee helpen?" id="question" name="question"></textarea>
-                  <span class="error-message disp-n">Sorry, maar dit begrijp ik niet.</span>
+                  <textarea class="<?php echo $question_has_error ? "error" : ""?>" type="text" placeholder="Waar kan ik je mee helpen?" id="contact-user-question" name="contact-user-question"><?php echo $user_question; ?></textarea>
+                  <span class="error-message <?php echo $question_has_error ? 'disp-b' : 'disp-n'; ?>"><?php echo $user_question_error; ?></span>
                 </div>
 
-                <input class="btn-submit" type="submit" value="Versturen">
+                <input class="btn-submit" name="submit" type="submit" value="Versturen">
             </form>
         </div>
 
