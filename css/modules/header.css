@@ -35,6 +35,11 @@ header{
   }
 }
 
+
+#logonaam:hover h1{
+  transform: scale(1.1);
+  transition: 0.5s linear;
+}
 .menu-item {
   color: white;
   font-family: "KdG";
@@ -44,6 +49,10 @@ header{
     text-decoration: none;
     color: white;
   }
+}
+
+.menu-item:hover a{
+  color: #34bedc;
 }
 
 .current-menu-item {

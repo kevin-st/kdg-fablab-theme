@@ -113,6 +113,11 @@ header{
       content: "i";
       font-size: 35px;
     }
+#logonaam:hover h1{
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  transition: 0.5s linear;
+}
 .menu-item {
   color: white;
   font-family: "KdG";
@@ -122,6 +127,9 @@ header{
     text-decoration: none;
     color: white;
   }
+.menu-item:hover a{
+  color: #34bedc;
+}
 .current-menu-item,
   .current-menu-item a {
     color: #34bedc;
@@ -414,12 +422,77 @@ section:nth-of-type(2){
 .btn:last-child {
   margin-right: 0;
 }
+.btn:hover, .introbtn:hover{
+  color: #34bedc;
+}
 @media (max-width:1350px) {
-  body{
-    background-color: green;
+  article{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .thumbnail {
+    margin:0;
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
   }
 
-  .buttons{}
+  .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .title, .excerpt, .buttons{
+    width: 100%;
+  }
+
+  .buttons{
+    display: flex;
+    position: relative;
+  }
+
+  .btn{
+    width: 48%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .content>.buttons>.btn:nth-of-type(2){
+    margin-left: 2%;
+  }
+
+  .title{
+    padding-top: 20px;
+  }
+  }
+@media (max-width: 960px) {
+  .introbtn{display: none;}
+  .disp-f{
+    flex-wrap: wrap;
+  }
+
+  section{
+    width: 100%;
+  }
+
+  section:nth-of-type(2){
+    margin-left: 0%;
+  }
+  }
+@media (max-width: 700px) {
+  .buttons{
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .content>.buttons>.btn:nth-of-type(2){
+    margin-left: 0%;
+  }
   }
 .contactGegevens {
   display: flex;

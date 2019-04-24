@@ -109,10 +109,79 @@ section:nth-of-type(2){
   margin-right: 0;
 }
 
+.btn:hover, .introbtn:hover{
+  color: #34bedc;
+}
+
 @mixin pcXL{
-  body{
-    background-color: green;
+  article{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .thumbnail {
+    margin:0;
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
   }
 
-  .buttons{}
+  .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .title, .excerpt, .buttons{
+    width: 100%;
+  }
+
+  .buttons{
+    display: flex;
+    position: relative;
+  }
+
+  .btn{
+    width: 48%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .content>.buttons>.btn:nth-of-type(2){
+    margin-left: 2%;
+  }
+
+  .title{
+    padding-top: 20px;
+  }
+}
+
+
+@mixin tablet{
+  .introbtn{display: none;}
+  .disp-f{
+    flex-wrap: wrap;
+  }
+
+  section{
+    width: 100%;
+  }
+
+  section:nth-of-type(2){
+    margin-left: 0%;
+  }
+}
+
+@mixin phone{
+  .buttons{
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .content>.buttons>.btn:nth-of-type(2){
+    margin-left: 0%;
+  }
 }
