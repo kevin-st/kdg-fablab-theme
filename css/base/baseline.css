@@ -53,13 +53,7 @@
 }
 
 @define-mixin pcXL /* of een andere naam */ {
-  @media (max-width:1500px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin pcXXL /* of een andere naam */ {
-  @media (max-width:1800px) {
+  @media (max-width:1350px) {
     @mixin-content;
   }
 }
