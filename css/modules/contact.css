@@ -85,3 +85,16 @@
     max-height: 100%;
   }
 }
+
+/* modal messages */
+.contact {
+  &-success {
+    border: 1px solid green;
+    color: green;
+  }
+
+  &-error {
+    border: 1px solid red;
+    color: red;
+  }
+}
