@@ -13,6 +13,42 @@
   display: block;
 }
 
+.disp-f {
+  display: flex;
+}
+
 .disp-n {
   display: none;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mr-sm {
+  margin-right: 5px;
+}
+
+.mr-med {
+  margin-right: 15px;
+}
+
+.mr-lg {
+  margin-right: 20px;
+}
+
+.p-abs {
+  position: absolute;
+}
+
+.p-rel {
+  position: relative;
+}
+
+.col-1-of-2 {
+  width: 50%;
+}
+
+.attach-to-bottom {
+  bottom: 0;
 }

@@ -74,8 +74,35 @@
 .disp-b {
   display: block;
 }
+.disp-f {
+  display: flex;
+}
 .disp-n {
   display: none;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mr-sm {
+  margin-right: 5px;
+}
+.mr-med {
+  margin-right: 15px;
+}
+.mr-lg {
+  margin-right: 20px;
+}
+.p-abs {
+  position: absolute;
+}
+.p-rel {
+  position: relative;
+}
+.col-1-of-2 {
+  width: 50%;
+}
+.attach-to-bottom {
+  bottom: 0;
 }
 /* modules */
 /* example module:
@@ -321,6 +348,51 @@ main{
 body{
   font-family: 'proximanova';
 }
+/* example module */
+/*
+  define a button class with some subclasses:
+
+  .btn {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &-small {
+      font-size: 12px;
+      padding: 3px;
+    }
+
+    &-big {
+      @mixin pc {
+        font-size: 15px;
+      }
+
+      @mixin phone {
+        font-size: 20px;
+      }
+
+      padding: 5px;
+
+      &:hover {
+        some stuff to do when hovering
+      }
+    }
+  }
+*/
+.btn-submit {
+    background-color: #34bedc;
+    color: #fff;
+    cursor: pointer;
+
+    border: none;
+    display: block;
+
+    padding: 14px 20px;
+    width: 100%;
+  }
+.btn-submit:hover {
+      color: #1d1d1b;
+    }
 html body {
   margin: 0px;
   padding: 0;
@@ -433,32 +505,17 @@ section:nth-of-type(2){
     height: 100%;
     position: relative;
   }
-.btn-submit {
-  background-color: #34bedc;
-  color: #fff;
-  cursor: pointer;
-
-  border: none;
-  bottom: 0;
-  display: block;
-  position: absolute; /* this way the message is not visible when all fields are left empty,
-   but relative positioning doesn't place the button correctly */
-
-  padding: 14px 20px;
-  width: 100%;
-}
-.btn-submit:hover {
-    color: #1d1d1b;
-  }
 .input-group {
   margin-bottom: 8px;
 }
 .input-group input,
   .input-group label,
+  .input-group select,
   .input-group textarea {
     display: block;
   }
 .input-group input,
+  .input-group select,
   .input-group textarea {
     box-sizing: border-box;
 
@@ -505,3 +562,6 @@ section:nth-of-type(2){
     border: 1px solid red;
     color: red;
   }
+#reg-tel {
+  margin-bottom: 0 !important;
+}
