@@ -645,3 +645,40 @@ section:nth-of-type(2){
 #reg-tel {
   margin-bottom: 0 !important;
 }
+#toestelImg{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+#mainToestellen{
+  width: 85%;
+  padding-top: 60px;
+  padding-bottom: 250px;
+}
+#mainToestellen article{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#mainToestellen section{
+  width: 100%;
+}
+#mainToestellen .toestelContent{
+  width: 48%;
+  display: flex;
+  margin-top: 50px;
+}
+#mainToestellen .toestelContent:nth-of-type(even){
+  margin-left: 2%;
+}
+#mainToestellen .thumbnail{
+  width: 50%;
+}
+#mainToestellen .content{
+  width: 50%;
+}
+#mainToestellen h1{
+  margin: 0;
+}
