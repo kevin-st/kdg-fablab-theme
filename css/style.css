@@ -24,5 +24,7 @@
 @import "modules/header";
 @import "modules/footer";
 @import "modules/general";
+@import "modules/btn";
 @import "modules/frontpage";
 @import "modules/contact";
+@import "modules/registration";

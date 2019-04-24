@@ -29,3 +29,21 @@
     }
   }
 */
+
+.btn {
+  &-submit {
+    background-color: $main_accent;
+    color: #fff;
+    cursor: pointer;
+
+    border: none;
+    display: block;
+
+    padding: 14px 20px;
+    width: 100%;
+
+    &:hover {
+      color: #1d1d1b;
+    }
+  }
+}
