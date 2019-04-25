@@ -69,7 +69,7 @@
          $_SESSION['msg'] = "Er ging iets mis tijdens het verzenden. Probeer het later nog een keer.";
        }
 
-       header("Location: $_SERVER[PHP_SELF]");
+       //header("Location: $_SERVER[PHP_SELF]");
      }
    }
 ?>
