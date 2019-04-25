@@ -51,6 +51,33 @@
 .blauw {
     color: #32bfdb;
 }
+    
+@media screen and (max-width: 992px) {
+    
+    body {
+        background-color: blue;
+    }
+    
+    main {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+    .nieuws1, .nieuws1, .nieuws3 {
+        postition: relative;
+    }
+    
+    .nieuwsItem2, .nieuwsItem4, .nieuwsItem6 {
+        position: absolute;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+   
+    
+}
 
 </style>
 
@@ -62,7 +89,7 @@
        
     <div class="nieuws1">
         
-        <div class="nieuwsItem">
+        <div class="nieuwsItem nieuwsItem1">
           
             <div class="foto">
                <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/workshopLasercutten.png"); ?>">
@@ -81,7 +108,7 @@
 
         </div>
 
-        <div class="nieuwsItem"> 
+        <div class="nieuwsItem nieuwsItem2"> 
             <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/openingParty.png"); ?>">
 
            <h2>THE OPENING <span class="blauw">PARTY</span></h2>
@@ -96,7 +123,7 @@
         
     <div class="nieuws2">
 
-        <div class="nieuwsItem">    
+        <div class="nieuwsItem nieuwsItem3">    
            <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/3dPrinter.png"); ?>">
 
            <h2><span class="blauw">NIEUWE</span> 3D PRINTER</h2>
@@ -107,7 +134,7 @@
            <a class="buttons" href="<?php echo site_url('toestellen') ?>">Meer toestellen</a>
         </div>
 
-        <div class="nieuwsItem">
+        <div class="nieuwsItem nieuwsItem4">
            <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/win.png"); ?>">
 
            <h2>WIN <span class="blauw">WIN</span> WIN</h2>
@@ -122,7 +149,7 @@
         
     <div class="nieuws3">
 
-        <div class="nieuwsItem">
+        <div class="nieuwsItem nieuwsItem5">
            <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/toestelReserveren.png"); ?>">
 
            <h2><span class="blauw">RESERVEER</span> JE TOESTEL</h2>
@@ -133,7 +160,7 @@
            <a class="buttons" href="<?php echo site_url('toestellen') ?>">Meer toestellen</a>
         </div>
 
-        <div class="nieuwsItem">
+        <div class="nieuwsItem nieuwsItem6">
            <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/vrCorner.png"); ?>">
 
            <h2><span class="blauw">VR</span> CORNER</h2>
