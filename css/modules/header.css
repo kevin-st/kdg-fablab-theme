@@ -151,12 +151,6 @@ nav{
 
 @mixin pcXL {
 
-  .introbtn {
-    top: 15%;
-    left: 35%;
-    right: 0;
-    z-index: 2;
-  }
 
 }
 

@@ -33,11 +33,11 @@
 }
 
 #mainToestellen .thumbnail{
-  width: 50%;
+  width: 39%;
 }
 
 #mainToestellen .content{
-  width: 50%;
+  width: 61%;
 }
 
 #mainToestellen h1{
@@ -45,5 +45,7 @@
 }
 
 @mixin pcXL{
-  
+  body{
+    background-color: green;
+  }
 }
