@@ -27,6 +27,43 @@
 .showcase {
     padding-bottom: 15px;
 }
+    
+
+@media screen and (max-width: 992px) {
+    
+    main {
+        padding-left: 50px;
+        padding-right: 50px;
+        height: 2700px;
+    }
+    
+    .imgShowcase1, .imgShowcase2, .imgShowcase3 {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .imgShowcase2, .imgShowcase3, .imgShowcase5 {
+        top: 515px;
+    }
+    
+    
+    #showcaseImg1, #showcaseImg3, #showcaseImg5 {
+        position: relative;
+    }
+
+    #showcaseImg2, #showcaseImg4, #showcaseImg6 {
+        position: absolute;
+        top: 515px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    
+   
+    
+}
 
 </style>
 
@@ -35,6 +72,8 @@
 <main>
     
     <h1>Showcase</h1>
+    
+    <div class="testDiv">
     
         <div class="imgShowcase1">
     
@@ -59,6 +98,8 @@
             <img id="showcaseImg6" class="showcase" src="<?php echo get_theme_file_uri("img/showcase6.png"); ?>" alt="showcase">
         
         </div>
+        
+    </div>
     
 </main>
 
