@@ -11,7 +11,7 @@
   add_action('wp_login','kdg_fablab_end_session');
   add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
   add_action('after_setup_theme', 'kdg_fablab_features');
-  add_action('pre_get_posts', 'kdg_fablab_cpt_archive_items');
+  //add_action('pre_get_posts', 'kdg_fablab_cpt_archive_items');
 
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
 
@@ -89,10 +89,8 @@
       return $classes;
     }
 
-    function kdg_fablab_cpt_archive_items($query) {
-      if ($query->is_main_query() && !is_admin() && is_post_type_archive('machine')) {
-  	    $query->set('posts_per_page', '6');
-  	  }
-    }
+    /*function kdg_fablab_cpt_archive_items($query) {
+
+    }*/
 
     // do not close php tags at the end of a file
