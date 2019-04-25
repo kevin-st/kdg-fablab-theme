@@ -118,6 +118,11 @@ nav{
   z-index: 2;
 }
 
+.page-banner>img{
+  max-height: 500px;
+  object-fit: cover;
+}
+
 @mixin pcbig {
   .menu-item {
     font-size: 25px;

@@ -219,6 +219,11 @@ nav{
           transform: translate(-50%, -500%);
   z-index: 2;
 }
+.page-banner>img{
+  max-height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 @media (max-width:1300px) {
   .menu-item {
     font-size: 25px;
@@ -688,3 +693,5 @@ section:nth-of-type(2) {
 #mainToestellen h1{
   margin: 0;
 }
+@media (max-width:1350px) {
+  }
