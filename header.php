@@ -26,4 +26,5 @@
            ]);
         ?>
       </div>
+      <?php kdg_fablab_get_page_banner(); ?>
     </header>

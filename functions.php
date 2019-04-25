@@ -56,6 +56,7 @@
     function kdg_fablab_features() {
       add_theme_support('title-tag');
       add_theme_support('post-thumbnails');
+      add_image_size('pageBanner', 1500, 350, true);
 
       // function(name_for_wordpress, human_readable_name);
       register_nav_menu('main_navigation', 'Hoofdnavigatie');
@@ -92,5 +93,21 @@
     /*function kdg_fablab_cpt_archive_items($query) {
 
     }*/
+
+    function kdg_fablab_get_page_banner($args = []) {
+      if (!isset($args['img'])) {
+        if (get_field('pagina_banner')) {
+          $args['img'] = get_field('pagina_banner')['sizes']['pageBanner'];
+        }
+      }
+    ?>
+      <div class="page-banner">
+        <img class="col-2-of-2" src="<?php echo $args['img']; ?>" alt="page-banner">
+        <?php if (is_front_page()) { ?>
+        <a class="introbtn" href="<?php echo site_url('login') ?>">Kom Binnen</a>
+        <?php } ?>
+      </div>
+    <?php
+    }
 
     // do not close php tags at the end of a file

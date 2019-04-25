@@ -7,7 +7,6 @@
       - create extra .php file -> e.g. archive-machine.php
   */
 ?>
-<img id="toestelImg" src="<?php echo get_theme_file_uri("img/fablab.PNG"); ?>" alt="fablab workarea">
 <main id="mainToestellen" class="disp-f">
   <section role="machines">
     <h1>Onze toestellen</h1>

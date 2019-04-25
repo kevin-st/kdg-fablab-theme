@@ -101,6 +101,9 @@
 .col-1-of-2 {
   width: 50%;
 }
+.col-2-of-2 {
+  width: 100%;
+}
 .attach-to-bottom {
   bottom: 0;
 }
@@ -442,18 +445,11 @@ html body {
   margin: 0px;
   padding: 0;
 }
-#frontpageImg{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 1;
-}
-h1{
-  font-family: 'KdG';
+h1 {
+  font-family: "KdG";
   font-size: 35px;
 }
-.introbtn{
+.introbtn {
   width: 200px;
   text-decoration: none;
   background-color: black;
@@ -462,14 +458,14 @@ h1{
   font-weight: 900;
   letter-spacing: 1.5px;
   font-size: 25px;
-  position:absolute;
+  position: absolute;
   text-align: center;
-  top:25%;
-  left:45%;
-  right:0;
+  top: 25%;
+  left: 45%;
+  right: 0;
   z-index: 2;
 }
-#mainFrontpage{
+#mainFrontpage {
   width: 85%;
   padding-top: 60px;
   padding-bottom: 250px;
@@ -483,10 +479,10 @@ article {
 section[role="news"] {
   margin-right: 15px;
 }
-section{
+section {
   width: 46%;
 }
-section:nth-of-type(2){
+section:nth-of-type(2) {
   margin-left: 4%;
 }
 .thumbnail {
@@ -531,23 +527,24 @@ section:nth-of-type(2){
 .btn:last-child {
   margin-right: 0;
 }
-.btn:hover, .introbtn:hover{
+.btn:hover,
+.introbtn:hover {
   color: #34bedc;
 }
 @media (max-width:1350px) {
-  article{
+  article {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .introbtn{
-    top:15%;
-    left:35%;
-    right:0;
+  .introbtn {
+    top: 15%;
+    left: 35%;
+    right: 0;
     z-index: 2;
   }
   .thumbnail {
-    margin:0;
+    margin: 0;
     height: 350px;
     width: 100%;
     overflow: hidden;
@@ -559,54 +556,58 @@ section:nth-of-type(2){
     display: flex;
     flex-wrap: wrap;
   }
-  .title, .excerpt, .buttons{
+  .title,
+  .excerpt,
+  .buttons {
     width: 100%;
   }
 
-  .buttons{
+  .buttons {
     display: flex;
     position: relative;
   }
 
-  .btn{
+  .btn {
     width: 48%;
     margin: 0;
     text-align: center;
   }
 
-  .content>.buttons>.btn:nth-of-type(2){
+  .content > .buttons > .btn:nth-of-type(2) {
     margin-left: 2%;
   }
 
-  .title{
+  .title {
     padding-top: 20px;
   }
   }
 @media (max-width: 960px) {
-  .introbtn{display: none;}
-  .disp-f{
+  .introbtn {
+    display: none;
+  }
+  .disp-f {
     flex-wrap: wrap;
   }
 
-  section{
+  section {
     width: 100%;
   }
 
-  section:nth-of-type(2){
+  section:nth-of-type(2) {
     margin-left: 0%;
   }
   }
 @media (max-width: 700px) {
-  .buttons{
+  .buttons {
     flex-wrap: wrap;
   }
 
-  .btn{
+  .btn {
     width: 100%;
     margin: 5px 0;
   }
 
-  .content>.buttons>.btn:nth-of-type(2){
+  .content > .buttons > .btn:nth-of-type(2) {
     margin-left: 0%;
   }
   }
