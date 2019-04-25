@@ -8,7 +8,6 @@
 
 #mainToestellen{
   width: 85%;
-  padding-top: 60px;
   padding-bottom: 250px;
 }
 
@@ -33,11 +32,11 @@
 }
 
 #mainToestellen .thumbnail{
-  width: 39%;
+  width: 45%;
 }
 
 #mainToestellen .content{
-  width: 61%;
+  width: 55%;
 }
 
 #mainToestellen h1{
@@ -45,7 +44,54 @@
 }
 
 @mixin pcXL{
-  body{
-    background-color: green;
+
+  #mainToestellen  .toestelContent{
+    flex-wrap: wrap;
+  }
+
+  #mainToestellen .thumbnail{
+    width: 100%;
+  }
+
+  #mainToestellen .content{
+    width: 100%;
+  }
+
+  #mainToestellen .excerpt{
+    min-height: auto;
+  }
+}
+
+@mixin tablet{
+  #mainToestellen .toestelContent{
+    width: 100%;
+  }
+
+  #mainToestellen .thumbnail{
+    width: 48%;
+  }
+
+  #mainToestellen .content{
+    width: 50%;
+    margin-left: 2%;
+  }
+
+  #mainToestellen .excerpt{
+    min-height: 210px;
+  }
+}
+
+@mixin phone{
+  #mainToestellen .thumbnail{
+    width: 100%;
+  }
+
+  #mainToestellen .content{
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  #mainToestellen .excerpt{
+    min-height: auto;
   }
 }
