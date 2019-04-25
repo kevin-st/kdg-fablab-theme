@@ -1,4 +1,4 @@
-header{
+nav{
   position: relative;
   z-index: 5000;
 }
@@ -101,6 +101,23 @@ header{
   transform: rotate(-4deg);
 }
 
+.introbtn {
+  width: 200px;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  font-size: 25px;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -500%);
+  z-index: 2;
+}
+
 @mixin pcbig {
   .menu-item {
     font-size: 25px;
@@ -125,6 +142,17 @@ header{
     height: 50px;
     margin: 15px 5px;
   }
+}
+
+@mixin pcXL {
+
+  .introbtn {
+    top: 15%;
+    left: 35%;
+    right: 0;
+    z-index: 2;
+  }
+
 }
 
 @mixin pcmed {
@@ -202,6 +230,9 @@ header{
 
   .zichtbaarheid{
     display:none;
+  }
+  .introbtn {
+    display: none;
   }
 
 }

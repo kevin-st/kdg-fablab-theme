@@ -111,7 +111,7 @@
 /* example module:
   @import "modules/btn"
 */
-header{
+nav{
   position: relative;
   z-index: 5000;
 }
@@ -202,6 +202,23 @@ header{
   -webkit-transform: rotate(-4deg);
           transform: rotate(-4deg);
 }
+.introbtn {
+  width: 200px;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  font-size: 25px;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -500%);
+          transform: translate(-50%, -500%);
+  z-index: 2;
+}
 @media (max-width:1300px) {
   .menu-item {
     font-size: 25px;
@@ -225,6 +242,15 @@ header{
   #logonaam img {
     height: 50px;
     margin: 15px 5px;
+  }
+  }
+@media (max-width:1350px) {
+
+  .introbtn {
+    top: 15%;
+    left: 35%;
+    right: 0;
+    z-index: 2;
   }
   }
 @media (max-width:1100px) {
@@ -301,6 +327,9 @@ header{
 
   .zichtbaarheid{
     display:none;
+  }
+  .introbtn {
+    display: none;
   }
   }
 html { height: 100%; }
@@ -449,22 +478,6 @@ h1 {
   font-family: "KdG";
   font-size: 35px;
 }
-.introbtn {
-  width: 200px;
-  text-decoration: none;
-  background-color: black;
-  color: white;
-  padding: 20px;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  font-size: 25px;
-  position: absolute;
-  text-align: center;
-  top: 25%;
-  left: 45%;
-  right: 0;
-  z-index: 2;
-}
 #mainFrontpage {
   width: 85%;
   padding-top: 60px;
@@ -537,12 +550,7 @@ section:nth-of-type(2) {
     flex-wrap: wrap;
   }
 
-  .introbtn {
-    top: 15%;
-    left: 35%;
-    right: 0;
-    z-index: 2;
-  }
+
   .thumbnail {
     margin: 0;
     height: 350px;
@@ -582,9 +590,6 @@ section:nth-of-type(2) {
   }
   }
 @media (max-width: 960px) {
-  .introbtn {
-    display: none;
-  }
   .disp-f {
     flex-wrap: wrap;
   }

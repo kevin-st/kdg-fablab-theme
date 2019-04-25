@@ -8,22 +8,7 @@ h1 {
   font-size: 35px;
 }
 
-.introbtn {
-  width: 200px;
-  text-decoration: none;
-  background-color: black;
-  color: white;
-  padding: 20px;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  font-size: 25px;
-  position: absolute;
-  text-align: center;
-  top: 25%;
-  left: 45%;
-  right: 0;
-  z-index: 2;
-}
+
 
 #mainFrontpage {
   width: 85%;
@@ -112,12 +97,7 @@ section:nth-of-type(2) {
     flex-wrap: wrap;
   }
 
-  .introbtn {
-    top: 15%;
-    left: 35%;
-    right: 0;
-    z-index: 2;
-  }
+
   .thumbnail {
     margin: 0;
     height: 350px;
@@ -158,9 +138,6 @@ section:nth-of-type(2) {
 }
 
 @mixin tablet {
-  .introbtn {
-    display: none;
-  }
   .disp-f {
     flex-wrap: wrap;
   }
