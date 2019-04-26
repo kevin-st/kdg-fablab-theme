@@ -136,10 +136,9 @@ nav{
   line-height: 80px;
   }
 .menu li:last-child {
-    font-size:26px;
     content: "i";
     font-family: "iconfont";
-    font-size: 35px;
+    font-size: 28px;
     padding: 0 2%;
     }
 .menu:hover{
@@ -153,7 +152,7 @@ nav{
 .menu-item {
   color: white;
   font-family: "KdG";
-  font-size: 30px;
+  font-size: 23px;
 }
 .menu-item a {
     text-decoration: none;
@@ -532,6 +531,7 @@ section:nth-of-type(2) {
 .CTA{
   position: relative;
   width: 100%;
+  margin: 0;
 }
 #background{
   width: 100%;
@@ -550,6 +550,8 @@ section:nth-of-type(2) {
   font-size: 20px;
   font-weight: 900;
   line-height: 80px;
+  text-decoration: none;
+  color: black;
 }
 .centerText{
   text-align: center;
@@ -617,6 +619,50 @@ section:nth-of-type(2) {
   }
   .excerpt{
     min-height: auto;
+  }
+  .CTA{
+    position: relative;
+    width: 101%;
+    margin: 0;
+  }
+  #background{
+    width: 100%;
+    background-color: #34bedc;
+    height: 100px;
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+    position: absolute;
+    top: -50px;
+    left: -10px;
+    display: inline-block;
+    z-index: 2;
+  }
+  .CTAtext{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: auto;
+    text-decoration: none;
+    color: black;
+  }
+  .centerText{
+    position: relative;
+  }
+
+  .centerText>span:nth-of-type(1){
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 30px;
+  }
+
+  .centerText>span:nth-of-type(2){
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: right;
+    right:30px;
+    top: 25px;
   }
   }
 @media (max-width: 700px) {
@@ -871,4 +917,8 @@ iframe {
 .newsContent>.content{
   width: 50% ;
   margin-left: 2%
+}
+#singleMachine{
+  width: 80%;
+  margin: 0 auto;
 }

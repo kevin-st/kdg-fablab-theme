@@ -75,6 +75,7 @@ section:nth-of-type(2) {
 .CTA{
   position: relative;
   width: 100%;
+  margin: 0;
 }
 #background{
   width: 100%;
@@ -93,6 +94,8 @@ section:nth-of-type(2) {
   font-size: 20px;
   font-weight: 900;
   line-height: 80px;
+  text-decoration: none;
+  color: black;
 }
 
 .centerText{
@@ -165,6 +168,49 @@ section:nth-of-type(2) {
   }
   .excerpt{
     min-height: auto;
+  }
+  .CTA{
+    position: relative;
+    width: 101%;
+    margin: 0;
+  }
+  #background{
+    width: 100%;
+    background-color: #34bedc;
+    height: 100px;
+    transform: rotate(-1deg);
+    position: absolute;
+    top: -50px;
+    left: -10px;
+    display: inline-block;
+    z-index: 2;
+  }
+  .CTAtext{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: auto;
+    text-decoration: none;
+    color: black;
+  }
+  .centerText{
+    position: relative;
+  }
+
+  .centerText>span:nth-of-type(1){
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 30px;
+  }
+
+  .centerText>span:nth-of-type(2){
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: right;
+    right:30px;
+    top: 25px;
   }
 }
 

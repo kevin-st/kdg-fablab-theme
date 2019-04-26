@@ -8,30 +8,25 @@
     */
   ?>
   <div class="CTA">
+    <?php
+      $last_added_machine = new WP_Query([
+        "posts_per_page" => 1, // control number of posts with this -> -1 is all posts
+        "post_type" => "workshop"
+      ]);
+
+      while($last_added_machine->have_posts()) {
+        $last_added_machine->the_post();
+    ?>
     <div id="background">
-      <div class="CTAtext">
+      <a class="CTAtext" href="<?php the_permalink(); ?>">
         <div class="centerText">
         <span>Reserveer je plaats tijdens onze nieuwste workshop:</span>
-          <?php
-            $last_added_machine = new WP_Query([
-              "posts_per_page" => 1, // control number of posts with this -> -1 is all posts
-              "post_type" => "workshop"
-            ]);
-
-            while($last_added_machine->have_posts()) {
-              $last_added_machine->the_post();
-          ?>
              <span class="title"><?php the_title(); ?></span>
           </div>
           <?php
             }
           ?>
-      </div>
-    </div>
-  </div>
-  <div class="CTA">
-    <div id="background2">
-
+      </a>
     </div>
   </div>
   <main id="mainFrontpage" class="disp-f">
