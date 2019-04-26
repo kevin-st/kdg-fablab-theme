@@ -124,7 +124,7 @@ nav{
 .menu {
   width: 78%;
   position: fixed;
-  top: 0;
+  top: 20px;
   right: 60px;
   margin: 0;
   padding: 0;
@@ -134,14 +134,16 @@ nav{
   display: flex;
   height: 80px;
   line-height: 80px;
-}
+  }
 .menu li:last-child {
     font-size:26px;
-  }
-.menu li:last-child:before {
-      font-family: "iconfont";
-      content: "i";
-      font-size: 35px;
+    content: "i";
+    font-family: "iconfont";
+    font-size: 35px;
+    padding: 0 30px;
+    }
+.menu:hover{
+      color: #34bedc;
     }
 #logonaam:hover h1{
   -webkit-transform: scale(1.1);
@@ -151,11 +153,13 @@ nav{
 .menu-item {
   color: white;
   font-family: "KdG";
-  font-size: 35px;
+  font-size: 30px;
 }
 .menu-item a {
     text-decoration: none;
     color: white;
+    display: block;
+    padding: 0 30px;
   }
 .menu-item:hover a{
   color: #34bedc;
@@ -188,7 +192,7 @@ nav{
   -webkit-transform: rotate(-2deg);
           transform: rotate(-2deg);
   position: fixed;
-  top: -100px;
+  top: -80px;
   left: -10px;
   box-shadow: 4px 6px 19px -4px rgba(0, 0, 0, 0.75);
 }
@@ -310,6 +314,9 @@ nav{
     line-height: 60px;
     font-size: 26px;
   }
+  .menu li:last-child:before{
+    width: 100%;
+  }
 
   .burgerbtn{
     display: block;
@@ -332,6 +339,11 @@ nav{
   .introbtn {
     display: none;
   }
+
+  .menu-item>a, .menu li:last-child:before {
+      padding: 0;
+      margin: 0;
+    }
   }
 html { height: 100%; }
 body {

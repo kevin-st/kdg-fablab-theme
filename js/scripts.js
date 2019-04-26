@@ -16,3 +16,7 @@ if (contact_form) {
     }
   });
 }
+
+/* Login nav */
+var loginNav = document.querySelector(".menu").lastElementChild;
+loginNav.querySelector("a").innerHTML="i";
