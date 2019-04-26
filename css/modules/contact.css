@@ -57,25 +57,25 @@ iframe {
         flex-wrap: wrap;
         width: 100%;
     }
-    
+
     .profile-picture {
         padding: 0;
         margin: 0;
-        width: 60%;
+        width: 40%;
     }
-    
+
     .contactForm {
         padding: 0;
         margin: 0;
         width: 60%;
     }
-    
+
     iframe {
         padding: 0;
         margin: 0;
         width: 60%;
     }
-    
+
     .extraMargin {
         margin-bottom: 80px;
     }
@@ -86,12 +86,13 @@ iframe {
         padding: 0;
         margin: 0;
         width: 50%;
+        margin-left: 25%;
     }
-    
+
     .contactForm {
         padding-top: 35px;
     }
-    
+
     .contactForm {
         padding: 0;
         margin: 0;
