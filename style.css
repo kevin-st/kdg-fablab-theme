@@ -448,7 +448,6 @@ body{
 
     background-color: #f5f5f5;
     border: 1px solid #ccc;
-    border-radius: 4px;
 
     margin-top: 8px;
     padding: 12px 20px;
@@ -641,12 +640,18 @@ iframe {
 }
 /* modal messages */
 .contact-success {
-    border: 1px solid green;
+    border: 2px solid green;
     color: green;
+      margin-bottom: 25px;
+      padding-left: 15px;
+      background: rgba(76, 175, 80, 0.3);
   }
 .contact-error {
-    border: 1px solid red;
-    color: red;
+    border: 2px solid darkred;
+    color: darkred;
+      margin-bottom: 25px;
+      padding-left: 15px;
+      background: rgba(255, 0, 0, 0.3);
   }
 @media (max-width: 960px) {
     #contactMain {
@@ -662,19 +667,20 @@ iframe {
     .profile-picture {
         padding: 0;
         margin: 0;
-        width: 40%;
+        width: 30%;
     }
 
     .contactForm {
         padding: 0;
         margin: 0;
-        width: 60%;
+        width: 65%;
+        margin-left: 25px;
     }
 
     iframe {
         padding: 0;
         margin: 0;
-        width: 60%;
+        width: 100%;
     }
 
     .extraMargin {
@@ -685,8 +691,8 @@ iframe {
     .profile-picture {
         padding: 0;
         margin: 0;
-        width: 50%;
-        margin-left: 25%;
+        width: 60%;
+        margin-left: 20%;
     }
 
     .contactForm {
@@ -696,7 +702,12 @@ iframe {
     .contactForm {
         padding: 0;
         margin: 0;
-        width: 60%;
+        width: 100%;
+        margin-top: 25px;
+    }
+    
+    iframe {
+        width: 100%;
     }
   }
 #reg-tel {
