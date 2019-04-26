@@ -7,7 +7,7 @@
       </div>
       <div id="socials">
         <a href="https://www.facebook.com/kareldegrotehogeschool/">
-          <img src="<?php echo get_theme_file_uri("img/fbWhite.png"); ?>" alt="facebook icon">
+          <img src="<?php echo get_theme_file_uri("img/fbWhite2.png"); ?>" alt="facebook icon">
         </a>
         <a href="https://www.instagram.com/kdghogeschool/?hl=nl">
           <img src="<?php echo get_theme_file_uri("img/igWhite.png"); ?>" alt="instagram icon">

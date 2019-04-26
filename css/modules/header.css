@@ -14,8 +14,8 @@ nav{
 .menu {
   width: 78%;
   position: fixed;
-  top: 0;
-  right: 60px;
+  top: 20px;
+  right: 40px;
   margin: 0;
   padding: 0;
   justify-content: space-around;
@@ -27,13 +27,18 @@ nav{
 
   li:last-child {
     font-size:26px;
-    &:before {
-      font-family: "iconfont";
-      content: "i";
-      font-size: 35px;
+    content: "i";
+    font-family: "iconfont";
+    font-size: 35px;
+    padding: 0 2%;
+    }
+    &:hover{
+      color: #34bedc;
     }
   }
-}
+
+
+
 
 
 #logonaam:hover h1{
@@ -43,11 +48,14 @@ nav{
 .menu-item {
   color: white;
   font-family: "KdG";
-  font-size: 35px;
+  font-size: 30px;
+
 
   a {
     text-decoration: none;
     color: white;
+    display: block;
+    padding: 0 2%;
   }
 }
 
@@ -70,10 +78,11 @@ nav{
   top: 0;
   left: 0;
   text-decoration: none;
-  margin: 40px;
+  margin: 9px 40px;
 }
 #logonaam img {
   height: 70px;
+  margin-top: 15px;
 }
 #logonaam h1 {
   font-family: "KdG";
@@ -85,7 +94,7 @@ nav{
   background-color: black;
   transform: rotate(-2deg);
   position: fixed;
-  top: -100px;
+  top: -80px;
   left: -10px;
   -webkit-box-shadow: 4px 6px 19px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 4px 6px 19px -4px rgba(0, 0, 0, 0.75);
@@ -129,57 +138,18 @@ nav{
 
 
 @mixin pcbig {
-  .menu-item {
+  .menu-item{
     font-size: 25px;
   }
-  .menu {
-    width: 75%;
-      li:last-child {
-      font-size: 22px;
-      margin-top: 0px;
-      &:before {
-        font-family: "iconfont";
-        content: "i";
-        font-size: 25px;
-      }
-    }
-  }
-  #logonaam a {
-    width: 20%;
-    margin: 20px;
-  }
-  #logonaam img {
-    height: 50px;
-    margin: 15px 5px;
-  }
-}
 
-@mixin pcXL {
-
-
+  .menu{
+    width: 70%;
+  }
 }
 
 @mixin pcmed {
   .menu-item {
     font-size: 22px;
-  }
-  .menu {
-    width: 70%;
-    li:last-child {
-      margin: 0;
-      font-size: 20px;
-      &:before{
-        font-size: 22px;
-      }
-    }
-  }
-  #logonaam a {
-    width: 20%;
-    margin: 20px;
-  }
-  #logonaam img {
-    height: 50px;
-    margin: 15px 5px;
   }
 }
 
@@ -198,7 +168,7 @@ nav{
     margin: 0 ;
     padding: 0 80px;
     left: 0;
-    top: 85px;
+    top: 89px;
     right: 0;
     display: flex;
     flex-wrap: wrap;
@@ -215,6 +185,9 @@ nav{
     width: 100%;
     line-height: 60px;
     font-size: 26px;
+  }
+  .menu li:last-child:before{
+    width: 100%;
   }
 
   .burgerbtn{
@@ -239,4 +212,8 @@ nav{
     display: none;
   }
 
-}
+  .menu-item>a, .menu li:last-child {
+      padding: 0;
+      margin: 0;
+    }
+  }
