@@ -1,3 +1,7 @@
+ #contactMain {
+     width: 70%;
+ }
+
 .contactGegevens {
   display: flex;
   margin-bottom: 50px;
@@ -45,8 +49,8 @@ iframe {
 
 @mixin tablet {
     #contactMain {
-        padding-left: 50px;
-        padding-right: 50px;
+        width: 90%;
+        margin-left: 5%;
     }
 
     .contactGegevens {
