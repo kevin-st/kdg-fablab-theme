@@ -470,6 +470,7 @@ body{
 html body {
   margin: 0px;
   padding: 0;
+  min-width: 100%;
 }
 h1 {
   font-family: "KdG";
@@ -541,7 +542,7 @@ section:nth-of-type(2) {
           transform: rotate(-1deg);
   position: absolute;
   top: -50px;
-  left: -10px;
+  left: 0px;
   display: inline-block;
   z-index: 2;
 }
@@ -555,6 +556,7 @@ section:nth-of-type(2) {
 }
 .centerText{
   text-align: center;
+  padding-right: 15px;
 }
 @media (max-width:1350px) {
   article {
@@ -622,21 +624,10 @@ section:nth-of-type(2) {
   }
   .CTA{
     position: relative;
-    width: 101%;
+    width: 100%;
     margin: 0;
   }
-  #background{
-    width: 100%;
-    background-color: #34bedc;
-    height: 100px;
-    -webkit-transform: rotate(-1deg);
-            transform: rotate(-1deg);
-    position: absolute;
-    top: -50px;
-    left: -10px;
-    display: inline-block;
-    z-index: 2;
-  }
+
   .CTAtext{
     width: 100%;
     font-size: 20px;
