@@ -1,0 +1,25 @@
+.newsButtons{
+  width: 100%;
+}
+
+.morenewsBtn{
+  width: 100%;
+  padding: 15px 0;
+}
+
+.newsContent{
+  width: 47% ;
+}
+
+.newsContent:nth-of-type(even){
+  margin-left: 6% ;
+}
+
+.newsContent>.thumbnail{
+  width: 48% ;
+}
+
+.newsContent>.content{
+  width: 50% ;
+  margin-left: 2%
+}

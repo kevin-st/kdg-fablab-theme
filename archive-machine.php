@@ -1,13 +1,6 @@
 <?php get_header(); ?>
-<?php
-  /*
-    used for showing an archive of blog posts
 
-    to show an archive of custom posts (like machines):
-      - create extra .php file -> e.g. archive-machine.php
-  */
-?>
-<main id="mainToestellen" class="disp-f">
+<main id="mainToestellen" class=" disp-f">
   <section role="machines">
     <h1>Onze toestellen</h1>
     <article class="disp-f">

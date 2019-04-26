@@ -72,12 +72,33 @@
   }
 
   #mainToestellen .content{
-    width: 50%;
-    margin-left: 2%;
+    width: 48%;
+    margin-left: 4%;
   }
 
   #mainToestellen .excerpt{
     min-height: 210px;
+  }
+
+  #mainToestellen .title{
+    margin-top: 0%;
+    padding-top: 0;
+  }
+
+  #mainToestellen .buttons{
+    position: relative;
+
+  }
+
+  #mainToestellen .btn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+  }
+
+  #mainToestellen .btn:nth-of-type(even){
+    right: 0;
   }
 }
 
@@ -93,5 +114,12 @@
 
   #mainToestellen .excerpt{
     min-height: auto;
+  }
+  #mainToestellen .buttons{
+    position: relative;
+  }
+
+  #mainToestellen .btn{
+    position: relative;
   }
 }

@@ -7,23 +7,16 @@
     -> in the case of KdG Fablab: Nieuws
    */
 ?>
-<main>
-  <h2>Laatste nieuws</h2>
+<main id="mainToestellen"  class="mainNews disp-f">
+  <section role="news">
+  <h1>Laatste nieuws</h1>
+  <article class="disp-f">
   <?php
     while(have_posts()) {
       the_post();
   ?>
-  <article class="news_item">
-    <h2>
-      <span role="accentuation">
-        <?php
-          $post_type = get_post_type();
-          $accent = "";
-        ?>
-      </span>
-      <?php echo strtoupper(get_the_title()); ?>
-    </h2>
-    <?php if (has_post_thumbnail()) { ?>
+<div class="toestelContent newsContent">
+        <?php if (has_post_thumbnail()) { ?>
      <div class="thumbnail">
        <?php the_post_thumbnail(); ?>
      </div>
@@ -33,23 +26,45 @@
       src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>"
       alt="news" />
     <?php } ?>
+    <div class="content">
+
+
+    <h2 class="title">
+      <span role="accentuation">
+        <?php
+          $post_type = get_post_type();
+          $accent = "";
+        ?>
+      </span>
+      <?php echo strtoupper(get_the_title()); ?>
+    </h2>
     <p class="excerpt">
      <?php
        if (has_excerpt()) {
          echo get_the_excerpt();
        } else {
-         echo wp_trim_words(get_the_content(), 20); // control number of words
+         echo wp_trim_words(get_the_content(), 25); // control number of words
        }
      ?>
     </p>
-    <a href="<?php the_permalink(); ?>">Meer info</a>
-  </article>
+    <div class="buttons newsButtons p-rel">
+      <a class="btn btn-dark morenewsBtn " href="<?php the_permalink(); ?>">Lees verder</a>
+    </div>
+
+    </div>
+  </div>
   <?php
     }
-
     wp_reset_postdata();
-    echo paginate_links();
+
   ?>
+  </article>
+  <div class="pagination">
+    <?php
+      echo paginate_links();
+    ?>
+  </div>
+  </section>
 </main>
 <?php
   get_footer();
