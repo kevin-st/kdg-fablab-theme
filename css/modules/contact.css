@@ -25,6 +25,11 @@
   }
 }
 
+iframe {
+    width: 100%;
+    height: 440px;
+}
+
 /* modal messages */
 .contact {
   &-success {
@@ -36,4 +41,56 @@
     border: 1px solid red;
     color: red;
   }
+}
+
+@mixin tablet {
+    #contactMain {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .contactGegevens {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .profile-picture {
+        padding: 0;
+        margin: 0;
+        width: 60%;
+    }
+    
+    .contactForm {
+        padding: 0;
+        margin: 0;
+        width: 60%;
+    }
+    
+    iframe {
+        padding: 0;
+        margin: 0;
+        width: 60%;
+    }
+    
+    .extraMargin {
+        margin-bottom: 80px;
+    }
+}
+
+@mixin phone {
+    .profile-picture {
+        padding: 0;
+        margin: 0;
+        width: 50%;
+    }
+    
+    .contactForm {
+        padding-top: 35px;
+    }
+    
+    .contactForm {
+        padding: 0;
+        margin: 0;
+        width: 60%;
+    }
 }

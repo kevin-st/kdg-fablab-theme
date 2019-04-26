@@ -116,7 +116,7 @@
                   <span class="error-message <?php echo $email_has_error ? 'disp-b' : 'disp-n'; ?>"><?php echo $user_email_error; ?></span>
                 </div>
 
-                <div class="input-group">
+                <div class="input-group extraMargin">
                   <label for="contact-user-question">
                     Vraag:
                     <span class="required">*</span>
@@ -131,8 +131,8 @@
 
     </div>
 
-    <div style="width: 960px;position: relative;">
-      <iframe width="960" height="440" src="https://maps.google.com/maps?width=960&amp;height=440&amp;hl=en&amp;q=Salesianenlaan%2090+(KdG%20Hoboken%20FabLab)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?width=960&amp;height=440&amp;hl=en&amp;q=Salesianenlaan%2090+(KdG%20Hoboken%20FabLab)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </div>
 
 </main>
