@@ -910,6 +910,44 @@ iframe {
   margin-left: 2%
 }
 #singleMachine{
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#singleMachine .thumbnail{
+  width: 60%;
+  height: auto;
+}
+.introMachine{
+  display: flex;
+  position: relative;
+}
+.introMachine>.flexdiv{
+   width: 40%;
+   position: relative;
+}
+.introMachine>.flexdiv>.title{
+   width: 100%;
+   position: absolute;
+   bottom: 0;
+}
+#singleMachine .content{
+  font-size: 16px;
+  width: 100%;
+}
+#singleMachine>.content>div{
+  width: 100%;
+}
+.detailBtn{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.detailBtn>.btn{
+  background-color: #34bedc;
+  color: black;
+}
+.detailBtn>.btn:hover{
+  color: white;
 }
