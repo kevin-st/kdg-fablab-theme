@@ -8,7 +8,10 @@ h1 {
   font-size: 35px;
 }
 
-
+.title{
+  white-space: nowrap;
+  overflow: hidden;
+}
 
 #mainFrontpage {
   width: 85%;

@@ -479,6 +479,10 @@ h1 {
   font-family: "KdG";
   font-size: 35px;
 }
+.title{
+  white-space: nowrap;
+  overflow: hidden;
+}
 #mainFrontpage {
   width: 85%;
   padding-top: 60px;
