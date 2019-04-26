@@ -7,7 +7,30 @@
         -> in case of KdG Fablab: Nieuws
     */
   ?>
+  <div class="CTA">
+    <?php
+      $last_added_machine = new WP_Query([
+        "posts_per_page" => 1, // control number of posts with this -> -1 is all posts
+        "post_type" => "workshop"
+      ]);
+
+      while($last_added_machine->have_posts()) {
+        $last_added_machine->the_post();
+    ?>
+    <div id="background">
+      <a class="CTAtext" href="<?php the_permalink(); ?>">
+        <div class="centerText">
+        <span>Reserveer je plaats tijdens onze nieuwste workshop:</span>
+             <span class="title"><?php the_title(); ?></span>
+          </div>
+          <?php
+            }
+          ?>
+      </a>
+    </div>
+  </div>
   <main id="mainFrontpage" class="disp-f">
+
     <section role="news">
       <h1>Laatste nieuws</h1>
       <article class="disp-f">
@@ -39,7 +62,7 @@
                 }
               ?>
              </p>
-             <div class="buttons ">
+             <div class="buttons disp-f col-2-of-2 ">
                <a class="btn btn-dark" href="<?php the_permalink(); ?>">Lees verder</a>
                <a class="btn btn-dark" href="<?php echo get_permalink(get_option("page_for_posts")); ?>">Meer nieuws</a>
              </div>
@@ -81,7 +104,7 @@
               }
             ?>
            </p>
-           <div class="buttons">
+           <div class="buttons disp-f col-2-of-2">
              <a class="btn btn-dark" href="<?php the_permalink(); ?>">Reserveer me</a>
              <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
            </div>

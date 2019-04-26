@@ -26,10 +26,9 @@ nav{
   line-height: 80px;
 
   li:last-child {
-    font-size:26px;
     content: "i";
     font-family: "iconfont";
-    font-size: 35px;
+    font-size: 28px;
     padding: 0 2%;
     }
     &:hover{
@@ -48,7 +47,7 @@ nav{
 .menu-item {
   color: white;
   font-family: "KdG";
-  font-size: 30px;
+  font-size: 23px;
 
 
   a {
