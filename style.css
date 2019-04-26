@@ -125,7 +125,7 @@ nav{
   width: 78%;
   position: fixed;
   top: 20px;
-  right: 60px;
+  right: 40px;
   margin: 0;
   padding: 0;
   justify-content: space-around;
@@ -140,7 +140,7 @@ nav{
     content: "i";
     font-family: "iconfont";
     font-size: 35px;
-    padding: 0 30px;
+    padding: 0 2%;
     }
 .menu:hover{
       color: #34bedc;
@@ -159,7 +159,7 @@ nav{
     text-decoration: none;
     color: white;
     display: block;
-    padding: 0 30px;
+    padding: 0 2%;
   }
 .menu-item:hover a{
   color: #34bedc;
@@ -176,10 +176,11 @@ nav{
   top: 0;
   left: 0;
   text-decoration: none;
-  margin: 40px;
+  margin: 9px 40px;
 }
 #logonaam img {
   height: 70px;
+  margin-top: 15px;
 }
 #logonaam h1 {
   font-family: "KdG";
@@ -232,53 +233,17 @@ nav{
      object-fit: cover;
 }
 @media (max-width:1300px) {
-  .menu-item {
+  .menu-item{
     font-size: 25px;
   }
-  .menu {
-    width: 75%;
+
+  .menu{
+    width: 70%;
   }
-      .menu li:last-child {
-      font-size: 22px;
-      margin-top: 0px;
-    }
-      .menu li:last-child:before {
-        font-family: "iconfont";
-        content: "i";
-        font-size: 25px;
-      }
-  #logonaam a {
-    width: 20%;
-    margin: 20px;
-  }
-  #logonaam img {
-    height: 50px;
-    margin: 15px 5px;
-  }
-  }
-@media (max-width:1350px) {
   }
 @media (max-width:1100px) {
   .menu-item {
     font-size: 22px;
-  }
-  .menu {
-    width: 70%;
-  }
-    .menu li:last-child {
-      margin: 0;
-      font-size: 20px;
-    }
-      .menu li:last-child:before{
-        font-size: 22px;
-      }
-  #logonaam a {
-    width: 20%;
-    margin: 20px;
-  }
-  #logonaam img {
-    height: 50px;
-    margin: 15px 5px;
   }
   }
 @media (max-width: 960px) {
@@ -296,7 +261,7 @@ nav{
     margin: 0 ;
     padding: 0 80px;
     left: 0;
-    top: 85px;
+    top: 89px;
     right: 0;
     display: flex;
     flex-wrap: wrap;
@@ -340,7 +305,7 @@ nav{
     display: none;
   }
 
-  .menu-item>a, .menu li:last-child:before {
+  .menu-item>a, .menu li:last-child {
       padding: 0;
       margin: 0;
     }
@@ -393,7 +358,6 @@ footer>#socials>a{
   }
   }
 main{
-  width: 960px;
   margin: 0 auto;
   padding-top: 120px;
   padding-bottom: 230px;
@@ -484,7 +448,6 @@ body{
 
     background-color: #f5f5f5;
     border: 1px solid #ccc;
-    border-radius: 4px;
 
     margin-top: 8px;
     padding: 12px 20px;
@@ -645,6 +608,9 @@ section:nth-of-type(2) {
     margin-left: 0%;
   }
   }
+#contactMain {
+     width: 70%;
+ }
 .contactGegevens {
   display: flex;
   margin-bottom: 50px;
@@ -668,14 +634,81 @@ section:nth-of-type(2) {
     max-width: 100%;
     max-height: 100%;
   }
+iframe {
+    width: 100%;
+    height: 440px;
+}
 /* modal messages */
 .contact-success {
-    border: 1px solid green;
+    border: 2px solid green;
     color: green;
+      margin-bottom: 25px;
+      padding-left: 15px;
+      background: rgba(76, 175, 80, 0.3);
   }
 .contact-error {
-    border: 1px solid red;
-    color: red;
+    border: 2px solid darkred;
+    color: darkred;
+      margin-bottom: 25px;
+      padding-left: 15px;
+      background: rgba(255, 0, 0, 0.3);
+  }
+@media (max-width: 960px) {
+    #contactMain {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .contactGegevens {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .profile-picture {
+        padding: 0;
+        margin: 0;
+        width: 30%;
+    }
+
+    .contactForm {
+        padding: 0;
+        margin: 0;
+        width: 65%;
+        margin-left: 25px;
+    }
+
+    iframe {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .extraMargin {
+        margin-bottom: 80px;
+    }
+  }
+@media (max-width: 700px) {
+    .profile-picture {
+        padding: 0;
+        margin: 0;
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .contactForm {
+        padding-top: 35px;
+    }
+
+    .contactForm {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        margin-top: 25px;
+    }
+    
+    iframe {
+        width: 100%;
+    }
   }
 #reg-tel {
   margin-bottom: 0 !important;
