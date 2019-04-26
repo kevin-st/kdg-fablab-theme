@@ -530,6 +530,31 @@ section:nth-of-type(2) {
   position: absolute;
   bottom: 0;
 }
+.CTA{
+  position: relative;
+  width: 100%;
+}
+#background{
+  width: 100%;
+  background-color: #34bedc;
+  height: 80px;
+  -webkit-transform: rotate(-1deg);
+          transform: rotate(-1deg);
+  position: absolute;
+  top: -50px;
+  left: -10px;
+  display: inline-block;
+  z-index: 2;
+}
+.CTAtext{
+  width: 100%;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 80px;
+}
+.centerText{
+  text-align: center;
+}
 @media (max-width:1350px) {
   article {
     display: flex;

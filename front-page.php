@@ -7,7 +7,35 @@
         -> in case of KdG Fablab: Nieuws
     */
   ?>
+  <div class="CTA">
+    <div id="background">
+      <div class="CTAtext">
+        <div class="centerText">
+        <span>Reserveer je plaats tijdens onze nieuwste workshop:</span>
+          <?php
+            $last_added_machine = new WP_Query([
+              "posts_per_page" => 1, // control number of posts with this -> -1 is all posts
+              "post_type" => "workshop"
+            ]);
+
+            while($last_added_machine->have_posts()) {
+              $last_added_machine->the_post();
+          ?>
+             <span class="title"><?php the_title(); ?></span>
+          </div>
+          <?php
+            }
+          ?>
+      </div>
+    </div>
+  </div>
+  <div class="CTA">
+    <div id="background2">
+
+    </div>
+  </div>
   <main id="mainFrontpage" class="disp-f">
+
     <section role="news">
       <h1>Laatste nieuws</h1>
       <article class="disp-f">
