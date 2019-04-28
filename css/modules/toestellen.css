@@ -22,13 +22,13 @@
 }
 
 #mainToestellen .toestelContent {
-  width: 48%;
+  width: 47%;
   display: flex;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 #mainToestellen .toestelContent:nth-of-type(even) {
-  margin-left: 2%;
+  margin-left: 6%;
 }
 
 #mainToestellen .thumbnail {
@@ -57,7 +57,7 @@
   }
 
   #mainToestellen .excerpt {
-    min-height: auto;
+    min-height: 120px;
   }
 }
 
@@ -82,6 +82,10 @@
   #mainToestellen .title {
     margin-top: 0%;
     padding-top: 0;
+  }
+
+  #mainToestellen .toestelContent:nth-of-type(even) {
+    margin-left: 0%;
   }
 
   /*#mainToestellen .buttons{
@@ -113,6 +117,10 @@
 
   #mainToestellen .excerpt {
     min-height: auto;
+  }
+
+  #mainToestellen .title {
+padding-top: 20px;
   }
 
   /*#mainToestellen .buttons{

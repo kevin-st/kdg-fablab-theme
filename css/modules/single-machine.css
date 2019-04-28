@@ -83,6 +83,9 @@
   .introMachine>.flexdiv>.title{
      position: relative;
   }
+  .detailBtn>.btn:nth-of-type(even){
+    margin-top: 0%;
+  }
 }
 
 @mixin phone{
@@ -96,5 +99,6 @@
 
   .detailBtn>.btn:nth-of-type(even){
     margin-left: 0%;
+    margin-top: 2%;
   }
 }

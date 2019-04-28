@@ -818,12 +818,12 @@ iframe {
   width: 100%;
 }
 #mainToestellen .toestelContent {
-  width: 48%;
+  width: 47%;
   display: flex;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 #mainToestellen .toestelContent:nth-of-type(even) {
-  margin-left: 2%;
+  margin-left: 6%;
 }
 #mainToestellen .thumbnail {
   width: 45%;
@@ -848,7 +848,7 @@ iframe {
   }
 
   #mainToestellen .excerpt {
-    min-height: auto;
+    min-height: 120px;
   }
   }
 @media (max-width: 960px) {
@@ -872,6 +872,10 @@ iframe {
   #mainToestellen .title {
     margin-top: 0%;
     padding-top: 0;
+  }
+
+  #mainToestellen .toestelContent:nth-of-type(even) {
+    margin-left: 0%;
   }
 
   /*#mainToestellen .buttons{
@@ -902,6 +906,10 @@ iframe {
 
   #mainToestellen .excerpt {
     min-height: auto;
+  }
+
+  #mainToestellen .title {
+padding-top: 20px;
   }
 
   /*#mainToestellen .buttons{
@@ -1005,6 +1013,9 @@ iframe {
   .introMachine>.flexdiv>.title{
      position: relative;
   }
+  .detailBtn>.btn:nth-of-type(even){
+    margin-top: 0%;
+  }
   }
 @media (max-width: 700px) {
   .detailBtn{
@@ -1017,6 +1028,7 @@ iframe {
 
   .detailBtn>.btn:nth-of-type(even){
     margin-left: 0%;
+    margin-top: 2%;
   }
   }
 .breadcrumbs{
@@ -1081,7 +1093,7 @@ iframe {
   }
 
   .opdeling>.content{
-    margin: 0px 0 20px 0;
+    margin: 0px 0 70px 0;
   }
   .opdeling>.title{
     margin:0;
