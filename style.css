@@ -342,8 +342,8 @@ footer>#socials{
   margin: 50px 150px;
 }
 footer>#socials>a>img{
-  height: 50px;
-  padding: 20px;
+  height: 40px;
+  padding: 10px;
 }
 footer>#socials>a{
   text-decoration: none;
