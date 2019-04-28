@@ -6,7 +6,7 @@
     in this case: a post with type of machine
   */
 ?>
-<main id="singleMachine">
+<main class="detail">
   <?php
     while(have_posts()) {
       the_post();

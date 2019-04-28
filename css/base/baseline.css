@@ -57,3 +57,10 @@
     @mixin-content;
   }
 }
+
+
+@define-mixin pcXXL /* of een andere naam */ {
+  @media (max-width:2000px) {
+    @mixin-content;
+  }
+}
