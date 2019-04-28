@@ -9,7 +9,7 @@
       -> e.g. machines for a "single-machine(.php)"
    */
 ?>
-<main class="detail detailnews">
+<main class="detail">
   <?php
     while(have_posts()) {
       the_post();
@@ -18,7 +18,7 @@
     <a href="<?php echo site_url('/nieuws/'); ?>">Laatste nieuws</a>
     > <?php strtolower(the_title()) ?>
   </div>
-  <div class="contentDetailNews">
+  <div class="contentdetail">
     <div role="thumbnail" class="thumbnail">
       <?php
         if (has_post_thumbnail()) {

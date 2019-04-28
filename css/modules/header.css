@@ -15,7 +15,7 @@ nav{
   width: 78%;
   position: fixed;
   top: 20px;
-  right: 40px;
+  right: 15px;
   margin: 0;
   padding: 0;
   justify-content: space-around;
@@ -29,7 +29,6 @@ nav{
     content: "i";
     font-family: "iconfont";
     font-size: 28px;
-    padding: 0 2%;
     }
     &:hover{
       color: #34bedc;
@@ -48,6 +47,8 @@ nav{
   color: white;
   font-family: "KdG";
   font-size: 23px;
+  width: 15.66%;
+  text-align: center;
 
 
   a {
@@ -56,6 +57,10 @@ nav{
     display: block;
     padding: 0 2%;
   }
+}
+
+.menu-item:last-of-type{
+  width: 6%;
 }
 
 .menu-item:hover a{
@@ -138,11 +143,11 @@ nav{
 
 @mixin pcbig {
   .menu-item{
-    font-size: 25px;
+    font-size: 23px;
   }
 
   .menu{
-    width: 70%;
+    width: 75%;
   }
 }
 
@@ -184,6 +189,8 @@ nav{
     width: 100%;
     line-height: 60px;
     font-size: 26px;
+    text-align: left;
+    padding: 0;
   }
   .menu li:last-child:before{
     width: 100%;
@@ -210,7 +217,9 @@ nav{
   .introbtn {
     display: none;
   }
-
+  .menu-item:last-of-type{
+    width: 100%;
+  }
   .menu-item>a, .menu li:last-child {
       padding: 0;
       margin: 0;

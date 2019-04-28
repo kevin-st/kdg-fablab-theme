@@ -5,36 +5,6 @@
   flex-wrap: wrap;
 }
 
-.detail .thumbnail{
-  width: 50%;
-  height: auto;
-}
-
-.introMachine{
-  display: flex;
-  position: relative;
-  width: 100%;
-}
-
-.introMachine>.flexdiv{
-   width: 50%;
-   position: relative;
-}
-
-.introMachine>.flexdiv>.title{
-   width: 100%;
-   position: absolute;
-   bottom: 0;
-}
-
-.detail .content{
-  font-size: 16px;
-  width: 100%;
-}
-
-.detail>.content>div{
-  width: 100%;
-}
 
 .detailBtn{
   width: 100%;
@@ -51,40 +21,9 @@
   color: white;
 }
 
-
-@mixin pcXL{
-
-  .detail{
-    width: 80%;
-  }
-  .detailBtn>.btn{
-    width: 49%;
-  }
-
-  .detailBtn>.btn:nth-of-type(even){
-    margin-left: 2%;
-  }
-}
-
 @mixin tablet{
-  .introMachine{
-    flex-wrap: wrap;
-  }
-
-  .detail .thumbnail{
-    width: 70%;
-    margin-left: 15%;
-  }
-
-  .introMachine>.flexdiv{
-     width: 100%;
-  }
-
-  .introMachine>.flexdiv>.title{
-     position: relative;
-  }
-  .detailBtn>.btn:nth-of-type(even){
-    margin-top: 0%;
+  .opdeling>.detailBtn>.btn{
+    margin-top: 0;
   }
 }
 
@@ -93,12 +32,7 @@
     flex-wrap: wrap;
   }
 
-  .detailBtn>.btn{
-    width: 100%;
-  }
-
-  .detailBtn>.btn:nth-of-type(even){
+  .opdeling>.detailBtn>.btn:nth-of-type(even){
     margin-left: 0%;
-    margin-top: 2%;
   }
 }

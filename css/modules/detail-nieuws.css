@@ -9,12 +9,12 @@
   color: black;
 }
 
-.contentDetailNews{
+.contentdetail{
   display: flex;
   width: 100%;
 }
 
-.contentDetailNews>.thumbnail{
+.contentdetail>.thumbnail{
   width: 48%;
   height: auto;
   max-height: 500px;
@@ -24,7 +24,7 @@
 .opdeling>.title>h1{
   margin-top:0;}
 
-.contentDetailNews>.opdeling{
+.contentdetail>.opdeling{
   width: 50%;
   position: relative;
 }
@@ -36,6 +36,7 @@
 
 .opdeling>.content{
   margin-bottom: 70px;
+  width: 100%;
 }
 .opdeling>.detailBtn>.btn{
   width: 100%;
@@ -47,7 +48,7 @@
 }
 
 @mixin pcXXL{
-  .detailnews{
+  .detail{
     width: 80%;
   }
 }
@@ -61,7 +62,7 @@
     margin-left: 0%;
   }
 
-  .contentDetailNews>.thumbnail {
+  .contentdetail>.thumbnail {
     max-height: 500px;
     margin-right: 2%;
     height: auto;
@@ -86,18 +87,18 @@
 }
 
 @mixin pcmed{
-  .contentDetailNews{
+  .contentdetail{
     flex-wrap: wrap;
   }
 
-  .detailnews{
+  .detail{
     width: 60%;
   }
-  .contentDetailNews>.opdeling{
+  .contentdetail>.opdeling{
     width: 100%;
   }
 
-  .contentDetailNews>.thumbnail{
+  .contentdetail>.thumbnail{
     width: 100%;
     margin: 0 0 30px 0;
   }
@@ -113,7 +114,21 @@
 }
 
 @mixin tablet{
-  .detailnews{
+  .detail{
     width: 80%;
+  }
+  .opdeling>.detailBtn>.btn:nth-of-type(even){
+    margin-left: 2%;
+  }
+}
+
+@mixin phone{
+  .detailBtn{
+    flex-wrap: wrap;
+  }
+
+  .opdeling>.detailBtn>.btn:nth-of-type(even){
+    margin-left: 0%;
+    margin-top: 2%;
   }
 }

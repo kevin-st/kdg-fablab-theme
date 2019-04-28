@@ -125,7 +125,7 @@ nav{
   width: 78%;
   position: fixed;
   top: 20px;
-  right: 40px;
+  right: 15px;
   margin: 0;
   padding: 0;
   justify-content: space-around;
@@ -139,7 +139,6 @@ nav{
     content: "i";
     font-family: "iconfont";
     font-size: 28px;
-    padding: 0 2%;
     }
 .menu:hover{
       color: #34bedc;
@@ -153,6 +152,8 @@ nav{
   color: white;
   font-family: "KdG";
   font-size: 23px;
+  width: 15.66%;
+  text-align: center;
 }
 .menu-item a {
     text-decoration: none;
@@ -160,6 +161,9 @@ nav{
     display: block;
     padding: 0 2%;
   }
+.menu-item:last-of-type{
+  width: 6%;
+}
 .menu-item:hover a{
   color: #34bedc;
 }
@@ -233,11 +237,11 @@ nav{
 }
 @media (max-width:1300px) {
   .menu-item{
-    font-size: 25px;
+    font-size: 23px;
   }
 
   .menu{
-    width: 70%;
+    width: 75%;
   }
   }
 @media (max-width:1100px) {
@@ -277,6 +281,8 @@ nav{
     width: 100%;
     line-height: 60px;
     font-size: 26px;
+    text-align: left;
+    padding: 0;
   }
   .menu li:last-child:before{
     width: 100%;
@@ -303,7 +309,9 @@ nav{
   .introbtn {
     display: none;
   }
-
+  .menu-item:last-of-type{
+    width: 100%;
+  }
   .menu-item>a, .menu li:last-child {
       padding: 0;
       margin: 0;
@@ -946,31 +954,6 @@ padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
 }
-.detail .thumbnail{
-  width: 50%;
-  height: auto;
-}
-.introMachine{
-  display: flex;
-  position: relative;
-  width: 100%;
-}
-.introMachine>.flexdiv{
-   width: 50%;
-   position: relative;
-}
-.introMachine>.flexdiv>.title{
-   width: 100%;
-   position: absolute;
-   bottom: 0;
-}
-.detail .content{
-  font-size: 16px;
-  width: 100%;
-}
-.detail>.content>div{
-  width: 100%;
-}
 .detailBtn{
   width: 100%;
   display: flex;
@@ -983,38 +966,9 @@ padding-top: 20px;
 .detailBtn>.btn:hover{
   color: white;
 }
-@media (max-width:1350px) {
-
-  .detail{
-    width: 80%;
-  }
-  .detailBtn>.btn{
-    width: 49%;
-  }
-
-  .detailBtn>.btn:nth-of-type(even){
-    margin-left: 2%;
-  }
-  }
 @media (max-width: 960px) {
-  .introMachine{
-    flex-wrap: wrap;
-  }
-
-  .detail .thumbnail{
-    width: 70%;
-    margin-left: 15%;
-  }
-
-  .introMachine>.flexdiv{
-     width: 100%;
-  }
-
-  .introMachine>.flexdiv>.title{
-     position: relative;
-  }
-  .detailBtn>.btn:nth-of-type(even){
-    margin-top: 0%;
+  .opdeling>.detailBtn>.btn{
+    margin-top: 0;
   }
   }
 @media (max-width: 700px) {
@@ -1022,13 +976,8 @@ padding-top: 20px;
     flex-wrap: wrap;
   }
 
-  .detailBtn>.btn{
-    width: 100%;
-  }
-
-  .detailBtn>.btn:nth-of-type(even){
+  .opdeling>.detailBtn>.btn:nth-of-type(even){
     margin-left: 0%;
-    margin-top: 2%;
   }
   }
 .breadcrumbs{
@@ -1040,11 +989,11 @@ padding-top: 20px;
   text-decoration: none;
   color: black;
 }
-.contentDetailNews{
+.contentdetail{
   display: flex;
   width: 100%;
 }
-.contentDetailNews>.thumbnail{
+.contentdetail>.thumbnail{
   width: 48%;
   height: auto;
   max-height: 500px;
@@ -1052,7 +1001,7 @@ padding-top: 20px;
 }
 .opdeling>.title>h1{
   margin-top:0;}
-.contentDetailNews>.opdeling{
+.contentdetail>.opdeling{
   width: 50%;
   position: relative;
 }
@@ -1062,6 +1011,7 @@ padding-top: 20px;
 }
 .opdeling>.content{
   margin-bottom: 70px;
+  width: 100%;
 }
 .opdeling>.detailBtn>.btn{
   width: 100%;
@@ -1071,7 +1021,7 @@ padding-top: 20px;
   white-space: normal;
 }
 @media (max-width:2000px) {
-  .detailnews{
+  .detail{
     width: 80%;
   }
   }
@@ -1084,7 +1034,7 @@ padding-top: 20px;
     margin-left: 0%;
   }
 
-  .contentDetailNews>.thumbnail {
+  .contentdetail>.thumbnail {
     max-height: 500px;
     margin-right: 2%;
     height: auto;
@@ -1108,18 +1058,18 @@ padding-top: 20px;
   }
   }
 @media (max-width:1100px) {
-  .contentDetailNews{
+  .contentdetail{
     flex-wrap: wrap;
   }
 
-  .detailnews{
+  .detail{
     width: 60%;
   }
-  .contentDetailNews>.opdeling{
+  .contentdetail>.opdeling{
     width: 100%;
   }
 
-  .contentDetailNews>.thumbnail{
+  .contentdetail>.thumbnail{
     width: 100%;
     margin: 0 0 30px 0;
   }
@@ -1134,7 +1084,20 @@ padding-top: 20px;
   }
   }
 @media (max-width: 960px) {
-  .detailnews{
+  .detail{
     width: 80%;
+  }
+  .opdeling>.detailBtn>.btn:nth-of-type(even){
+    margin-left: 2%;
+  }
+  }
+@media (max-width: 700px) {
+  .detailBtn{
+    flex-wrap: wrap;
+  }
+
+  .opdeling>.detailBtn>.btn:nth-of-type(even){
+    margin-left: 0%;
+    margin-top: 2%;
   }
   }
