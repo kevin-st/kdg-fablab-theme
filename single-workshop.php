@@ -9,39 +9,45 @@
       -> e.g. machines for a "single-machine(.php)"
    */
 ?>
-<main>
+<main class="detail">
   <?php
     while(have_posts()) {
       the_post();
       $title = strtolower(str_replace(" ", "-", get_the_title()));
   ?>
-  <div role="breadcrumbs">
+  <div role="breadcrumbs" class="breadcrumbs">
     <a href="<?php echo site_url('/nieuws/'); ?>">Laatste nieuws</a>
     > <?php strtolower(the_title()) ?>
   </div>
-  <div role="title">
+  <div class="contentdetail">
+    <div role="thumbnail" class="thumbnail">
+      <?php
+        if (has_post_thumbnail()) {
+          echo the_post_thumbnail();
+        } else {
+      ?>
+      <img src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news"/> <!-- default_workshop.jpg? -->
+      <?php
+        }
+      ?>
+    </div>
+<div class="opdeling">
+  <div role="title" class="title">
     <h1 role="title-content"><?php the_title(); ?></h1>
     <p>
       <span role="date"><?php the_field('workshop_datum'); ?></span>
       <span role="time"><?php the_field('start_tijd'); ?> - <?php the_field('eind_tijd'); ?></span>
     </p>
   </div>
-  <div role="thumbnail">
-    <?php
-      if (has_post_thumbnail()) {
-        echo the_post_thumbnail();
-      } else {
-    ?>
-    <img src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news"/> <!-- default_workshop.jpg? -->
-    <?php
-      }
-    ?>
-  </div>
-  <div role="content">
+
+  <div role="content" class="content">
     <p><?php the_content(); ?></p>
   </div>
-  <div role="button"> <!-- only display when user is logged in? -->
-    <a href="<?php echo esc_url(add_query_arg("workshop", $title, site_url('/reserveren'))); ?>">Schrijf nu in</a>
+  <div role="button" class="detailBtn"> <!-- only display when user is logged in? -->
+    <a  class="btn btn-dark" href="<?php echo esc_url(add_query_arg("workshop", $title, site_url('/reserveren'))); ?>">Schrijf nu in</a>
+  </div>
+</div>
+
   </div>
   <?php
     }
