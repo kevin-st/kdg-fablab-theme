@@ -9,39 +9,51 @@
       -> e.g. machines for a "single-machine(.php)"
    */
 ?>
-<main>
+<main class="detail detailnews">
   <?php
     while(have_posts()) {
       the_post();
   ?>
-  <div role="breadcrumbs">
+  <div role="breadcrumbs" class="breadcrumbs">
     <a href="<?php echo site_url('/nieuws/'); ?>">Laatste nieuws</a>
     > <?php strtolower(the_title()) ?>
   </div>
-  <div role="title">
-    <h1 role="title-content"><?php the_title(); ?></h1>
-    <p>
-      <span role="date"><?php the_date(); ?></span>
-      <span role="time"><?php the_time(); ?></span>
-    </p>
+  <div class="contentDetailNews">
+    <div role="thumbnail" class="thumbnail">
+      <?php
+        if (has_post_thumbnail()) {
+          echo the_post_thumbnail();
+        } else {
+      ?>
+      <img src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news"/>
+      <?php
+        }
+      ?>
+    </div>
+    <div class="opdeling">
+      <div role="title" class="title">
+        <h1 role="title-content" ><?php the_title(); ?></h1>
+        <p>
+          <span role="date"><?php the_date(); ?></span>
+          <span role="time"><?php the_time(); ?></span>
+        </p>
+      </div>
+      <div role="content" class="content">
+        <p><?php the_content(); ?></p>
+      </div>
+      <div role="button" class="detailBtn">
+        <a class="btn btn-dark " href="<?php echo site_url('/nieuws/'); ?>">Terug naar nieuwsberichten</a>
+      </div>
+    </div>
   </div>
-  <div role="thumbnail">
-    <?php
-      if (has_post_thumbnail()) {
-        echo the_post_thumbnail();
-      } else {
-    ?>
-    <img src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news"/>
-    <?php
-      }
-    ?>
-  </div>
-  <div role="content">
-    <p><?php the_content(); ?></p>
-  </div>
+
+
+
+
   <?php
     }
   ?>
+
 </main>
 <?php
   get_footer();

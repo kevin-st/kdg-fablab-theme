@@ -1,22 +1,23 @@
-#singleMachine{
+.detail{
   width: 60%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
 
-#singleMachine .thumbnail{
-  width: 60%;
+.detail .thumbnail{
+  width: 50%;
   height: auto;
 }
 
 .introMachine{
   display: flex;
   position: relative;
+  width: 100%;
 }
 
 .introMachine>.flexdiv{
-   width: 40%;
+   width: 50%;
    position: relative;
 }
 
@@ -26,12 +27,12 @@
    bottom: 0;
 }
 
-#singleMachine .content{
+.detail .content{
   font-size: 16px;
   width: 100%;
 }
 
-#singleMachine>.content>div{
+.detail>.content>div{
   width: 100%;
 }
 
@@ -48,4 +49,52 @@
 
 .detailBtn>.btn:hover{
   color: white;
+}
+
+
+@mixin pcXL{
+
+  .detail{
+    width: 80%;
+  }
+  .detailBtn>.btn{
+    width: 49%;
+  }
+
+  .detailBtn>.btn:nth-of-type(even){
+    margin-left: 2%;
+  }
+}
+
+@mixin tablet{
+  .introMachine{
+    flex-wrap: wrap;
+  }
+
+  .detail .thumbnail{
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .introMachine>.flexdiv{
+     width: 100%;
+  }
+
+  .introMachine>.flexdiv>.title{
+     position: relative;
+  }
+}
+
+@mixin phone{
+  .detailBtn{
+    flex-wrap: wrap;
+  }
+
+  .detailBtn>.btn{
+    width: 100%;
+  }
+
+  .detailBtn>.btn:nth-of-type(even){
+    margin-left: 0%;
+  }
 }
