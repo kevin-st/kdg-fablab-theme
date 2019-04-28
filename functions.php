@@ -83,7 +83,9 @@
 
       if ((is_post_type_archive('machine') || $current_post_type == 'machine') && strtolower($item->title) == "toestellen"){
         $classes[] = "current-menu-item";
-      } else if ((is_post_type_archive('post')|| ($current_post_type == 'post' || $current_post_type == 'workshop')) && strtolower($item->title) == "nieuws"){
+      } else if ((is_post_type_archive('workshop') || $current_post_type == 'workshop') && strtolower($item->title) == "workshops"){
+        $classes[] = "current-menu-item";
+      } else if ((is_post_type_archive('post')|| $current_post_type == 'post') && strtolower($item->title) == "nieuws"){
         $classes[] = "current-menu-item";
       }
 
