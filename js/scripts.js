@@ -19,4 +19,11 @@ if (contact_form) {
 
 /* Login nav */
 var loginNav = document.querySelector(".menu").lastElementChild;
-loginNav.querySelector("a").innerHTML="i";
+
+
+if(window.innerWidth > 960){
+  loginNav.querySelector("a").innerHTML="i";
+} else {
+  loginNav.querySelector("a").innerHTML="Login";
+  
+}
