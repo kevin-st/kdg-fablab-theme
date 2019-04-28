@@ -62,7 +62,7 @@
                 }
               ?>
              </p>
-             <div class="buttons disp-f col-2-of-2 ">
+             <div class="buttons-frontpage disp-f col-2-of-2 ">
                <a class="btn btn-dark" href="<?php the_permalink(); ?>">Lees verder</a>
                <a class="btn btn-dark" href="<?php echo get_permalink(get_option("page_for_posts")); ?>">Meer nieuws</a>
              </div>
@@ -104,7 +104,7 @@
               }
             ?>
            </p>
-           <div class="buttons disp-f col-2-of-2">
+           <div class="buttons-frontpage disp-f col-2-of-2">
              <a class="btn btn-dark" href="<?php the_permalink(); ?>">Reserveer me</a>
              <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
            </div>

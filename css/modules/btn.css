@@ -30,15 +30,42 @@
   }
 */
 
+.buttons {
+  &,
+  &-frontpage {
+    position: absolute;
+    bottom: 0;
+  }
+
+  & {
+    @mixin pcXL {
+      position: static;
+    }
+
+    @mixin tablet {
+      position: absolute;
+    }
+
+    @mixin phone {
+      position: static;
+    }
+  }
+
+  &-frontpage {
+    @mixin tablet {
+      position: static;
+    }
+  }
+}
+
 .btn {
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 2%;
   width: 50%;
   padding: 15px;
   text-decoration: none;
   text-align: center;
   height: 20px;
-  line-height: 25px;
 
   &-dark {
     background-color: #000;
@@ -51,6 +78,17 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &:nth-child(2) {
+    @mixin tablet {
+      margin-top: 2%;
+    }
+  }
+
+  @mixin tablet {
+    margin-right: 0;
+    width: 100%;
   }
 
   &-submit {

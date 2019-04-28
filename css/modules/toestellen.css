@@ -1,4 +1,4 @@
-#toestelImg{
+#toestelImg {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -6,86 +6,85 @@
   z-index: 1;
 }
 
-#mainToestellen{
+#mainToestellen {
   width: 85%;
   padding-bottom: 250px;
 }
 
-#mainToestellen article{
+#mainToestellen article {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 
-#mainToestellen section{
+#mainToestellen section {
   width: 100%;
 }
 
-#mainToestellen .toestelContent{
+#mainToestellen .toestelContent {
   width: 48%;
   display: flex;
   margin-top: 50px;
 }
 
-#mainToestellen .toestelContent:nth-of-type(even){
+#mainToestellen .toestelContent:nth-of-type(even) {
   margin-left: 2%;
 }
 
-#mainToestellen .thumbnail{
+#mainToestellen .thumbnail {
   width: 45%;
 }
 
-#mainToestellen .content{
+#mainToestellen .content {
   width: 55%;
 }
 
-#mainToestellen h1{
+#mainToestellen h1 {
   margin: 0;
 }
 
-@mixin pcXL{
-
-  #mainToestellen  .toestelContent{
+@mixin pcXL {
+  #mainToestellen .toestelContent {
     flex-wrap: wrap;
   }
 
-  #mainToestellen .thumbnail{
+  #mainToestellen .thumbnail {
     width: 100%;
   }
 
-  #mainToestellen .content{
+  #mainToestellen .content {
     width: 100%;
   }
 
-  #mainToestellen .excerpt{
+  #mainToestellen .excerpt {
     min-height: auto;
   }
 }
 
-@mixin tablet{
-  #mainToestellen .toestelContent{
+@mixin tablet {
+  #mainToestellen .toestelContent {
     width: 100%;
   }
 
-  #mainToestellen .thumbnail{
+  #mainToestellen .thumbnail {
     width: 48%;
   }
 
-  #mainToestellen .content{
+  #mainToestellen .content {
     width: 48%;
     margin-left: 4%;
   }
 
-  #mainToestellen .excerpt{
+  #mainToestellen .excerpt {
     min-height: 210px;
   }
 
-  #mainToestellen .title{
+  #mainToestellen .title {
     margin-top: 0%;
     padding-top: 0;
   }
 
-  #mainToestellen .buttons{
+  /*#mainToestellen .buttons{
     position: relative;
 
   }
@@ -99,27 +98,28 @@
 
   #mainToestellen .btn:nth-of-type(even){
     right: 0;
-  }
+  }*/
 }
 
-@mixin phone{
-  #mainToestellen .thumbnail{
+@mixin phone {
+  #mainToestellen .thumbnail {
     width: 100%;
   }
 
-  #mainToestellen .content{
+  #mainToestellen .content {
     width: 100%;
     margin-left: 0%;
   }
 
-  #mainToestellen .excerpt{
+  #mainToestellen .excerpt {
     min-height: auto;
   }
-  #mainToestellen .buttons{
+
+  /*#mainToestellen .buttons{
     position: relative;
   }
 
   #mainToestellen .btn{
     position: relative;
-  }
+  }*/
 }
