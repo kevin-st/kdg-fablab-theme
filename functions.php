@@ -15,11 +15,13 @@
   add_action('register_form', 'kdg_fablab_registration_form');
   add_action('admin_init', 'kdg_fablab_redirect_to_front_end');
   add_action('wp_loaded', 'kdg_fablab_hide_admin_bar_sub');
+  add_action('user_register', 'kdg_fablab_user_register');
 
-  add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
+  add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class', 10, 2);
   add_filter('login_headerurl', 'kdg_fablab_login_headerurl');
   add_filter('login_headertitle', 'kdg_fablab_login_headertitle');
-  add_filter( 'wp_nav_menu_items', 'kdg_fablab_loginout_menu_link', 10, 2 );
+  add_filter('wp_nav_menu_items', 'kdg_fablab_loginout_menu_link', 10, 2);
+  add_filter('registration_errors', 'kdg_fablab_registration_errors', 10, 3);
 
   /**
    * Start a session.
@@ -151,7 +153,62 @@
      * Add custom fields to registration form.
      */
     function kdg_fablab_registration_form() {
+      $first_name = (!empty($_POST['first_name'])) ? sanitize_text_field($_POST['first_name']) : '';
+      $last_name = (!empty($_POST['last_name'])) ? sanitize_text_field($_POST['last_name']) : '';
+      $who_are_you = !empty($_POST['who_are_you']) ? sanitize_text_field($_POST['who_are_you']) : '';
+    ?>
+    <!-- user name -->
+    <p id="user_name_fields">
+      <label id="reg_first_name_label" for="reg_first_name">
+        <?php esc_html_e('Voornaam'); ?>
+        <br />
+        <input type="text" name="first_name" id="reg_first_name" class="input" value="<?php echo esc_attr($first_name); ?>">
+      </label>
 
+      <label id="reg_last_name_label" for="reg_last_name">
+        <?php esc_html_e('Achternaam'); ?>
+        <br />
+        <input type="text" name="last_name" id="reg_last_name" class="input" value="<?php echo esc_attr($last_name); ?>">
+      </label>
+    </p>
+    <!-- end of user name-->
+
+    <!-- who are you -->
+    <p>
+      <label for="reg_who_are_you">
+        <?php esc_html_e('Wie ben je?') ?>
+        <br />
+        <select id="reg_who_are_you" name="who_are_you" class="input">
+          <option value="" <?php if ($who_are_you == "") echo "selected"; ?>>-- Kiezen --</option>
+          <option value="student" <?php if ($who_are_you == "student") echo "selected"; ?>>Student</option>
+          <option value="bedrijf" <?php if ($who_are_you == "bedrijf") echo "selected"; ?>>Bedrijf</option>
+          <option value="particulier" <?php if ($who_are_you == "particulier") echo "selected"; ?>>Particulier</option>
+        </select>
+      </label>
+    </p>
+    <!-- end of who are you -->
+
+    <?php
+    }
+
+    /**
+     * Validation custom fields registration
+     */
+    function kdg_fablab_registration_errors($errors, $sanitized_user_login, $user_email) {
+      if (empty($_POST['who_are_you'])) {
+        $errors->add('who_are_you_error', __('<strong>FOUT</strong>: Vertel me wie je bent'));
+      }
+
+      return $errors;
+    }
+
+    /**
+     * Save custom date when user is being registered
+     */
+    function kdg_fablab_user_register($user_id) {
+      if (!empty($_POST['who_are_you'])) {
+        update_user_meta($user_id, 'who_are_you', sanitize_text_field($_POST['who_are_you']));
+      }
     }
 
     /**

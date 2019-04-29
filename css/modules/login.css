@@ -1,3 +1,11 @@
+body {
+  &.login-action-register {
+    /*background-image: url("img/fablab_reg_form.jpg");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
 .login {
   background-color: #000;
 
@@ -28,6 +36,18 @@
       color: #fff;
     }
 
+    #registerform {
+      #user_name_fields {
+        display: flex;
+      }
+
+      #reg_first_name_label,
+      #reg_last_name_label {
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+
     #loginform,
     #registerform,
     #lostpasswordform {
@@ -42,7 +62,17 @@
       }
 
       #wp-submit {
-        background-color: black;
+        background-color: $main_accent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        color: #000;
+        text-shadow: none;
+        width: 100%;
+
+        &:hover {
+          color: #fff;
+        }
       }
     }
 
