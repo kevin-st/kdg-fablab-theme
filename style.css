@@ -511,6 +511,44 @@ body{
 .input-group .error-message {
       font-size: 12px;
     }
+.login {
+  background-color: rgb(187, 255, 250);
+}
+.login #login h1 a {
+      border: 3px solid red;
+      /*
+        to change logo above the form:
+
+          1. set background to none and default display for a-tag
+            -> site title gets displayed (takes the title from admin)
+
+          2. set different background
+      */
+    }
+.login #login .message {
+      background-color: blue;
+      color: #fff;
+    }
+.login #login #loginform,
+    .login #login #registerform,
+    .login #login #lostpasswordform {
+      border: 2px dashed green;
+    }
+.login #login #loginform p label, .login #login #registerform p label, .login #login #lostpasswordform p label {
+        color: purple;
+      }
+.login #login #loginform input, .login #login #registerform input, .login #login #lostpasswordform input {
+        border: 1px solid orange;
+      }
+.login #login #loginform #wp-submit, .login #login #registerform #wp-submit, .login #login #lostpasswordform #wp-submit {
+        background-color: black;
+      }
+.login #login #nav a {
+      font-weight: bold;
+    }
+.login #login #backtoblog a {
+      font-size: 20px;
+    }
 html body {
   margin: 0px;
   padding: 0;
@@ -803,9 +841,6 @@ iframe {
         width: 100%;
     }
   }
-#reg-tel {
-  margin-bottom: 0 !important;
-}
 #toestelImg {
   width: 100%;
   margin: 0;

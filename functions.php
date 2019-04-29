@@ -11,9 +11,11 @@
   add_action('wp_login','kdg_fablab_end_session');
   add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
   add_action('after_setup_theme', 'kdg_fablab_features');
-  //add_action('pre_get_posts', 'kdg_fablab_cpt_archive_items');
+  add_action('login_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
 
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
+  add_filter('login_headerurl', 'kdg_fablab_login_headerurl');
+  add_filter('login_headertitle', 'kdg_fablab_login_headertitle');
 
   /**
    * Start a session.
@@ -92,10 +94,6 @@
       return $classes;
     }
 
-    /*function kdg_fablab_cpt_archive_items($query) {
-
-    }*/
-
     function kdg_fablab_get_page_banner($args = []) {
       if (!isset($args['img'])) {
         if (get_field('pagina_banner')) {
@@ -111,5 +109,33 @@
       </div>
     <?php
     }
+
+    /**
+     * Change login header url
+     */
+     function kdg_fablab_login_headerurl() {
+        return esc_url(site_url('/'));
+     }
+
+     /**
+      * Change login header title
+      */
+     function kdg_fablab_login_headertitle() {
+       return get_bloginfo('name');
+     }
+
+     add_filter( 'wp_nav_menu_items', 'kdg_fablab_loginout_menu_link', 10, 2 );
+
+     function kdg_fablab_loginout_menu_link($items, $args) {
+       if ($args->theme_location == 'main_navigation') {
+         if (is_user_logged_in()) {
+           $items .= '<li class="menu-item"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
+         } else {
+           $items .= '<li class="menu-item"><a href="'. wp_login_url(get_permalink()) .'">'. __("Log In") .'</a></li>';
+         }
+       }
+
+       return $items;
+     }
 
     // do not close php tags at the end of a file

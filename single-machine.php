@@ -13,7 +13,7 @@
       $title = strtolower(str_replace(" ", "-", get_the_title()));
   ?>
   <div role="breadcrumbs" class="breadcrumbs">
-    <a href="<?php echo site_url('/toestellen/'); ?>">toestellen</a>
+    <a href="<?php echo site_url('/toestellen/'); ?>">Toestellen</a>
     > <?php strtolower(the_title()) ?>
   </div>
 

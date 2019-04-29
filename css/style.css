@@ -26,9 +26,9 @@
 @import "modules/general";
 @import "modules/btn";
 @import "modules/input";
+@import "modules/login";
 @import "modules/frontpage";
 @import "modules/contact";
-@import "modules/registration";
 @import "modules/toestellen";
 @import "modules/nieuws";
 @import "modules/single-machine";
