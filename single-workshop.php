@@ -16,7 +16,7 @@
       $title = strtolower(str_replace(" ", "-", get_the_title()));
   ?>
   <div role="breadcrumbs" class="breadcrumbs">
-    <a href="<?php echo site_url('/nieuws/'); ?>">Laatste nieuws</a>
+    <a href="<?php echo site_url('/workshops/'); ?>">Workshops</a>
     > <?php strtolower(the_title()) ?>
   </div>
   <div class="contentdetail">
