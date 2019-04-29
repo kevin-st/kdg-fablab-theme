@@ -13,6 +13,8 @@
   add_action('after_setup_theme', 'kdg_fablab_features');
   add_action('login_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
   add_action('register_form', 'kdg_fablab_registration_form');
+  add_action('admin_init', 'kdg_fablab_redirect_to_front_end');
+  add_action('wp_loaded', 'kdg_fablab_hide_admin_bar_sub');
 
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
   add_filter('login_headerurl', 'kdg_fablab_login_headerurl');
@@ -149,6 +151,29 @@
      */
     function kdg_fablab_registration_form() {
 
+    }
+
+    /**
+     * Redirect subscribers to the home page when logging in
+     */
+    function kdg_fablab_redirect_to_front_end() {
+      $current_user = wp_get_current_user();
+
+      if (count($current_user->roles) == 1 && $current_user->roles[0] == "subscriber") {
+        wp_redirect(site_url('/'));
+        exit;
+      }
+    }
+
+    /**
+     * Redirect subscribers to the home page when logging in
+     */
+    function kdg_fablab_hide_admin_bar_sub() {
+      $current_user = wp_get_current_user();
+
+      if (count($current_user->roles) == 1 && $current_user->roles[0] == "subscriber") {
+        show_admin_bar(false);
+      }
     }
 
     // do not close php tags at the end of a file
