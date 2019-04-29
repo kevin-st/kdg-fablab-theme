@@ -271,7 +271,9 @@ nav{
     height: 450px;
   }
     .menu li:last-child {
-      font-size: 22px;
+      font-size: 26px;
+      font-family: "KdG";
+
       margin: 0;
     }
       .menu li:last-child:before{

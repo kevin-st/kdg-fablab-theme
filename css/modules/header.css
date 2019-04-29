@@ -178,7 +178,9 @@ nav{
     flex-wrap: wrap;
     height: 450px;
     li:last-child {
-      font-size: 22px;
+      font-size: 26px;
+      font-family: "KdG";
+
       margin: 0;
       &:before{
         font-size: 26px;
