@@ -29,9 +29,9 @@ class Menu {
     var img = document.querySelector("#menuimg");
     var img2 = document.querySelector("#menuimg2");
 
-
-    navknop.addEventListener("click", menuKlik);
-
+    if (navknop) {
+      navknop.addEventListener("click", menuKlik);
+    }
 
     function menuKlik(evt) {
       if (menureact.classList) {
@@ -44,14 +44,11 @@ class Menu {
         var classes = menureact.className.split(" ");
         var i = classes.indexOf("zichtbaarheid");
 
-        if (i >= 0)
-          classes.splice(i, 1);
-        else
-          classes.push("zichtbaarheid");
-          menureact.className = classes.join(" ");
+        if (i >= 0) classes.splice(i, 1);
+        else classes.push("zichtbaarheid");
+        menureact.className = classes.join(" ");
       }
     }
-
   }
 }
 

@@ -137,7 +137,8 @@
     function kdg_fablab_loginout_menu_link($items, $args) {
      if ($args->theme_location == 'main_navigation') {
       if (is_user_logged_in()) {
-        $items .= '<li class="menu-item"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
+        // change url to dashboard
+        $items .= '<li class="menu-item"><a href="'. wp_logout_url() .'">Mijn profiel</a></li>';
       } else {
         $items .= '<li class="menu-item"><a href="'. wp_login_url(get_permalink()) .'">'. __("Log In") .'</a></li>';
       }

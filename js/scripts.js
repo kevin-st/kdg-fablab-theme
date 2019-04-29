@@ -17,13 +17,24 @@ if (contact_form) {
   });
 }
 
-/* Login nav */
-var loginNav = document.querySelector(".menu").lastElementChild;
+/* LOGIN ICON NAVIGATION */
+let login_menu = document.querySelector(".menu");
 
+if (login_menu) {
+  let login_menu_item = login_menu.lastElementChild;
+  let login_menu_item_content = login_menu_item.querySelector("a").innerHTML;
 
-if(window.innerWidth > 960){
-  loginNav.querySelector("a").innerHTML="i";
-} else {
-  loginNav.querySelector("a").innerHTML="Login";
-  
+  function change_login_icon() {
+    if (window.innerWidth > 960) {
+      login_menu_item.querySelector("a").innerHTML = "i";
+    } else {
+      login_menu_item.querySelector("a").innerHTML = login_menu_item_content;
+    }
+  }
+
+  window.addEventListener("resize", () => {
+    change_login_icon();
+  });
+
+  change_login_icon();
 }
