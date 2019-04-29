@@ -12,6 +12,7 @@
   add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
   add_action('after_setup_theme', 'kdg_fablab_features');
   add_action('login_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
+  add_action('register_form', 'kdg_fablab_registration_form');
 
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
   add_filter('login_headerurl', 'kdg_fablab_login_headerurl');
@@ -78,10 +79,10 @@
       */
     }
 
+    /**
+     * Fix navigation menu hightlighting
+     */
     function kdg_fablab_nav_class($classes, $item, $post = null){
-      /*if ($post !== null)
-        var_dump($post);*/
-
       $current_post_type = get_post_type();
 
       if ((is_post_type_archive('machine') || $current_post_type == 'machine') && strtolower($item->title) == "toestellen"){
@@ -95,6 +96,9 @@
       return $classes;
     }
 
+    /**
+     * Get page banner
+     */
     function kdg_fablab_get_page_banner($args = []) {
       if (!isset($args['img'])) {
         if (get_field('pagina_banner')) {
@@ -138,6 +142,13 @@
      }
 
      return $items;
+    }
+
+    /**
+     * Add custom fields to registration form.
+     */
+    function kdg_fablab_registration_form() {
+
     }
 
     // do not close php tags at the end of a file
