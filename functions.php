@@ -16,6 +16,7 @@
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class' , 10 , 2);
   add_filter('login_headerurl', 'kdg_fablab_login_headerurl');
   add_filter('login_headertitle', 'kdg_fablab_login_headertitle');
+  add_filter( 'wp_nav_menu_items', 'kdg_fablab_loginout_menu_link', 10, 2 );
 
   /**
    * Start a session.
@@ -113,29 +114,30 @@
     /**
      * Change login header url
      */
-     function kdg_fablab_login_headerurl() {
-        return esc_url(site_url('/'));
+    function kdg_fablab_login_headerurl() {
+      return esc_url(site_url('/'));
+    }
+
+    /**
+     * Change login header title
+     */
+    function kdg_fablab_login_headertitle() {
+      return get_bloginfo('name');
+    }
+
+    /**
+     * Add login/out icon programmaticly to nav menu
+     */
+    function kdg_fablab_loginout_menu_link($items, $args) {
+     if ($args->theme_location == 'main_navigation') {
+      if (is_user_logged_in()) {
+        $items .= '<li class="menu-item"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
+      } else {
+        $items .= '<li class="menu-item"><a href="'. wp_login_url(get_permalink()) .'">'. __("Log In") .'</a></li>';
+      }
      }
 
-     /**
-      * Change login header title
-      */
-     function kdg_fablab_login_headertitle() {
-       return get_bloginfo('name');
-     }
-
-     add_filter( 'wp_nav_menu_items', 'kdg_fablab_loginout_menu_link', 10, 2 );
-
-     function kdg_fablab_loginout_menu_link($items, $args) {
-       if ($args->theme_location == 'main_navigation') {
-         if (is_user_logged_in()) {
-           $items .= '<li class="menu-item"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
-         } else {
-           $items .= '<li class="menu-item"><a href="'. wp_login_url(get_permalink()) .'">'. __("Log In") .'</a></li>';
-         }
-       }
-
-       return $items;
-     }
+     return $items;
+    }
 
     // do not close php tags at the end of a file
