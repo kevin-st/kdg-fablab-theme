@@ -514,8 +514,18 @@ body{
       font-size: 12px;
     }
 .login {
-  background-color: rgb(187, 255, 250);
+  background-color: #000;
 }
+.login #login {
+    background-color: #fff;
+    box-sizing: border-box;
+    float: right;
+    height: 100%;
+    margin: 0;
+    min-height: 100%;
+    padding: 8%;
+    width: 35%;
+  }
 .login #login h1 a {
       border: 3px solid red;
       /*
