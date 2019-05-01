@@ -44,7 +44,7 @@
     <p><?php the_content(); ?></p>
   </div>
   <div role="button" class="detailBtn"> <!-- only display when user is logged in? -->
-    <a  class="btn btn-dark" href="<?php echo esc_url(add_query_arg("workshop", $title, site_url('/reserveren'))); ?>">Schrijf nu in</a>
+    <a  class="btn btn-dark" href="<?php echo site_url('/reserveren')/*esc_url(add_query_arg("workshop", $title, site_url('/reserveren/')))*/; ?>">Schrijf nu in</a>
   </div>
 </div>
 

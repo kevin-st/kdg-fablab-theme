@@ -37,7 +37,15 @@
     </div>
     <div role="button" class="detailBtn">
       <!-- url fix redirect when not logged in -->
-      <a class="btn btn-dark " href="<?php echo is_user_logged_in() ? esc_url(add_query_arg("machine", $title, site_url('/reserveren'))) : esc_url(add_query_arg("redirect_to", site_url("/toestellen"), wp_login_url())); ?>">Reserveer dit toestel!</a> <!-- Moet nog nagekeken worden, reservatie plugin -->
+      <a class="btn btn-dark " href="<?php
+        $redirect_to = esc_url(add_query_arg("id", $title, site_url('/reserveren/')));
+        if (is_user_logged_in()) {
+          // redirect to reservation page
+          echo $redirect_to;
+        } else {
+          echo esc_url(add_query_arg("redirect_to", $redirect_to, wp_login_url()));
+        }
+      ?>">Reserveer dit toestel!</a> <!-- Moet nog nagekeken worden, reservatie plugin -->
       <a class="btn btn-dark " href="<?php echo get_post_type_archive_link("machine"); ?>">Terug naar toestellen</a>
     </div>
     </div>

@@ -24,6 +24,8 @@
   add_filter('login_headertitle', 'kdg_fablab_login_headertitle');
   add_filter('wp_nav_menu_items', 'kdg_fablab_loginout_menu_link', 10, 2);
   add_filter('registration_errors', 'kdg_fablab_registration_errors', 10, 3);
+  add_filter("query_vars", "kdg_fablab_query_vars");
+  add_filter("generate_rewrite_rules", "kdg_fablab_custom_rewrite_rules");
 
   /**
    * Start a session.
@@ -85,6 +87,15 @@
     }
 
     /**
+     * Recognize custom query vars
+     */
+    function kdg_fablab_query_vars($vars) {
+      $vars[] = "id";
+
+      return $vars;
+    }
+
+    /**
      * Fix navigation menu hightlighting
      */
     function kdg_fablab_nav_class($classes, $item, $post = null){
@@ -143,7 +154,7 @@
         // change url to dashboard
         $items .= '<li class="menu-item"><a href="'. wp_logout_url() .'">Mijn profiel</a></li>';
       } else {
-        $items .= '<li class="menu-item"><a href="'. wp_login_url(get_permalink()) .'">'. __("Log In") .'</a></li>';
+        $items .= '<li class="menu-item"><a href="'. wp_login_url(get_permalink()) .'">'. __("Log In") .'</a></li>'; /* needs some fixing -> when on toestellen it redirects to the last added machine */
       }
      }
 
@@ -267,21 +278,39 @@
     /**
      * Show custom profile fields when admin is editing or looking up a profile
      */
-     function kdg_fablab_show_custom_profile_fields($user) {
-       ?>
-       <h3><?php esc_html_e("Extra informatie"); ?></h3>
+    function kdg_fablab_show_custom_profile_fields($user) {
+     ?>
+     <h3><?php esc_html_e("Extra informatie"); ?></h3>
+     <table class="form-table">
+       <tr>
+         <th>
+           <label for="who_are_you"><?php esc_html_e("Wie ben je?"); ?></label>
+           <td>
+            <?php echo esc_html(get_the_author_meta("who_are_you", $user->ID)); ?>
+          </td>
+         </th>
+      </tr>
+     </table>
+     <?php
+    }
 
-       <table class="form-table">
-         <tr>
-           <th>
-             <label for="who_are_you"><?php esc_html_e("Wie ben je?"); ?></label>
-             <td>
-              <?php echo esc_html(get_the_author_meta("who_are_you", $user->ID)); ?>
-             </td>
-           </th>
-         </tr>
-       </table>
-       <?php
-     }
+    /**
+     * Generate custom rewrite rules
+     */
+    function kdg_fablab_custom_rewrite_rules($wp_rewrite) {
+      $wp_rewrite->rules = array_merge(
+        ["reserveren\/([a-z]+-[a-z]+)/?$" => 'index.php?id=$matches[1]'],
+        $wp_rewrite->rules
+      );
+    }
+
+    add_action("template_redirect", function() {
+      $machine_id = sanitize_text_field(get_query_var('id'));
+
+      if ($machine_id !== "") {
+        include(get_template_directory() . "/templates/template-reserveren.php");
+        die();
+      }
+    });
 
     // do not close php tags at the end of a file
