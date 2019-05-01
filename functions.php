@@ -7,15 +7,17 @@
 
   // define hooks -> overzicht hooks: https://codex.wordpress.org/Plugin_API/Action_Reference
   add_action('init', 'kdg_fablab_start_session', 1);
-  add_action('wp_logout','kdg_fablab_end_session');
-  add_action('wp_login','kdg_fablab_end_session');
-  add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
-  add_action('after_setup_theme', 'kdg_fablab_features');
-  add_action('login_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
-  add_action('register_form', 'kdg_fablab_registration_form');
   add_action('admin_init', 'kdg_fablab_redirect_to_front_end');
   add_action('wp_loaded', 'kdg_fablab_hide_admin_bar_sub');
+  add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
+  add_action('login_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
+  add_action('after_setup_theme', 'kdg_fablab_features');
+  add_action('wp_login','kdg_fablab_end_session');
+  add_action('wp_logout','kdg_fablab_end_session');
+  add_action('register_form', 'kdg_fablab_registration_form');
   add_action('user_register', 'kdg_fablab_user_register');
+  add_action("show_user_profile", "kdg_fablab_show_custom_profile_fields");
+  add_action("edit_user_profile", "kdg_fablab_show_custom_profile_fields");
 
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class', 10, 2);
   add_filter('login_headerurl', 'kdg_fablab_login_headerurl');
@@ -55,7 +57,6 @@
      wp_enqueue_style('kdg_fablab_main_styles', get_stylesheet_uri(), NULL, microtime());
 
      wp_enqueue_script('kdg_fablab_js', get_theme_file_uri('js/scripts-bundled.js'), NULL, microtime()/*'1.0'*/, true);
-
    }
 
    /**
@@ -262,5 +263,25 @@
         show_admin_bar(false);
       }
     }
+
+    /**
+     * Show custom profile fields when admin is editing or looking up a profile
+     */
+     function kdg_fablab_show_custom_profile_fields($user) {
+       ?>
+       <h3><?php esc_html_e("Extra informatie"); ?></h3>
+
+       <table class="form-table">
+         <tr>
+           <th>
+             <label for="who_are_you"><?php esc_html_e("Wie ben je?"); ?></label>
+             <td>
+              <?php echo esc_html(get_the_author_meta("who_are_you", $user->ID)); ?>
+             </td>
+           </th>
+         </tr>
+       </table>
+       <?php
+     }
 
     // do not close php tags at the end of a file
