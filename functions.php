@@ -195,6 +195,14 @@
      * Validation custom fields registration
      */
     function kdg_fablab_registration_errors($errors, $sanitized_user_login, $user_email) {
+      if (empty($_POST['first_name'])) {
+        $errors->add('first_name_error', __('<strong>FOUT</strong>: Vul je voornaam in.'));
+      }
+
+      if (empty($_POST['last_name'])) {
+        $errors->add('last_name_error', __('<strong>FOUT</strong>: Vul je achternaam in.'));
+      }
+
       if (empty($_POST['who_are_you'])) {
         $errors->add('who_are_you_error', __('<strong>FOUT</strong>: Vertel me wie je bent'));
       }
@@ -206,8 +214,20 @@
      * Save custom date when user is being registered
      */
     function kdg_fablab_user_register($user_id) {
+      if (!empty($_POST['first_name'])) {
+        update_user_meta($user_id, 'first_name', sanitize_text_field($_POST['first_name']));
+      }
+
+      if (!empty($_POST['last_name'])) {
+        update_user_meta($user_id, 'last_name', sanitize_text_field($_POST['last_name']));
+      }
+
       if (!empty($_POST['who_are_you'])) {
         update_user_meta($user_id, 'who_are_you', sanitize_text_field($_POST['who_are_you']));
+
+        if ($_POST['who_are_you'] !== "student") {
+          add_user_meta($user_id, "VAT-number", "");
+        }
       }
     }
 
@@ -219,6 +239,15 @@
 
       if (count($current_user->roles) == 1 && $current_user->roles[0] == "subscriber") {
         wp_redirect(site_url('/'));
+
+        // if the user hasn't filled in VAT/address/tel.num.
+          // then go to additional form
+        // else, the user has filled in the additional information
+          // redirect to profile page
+
+        /*echo "<pre>";
+        var_dump(get_user_meta(get_current_user_id()));
+        echo "</pre>";*/
         exit;
       }
     }
