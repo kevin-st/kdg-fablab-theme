@@ -291,10 +291,57 @@
          <th>
            <label for="who_are_you"><?php esc_html_e("Wie ben je?"); ?></label>
            <td>
-            <?php echo esc_html(get_the_author_meta("who_are_you", $user->ID)); ?>
-          </td>
+             <?php echo esc_html(get_the_author_meta("who_are_you", $user->ID)); ?>
+           </td>
          </th>
-      </tr>
+       </tr>
+
+       <tr>
+         <th>
+           <label for="address"><?php esc_html_e("Adres"); ?></label>
+           <td>
+             <?php echo esc_html(get_the_author_meta("address", $user->ID)); ?>
+           </td>
+         </th>
+       </tr>
+
+       <tr>
+         <th>
+           <label for="tel-number"><?php esc_html_e("Telefoonnummer"); ?></label>
+           <td>
+             <?php echo esc_html(get_the_author_meta("tel-number", $user->ID)); ?>
+           </td>
+         </th>
+       </tr>
+
+       <tr>
+         <th>
+           <label for="postal-code"><?php esc_html_e("Postcode"); ?></label>
+           <td>
+             <?php echo esc_html(get_the_author_meta("postal-code", $user->ID)); ?>
+           </td>
+         </th>
+       </tr>
+
+       <tr>
+         <th>
+           <label for="city"><?php esc_html_e("Gemeente"); ?></label>
+           <td>
+             <?php echo esc_html(get_the_author_meta("city", $user->ID)); ?>
+           </td>
+         </th>
+       </tr>
+
+       <?php if(metadata_exists("user", $user->ID, "VAT-number")) { ?>
+       <tr>
+         <th>
+           <label for="VAT-number"><?php esc_html_e("BTW-nummer"); ?></label>
+           <td>
+             <?php echo esc_html(get_the_author_meta("VAT-number", $user->ID)); ?>
+           </td>
+         </th>
+       </tr>
+      <?php } ?>
      </table>
      <?php
     }
