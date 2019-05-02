@@ -18,7 +18,10 @@
   add_action('user_register', 'kdg_fablab_user_register');
   add_action("show_user_profile", "kdg_fablab_show_custom_profile_fields");
   add_action("edit_user_profile", "kdg_fablab_show_custom_profile_fields");
+  add_action('template_redirect', 'kdg_fablab_author_page_redirect');
 
+  add_filter('manage_users_columns', 'kdg_fablab_modify_user_table');
+  add_filter('manage_users_custom_column', 'kdg_fablab_modify_user_table_row', 10, 3);
   add_filter('nav_menu_css_class' , 'kdg_fablab_nav_class', 10, 2);
   add_filter('login_headerurl', 'kdg_fablab_login_headerurl');
   add_filter('login_headertitle', 'kdg_fablab_login_headertitle');
@@ -238,13 +241,22 @@
         update_user_meta($user_id, 'who_are_you', sanitize_text_field($_POST['who_are_you']));
 
         if ($_POST['who_are_you'] !== "student") {
-          add_user_meta($user_id, "VAT-number", "");
+          add_user_meta($user_id, "VAT_number", "");
         }
 
         add_user_meta($user_id, "address", "");
-        add_user_meta($user_id, "tel-number", "");
-        add_user_meta($user_id, "postal-code", "");
+        add_user_meta($user_id, "tel_number", "");
+        add_user_meta($user_id, "postal_code", "");
         add_user_meta($user_id, "city", "");
+      }
+    }
+
+    /**
+     * Redirect to the homepage when someone tries to access the page of an author.
+     */
+    function kdg_fablab_author_page_redirect() {
+      if (is_author()) {
+        wp_redirect(home_url());
       }
     }
 
@@ -255,16 +267,16 @@
       $current_user = wp_get_current_user();
 
       if (count($current_user->roles) == 1 && $current_user->roles[0] == "subscriber") {
-        wp_redirect(site_url('/'));
+        //wp_redirect(site_url('/'));
 
         // if the user hasn't filled in VAT/address/tel.num.
           // then go to additional form
         // else, the user has filled in the additional information
           // redirect to profile page
 
-        /*echo "<pre>";
+        echo "<pre>";
         var_dump(get_user_meta(get_current_user_id()));
-        echo "</pre>";*/
+        echo "</pre>";
         exit;
       }
     }
@@ -307,18 +319,18 @@
 
        <tr>
          <th>
-           <label for="tel-number"><?php esc_html_e("Telefoonnummer"); ?></label>
+           <label for="tel_number"><?php esc_html_e("Telefoonnummer"); ?></label>
            <td>
-             <?php echo esc_html(get_the_author_meta("tel-number", $user->ID)); ?>
+             <?php echo esc_html(get_the_author_meta("tel_number", $user->ID)); ?>
            </td>
          </th>
        </tr>
 
        <tr>
          <th>
-           <label for="postal-code"><?php esc_html_e("Postcode"); ?></label>
+           <label for="postal_code"><?php esc_html_e("Postcode"); ?></label>
            <td>
-             <?php echo esc_html(get_the_author_meta("postal-code", $user->ID)); ?>
+             <?php echo esc_html(get_the_author_meta("postal_code", $user->ID)); ?>
            </td>
          </th>
        </tr>
@@ -335,9 +347,9 @@
        <?php if(metadata_exists("user", $user->ID, "VAT-number")) { ?>
        <tr>
          <th>
-           <label for="VAT-number"><?php esc_html_e("BTW-nummer"); ?></label>
+           <label for="VAT_number"><?php esc_html_e("BTW-nummer"); ?></label>
            <td>
-             <?php echo esc_html(get_the_author_meta("VAT-number", $user->ID)); ?>
+             <?php echo esc_html(get_the_author_meta("VAT_number", $user->ID)); ?>
            </td>
          </th>
        </tr>
@@ -364,5 +376,54 @@
         die();
       }
     });
+
+
+    function kdg_fablab_modify_user_table( $column ) {
+      $column['who_are_you'] = "Wie ben je?";
+      $column['address'] = 'Adres';
+      $column['postal_code'] = 'Postcode';
+      $column['city'] = 'Gemeente';
+      $column['tel_number'] = 'Telefoonnummer';
+      $column['VAT_number'] = 'BTW-nummer';
+
+      return $column;
+    }
+
+
+    function kdg_fablab_modify_user_table_row( $val, $column_name, $user_id ) {
+      global $wpdb;
+
+      if ($column_name == 'who_are_you') {
+        $who_are_you = $wpdb->get_var($wpdb->prepare("SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'who_are_you' AND user_id = %s", $user_id));
+        return $who_are_you;
+      }
+
+      if ($column_name == 'address') {
+        $address = $wpdb->get_var($wpdb->prepare( "SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'address' AND user_id = %s", $user_id));
+        return $address;
+      }
+
+      if ($column_name == 'postal_code') {
+        $postal_code = $wpdb->get_var($wpdb->prepare( "SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'postal_code' AND user_id = %s", $user_id));
+        return $postal_code;
+      }
+
+      if ($column_name == 'city') {
+        $city = $wpdb->get_var($wpdb->prepare( "SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'city' AND user_id = %s", $user_id));
+        return $city;
+      }
+
+      if ($column_name == 'tel_number') {
+        $tel_number = $wpdb->get_var($wpdb->prepare( "SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'tel_number' AND user_id = %s", $user_id));
+        return $tel_number;
+      }
+
+      if ($column_name == 'VAT_number') {
+        $VAT_number = $wpdb->get_var($wpdb->prepare( "SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'VAT_number' AND user_id = %s", $user_id));
+        return $VAT_number;
+      }
+
+      return $val;
+    }
 
     // do not close php tags at the end of a file
