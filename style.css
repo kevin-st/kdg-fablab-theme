@@ -518,21 +518,28 @@ body.login-action-register {
     background-repeat: no-repeat;
     background-size: cover;
   }
-.login {
-  background-color: #000;
+.login, .registeren {
+    background-color: #000;
+    background-image: url("img/icon-man.png");
+    background-repeat: no-repeat;
+    background-size: 350px 600px;
+    background-position: center bottom;
 }
-.login #login {
-    background-color: #fff;
-    box-sizing: border-box;
-    float: right;
-    height: 100%;
-    margin: 0;
-    min-height: 100%;
-    padding: 8%;
-    width: 35%;
+.login #nav, .login #backtoblog, .registeren #nav, .registeren #backtoblog {
+        padding: 0px;
+    }
+.login #login, .registeren #login {
+        background-color: #fff;
+        float: right;
+        height: 100%;
+        margin: 0;
+        min-height: 100%;
+        padding: 8%;
+        width: 15%;
   }
-.login #login h1 a {
-      border: 3px solid red;
+.login #login h1 a, .registeren #login h1 a {
+        background: none;
+        background-image: url("img/lorenz.png");
       /*
         to change logo above the form:
 
@@ -542,47 +549,78 @@ body.login-action-register {
           2. set different background
       */
     }
-.login #login .message {
-      background-color: blue;
-      color: #fff;
+.login #login .message, .registeren #login .message {
+        display: none;
     }
-.login #login #registerform #user_name_fields {
-        display: flex;
+.login #login #registerform #user_name_fields, .registeren #login #registerform #user_name_fields {
+            display: flex;
       }
 .login #login #registerform #reg_first_name_label,
-      .login #login #registerform #reg_last_name_label {
-        display: inline-block;
-        margin-right: 5px;
+      .login #login #registerform #reg_last_name_label,
+      .registeren #login #registerform #reg_first_name_label,
+      .registeren #login #registerform #reg_last_name_label {
+          display: inline-block;
+          margin-right: 5px;
       }
 .login #login #loginform,
     .login #login #registerform,
-    .login #login #lostpasswordform {
-      border: 2px dashed green;
+    .login #login #lostpasswordform,
+    .registeren #login #loginform,
+    .registeren #login #registerform,
+    .registeren #login #lostpasswordform {
+        
+    padding: 0;
+    box-shadow: none;
     }
-.login #login #loginform p label, .login #login #registerform p label, .login #login #lostpasswordform p label {
-        color: purple;
+.login #login #loginform p label, .login #login #registerform p label, .login #login #lostpasswordform p label, .registeren #login #loginform p label, .registeren #login #registerform p label, .registeren #login #lostpasswordform p label {
+        color: black;
+    }
+.login #login #loginform input, .login #login #registerform input, .login #login #lostpasswordform input, .registeren #login #loginform input, .registeren #login #registerform input, .registeren #login #lostpasswordform input {
+        border: 1px solid;
+        padding: 2px;
+        box-shadow: 1px 1px;
       }
-.login #login #loginform input, .login #login #registerform input, .login #login #lostpasswordform input {
-        border: 1px solid orange;
-      }
-.login #login #loginform #wp-submit, .login #login #registerform #wp-submit, .login #login #lostpasswordform #wp-submit {
+.login #login #loginform #wp-submit, .login #login #registerform #wp-submit, .login #login #lostpasswordform #wp-submit, .registeren #login #loginform #wp-submit, .registeren #login #registerform #wp-submit, .registeren #login #lostpasswordform #wp-submit {
         background-color: #34bedc;
         border: none;
         border-radius: 0;
         box-shadow: none;
-        color: #000;
+        color: #ffffff;
         text-shadow: none;
         width: 100%;
+        margin-top: 15px;
+        font-size: 20px;
       }
-.login #login #loginform #wp-submit:hover, .login #login #registerform #wp-submit:hover, .login #login #lostpasswordform #wp-submit:hover {
-          color: #fff;
+.login #login #loginform #wp-submit:hover, .login #login #registerform #wp-submit:hover, .login #login #lostpasswordform #wp-submit:hover, .registeren #login #loginform #wp-submit:hover, .registeren #login #registerform #wp-submit:hover, .registeren #login #lostpasswordform #wp-submit:hover {
+            color: #000000;
         }
-.login #login #nav a {
-      font-weight: bold;
+.login #login #nav a, .registeren #login #nav a {
+        font-weight: bold;
     }
-.login #login #backtoblog a {
-      font-size: 20px;
+.login #login #backtoblog a, .registeren #login #backtoblog a {
+        font-size: 20px;
     }
+@media (max-width: 960px) {
+    .login {
+        background-size: 350px 600px;
+        background-position: left bottom;
+    } 
+        
+        .login #login {
+            width: 30%;
+        }
+  }
+@media (max-width: 700px) {
+    .login {
+        background: none;
+        padding-left: 5px;
+    }
+        
+        .login #login {
+            width: 90%;
+            margin-left: 15px;
+        }
+  }
 html body {
   margin: 0px;
   padding: 0;

@@ -1,26 +1,34 @@
 body {
-  &.login-action-register {
+    &.login-action-register {
     /*background-image: url("img/fablab_reg_form.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
 
-.login {
-  background-color: #000;
+.login, .registeren {
+    background-color: #000;
+    background-image: url("img/icon-man.png");
+    background-repeat: no-repeat;
+    background-size: 350px 600px;
+    background-position: center bottom; 
+    
+    #nav, #backtoblog {
+        padding: 0px;
+    }
 
-  #login {
-    background-color: #fff;
-    box-sizing: border-box;
-    float: right;
-    height: 100%;
-    margin: 0;
-    min-height: 100%;
-    padding: 8%;
-    width: 35%;
+    #login {
+        background-color: #fff;
+        float: right;
+        height: 100%;
+        margin: 0;
+        min-height: 100%;
+        padding: 8%;
+        width: 15%;
 
     h1 a {
-      border: 3px solid red;
+        background: none;
+        background-image: url("img/lorenz.png");
       /*
         to change logo above the form:
 
@@ -32,56 +40,85 @@ body {
     }
 
     .message {
-      background-color: blue;
-      color: #fff;
+        display: none;
     }
 
     #registerform {
-      #user_name_fields {
-        display: flex;
+        
+        #user_name_fields {
+            display: flex;
       }
 
       #reg_first_name_label,
       #reg_last_name_label {
-        display: inline-block;
-        margin-right: 5px;
+          display: inline-block;
+          margin-right: 5px;
       }
     }
 
     #loginform,
     #registerform,
     #lostpasswordform {
-      border: 2px dashed green;
+        
+    padding: 0;
+    box-shadow: none;
+        
+    p label {
+        color: black;
+    }
 
-      p label {
-        color: purple;
+    input {
+        border: 1px solid;
+        padding: 2px;
+        box-shadow: 1px 1px;
       }
 
-      input {
-        border: 1px solid orange;
-      }
-
-      #wp-submit {
+    #wp-submit {
         background-color: $main_accent;
         border: none;
         border-radius: 0;
         box-shadow: none;
-        color: #000;
+        color: #ffffff;
         text-shadow: none;
         width: 100%;
+        margin-top: 15px;
+        font-size: 20px;
 
         &:hover {
-          color: #fff;
+            color: #000000;
         }
       }
     }
 
     #nav a {
-      font-weight: bold;
+        font-weight: bold;
     }
 
     #backtoblog a {
-      font-size: 20px;
+        font-size: 20px;
     }
   }
+}
+
+@mixin tablet {
+    .login {
+        background-size: 350px 600px;
+        background-position: left bottom; 
+        
+        #login {
+            width: 30%;
+        }
+    }
+}
+
+@mixin phone {
+    .login {
+        background: none;
+        padding-left: 5px;
+        
+        #login {
+            width: 90%;
+            margin-left: 15px;
+        }
+    }
 }
