@@ -240,6 +240,11 @@
         if ($_POST['who_are_you'] !== "student") {
           add_user_meta($user_id, "VAT-number", "");
         }
+
+        add_user_meta($user_id, "address", "");
+        add_user_meta($user_id, "tel-number", "");
+        add_user_meta($user_id, "postal-code", "");
+        add_user_meta($user_id, "city", "");
       }
     }
 
