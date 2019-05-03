@@ -9,7 +9,7 @@ body {
 footer{
   width: 100%;
   min-height: 50px;
-  background-color: black;
+  background-color: $zwartKdg;
   position: absolute;
   left: 0 ; right: 0; bottom: 0;
   margin: 0;
@@ -19,24 +19,27 @@ footer{
   color: white;
 }
 footer>#adres{
-  margin: 50px 150px;
-  line-height: 10px;
+  margin: 20px 150px;
+  line-height: 5px;
 }
 
 footer>#adres>h1{
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 footer>#adres>p{
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 footer>#socials{
-  margin: 50px 150px;
+  margin: 20px 150px;
+  height: 100;
+  display: flex;
+  align-items: flex-end;
 }
 
 footer>#socials>a>img{
-  height: 40px;
+  height: 30px;
   padding: 10px;
 }
 
