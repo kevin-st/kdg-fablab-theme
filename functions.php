@@ -248,6 +248,7 @@
         add_user_meta($user_id, "tel_number", "");
         add_user_meta($user_id, "postal_code", "");
         add_user_meta($user_id, "city", "");
+        add_user_meta($user_id, "is_initialized", 0);
       }
     }
 
@@ -267,6 +268,14 @@
       $current_user = wp_get_current_user();
 
       if (count($current_user->roles) == 1 && $current_user->roles[0] == "subscriber") {
+        $is_user_initialized = get_user_meta(get_current_user_id(), "is_initialized", true);
+
+        if ($is_user_initialized) {
+          wp_redirect(home_url());
+        } else {
+          wp_redirect(site_url('/registratie'));
+        }
+
         //wp_redirect(site_url('/'));
 
         // if the user hasn't filled in VAT/address/tel.num.
@@ -274,9 +283,9 @@
         // else, the user has filled in the additional information
           // redirect to profile page
 
-        echo "<pre>";
+        /*echo "<pre>";
         var_dump(get_user_meta(get_current_user_id()));
-        echo "</pre>";
+        echo "</pre>";*/
         exit;
       }
     }
