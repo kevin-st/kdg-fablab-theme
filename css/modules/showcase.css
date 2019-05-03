@@ -3,10 +3,22 @@
 }
 
 
-.crt-grid-post-content{
-    padding: 15px;
-    border: 15px white;
+.crt-widget-grid.crt-grid-col2  .crt-grid-post{
+    padding: 0px 20px 0px 0px;
+    /*border: 15px white;*/
 }
+
+.crt-widget-grid.crt-grid-col3 .crt-grid-post{
+      padding: 0px 20px 0px 0px;
+    /*border: 15px white;*/
+}
+
+.crt-widget-grid.crt-grid-col4 .crt-grid-post{
+      padding: 0px 20px 0px 0px;
+    /*border: 15px white;*/
+}
+
+
 
 
 
