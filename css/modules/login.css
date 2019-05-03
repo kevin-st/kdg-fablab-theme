@@ -16,12 +16,8 @@ body {
     background-repeat: no-repeat;
     background-size: 350px 600px;
     background-position: center bottom;
-<<<<<<< HEAD
     overflow: hidden;
     
-=======
-
->>>>>>> c0d1e6ed820b5dcf6ab0879ee20d658036701f07
     #nav, #backtoblog {
         padding: 0px;
     }
@@ -39,14 +35,6 @@ body {
         background-image: url("img/logozwart.png");
         background-repeat: no-repeat;
         background-size: 80px 80px;
-      /*
-        to change logo above the form:
-
-          1. set background to none and default display for a-tag
-            -> site title gets displayed (takes the title from admin)
-
-          2. set different background
-      */
     }
 
     .message {
@@ -122,14 +110,9 @@ body.login-action-register {
 
 @mixin tablet {
     .login {
-<<<<<<< HEAD
-        background: none;
-        
-=======
         background-size: 350px 600px;
         background-position: left bottom;
 
->>>>>>> c0d1e6ed820b5dcf6ab0879ee20d658036701f07
         #login {
             width: 90%;
         }

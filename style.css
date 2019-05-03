@@ -519,6 +519,9 @@ body{
 .input-group .error-message {
       font-size: 12px;
     }
+html, body{
+  height: auto;
+}
 body.login-action-register {
     /*background-image: url("img/fablab_reg_form.jpg");*/
     background-repeat: no-repeat;
@@ -548,14 +551,6 @@ body.login-action-register {
         background-image: url("img/logozwart.png");
         background-repeat: no-repeat;
         background-size: 80px 80px;
-      /*
-        to change logo above the form:
-
-          1. set background to none and default display for a-tag
-            -> site title gets displayed (takes the title from admin)
-
-          2. set different background
-      */
     }
 .login #login .message {
         border: 2px solid #34bedc;
@@ -574,7 +569,7 @@ body.login-action-register {
 .login #login #loginform,
     .login #login #registerform,
     .login #login #lostpasswordform {
-        
+
     padding: 0;
     box-shadow: none;
     }
@@ -613,9 +608,10 @@ body.login-action-register {
 }
 @media (max-width: 960px) {
     .login {
-        background: none;
+        background-size: 350px 600px;
+        background-position: left bottom;
     }
-        
+
         .login #login {
             width: 90%;
         }
@@ -625,7 +621,7 @@ body.login-action-register {
         background: none;
         padding-left: 5px;
     }
-        
+
         .login #login {
             width: 90%;
             margin-left: 15px;
