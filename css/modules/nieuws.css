@@ -23,3 +23,9 @@
   width: 50% ;
   margin-left: 2%
 }
+
+@mixin pcXL{
+  .newsContent>.content{
+    margin-left: 0%
+  }
+}

@@ -9,19 +9,19 @@ body {
 }
 
 .login {
-    background-color: #1d1d1b;
+    background-color: $zwartKdg;
     background-image: url("img/icon-man.png");
     background-repeat: no-repeat;
     background-size: 22.7% 80.5%;
     background-position: center bottom;
     overflow: hidden;
-    
+
     #nav, #backtoblog {
         padding: 0px;
     }
 
     #login {
-        background-color: #fff;
+        background-color: $wit;
         float: right;
         margin: 0;
         min-height: 100%;
@@ -36,10 +36,10 @@ body {
     }
 
     .message {
-        border: 2px solid #34bedc;
-        color: #34bedc;
+        border: 2px solid $main_accent;
+        color: $main_accent;
     }
-        
+
     #login_error {
         border: 2px solid darkred;
         color: darkred;
@@ -55,7 +55,7 @@ body {
         #reg_first_name_label {
             width: 47%;
         }
-        
+
         #reg_last_name_label {
             width: 47%;
             margin-left: 6%;
@@ -84,7 +84,7 @@ body {
         border: none;
         border-radius: 0;
         box-shadow: none;
-        color: #ffffff;
+        color: $wit;
         text-shadow: none;
         width: 100%;
         margin-top: 15px;
