@@ -1286,13 +1286,39 @@ padding-top: 20px;
 }
 .intro404{
   width: 70%;
-  margin: 170px auto 70px auto;
+  margin: 200px auto 70px auto;
   text-align:justify;
 }
 .content404{
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+.img_404{
+  width: 20%;
+  height: 20%;
+
+}
+.introContent_404{
+  width: 80%;
+  padding: 0 5%;
+}
+@media (max-width:1350px) {
+  .intro404{
+    width: 85%;
+  }
+  }
+@media (max-width:1100px) {
+
+  .img_404{
+    width: 30%;
+    height: 30%;
+
+  }
+
+  .introContent_404{
+    width: 70%;
+  }
+  }
 @media (max-width: 960px) {
   .intro404{
     width: 85%;
