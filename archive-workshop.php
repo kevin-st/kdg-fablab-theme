@@ -7,12 +7,13 @@
       <?php
         while(have_posts()) {
           the_post();
+          $title = strtolower(str_replace(" ", "-", get_the_title()));
       ?>
       <div class="toestelContent">
         <?php if (has_post_thumbnail()) { ?>
-        <div class="thumbnail">
+        <a href="<?php the_permalink(); ?>" class="thumbnail">
           <?php the_post_thumbnail(); ?>
-        </div>
+        </a>
         <?php } else { ?>
           <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
         <?php } ?>
@@ -29,7 +30,15 @@
           </p>
           <div class="buttons disp-f col-2-of-2">
             <a class="btn btn-dark" href="<?php the_permalink(); ?>">Meer info</a>
-            <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Reserveren</a>
+            <a class="btn btn-dark " href="<?php
+              $redirect_to = esc_url(add_query_arg("id", $title, site_url('/reserveren/')));
+              if (is_user_logged_in()) {
+                // redirect to reservation page
+                echo $redirect_to;
+              } else {
+                echo esc_url(add_query_arg("redirect_to", $redirect_to, wp_login_url()));
+              }
+            ?>">Reserveren</a> <!-- Moet nog nagekeken worden, reservatie plugin -->
           </div>
         </div>
       </div>
