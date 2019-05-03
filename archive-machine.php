@@ -9,14 +9,14 @@
           the_post();
       ?>
       <div class="toestelContent">
-        <div class="thumbnail">
+        <a href="<?php the_permalink(); ?>" class="thumbnail">
         <?php if (has_post_thumbnail()) {
           the_post_thumbnail();
         } else {
         ?>
           <img src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
         <?php } ?>
-        </div>
+      </a>
         <div class="content">
           <h2 class="title"><?php the_title(); ?></h2>
           <p class="excerpt">

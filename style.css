@@ -152,7 +152,7 @@ nav{
   color: white;
   font-family: "KdG";
   font-size: 23px;
-  width: 15.66%;
+  width: 14.33%;
   text-align: center;
 }
 .menu-item a {
@@ -161,8 +161,14 @@ nav{
     display: block;
     padding: 0 2%;
   }
+.menu-item:first-of-type a{
+  padding-left: 15px;
+}
 .menu-item:last-of-type{
   width: 6%;
+}
+.menu-item:nth-of-type(2), .menu-item:nth-of-type(3), .menu-item:nth-of-type(4){
+  width: 17%;
 }
 .menu-item:hover a{
   color: #34bedc;
@@ -513,118 +519,6 @@ body{
 .input-group .error-message {
       font-size: 12px;
     }
-body.login-action-register {
-    /*background-image: url("img/fablab_reg_form.jpg");*/
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-.login {
-    background-color: #1d1d1b;
-    background-image: url("img/icon-man.png");
-    background-repeat: no-repeat;
-    background-size: 350px 600px;
-    background-position: center bottom;
-    overflow: hidden;
-}
-.login #nav, .login #backtoblog {
-        padding: 0px;
-    }
-.login #login {
-        background-color: #fff;
-        float: right;
-        margin: 0;
-        min-height: 100%;
-        padding: 3%;
-        width: 25%;
-  }
-.login #login h1 a {
-        background: none;
-        background-image: url("img/logozwart.png");
-        background-repeat: no-repeat;
-        background-size: 80px 80px;
-      /*
-        to change logo above the form:
-
-          1. set background to none and default display for a-tag
-            -> site title gets displayed (takes the title from admin)
-
-          2. set different background
-      */
-    }
-.login #login .message {
-        border: 2px solid #34bedc;
-        color: #34bedc;
-    }
-.login #login #registerform #user_name_fields {
-            display: flex;
-          }
-.login #login #registerform #reg_first_name_label {
-            width: 47%;
-        }
-.login #login #registerform #reg_last_name_label {
-            width: 47%;
-            margin-left: 6%;
-        }
-.login #login #loginform,
-    .login #login #registerform,
-    .login #login #lostpasswordform {
-        
-    padding: 0;
-    box-shadow: none;
-    }
-.login #login #loginform p label, .login #login #registerform p label, .login #login #lostpasswordform p label {
-        color: black;
-    }
-.login #login #loginform input, .login #login #registerform input, .login #login #lostpasswordform input {
-        border: 1px solid;
-        padding: 2px;
-        box-shadow: 1px 1px;
-      }
-.login #login #loginform #wp-submit, .login #login #registerform #wp-submit, .login #login #lostpasswordform #wp-submit {
-        background-color: #34bedc;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        color: #ffffff;
-        text-shadow: none;
-        width: 100%;
-        margin-top: 15px;
-        line-height: 0px;
-        padding: 20px 0px 20px 0px;
-        font-size: 15px;
-      }
-.login #login #loginform #wp-submit:hover, .login #login #registerform #wp-submit:hover, .login #login #lostpasswordform #wp-submit:hover {
-            color: #000000;
-        }
-.login #login #nav a {
-        font-weight: bold;
-    }
-.login #login #backtoblog a {
-        font-size: 20px;
-    }
-body.login-action-register {
-    background-size: 350px 600px;
-}
-@media (max-width: 960px) {
-    .login {
-        background: none;
-    }
-        
-        .login #login {
-            width: 90%;
-        }
-  }
-@media (max-width: 700px) {
-    .login {
-        background: none;
-        padding-left: 5px;
-    }
-        
-        .login #login {
-            width: 90%;
-            margin-left: 15px;
-        }
-  }
 html body {
   margin: 0px;
   padding: 0;
@@ -709,6 +603,10 @@ article {
 .centerText {
   text-align: center;
   padding-right: 15px;
+}
+.thumbnaillink{
+  margin: 0;
+  padding: 0;
 }
 @media (max-width:1350px) {
   article {
@@ -1217,4 +1115,8 @@ padding-top: 20px;
   }
 .content {
     width: 85%;
+}
+.crt-post-hover{
+    padding: 15px;
+    border: 15px white;
 }
