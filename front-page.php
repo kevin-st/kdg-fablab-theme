@@ -49,7 +49,7 @@
              <?php the_post_thumbnail(); ?>
            </div>
            <?php } else { ?>
-           <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news">
+           <img class="thumbnail valencia" src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news">
           <?php } ?>
         </a>
           <div class="content">
@@ -94,7 +94,7 @@
               <?php the_post_thumbnail(); ?>
             </div>
             <?php } else { ?>
-            <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
+            <img class="thumbnail valencia" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
            <?php } ?>
           </a>
            <div class="content">
