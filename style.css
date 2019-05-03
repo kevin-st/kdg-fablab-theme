@@ -411,7 +411,7 @@ footer>#socials>a{
   }
 main{
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: 160px;
   padding-bottom: 230px;
 }
 body{
@@ -1112,6 +1112,11 @@ padding-top: 20px;
   width: 50% ;
   margin-left: 2%
 }
+@media (max-width:1350px) {
+  .newsContent>.content{
+    margin-left: 0%
+  }
+  }
 .detail{
   width: 60%;
   margin: 0 auto;
