@@ -519,117 +519,6 @@ body{
 .input-group .error-message {
       font-size: 12px;
     }
-html, body{
-  height: auto;
-}
-body.login-action-register {
-    /*background-image: url("img/fablab_reg_form.jpg");*/
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-.login {
-    background-color: #000;
-    background-image: url("img/icon-man.png");
-    background-repeat: no-repeat;
-    background-size: 350px 600px;
-    background-position: center bottom;
-}
-.login #nav, .login #backtoblog {
-        padding: 0px;
-    }
-.login #login {
-        background-color: #fff;
-        float: right;
-        height: 100%;
-        margin: 0;
-        min-height: 100%;
-        padding: 8%;
-        width: 15%;
-  }
-.login #login h1 a {
-        background: none;
-        background-image: url("img/logozwart.png");
-        background-repeat: no-repeat;
-        background-size: 70px 70px;
-      /*
-        to change logo above the form:
-
-          1. set background to none and default display for a-tag
-            -> site title gets displayed (takes the title from admin)
-
-          2. set different background
-      */
-    }
-.login #login .message {
-        display: none;
-    }
-.login #login #registerform #user_name_fields {
-            display: flex;
-      }
-.login #login #registerform #reg_first_name_label,
-      .login #login #registerform #reg_last_name_label {
-          display: inline-block;
-          margin-right: 5px;
-      }
-.login #login #loginform,
-    .login #login #registerform,
-    .login #login #lostpasswordform {
-
-    padding: 0;
-    box-shadow: none;
-    }
-.login #login #loginform p label, .login #login #registerform p label, .login #login #lostpasswordform p label {
-        color: black;
-    }
-.login #login #loginform input, .login #login #registerform input, .login #login #lostpasswordform input {
-        border: 1px solid;
-        padding: 2px;
-        box-shadow: 1px 1px;
-      }
-.login #login #loginform #wp-submit, .login #login #registerform #wp-submit, .login #login #lostpasswordform #wp-submit {
-        background-color: #34bedc;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        color: #ffffff;
-        text-shadow: none;
-        width: 100%;
-        margin-top: 15px;
-        font-size: 20px;
-      }
-.login #login #loginform #wp-submit:hover, .login #login #registerform #wp-submit:hover, .login #login #lostpasswordform #wp-submit:hover {
-            color: #000000;
-        }
-.login #login #nav a {
-        font-weight: bold;
-    }
-.login #login #backtoblog a {
-        font-size: 20px;
-    }
-body.login-action-register {
-    background-size: 350px 600px;
-}
-@media (max-width: 960px) {
-    .login {
-        background-size: 350px 600px;
-        background-position: left bottom;
-    }
-
-        .login #login {
-            width: 30%;
-        }
-  }
-@media (max-width: 700px) {
-    .login {
-        background: none;
-        padding-left: 5px;
-    }
-
-        .login #login {
-            width: 90%;
-            margin-left: 15px;
-        }
-  }
 html body {
   margin: 0px;
   padding: 0;
@@ -1227,7 +1116,15 @@ padding-top: 20px;
 .content {
     width: 85%;
 }
-.crt-post-hover{
-    padding: 15px;
-    border: 15px white;
+.crt-widget-grid.crt-grid-col2  .crt-grid-post{
+    padding: 0px 20px 0px 0px;
+    /*border: 15px white;*/
+}
+.crt-widget-grid.crt-grid-col3 .crt-grid-post{
+      padding: 0px 20px 0px 0px;
+    /*border: 15px white;*/
+}
+.crt-widget-grid.crt-grid-col4 .crt-grid-post{
+      padding: 0px 20px 0px 0px;
+    /*border: 15px white;*/
 }
