@@ -10,9 +10,9 @@
       ?>
       <div class="toestelContent">
         <?php if (has_post_thumbnail()) { ?>
-        <div class="thumbnail">
+        <a href="<?php the_permalink(); ?>" class="thumbnail">
           <?php the_post_thumbnail(); ?>
-        </div>
+        </a>
         <?php } else { ?>
           <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
         <?php } ?>

@@ -17,9 +17,9 @@
   ?>
 <div class="toestelContent newsContent">
         <?php if (has_post_thumbnail()) { ?>
-     <div class="thumbnail">
+     <a href="<?php the_permalink(); ?>" class="thumbnail">
        <?php the_post_thumbnail(); ?>
-     </div>
+     </a>
      <?php } else { ?>
      <img
       class="thumbnail"
