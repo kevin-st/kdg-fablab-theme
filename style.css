@@ -1286,6 +1286,10 @@ padding-top: 20px;
       padding: 0px 20px 20px 0px;
     /*border: 15px white;*/
 }
+.href_Showcase{
+  color: #34bedc;
+  text-decoration: none;
+}
 .intro404{
   width: 70%;
   margin: 100px auto 0px auto;

@@ -22,9 +22,7 @@
     /*border: 15px white;*/
 }
 
-
-
-
-
-
-
+.href_Showcase{
+  color: $main_accent;
+  text-decoration: none;
+}
