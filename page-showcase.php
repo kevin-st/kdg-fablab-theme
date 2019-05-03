@@ -16,7 +16,7 @@
 
 
 <body>
-<main class="content">
+<main class="content-show">
 
     <h1>Showcase</h1>
     
