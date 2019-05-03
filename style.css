@@ -1222,15 +1222,19 @@ padding-top: 20px;
 .content {
     width: 85%;
 }
+.crt-widget-grid.crt-grid-col1 .crt-grid-post{
+     padding: 0px 0px 20px 0px;
+}
 .crt-widget-grid.crt-grid-col2  .crt-grid-post{
-    padding: 0px 20px 0px 0px;
+    padding: 0px 20px 20px 0px;
+    width: 100%
     /*border: 15px white;*/
 }
 .crt-widget-grid.crt-grid-col3 .crt-grid-post{
-      padding: 0px 20px 0px 0px;
+      padding: 0px 20px 20px 0px;
     /*border: 15px white;*/
 }
 .crt-widget-grid.crt-grid-col4 .crt-grid-post{
-      padding: 0px 20px 0px 0px;
+      padding: 0px 20px 20px 0px;
     /*border: 15px white;*/
 }
