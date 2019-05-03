@@ -1079,10 +1079,10 @@ padding-top: 20px;
 }
 .detailBtn>.btn{
   background-color: #34bedc;
-  color: black;
+  color: white;
 }
 .detailBtn>.btn:hover{
-  color: white;
+  color: black;
 }
 @media (max-width: 960px) {
   .opdeling>.detailBtn>.btn{
