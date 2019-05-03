@@ -528,7 +528,7 @@ body.login-action-register {
     background-color: #1d1d1b;
     background-image: url("img/icon-man.png");
     background-repeat: no-repeat;
-    background-size: 20%;
+    background-size: 20% 80%;
     background-position: center bottom;
     overflow: hidden;
 }
