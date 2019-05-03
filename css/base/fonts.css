@@ -21,8 +21,7 @@
     url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.ttf")
       format("truetype");
   font-weight: normal;
-}
-
+}*/
 
 @font-face {
   font-family: "KdG";
@@ -32,7 +31,6 @@
       format("truetype");
   font-weight: normal;
 }
-*/
 
 @font-face {
   font-family: "iconfont";

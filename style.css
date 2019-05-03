@@ -38,9 +38,7 @@
     url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.ttf")
       format("truetype");
   font-weight: normal;
-}
-
-
+}*/
 @font-face {
   font-family: "KdG";
   src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.woff")
@@ -49,7 +47,6 @@
       format("truetype");
   font-weight: normal;
 }
-*/
 @font-face {
   font-family: "iconfont";
   src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/iconfont.woff")
