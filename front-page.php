@@ -59,7 +59,7 @@
                 if (has_excerpt()) {
                   echo get_the_excerpt();
                 } else {
-                  echo wp_trim_words(get_the_content(), 35); // control number of words
+                  echo wp_trim_words(get_the_content(), 30); // control number of words
                 }
               ?>
              </p>
@@ -103,7 +103,7 @@
               if (has_excerpt()) {
                 echo get_the_excerpt();
               } else {
-                echo wp_trim_words(get_the_content(), 35); // control number of words
+                echo wp_trim_words(get_the_content(), 30); // control number of words
               }
             ?>
            </p>

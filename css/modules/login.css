@@ -1,6 +1,4 @@
-html, body{
-  height: auto;
-}
+
 
 body {
     &.login-action-register {
@@ -14,7 +12,7 @@ body {
     background-color: #1d1d1b;
     background-image: url("img/icon-man.png");
     background-repeat: no-repeat;
-    background-size: 350px 600px;
+    background-size: 20% 80%;
     background-position: center bottom;
     overflow: hidden;
     
@@ -110,11 +108,12 @@ body.login-action-register {
 
 @mixin tablet {
     .login {
-        background-size: 350px 600px;
+        background: none;
         background-position: left bottom;
 
         #login {
             width: 90%;
+            margin-left: 15px;
         }
     }
 }
