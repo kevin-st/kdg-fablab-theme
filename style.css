@@ -863,7 +863,7 @@ article {
   }*/
   }
 #contactMain {
-     width: 70%;
+     width: 85%;
  }
 .contactGegevens {
   display: flex;
@@ -871,14 +871,14 @@ article {
 }
 .contactForm {
   margin-left: 145px;
-  width: 670px;
+  width: 100%;
 }
 .contactForm form {
     height: 100%;
     position: relative;
   }
 .profile-picture {
-  width: 250px;
+  width: 30%;
 }
 .profile-picture img {
     -o-object-fit: cover;
@@ -891,9 +891,6 @@ article {
 iframe {
     width: 100%;
     height: 440px;
-}
-textarea {
-    margin-bottom: 80px;
 }
 /* modal messages */
 .contact-success {
@@ -912,7 +909,7 @@ textarea {
   }
 @media (max-width: 960px) {
     #contactMain {
-        width: 90%;
+        width: 100%;
         margin-left: 5%;
     }
 
@@ -930,7 +927,7 @@ textarea {
     .contactForm {
         padding: 0;
         margin: 0;
-        width: 65%;
+        width: 70%;
         margin-left: 25px;
     }
 
