@@ -715,6 +715,10 @@ article {
   text-align: center;
   padding-right: 15px;
 }
+.thumbnaillink{
+  margin: 0;
+  padding: 0;
+}
 @media (max-width:1350px) {
   article {
     display: flex;

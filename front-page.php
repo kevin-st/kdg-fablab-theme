@@ -42,7 +42,7 @@
           while($homepage_news->have_posts()) {
             $homepage_news->the_post();
         ?>
-
+        <a class="thumbnaillink" href="<?php the_permalink(); ?>">
           <?php if (has_post_thumbnail()) { ?>
            <div class="thumbnail">
              <?php the_post_thumbnail(); ?>
@@ -50,6 +50,7 @@
            <?php } else { ?>
            <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news">
           <?php } ?>
+        </a>
           <div class="content">
             <h2 class="title"><?php the_title(); ?></h2>
 
@@ -86,6 +87,7 @@
           while($last_added_machine->have_posts()) {
             $last_added_machine->the_post();
         ?>
+        <a class="thumbnaillink" href="<?php the_permalink(); ?>">
            <?php if (has_post_thumbnail()) { ?>
             <div class="thumbnail">
               <?php the_post_thumbnail(); ?>
@@ -93,6 +95,7 @@
             <?php } else { ?>
             <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
            <?php } ?>
+          </a>
            <div class="content">
            <h2 class="title"><?php the_title(); ?></h2>
            <p class="excerpt">
@@ -105,7 +108,7 @@
             ?>
            </p>
            <div class="buttons-frontpage disp-f col-2-of-2">
-             <a class="btn btn-dark" href="<?php the_permalink(); ?>">Reserveer me</a>
+             <a class="btn btn-dark" href="<?php the_permalink(); ?>">Lees meer</a>
              <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
            </div>
 

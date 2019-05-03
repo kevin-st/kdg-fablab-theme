@@ -96,6 +96,11 @@ article {
   padding-right: 15px;
 }
 
+.thumbnaillink{
+  margin: 0;
+  padding: 0;
+}
+
 @mixin pcXL {
   article {
     display: flex;
