@@ -44,7 +44,7 @@ nav{
   transition: 0.5s linear;
 }
 .menu-item {
-  color: white;
+  color: $wit;
   font-family: "KdG";
   font-size: 23px;
   width: 14.33%;
@@ -53,7 +53,7 @@ nav{
 
   a {
     text-decoration: none;
-    color: white;
+    color: $wit;
     display: block;
     padding: 0 2%;
   }
@@ -98,7 +98,7 @@ nav{
 }
 #logonaam h1 {
   font-family: "KdG";
-  color: white;
+  color: $wit;
 }
 #vormgeving {
   width: 110%;
@@ -126,7 +126,7 @@ nav{
   width: 200px;
   text-decoration: none;
   background-color: $zwartKdg;
-  color: white;
+  color: $wit;
   padding: 20px;
   font-weight: 900;
   letter-spacing: 1.5px;

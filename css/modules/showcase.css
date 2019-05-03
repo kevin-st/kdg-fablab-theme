@@ -9,17 +9,17 @@
 .crt-widget-grid.crt-grid-col2  .crt-grid-post{
     padding: 0px 20px 20px 0px;
     width: 100%
-    /*border: 15px white;*/
+    /*border: 15px $wit;*/
 }
 
 .crt-widget-grid.crt-grid-col3 .crt-grid-post{
       padding: 0px 20px 20px 0px;
-    /*border: 15px white;*/
+    /*border: 15px $wit;*/
 }
 
 .crt-widget-grid.crt-grid-col4 .crt-grid-post{
       padding: 0px 20px 20px 0px;
-    /*border: 15px white;*/
+    /*border: 15px $wit;*/
 }
 
 .href_Showcase{

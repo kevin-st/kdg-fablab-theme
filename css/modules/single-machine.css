@@ -14,7 +14,7 @@
 
 .detailBtn>.btn{
   background-color: #34bedc;
-  color: white;
+  color: $wit;
 }
 
 .detailBtn>.btn:hover{

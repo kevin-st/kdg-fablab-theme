@@ -3,7 +3,7 @@ margin-top: 50px;
 }
 .page-numbers {
   background-color: $zwartKdg;
-  color: white;
+  color: $wit;
   padding: 15px;
   text-decoration: none;
 }
