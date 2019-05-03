@@ -549,10 +549,10 @@ body{
   }
 .input-group .required,
   .input-group .error-message {
-    color: red;
+    color: #ff0000;
   }
 .input-group .error {
-    border: 1px solid red;
+    border: 1px solid #ff0000;
   }
 .input-group .error-message {
       font-size: 12px;
@@ -593,7 +593,7 @@ body.login-action-register {
     }
 .login #login #login_error {
         border: 2px solid darkred;
-        color: darkred;
+        color: #8b0000;
         background: rgba(255, 0, 0, 0.3);
     }
 .login #login #registerform #user_name_fields {
