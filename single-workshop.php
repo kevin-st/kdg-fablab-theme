@@ -44,8 +44,16 @@
     <p><?php the_content(); ?></p>
   </div>
   <div role="button" class="detailBtn"> <!-- only display when user is logged in? -->
-    <a  class="btn btn-dark" href="<?php echo site_url('/reserveren')/*esc_url(add_query_arg("workshop", $title, site_url('/reserveren/')))*/; ?>">Schrijf nu in</a>
-  </div>
+    <a class="btn btn-dark " href="<?php
+      $redirect_to = esc_url(add_query_arg("id", $title, site_url('/reserveren/')));
+      if (is_user_logged_in()) {
+        // redirect to reservation page
+        echo $redirect_to;
+      } else {
+        echo esc_url(add_query_arg("redirect_to", $redirect_to, wp_login_url()));
+      }
+    ?>">Schrijf nu in!</a> <!-- Moet nog nagekeken worden, reservatie plugin -->
+    
 </div>
 
   </div>
