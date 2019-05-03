@@ -93,7 +93,7 @@
     <div class="contactGegevens">
 
         <div class="profile-picture">
-          <img src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
+          <img class="valencia" src="<?php echo get_theme_file_uri("img/lorenz.png"); ?>">
         </div>
 
         <div class="contactForm">
