@@ -125,7 +125,7 @@
         }
       }
     ?>
-      <div class="page-banner p-rel">
+      <div class="page-banner p-rel valencia">
         <img class="col-2-of-2" src="<?php echo $args['img']; ?>" alt="page-banner">
         <?php if (is_front_page()) { ?>
         <a class="introbtn" href="<?php echo site_url('login') ?>">Reserveer nu!</a>
