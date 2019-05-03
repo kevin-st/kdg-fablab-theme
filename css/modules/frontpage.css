@@ -88,7 +88,7 @@ article {
   font-weight: 900;
   line-height: 80px;
   text-decoration: none;
-  color: black;
+  color: $zwartKdg;
 }
 
 .centerText {
@@ -174,7 +174,7 @@ article {
     font-weight: 900;
     line-height: auto;
     text-decoration: none;
-    color: black;
+    color: $zwartKdg;
   }
   .centerText {
     position: relative;
