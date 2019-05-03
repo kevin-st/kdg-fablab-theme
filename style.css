@@ -592,7 +592,7 @@ body.login-action-register {
         color: #34bedc;
     }
 .login #login #login_error {
-        border: 2px solid darkred;
+        border: 2px solid #8b0000;
         color: #8b0000;
         background: rgba(255, 0, 0, 0.3);
     }
@@ -895,14 +895,14 @@ iframe {
 /* modal messages */
 .contact-success {
     border: 2px solid green;
-    color: green;
+    color: #00ff00;
       margin-bottom: 25px;
       padding-left: 15px;
       background: rgba(76, 175, 80, 0.3);
   }
 .contact-error {
     border: 2px solid darkred;
-    color: darkred;
+    color: #8b0000;
       margin-bottom: 25px;
       padding-left: 15px;
       background: rgba(255, 0, 0, 0.3);
@@ -959,7 +959,7 @@ iframe {
         width: 100%;
         margin-top: 25px;
     }
-    
+
     iframe {
         width: 100%;
     }

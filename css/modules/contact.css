@@ -38,7 +38,7 @@ iframe {
 .contact {
   &-success {
     border: 2px solid green;
-    color: green;
+    color: $groen;
       margin-bottom: 25px;
       padding-left: 15px;
       background: rgba(76, 175, 80, 0.3);
@@ -46,7 +46,7 @@ iframe {
 
   &-error {
     border: 2px solid darkred;
-    color: darkred;
+    color: $donkerrood;
       margin-bottom: 25px;
       padding-left: 15px;
       background: rgba(255, 0, 0, 0.3);
@@ -106,7 +106,7 @@ iframe {
         width: 100%;
         margin-top: 25px;
     }
-    
+
     iframe {
         width: 100%;
     }
