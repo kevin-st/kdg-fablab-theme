@@ -161,6 +161,9 @@ nav{
     display: block;
     padding: 0 2%;
   }
+.menu-item:first-of-type a{
+  padding-left: 15px;
+}
 .menu-item:last-of-type{
   width: 6%;
 }
