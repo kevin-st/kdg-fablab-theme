@@ -15,8 +15,6 @@
    */
 ?>
 
-<img id="frontpageImg" src="<?php echo get_theme_file_uri("img/nieuws_header.jpg"); ?>">
-
 <main>
 
     <h1>Laatste nieuws</h1>
@@ -26,7 +24,7 @@
         <div class="nieuwsItem nieuwsItem1">
           
             <div class="foto">
-               <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/workshopLasercutten.png"); ?>">
+               <img id="fotoNieuws valencia" src="<?php echo get_theme_file_uri("img/workshopLasercutten.png"); ?>">
             </div>
                
            <div class="tekstNieuws">
@@ -43,7 +41,7 @@
         </div>
 
         <div class="nieuwsItem nieuwsItem2"> 
-            <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/openingParty.png"); ?>">
+            <img id="fotoNieuws valencia" src="<?php echo get_theme_file_uri("img/openingParty.png"); ?>">
 
            <h2>THE OPENING <span class="blauw">PARTY</span></h2>
 
@@ -58,7 +56,7 @@
     <div class="nieuws2">
 
         <div class="nieuwsItem nieuwsItem3">    
-           <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/3dPrinter.png"); ?>">
+           <img id="fotoNieuws valencia" src="<?php echo get_theme_file_uri("img/3dPrinter.png"); ?>">
 
            <h2><span class="blauw">NIEUWE</span> 3D PRINTER</h2>
 
@@ -69,7 +67,7 @@
         </div>
 
         <div class="nieuwsItem nieuwsItem4">
-           <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/win.png"); ?>">
+           <img id="fotoNieuws valencia" src="<?php echo get_theme_file_uri("img/win.png"); ?>">
 
            <h2>WIN <span class="blauw">WIN</span> WIN</h2>
 
@@ -84,7 +82,7 @@
     <div class="nieuws3">
 
         <div class="nieuwsItem nieuwsItem5">
-           <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/toestelReserveren.png"); ?>">
+           <img id="fotoNieuws valencia" src="<?php echo get_theme_file_uri("img/toestelReserveren.png"); ?>">
 
            <h2><span class="blauw">RESERVEER</span> JE TOESTEL</h2>
 
@@ -95,7 +93,7 @@
         </div>
 
         <div class="nieuwsItem nieuwsItem6">
-           <img id="fotoNieuws" src="<?php echo get_theme_file_uri("img/vrCorner.png"); ?>">
+           <img id="fotoNieuws valencia" src="<?php echo get_theme_file_uri("img/vrCorner.png"); ?>">
 
            <h2><span class="blauw">VR</span> CORNER</h2>
 
