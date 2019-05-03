@@ -1,0 +1,27 @@
+.intro404{
+  width: 70%;
+  margin: 170px auto 70px auto;
+  text-align:justify;
+}
+
+.content404{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+@mixin tablet{
+  .intro404{
+    width: 85%;
+  }
+}
+
+@mixin phone{
+  .intro404{
+    text-align: center;
+  }
+
+  .content404, #p_404{
+    display: none;
+  }
+
+}

@@ -1280,3 +1280,26 @@ padding-top: 20px;
       padding: 0px 20px 20px 0px;
     /*border: 15px white;*/
 }
+.intro404{
+  width: 70%;
+  margin: 170px auto 70px auto;
+  text-align:justify;
+}
+.content404{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+@media (max-width: 960px) {
+  .intro404{
+    width: 85%;
+  }
+  }
+@media (max-width: 700px) {
+  .intro404{
+    text-align: center;
+  }
+
+  .content404, #p_404{
+    display: none;
+  }
+  }
