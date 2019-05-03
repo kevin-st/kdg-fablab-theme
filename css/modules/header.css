@@ -47,7 +47,7 @@ nav{
   color: white;
   font-family: "KdG";
   font-size: 23px;
-  width: 15.66%;
+  width: 14.33%;
   text-align: center;
 
 
@@ -61,6 +61,10 @@ nav{
 
 .menu-item:last-of-type{
   width: 6%;
+}
+
+.menu-item:nth-of-type(2), .menu-item:nth-of-type(3), .menu-item:nth-of-type(4){
+  width: 17%;
 }
 
 .menu-item:hover a{
