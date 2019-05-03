@@ -519,9 +519,6 @@ body{
 .input-group .error-message {
       font-size: 12px;
     }
-html, body{
-  height: auto;
-}
 body.login-action-register {
     /*background-image: url("img/fablab_reg_form.jpg");*/
     background-repeat: no-repeat;
@@ -531,7 +528,7 @@ body.login-action-register {
     background-color: #1d1d1b;
     background-image: url("img/icon-man.png");
     background-repeat: no-repeat;
-    background-size: 350px 600px;
+    background-size: 20% 80%;
     background-position: center bottom;
     overflow: hidden;
 }
@@ -608,12 +605,13 @@ body.login-action-register {
 }
 @media (max-width: 960px) {
     .login {
-        background-size: 350px 600px;
+        background: none;
         background-position: left bottom;
     }
 
         .login #login {
             width: 90%;
+            margin-left: 15px;
         }
   }
 @media (max-width: 700px) {
