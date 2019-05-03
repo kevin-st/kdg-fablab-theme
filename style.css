@@ -387,6 +387,10 @@ main{
 body{
   font-family: 'proximanova';
 }
+.valencia {
+    -webkit-filter: sepia(0.15) saturate(1.5) contrast(0.9);
+    filter: sepia(0.15) saturate(1.5) contrast(0.9);
+}
 /* example module */
 /*
   define a button class with some subclasses:

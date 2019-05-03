@@ -7,6 +7,7 @@
         -> in case of KdG Fablab: Nieuws
     */
   ?>
+  
   <div class="CTA">
     <?php
       $last_added_machine = new WP_Query([
