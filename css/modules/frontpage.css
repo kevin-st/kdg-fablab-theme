@@ -72,7 +72,7 @@ article {
 }
 #background {
   width: 100%;
-  background-color: #34bedc;
+  background-color: $main_accent;
   height: 80px;
   transform: rotate(-1deg);
   position: absolute;

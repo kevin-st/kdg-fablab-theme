@@ -31,7 +31,7 @@ nav{
     font-size: 28px;
     }
     &:hover{
-      color: #34bedc;
+      color: $main_accent;
     }
   }
 
@@ -72,7 +72,7 @@ nav{
 }
 
 .menu-item:hover a{
-  color: #34bedc;
+  color: $main_accent;
 }
 
 .current-menu-item {
@@ -140,7 +140,7 @@ nav{
 }
 
 .introbtn:hover {
-  color: #34bedc;
+  color: $main_accent;
 }
 
 .page-banner>img{

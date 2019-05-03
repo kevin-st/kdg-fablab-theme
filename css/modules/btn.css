@@ -101,7 +101,7 @@
     width: 100%;
 
     &:hover {
-      color: #1d1d1b;
+      color: $zwartKdg;
     }
   }
 }

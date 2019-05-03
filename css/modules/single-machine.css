@@ -13,7 +13,7 @@
 }
 
 .detailBtn>.btn{
-  background-color: #34bedc;
+  background-color: $main_accent;
   color: $wit;
 }
 

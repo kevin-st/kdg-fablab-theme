@@ -9,7 +9,7 @@ body {
 }
 
 .login {
-    background-color: #1d1d1b;
+    background-color: $zwartKdg;
     background-image: url("img/icon-man.png");
     background-repeat: no-repeat;
     background-size: 22.7% 80.5%;
@@ -36,8 +36,8 @@ body {
     }
 
     .message {
-        border: 2px solid #34bedc;
-        color: #34bedc;
+        border: 2px solid $main_accent;
+        color: $main_accent;
     }
 
     #login_error {
