@@ -14,11 +14,11 @@
 
 .detailBtn>.btn{
   background-color: #34bedc;
-  color: black;
+  color: white;
 }
 
 .detailBtn>.btn:hover{
-  color: white;
+  color: $zwartKdg;
 }
 
 @mixin tablet{

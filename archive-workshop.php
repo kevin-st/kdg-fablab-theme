@@ -15,7 +15,7 @@
           <?php the_post_thumbnail(); ?>
         </a>
         <?php } else { ?>
-          <img class="thumbnail" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
+          <img class="thumbnail valencia" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
         <?php } ?>
         <div class="content">
           <h2 class="title"><?php the_title(); ?></h2>

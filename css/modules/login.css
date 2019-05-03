@@ -12,7 +12,7 @@ body {
     background-color: #1d1d1b;
     background-image: url("img/icon-man.png");
     background-repeat: no-repeat;
-    background-size: 20% 80%;
+    background-size: 22.7% 80.5%;
     background-position: center bottom;
     overflow: hidden;
     
@@ -39,6 +39,12 @@ body {
         border: 2px solid #34bedc;
         color: #34bedc;
     }
+        
+    #login_error {
+        border: 2px solid darkred;
+        color: darkred;
+        background: rgba(255, 0, 0, 0.3);
+    }
 
     #registerform {
 
@@ -64,7 +70,7 @@ body {
     box-shadow: none;
 
     p label {
-        color: black;
+        color: $zwartKdg;
     }
 
     input {
@@ -87,7 +93,7 @@ body {
         font-size: 15px;
 
         &:hover {
-            color: #000000;
+            color: $zwartKdg;
         }
       }
     }
