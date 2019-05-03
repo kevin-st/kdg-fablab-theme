@@ -70,7 +70,7 @@ body {
     box-shadow: none;
 
     p label {
-        color: black;
+        color: $zwartKdg;
     }
 
     input {
@@ -93,7 +93,7 @@ body {
         font-size: 15px;
 
         &:hover {
-            color: #000000;
+            color: $zwartKdg;
         }
       }
     }

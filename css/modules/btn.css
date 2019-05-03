@@ -68,7 +68,7 @@
   height: 20px;
 
   &-dark {
-    background-color: #000;
+    background-color: $zwartKdg;
     color: #fff;
   }
 

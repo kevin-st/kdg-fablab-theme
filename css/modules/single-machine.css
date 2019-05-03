@@ -18,7 +18,7 @@
 }
 
 .detailBtn>.btn:hover{
-  color: black;
+  color: $zwartKdg;
 }
 
 @mixin tablet{

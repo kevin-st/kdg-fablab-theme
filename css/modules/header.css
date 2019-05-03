@@ -103,7 +103,7 @@ nav{
 #vormgeving {
   width: 110%;
   height: 200px;
-  background-color: black;
+  background-color: $zwartKdg;
   transform: rotate(-2deg);
   position: fixed;
   top: -80px;
@@ -116,7 +116,7 @@ nav{
   position: fixed;
   width: 100px;
   height: 1000px;
-  background-color: black;
+  background-color: $zwartKdg;
   right: -80px;
   top: 0;
   transform: rotate(-4deg);
@@ -125,7 +125,7 @@ nav{
 .introbtn {
   width: 200px;
   text-decoration: none;
-  background-color: black;
+  background-color: $zwartKdg;
   color: white;
   padding: 20px;
   font-weight: 900;
@@ -175,7 +175,7 @@ nav{
   }
 
   .menu{
-    background-color: black;
+    background-color: $zwartKdg;
     width: 100%;
     margin: 0 ;
     padding: 0 80px;

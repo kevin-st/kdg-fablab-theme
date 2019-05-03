@@ -198,7 +198,7 @@ nav{
 #vormgeving {
   width: 110%;
   height: 200px;
-  background-color: black;
+  background-color: #1d1d1b;
   -webkit-transform: rotate(-2deg);
           transform: rotate(-2deg);
   position: fixed;
@@ -210,7 +210,7 @@ nav{
   position: fixed;
   width: 100px;
   height: 1000px;
-  background-color: black;
+  background-color: #1d1d1b;
   right: -80px;
   top: 0;
   -webkit-transform: rotate(-4deg);
@@ -219,7 +219,7 @@ nav{
 .introbtn {
   width: 200px;
   text-decoration: none;
-  background-color: black;
+  background-color: #1d1d1b;
   color: white;
   padding: 20px;
   font-weight: 900;
@@ -265,7 +265,7 @@ nav{
   }
 
   .menu{
-    background-color: black;
+    background-color: #1d1d1b;
     width: 100%;
     margin: 0 ;
     padding: 0 80px;
@@ -453,7 +453,7 @@ body{
   height: 20px;
 }
 .btn-dark {
-    background-color: #000;
+    background-color: #1d1d1b;
     color: #fff;
   }
 .btn:hover {
@@ -583,7 +583,7 @@ body.login-action-register {
     box-shadow: none;
     }
 .login #login #loginform p label, .login #login #registerform p label, .login #login #lostpasswordform p label {
-        color: black;
+        color: #1d1d1b;
     }
 .login #login #loginform input, .login #login #registerform input, .login #login #lostpasswordform input {
         border: 1px solid;
@@ -604,7 +604,7 @@ body.login-action-register {
         font-size: 15px;
       }
 .login #login #loginform #wp-submit:hover, .login #login #registerform #wp-submit:hover, .login #login #lostpasswordform #wp-submit:hover {
-            color: #000000;
+            color: #1d1d1b;
         }
 .login #login #nav a {
         font-weight: bold;
@@ -716,7 +716,7 @@ article {
   font-weight: 900;
   line-height: 80px;
   text-decoration: none;
-  color: black;
+  color: #1d1d1b;
 }
 .centerText {
   text-align: center;
@@ -795,7 +795,7 @@ article {
     font-weight: 900;
     line-height: auto;
     text-decoration: none;
-    color: black;
+    color: #1d1d1b;
   }
   .centerText {
     position: relative;
@@ -1094,7 +1094,7 @@ padding-top: 20px;
   color: white;
 }
 .detailBtn>.btn:hover{
-  color: black;
+  color: #1d1d1b;
 }
 @media (max-width: 960px) {
   .opdeling>.detailBtn>.btn{
@@ -1117,7 +1117,7 @@ padding-top: 20px;
 }
 .breadcrumbs>a{
   text-decoration: none;
-  color: black;
+  color: #1d1d1b;
 }
 .contentdetail{
   display: flex;
