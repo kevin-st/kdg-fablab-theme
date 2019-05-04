@@ -1,7 +1,8 @@
+/*
 .sidebar {
     border: 2px solid $main_accent;
-    box-sizing: border-box;
 
+    
     & > div, ul {
         height: 100%;
     }
@@ -31,4 +32,34 @@
             }
         }
     }
+}
+*/
+
+.widgettitle {
+    display: none;
+}
+
+.sidebar {
+    margin: 50px;
+    margin-top: 92px;
+}
+
+#menu-sidebar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $main_accent;
+}
+
+.menu-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu-item a:hover {
+    color: $zwartKdg;
 }
