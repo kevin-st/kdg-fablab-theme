@@ -40,8 +40,8 @@
 }
 
 .sidebar {
-    margin: 50px;
-    margin-top: 92px;
+    margin-top: 460px;
+    position: absolute;
 }
 
 #menu-sidebar {
@@ -49,6 +49,11 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+#profielMain .menu-item {
+    float: left;
+    margin-right: 15px;
     background-color: $main_accent;
 }
 

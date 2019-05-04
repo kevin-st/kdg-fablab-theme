@@ -1338,14 +1338,18 @@ padding-top: 20px;
     display: none;
 }
 .sidebar {
-    margin: 50px;
-    margin-top: 92px;
+    margin-top: 460px;
+    position: absolute;
 }
 #menu-sidebar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+#profielMain .menu-item {
+    float: left;
+    margin-right: 15px;
     background-color: #34bedc;
 }
 .menu-item a {
@@ -1424,3 +1428,6 @@ margin-top: 50px;
   background-color: #34bedc;
   transition: 0.3s;
 }
+#profielMain {
+     width: 85%;
+ }
