@@ -9,8 +9,8 @@
 
   get_header();
 
-  $user_id = get_current_user_id();
-  $user_meta = get_user_meta($user_id);
+  $user = wp_get_current_user();
+  $user_meta = get_user_meta($user->ID);
 
 
   $first_name = isset($user_meta['first_name'][0]) ? $user_meta['first_name'][0] : "";
