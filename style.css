@@ -1338,14 +1338,18 @@ padding-top: 20px;
     display: none;
 }
 .sidebar {
-    margin: 50px;
-    margin-top: 92px;
+    margin-top: 460px;
+    position: absolute;
 }
 #menu-sidebar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+#profielMain .menu-item {
+    float: left;
+    margin-right: 15px;
     background-color: #34bedc;
 }
 .menu-item a {
@@ -1358,6 +1362,20 @@ padding-top: 20px;
 .menu-item a:hover {
     color: #1d1d1b;
 }
+@media (max-width: 700px) {
+    #profielMain {
+        min-height: 620px;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+
+    #profielMain .menu-item {
+        width: 85%;
+        margin-bottom: 15px;
+    }
+  }
 .intro404{
   width: 70%;
   margin: 100px auto 0px auto;
@@ -1424,3 +1442,6 @@ margin-top: 50px;
   background-color: #34bedc;
   transition: 0.3s;
 }
+#profielMain {
+     width: 85%;
+ }

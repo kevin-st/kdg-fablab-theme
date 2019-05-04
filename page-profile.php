@@ -2,7 +2,7 @@
   /* Template Name: Profiel template */
   get_header();
 ?>
-<main>
+<main id="profielMain">
   <div class="disp-f">
     <?php get_sidebar("profile"); ?>
     <div role="content-van-profielpagina">
@@ -16,14 +16,18 @@
         }
       ?>
       
-      <p>Naam:</p>
-      <p>Voornaam:</p>
-      <p>Wie je bent:</p>
-      <p>E-mailadres:</p>
-      <p>Telefoonnummer</p>
-      <p>Adres + nummer:</p>
-      <p>Postcode</p>
-      <p>Gemeente:</p>
+      <div class="content-profile">
+          <p>Naam:</p>
+          <p>Voornaam:</p>
+          <p>Wie je bent:</p>
+          <p>BTW-nummer:</p>
+          <p>E-mailadres:</p>
+          <p>Telefoonnummer:</p>
+          <p>Adres + nummer:</p>
+          <p>Postcode:</p>
+          <p>Gemeente:</p>
+          <p>Wachtwoord:</p>
+      </div>
       
     </div>
   </div>
