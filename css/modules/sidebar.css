@@ -1,35 +1,65 @@
+/*
 .sidebar {
-  border: 2px solid $main_accent;
-  box-sizing: border-box;
+    border: 2px solid $main_accent;
 
-  & > div,
-  ul {
-    height: 100%;
-  }
+    
+    & > div, ul {
+        height: 100%;
+    }
 
-  ul {
-    display: flex;
-    flex-direction: column;
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        .menu-item {
+            box-sizing: border-box;
+            flex-grow: 1;
+            border-bottom: 2px solid $main_accent;
+            width: 100%;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            a {
+                color: $main_accent;
+                display: block;
+                text-decoration: none;
+            }
+        }
+    }
+}
+*/
+
+.widgettitle {
+    display: none;
+}
+
+.sidebar {
+    margin: 50px;
+    margin-top: 92px;
+}
+
+#menu-sidebar {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 100%;
+    overflow: hidden;
+    background-color: $main_accent;
+}
 
-    .menu-item {
-      box-sizing: border-box;
-      flex-grow: 1;
-      border-bottom: 2px solid $main_accent;
-      width: 100%;
+.menu-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-      &:last-child {
-        border-bottom: none;
-      }
-
-      a {
-        color: $main_accent;
-        display: block;
-        text-decoration: none;
-      }
-    }
-  }
+.menu-item a:hover {
+    color: $zwartKdg;
 }

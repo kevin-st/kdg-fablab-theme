@@ -15,6 +15,16 @@
         <?php
         }
       ?>
+      
+      <p>Naam:</p>
+      <p>Voornaam:</p>
+      <p>Wie je bent:</p>
+      <p>E-mailadres:</p>
+      <p>Telefoonnummer</p>
+      <p>Adres + nummer:</p>
+      <p>Postcode</p>
+      <p>Gemeente:</p>
+      
     </div>
   </div>
 </main>
