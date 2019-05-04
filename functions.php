@@ -7,6 +7,7 @@
 
   // define hooks -> overzicht hooks: https://codex.wordpress.org/Plugin_API/Action_Reference
   add_action('init', 'kdg_fablab_start_session', 1);
+  add_action('init', 'kdg_fablab_register_sidebar', 2);
   add_action('admin_init', 'kdg_fablab_redirect_to_front_end');
   add_action('wp_loaded', 'kdg_fablab_hide_admin_bar_sub');
   add_action('wp_enqueue_scripts', 'kdg_fablab_enqueue_scripts');
@@ -44,6 +45,21 @@
    */
   function kdg_fablab_end_session() {
     session_destroy();
+  }
+
+  /**
+   * Register sidebars for the theme
+   */
+  function kdg_fablab_register_sidebar() {
+    if (function_exists("register_sidebar")) {
+      register_sidebar([
+        "name" => "Sidebar profiel",
+        "id" => "profile_sidebar",
+        "description" => "Deze sidebar wordt getoond op de profielpagina.",
+        "before_widget" => "",
+        "after_widget" => "",
+      ]);
+    }
   }
 
   /**

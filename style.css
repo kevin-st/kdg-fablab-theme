@@ -135,72 +135,74 @@
 /* example module:
   @import "modules/btn"
 */
-nav{
+nav {
   position: relative;
   z-index: 5000;
 }
-.burgerbtn{
+.burgerbtn {
   display: none;
 }
-.zichtbaarheid{
-  display:block;
+.zichtbaarheid {
+  display: block;
 }
-.menu {
-  width: 78%;
-  position: fixed;
-  top: 20px;
-  right: 15px;
-  margin: 0;
-  padding: 0;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  list-style: none;
-  display: flex;
-  height: 80px;
-  line-height: 80px;
+header .menu {
+    width: 78%;
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    list-style: none;
+    display: flex;
+    height: 80px;
+    line-height: 80px;
   }
-.menu li:last-child {
-    content: "i";
-    font-family: "iconfont";
-    font-size: 28px;
+header .menu li:last-child {
+      content: "i";
+      font-family: "iconfont";
+      font-size: 28px;
     }
-.menu:hover{
+header .menu:hover {
       color: #34bedc;
     }
-#logonaam:hover h1{
+header .menu-item {
+    color: #fff;
+    font-family: "KdG";
+    font-size: 23px;
+    width: 14.33%;
+    text-align: center;
+  }
+header .menu-item a {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      padding: 0 2%;
+    }
+header .menu-item:first-of-type a {
+    padding-left: 15px;
+  }
+header .menu-item:last-of-type {
+    width: 6%;
+  }
+header .menu-item:nth-of-type(2),
+  header .menu-item:nth-of-type(3),
+  header .menu-item:nth-of-type(4) {
+    width: 17%;
+  }
+header .menu-item:hover a {
+    color: #34bedc;
+  }
+header .current-menu-item,
+    header .current-menu-item a {
+      color: #34bedc;
+    }
+#logonaam:hover h1 {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   transition: 0.5s linear;
 }
-.menu-item {
-  color: #fff;
-  font-family: "KdG";
-  font-size: 23px;
-  width: 14.33%;
-  text-align: center;
-}
-.menu-item a {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    padding: 0 2%;
-  }
-.menu-item:first-of-type a{
-  padding-left: 15px;
-}
-.menu-item:last-of-type{
-  width: 6%;
-}
-.menu-item:nth-of-type(2), .menu-item:nth-of-type(3), .menu-item:nth-of-type(4){
-  width: 17%;
-}
-.menu-item:hover a{
-  color: #34bedc;
-}
-.current-menu-item,
-  .current-menu-item a {
-    color: #34bedc;
-  }
 #logonaam a {
   display: flex;
   flex-wrap: nowrap;
@@ -260,67 +262,88 @@ nav{
 .introbtn:hover {
   color: #34bedc;
 }
-.page-banner>img{
+.page-banner > img {
   max-height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 @media (max-width:1300px) {
-  .menu-item{
-    font-size: 23px;
-  }
+    header .menu-item {
+      font-size: 23px;
+    }
 
-  .menu{
-    width: 75%;
-  }
+    header .menu {
+      width: 75%;
+    }
   }
 @media (max-width:1100px) {
-  .menu-item {
-    font-size: 22px;
-  }
+    header .menu-item {
+      font-size: 22px;
+    }
   }
 @media (max-width: 960px) {
-  .burgerbtn{
+  .burgerbtn {
     display: block;
   }
 
-  #vormgeving2{
+  #vormgeving2 {
     display: none;
   }
+    header .menu {
+      background-color: #1d1d1b;
+      width: 100%;
+      margin: 0;
+      padding: 0 80px;
+      left: 0;
+      top: 89px;
+      right: 0;
+      display: flex;
+      flex-wrap: wrap;
+      height: 450px;
+    }
+      header .menu li:last-child {
+        font-size: 26px;
+        font-family: "KdG";
 
-  .menu{
-    background-color: #1d1d1b;
-    width: 100%;
-    margin: 0 ;
-    padding: 0 80px;
-    left: 0;
-    top: 89px;
-    right: 0;
-    display: flex;
-    flex-wrap: wrap;
-    height: 450px;
-  }
-    .menu li:last-child {
+        margin: 0;
+      }
+        header .menu li:last-child:before {
+          font-size: 26px;
+        }
+
+    header .menu-item {
+      width: 100%;
+      line-height: 60px;
       font-size: 26px;
-      font-family: "KdG";
+      text-align: left;
+      padding: 0;
+    }
 
+    header .menu li:last-child:before {
+      width: 100%;
+    }
+
+    header .menu-item:last-of-type {
+      width: 100%;
+    }
+
+    header .menu-item > a,
+    header .menu li:last-child {
+      padding: 0;
       margin: 0;
     }
-      .menu li:last-child:before{
-        font-size: 26px;
-      }
-  .menu-item{
-    width: 100%;
-    line-height: 60px;
-    font-size: 26px;
-    text-align: left;
-    padding: 0;
-  }
-  .menu li:last-child:before{
-    width: 100%;
-  }
 
-  .burgerbtn{
+    header .menu-item:first-of-type a {
+      padding-left: 0px;
+    }
+
+    header .menu-item:nth-of-type(2),
+    header .menu-item:nth-of-type(3),
+    header .menu-item:nth-of-type(4) {
+      width: 100%;
+    }
+
+  .burgerbtn {
     display: block;
     width: 60px;
     height: 60px;
@@ -330,31 +353,17 @@ nav{
     top: 30px;
   }
 
-  .burgerbtn img{
+  .burgerbtn img {
     width: 50px;
     height: 30px;
   }
 
-  .zichtbaarheid{
-    display:none;
+  .zichtbaarheid {
+    display: none;
   }
   .introbtn {
     display: none;
   }
-  .menu-item:last-of-type{
-    width: 100%;
-  }
-  .menu-item>a, .menu li:last-child {
-      padding: 0;
-      margin: 0;
-    }
-    .menu-item:first-of-type a{
-      padding-left: 0px;
-    }
-
-    .menu-item:nth-of-type(2), .menu-item:nth-of-type(3), .menu-item:nth-of-type(4){
-      width:100%;
-    }
   }
 html { height: 100%; }
 body {
@@ -1287,6 +1296,36 @@ padding-top: 20px;
   color: #34bedc;
   text-decoration: none;
 }
+.sidebar {
+  border: 2px solid #34bedc;
+  box-sizing: border-box;
+}
+.sidebar > div,
+  .sidebar ul {
+    height: 100%;
+  }
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+.sidebar ul .menu-item {
+      box-sizing: border-box;
+      flex-grow: 1;
+      border-bottom: 2px solid #34bedc;
+      width: 100%;
+    }
+.sidebar ul .menu-item:last-child {
+        border-bottom: none;
+      }
+.sidebar ul .menu-item a {
+        color: #34bedc;
+        display: block;
+        text-decoration: none;
+      }
 .intro404{
   width: 70%;
   margin: 100px auto 0px auto;
