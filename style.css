@@ -1299,35 +1299,34 @@ padding-top: 20px;
   text-decoration: none;
 }
 .sidebar {
-  border: 2px solid #34bedc;
-  box-sizing: border-box;
+    border: 2px solid #34bedc;
+    box-sizing: border-box;
 }
-.sidebar > div,
-  .sidebar ul {
-    height: 100%;
-  }
-.sidebar ul {
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-.sidebar ul .menu-item {
-      box-sizing: border-box;
-      flex-grow: 1;
-      border-bottom: 2px solid #34bedc;
-      width: 100%;
+.sidebar > div, .sidebar ul {
+        height: 100%;
     }
+.sidebar ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+.sidebar ul .menu-item {
+            box-sizing: border-box;
+            flex-grow: 1;
+            border-bottom: 2px solid #34bedc;
+            width: 100%;
+        }
 .sidebar ul .menu-item:last-child {
-        border-bottom: none;
-      }
+                border-bottom: none;
+            }
 .sidebar ul .menu-item a {
-        color: #34bedc;
-        display: block;
-        text-decoration: none;
-      }
+                color: #34bedc;
+                display: block;
+                text-decoration: none;
+            }
 .intro404{
   width: 70%;
   margin: 100px auto 0px auto;
