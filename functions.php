@@ -287,9 +287,9 @@
         $is_user_initialized = get_user_meta(get_current_user_id(), "is_initialized", true);
 
         if ($is_user_initialized) {
-          wp_redirect(home_url());
+          wp_redirect(site_url('/mijn-profiel/'));
         } else {
-          wp_redirect(site_url('/registratie'));
+          wp_redirect(site_url('/mijn-profiel/edit/'));
         }
 
         //wp_redirect(site_url('/'));
