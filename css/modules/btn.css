@@ -59,13 +59,14 @@
 }
 
 .btn {
+  box-sizing: border-box;
   display: inline-block;
   margin-right: 2%;
   width: 50%;
   padding: 15px;
   text-decoration: none;
   text-align: center;
-  height: 20px;
+  /*height: 20px;*/
 
   &-dark {
     background-color: $zwartKdg;
