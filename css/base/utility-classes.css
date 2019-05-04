@@ -9,48 +9,128 @@
     ...
 */
 
-.disp-b {
-  display: block;
+.disp {
+  &-b {
+    display: block;
+  }
+
+  &-f {
+    display: flex;
+  }
+
+  &-n {
+    display: none;
+  }
 }
 
-.disp-f {
-  display: flex;
+.m {
+  &-0 {
+    margin: $none;
+  }
+
+  &-sm {
+    margin: $small;
+  }
+
+  &-med {
+    margin: $med;
+  }
+
+  &-lg {
+    margin: $lg;
+  }
 }
 
-.disp-n {
-  display: none;
+.mt {
+  &-0 {
+    margin-top: $none;
+  }
+
+  &-sm {
+    margin-top: $small;
+  }
+
+  &-med {
+    margin-top: $med;
+  }
+
+  &-lg {
+    margin-top: $lg;
+  }
 }
 
-.mb-0 {
-  margin-bottom: 0;
+.mb {
+  &-0 {
+    margin-bottom: $none;
+  }
+
+  &-sm {
+    margin-bottom: $small;
+  }
+
+  &-med {
+    margin-bottom: $med;
+  }
+
+  &-lg {
+    margin-bottom: $lg;
+  }
 }
 
-.mr-sm {
-  margin-right: 5px;
+.mr {
+  &-0 {
+    margin-right: $none;
+  }
+
+  &-sm {
+    margin-right: $small;
+  }
+
+  &-med {
+    margin-right: $med;
+  }
+
+  &-lg {
+    margin-right: $lg;
+  }
 }
 
-.mr-med {
-  margin-right: 15px;
+.ml {
+  &-0 {
+    margin-left: $none;
+  }
+
+  &-sm {
+    margin-left: $small;
+  }
+
+  &-med {
+    margin-left: $med;
+  }
+
+  &-lg {
+    margin-left: $lg;
+  }
 }
 
-.mr-lg {
-  margin-right: 20px;
+.p {
+  &-abs {
+    position: absolute;
+  }
+
+  &-rel {
+    position: relative;
+  }
 }
 
-.p-abs {
-  position: absolute;
-}
+.col {
+  &-1-of-2 {
+    width: 50%;
+  }
 
-.p-rel {
-  position: relative;
-}
-
-.col-1-of-2 {
-  width: 50%;
-}
-
-.col-2-of-2 {
-  width: 100%;
+  &-2-of-2 {
+    width: 100%;
+  }
 }
 
 .attach-to-bottom {

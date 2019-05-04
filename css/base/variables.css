@@ -11,3 +11,8 @@ $grey: #ccc;
 $rood: #ff0000;
 $groen: #00ff00;
 $donkerrood: #8b0000;
+
+$none: 0;
+$small: 5px;
+$med: 15px;
+$lg: 20px;
