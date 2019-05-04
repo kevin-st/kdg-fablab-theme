@@ -1362,6 +1362,20 @@ padding-top: 20px;
 .menu-item a:hover {
     color: #1d1d1b;
 }
+@media (max-width: 700px) {
+    #profielMain {
+        min-height: 620px;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+
+    #profielMain .menu-item {
+        width: 85%;
+        margin-bottom: 15px;
+    }
+  }
 .intro404{
   width: 70%;
   margin: 100px auto 0px auto;
