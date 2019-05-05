@@ -134,6 +134,15 @@
       && $tel_number_error == "" && $address_error == "" && $postal_code_error == ""
       && $city_error == "" && $VAT_number_error == "" && $company_name_error == ""//&& $who_are_you_error == ""
     ) {
+      // set user to initialized
+      update_user_meta($user->ID, "is_initialized", 1);
+
+      // set session value
+      $_SESSION['sent'] = TRUE;
+      $_SESSION['msg-type'] = "success";
+      $_SESSION['msg'] = "Je profiel werd succesvol gëupdatet!";
+
+      // redirect to profile page
       wp_redirect(site_url('/mijn-profiel'));
       exit();
     } else {

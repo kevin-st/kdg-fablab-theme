@@ -726,6 +726,20 @@ body.login-action-register {
             margin-left: 15px;
         }
   }
+.modal-success {
+    border: 2px solid #066f06;
+    color: #066f06;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    background: rgba(76,175,80, 0.3);
+  }
+.modal-error {
+    border: 2px solid darkred;
+    color: #8b0000;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    background: rgba(255, 0, 0, 0.3);
+  }
 html body {
   margin: 0px;
   padding: 0;
@@ -921,8 +935,8 @@ article {
   }*/
   }
 #contactMain {
-     width: 85%;
- }
+  width: 85%;
+}
 .contactGegevens {
   display: flex;
   margin-bottom: 50px;
@@ -947,82 +961,67 @@ article {
     max-height: 100%;
   }
 .input-group textarea {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 iframe {
-    width: 100%;
-    height: 440px;
+  width: 100%;
+  height: 440px;
 }
-/* modal messages */
-.contact-success {
-    border: 2px solid green;
-    color: #00ff00;
-      margin-bottom: 25px;
-      padding-left: 15px;
-      background: rgba(76, 175, 80, 0.3);
-  }
-.contact-error {
-    border: 2px solid darkred;
-    color: #8b0000;
-      margin-bottom: 25px;
-      padding-left: 15px;
-      background: rgba(255, 0, 0, 0.3);
-  }
 @media (max-width: 960px) {
-    #contactMain {
-        width: 100%;
-        margin-left: 5%;
-    }
+  #contactMain {
+    width: 100%;
+    margin-left: 5%;
+  }
 
-    .contactGegevens {
-        flex-wrap: wrap;
-        width: 100%;
-    }
+  .contactGegevens {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 
-    .profile-picture {
-        padding: 0;
-        margin: 0;
-        width: 30%;
-    }
+  .profile-picture {
+    padding: 0;
+    margin: 0;
+    width: 30%;
+  }
 
-    .contactForm {
-        padding: 0;
-        margin: 0;
-        width: 50%;
-        margin-left: 10%;
-    }
+  .contactForm {
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    margin-left: 10%;
+  }
 
-    iframe {
-        padding: 0;
-        margin: 0;
-        width: 90%;
-    }
+  iframe {
+    padding: 0;
+    margin: 0;
+    width: 90%;
+  }
 
-    .extraMargin {
-        margin-bottom: 80px;
-    }
+  .extraMargin {
+    margin-bottom: 80px;
+  }
   }
 @media (max-width: 700px) {
-    .profile-picture {
-        padding: 0;
-        margin: 0;
-        width: 60%;
-        margin-left: 17%;
-    }
+  .profile-picture {
+    padding: 0;
+    margin: 0;
+    width: 60%;
+    margin-left: 17%;
+  }
 
-    .contactForm {
-        padding: 0;
-        margin: 0;
-        margin-left: 5%;
-        width: 80%;
-        margin-top: 25px;
-        padding-top: 35px;
-    }
+  .contactForm {
+    padding: 0;
+    margin: 0;
+    margin-left: 5%;
+    width: 80%;
+    margin-top: 25px;
+    padding-top: 35px;
+  }
 
-    iframe {
-        width: 80%;
-        margin-left: 5%;
-    }
+  iframe {
+    width: 80%;
+    margin-left: 5%;
+  }
   }
 #toestelImg {
   width: 100%;

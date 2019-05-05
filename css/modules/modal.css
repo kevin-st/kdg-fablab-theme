@@ -1,0 +1,17 @@
+.modal {
+  &-success {
+    border: 2px solid $modal_success;
+    color: $modal_success;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    background: $modal_success_bg;
+  }
+
+  &-error {
+    border: 2px solid $modal_error;
+    color: $modal_error;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    background: $modal_error_bg;
+  }
+}

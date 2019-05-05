@@ -1,6 +1,6 @@
- #contactMain {
-     width: 85%;
- }
+#contactMain {
+  width: 85%;
+}
 
 .contactGegevens {
   display: flex;
@@ -30,87 +30,68 @@
 }
 
 .input-group textarea {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 iframe {
-    width: 100%;
-    height: 440px;
-}
-
-/* modal messages */
-.contact {
-  &-success {
-    border: 2px solid green;
-    color: $groen;
-      margin-bottom: 25px;
-      padding-left: 15px;
-      background: rgba(76, 175, 80, 0.3);
-  }
-
-  &-error {
-    border: 2px solid darkred;
-    color: $donkerrood;
-      margin-bottom: 25px;
-      padding-left: 15px;
-      background: rgba(255, 0, 0, 0.3);
-  }
+  width: 100%;
+  height: 440px;
 }
 
 @mixin tablet {
-    #contactMain {
-        width: 100%;
-        margin-left: 5%;
-    }
+  #contactMain {
+    width: 100%;
+    margin-left: 5%;
+  }
 
-    .contactGegevens {
-        flex-wrap: wrap;
-        width: 100%;
-    }
+  .contactGegevens {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 
-    .profile-picture {
-        padding: 0;
-        margin: 0;
-        width: 30%;
-    }
+  .profile-picture {
+    padding: 0;
+    margin: 0;
+    width: 30%;
+  }
 
-    .contactForm {
-        padding: 0;
-        margin: 0;
-        width: 50%;
-        margin-left: 10%;
-    }
+  .contactForm {
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    margin-left: 10%;
+  }
 
-    iframe {
-        padding: 0;
-        margin: 0;
-        width: 90%;
-    }
+  iframe {
+    padding: 0;
+    margin: 0;
+    width: 90%;
+  }
 
-    .extraMargin {
-        margin-bottom: 80px;
-    }
+  .extraMargin {
+    margin-bottom: 80px;
+  }
 }
 
 @mixin phone {
-    .profile-picture {
-        padding: 0;
-        margin: 0;
-        width: 60%;
-        margin-left: 17%;
-    }
+  .profile-picture {
+    padding: 0;
+    margin: 0;
+    width: 60%;
+    margin-left: 17%;
+  }
 
-    .contactForm {
-        padding: 0;
-        margin: 0;
-        margin-left: 5%;
-        width: 80%;
-        margin-top: 25px;
-        padding-top: 35px;
-    }
+  .contactForm {
+    padding: 0;
+    margin: 0;
+    margin-left: 5%;
+    width: 80%;
+    margin-top: 25px;
+    padding-top: 35px;
+  }
 
-    iframe {
-        width: 80%;
-        margin-left: 5%;
-    }
+  iframe {
+    width: 80%;
+    margin-left: 5%;
+  }
 }
