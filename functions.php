@@ -256,8 +256,9 @@
       if (!empty($_POST['who_are_you'])) {
         update_user_meta($user_id, 'who_are_you', sanitize_text_field($_POST['who_are_you']));
 
-        if ($_POST['who_are_you'] !== "student") {
+        if ($_POST['who_are_you'] !== "student" || $_POST["who_are_you"] !== "particulier") {
           add_user_meta($user_id, "VAT_number", "");
+          add_user_meta($user_id, "company_name", "");
         }
 
         add_user_meta($user_id, "address", "");
@@ -292,16 +293,6 @@
           wp_redirect(site_url('/mijn-profiel/edit/'));
         }
 
-        //wp_redirect(site_url('/'));
-
-        // if the user hasn't filled in VAT/address/tel.num.
-          // then go to additional form
-        // else, the user has filled in the additional information
-          // redirect to profile page
-
-        /*echo "<pre>";
-        var_dump(get_user_meta(get_current_user_id()));
-        echo "</pre>";*/
         exit;
       }
     }
@@ -369,7 +360,7 @@
          </th>
        </tr>
 
-       <?php if(metadata_exists("user", $user->ID, "VAT-number")) { ?>
+       <?php if(metadata_exists("user", $user->ID, "VAT_number")) { ?>
        <tr>
          <th>
            <label for="VAT_number"><?php esc_html_e("BTW-nummer"); ?></label>
@@ -379,6 +370,17 @@
          </th>
        </tr>
       <?php } ?>
+
+      <?php if(metadata_exists("user", $user->ID, "company_name")) { ?>
+      <tr>
+        <th>
+          <label for="company_name"><?php esc_html_e("Naam bedrijf"); ?></label>
+          <td>
+            <?php echo esc_html(get_the_author_meta("company_name", $user->ID)); ?>
+          </td>
+        </th>
+      </tr>
+     <?php } ?>
      </table>
      <?php
     }
@@ -405,6 +407,7 @@
 
     function kdg_fablab_modify_user_table( $column ) {
       $column['who_are_you'] = "Wie ben je?";
+      $column["company_name"] = "Naam bedrijf";
       $column['address'] = 'Adres';
       $column['postal_code'] = 'Postcode';
       $column['city'] = 'Gemeente';
@@ -446,6 +449,11 @@
       if ($column_name == 'VAT_number') {
         $VAT_number = $wpdb->get_var($wpdb->prepare( "SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'VAT_number' AND user_id = %s", $user_id));
         return $VAT_number;
+      }
+
+      if ($column_name == 'company_name') {
+        $company_name = $wpdb->get_var($wpdb->prepare( "SELECT meta_value FROM $wpdb->usermeta WHERE meta_key = 'company_name' AND user_id = %s", $user_id));
+        return $company_name;
       }
 
       return $val;

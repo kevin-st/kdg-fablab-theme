@@ -16,6 +16,7 @@
   $last_name = isset($user_meta['last_name'][0]) ? $user_meta['last_name'][0] : "";
   $tel_number = isset($user_meta['tel_number'][0]) ? $user_meta['tel_number'][0] : "";
   $address = isset($user_meta['address'][0]) ? $user_meta['address'][0] : "";
+  $company_name = isset($user_meta["company_name"][0]) ? $user_meta["company_name"][0] : "";
   $postal_code = isset($user_meta['postal_code'][0]) ? $user_meta['postal_code'][0] : "";
   $city = isset($user_meta['city'][0]) ? $user_meta['city'][0] : "";
   $VAT_number = isset($user_meta['VAT_number'][0]) ? $user_meta['VAT_number'][0] : "";
@@ -80,11 +81,22 @@
 
         <section>
           <h3>Contactgegevens</h3>
-          <div>
-            <p>
-              <span class="profile-value-label">Adres:</span>
-              <span class="profile-value"><?php echo $address; ?></span>
-            </p>
+
+          <div class="disp-f col-2-of-2">
+            <div class="col-1-of-2">
+              <p>
+                <span class="profile-value-label">Adres:</span>
+                <span class="profile-value"><?php echo $address; ?></span>
+              </p>
+            </div>
+            <?php if ($who_are_you === "bedrijf") { ?>
+            <div class="col-1-of-2">
+              <p>
+                <span class="profile-value-label">Naam bedrijf:</span>
+                <span class="profile-value"><?php echo $company_name; ?></span>
+              </p>
+            </div>
+            <?php } ?>
           </div>
 
           <div class="disp-f col-2-of-2">
@@ -112,7 +124,7 @@
                 <span class="profile-value"><?php echo $who_are_you; ?></span>
               </p>
             </div>
-            <?php if ($who_are_you !== "student") { ?>
+            <?php if ($who_are_you === "bedrijf") { ?>
             <div class="col-1-of-2">
               <p>
                 <span class="profile-value-label">BTW-nummer:</span>

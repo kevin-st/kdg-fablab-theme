@@ -10,7 +10,7 @@
   $user = wp_get_current_user();
   $user_meta = get_user_meta($user->ID);
 
-  $first_name_error = $last_name_error = $email_error = $tel_number_error = $address_error = $postal_code_error = $city_error = $VAT_number_error = /*$who_are_you_error = "";*/
+  $first_name_error = $last_name_error = $email_error = $tel_number_error = $address_error = $postal_code_error = $city_error = $VAT_number_error = $company_name_error = /*$who_are_you_error =*/ "";
 
   if (isset($_POST['submit'])) {
 
@@ -95,6 +95,16 @@
       }
     }
 
+    if (isset($_POST["company_name"])) {
+      if ($_POST["company_name"] !== "") {
+        if ($user_meta["company_name"][0] !== $_POST["company_name"]) {
+          update_user_meta($user->ID, "company_name", sanitize_text_field($_POST["company_name"]));
+        }
+      } else {
+        $company_name_error = "Je moet de naam van het bedrijf opgeven";
+      }
+    }
+
     if (isset($_POST["VAT_number"])) {
       if ($_POST["VAT_number"] !== "") {
         if (preg_match("/^[0-9]{4}\.[0-9]{3}\.[0-9]{3}$/", $_POST["VAT_number"])) {
@@ -122,7 +132,7 @@
     if (
       $first_name_error == "" && $last_name_error == "" && $email_error == ""
       && $tel_number_error == "" && $address_error == "" && $postal_code_error == ""
-      && $city_error == "" && $VAT_number_error == "" //&& $who_are_you_error == ""
+      && $city_error == "" && $VAT_number_error == "" && $company_name_error == ""//&& $who_are_you_error == ""
     ) {
       wp_redirect(site_url('/mijn-profiel'));
       exit();
@@ -143,8 +153,9 @@
   $postal_code = isset($user_meta['postal_code'][0]) ? $user_meta['postal_code'][0] : "";
   $city = isset($user_meta['city'][0]) ? $user_meta['city'][0] : "";
 
+  $company_name = isset($user_meta["company_name"][0]) ? $user_meta["company_name"][0] : "";
   $VAT_number = isset($user_meta['VAT_number'][0]) ? $user_meta['VAT_number'][0] : "";
-  //$who_are_you = isset($user_meta['who_are_you'][0]) ? $user_meta['who_are_you'][0] : "";
+  $who_are_you = isset($user_meta['who_are_you'][0]) ? $user_meta['who_are_you'][0] : "";
 ?>
 <main>
   <?php get_sidebar("profile"); ?>
@@ -204,6 +215,11 @@
       </div>
     </div>
     <?php if ($who_are_you === "bedrijf") { ?>
+      <div class="input-group">
+        <label>Naam bedrijf:</label>
+        <input class="<?php echo ($company_name_error !== "") ? "error" : ""; ?>" type="text" name="company_name" value="<?php echo $company_name; ?>"/>
+        <span class="error-message <?php echo ($company_name_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $company_name_error; ?></span>
+      </div>
       <div class="input-group">
         <label>BTW-nummer:</label>
         <input class="<?php echo ($VAT_number_error !== "") ? "error" : ""; ?>" type="text" name="VAT_number" value="<?php echo $VAT_number; ?>"/>
