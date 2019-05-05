@@ -621,59 +621,59 @@ body.login-action-register {
     background-size: cover;
   }
 .login {
-    background-color: #1d1d1b;
-    background-image: url("img/icon-man.png");
-    background-repeat: no-repeat;
-    background-size: 22.7% 80.5%;
-    background-position: center bottom;
-    overflow: hidden;
+  background-color: #1d1d1b;
+  background-image: url("img/icon-man.png");
+  background-repeat: no-repeat;
+  background-size: 22.7% 80.5%;
+  background-position: center bottom;
+  overflow: hidden;
 }
-.login #nav, .login #backtoblog {
-        padding: 0px;
-    }
+.login #nav,
+  .login #backtoblog {
+    padding: 0px;
+  }
 .login #login {
-        background-color: #fff;
-        float: right;
-        margin: 0;
-        min-height: 100%;
-        padding: 3%;
-        width: 25%;
+    background-color: #fff;
+    float: right;
+    margin: 0;
+    min-height: 100%;
+    padding: 3%;
+    width: 25%;
   }
 .login #login h1 a {
-        background: none;
-        background-image: url("img/logozwart.png");
-        background-repeat: no-repeat;
-        background-size: 80px 80px;
+      background: none;
+      background-image: url("img/logozwart.png");
+      background-repeat: no-repeat;
+      background-size: 80px 80px;
     }
 .login #login .message {
-        border: 2px solid #34bedc;
-        color: #34bedc;
+      border: 2px solid #34bedc;
+      color: #34bedc;
     }
 .login #login #login_error {
-        border: 2px solid #8b0000;
-        color: #8b0000;
-        background: rgba(255, 0, 0, 0.3);
+      border: 2px solid #8b0000;
+      color: #8b0000;
+      background: rgba(255, 0, 0, 0.3);
     }
 .login #login #registerform #user_name_fields {
-            display: flex;
-          }
+        display: flex;
+      }
 .login #login #registerform #reg_first_name_label {
-            width: 47%;
-        }
+        width: 47%;
+      }
 .login #login #registerform #reg_last_name_label {
-            width: 47%;
-            margin-left: 6%;
-        }
+        width: 47%;
+        margin-left: 6%;
+      }
 .login #login #loginform,
     .login #login #registerform,
     .login #login #lostpasswordform {
-
-    padding: 0;
-    box-shadow: none;
+      padding: 0;
+      box-shadow: none;
     }
 .login #login #loginform p label, .login #login #registerform p label, .login #login #lostpasswordform p label {
         color: #1d1d1b;
-    }
+      }
 .login #login #loginform input, .login #login #registerform input, .login #login #lostpasswordform input {
         border: 1px solid;
         padding: 2px;
@@ -693,48 +693,48 @@ body.login-action-register {
         font-size: 15px;
       }
 .login #login #loginform #wp-submit:hover, .login #login #registerform #wp-submit:hover, .login #login #lostpasswordform #wp-submit:hover {
-            color: #1d1d1b;
+          color: #1d1d1b;
         }
 .login #login #nav a {
-        font-weight: bold;
+      font-weight: bold;
     }
 .login #login #backtoblog a {
-        font-size: 20px;
+      font-size: 20px;
     }
 body.login-action-register {
-    background-size: 350px 600px;
+  background-size: 350px 600px;
 }
 @media (max-width: 960px) {
-    .login {
-        background: none;
-        background-position: left bottom;
-    }
+  .login {
+    background: none;
+    background-position: left bottom;
+  }
 
-        .login #login {
-            width: 90%;
-            margin-left: 15px;
-        }
+    .login #login {
+      width: 90%;
+      margin-left: 15px;
+    }
   }
 @media (max-width: 700px) {
-    .login {
-        background: none;
-        padding-left: 5px;
-    }
+  .login {
+    background: none;
+    padding-left: 5px;
+  }
 
-        .login #login {
-            width: 90%;
-            margin-left: 15px;
-        }
+    .login #login {
+      width: 90%;
+      margin-left: 15px;
+    }
   }
 .modal-success {
     border: 2px solid #066f06;
     color: #066f06;
     margin-bottom: 25px;
     padding-left: 15px;
-    background: rgba(76,175,80, 0.3);
+    background: rgba(76, 175, 80, 0.3);
   }
 .modal-error {
-    border: 2px solid darkred;
+    border: 2px solid #8b0000;
     color: #8b0000;
     margin-bottom: 25px;
     padding-left: 15px;
@@ -1469,5 +1469,8 @@ margin-top: 50px;
   transition: 0.3s;
 }
 #profielMain {
-     width: 85%;
- }
+  width: 85%;
+}
+#profile-meta-data > div:last-of-type {
+    margin-bottom: 20px;
+  }

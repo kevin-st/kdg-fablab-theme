@@ -1,7 +1,5 @@
-
-
 body {
-    &.login-action-register {
+  &.login-action-register {
     /*background-image: url("img/fablab_reg_form.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,77 +7,76 @@ body {
 }
 
 .login {
-    background-color: $zwartKdg;
-    background-image: url("img/icon-man.png");
-    background-repeat: no-repeat;
-    background-size: 22.7% 80.5%;
-    background-position: center bottom;
-    overflow: hidden;
+  background-color: $zwartKdg;
+  background-image: url("img/icon-man.png");
+  background-repeat: no-repeat;
+  background-size: 22.7% 80.5%;
+  background-position: center bottom;
+  overflow: hidden;
 
-    #nav, #backtoblog {
-        padding: 0px;
-    }
+  #nav,
+  #backtoblog {
+    padding: 0px;
+  }
 
-    #login {
-        background-color: $wit;
-        float: right;
-        margin: 0;
-        min-height: 100%;
-        padding: 3%;
-        width: 25%;
+  #login {
+    background-color: $wit;
+    float: right;
+    margin: 0;
+    min-height: 100%;
+    padding: 3%;
+    width: 25%;
 
     h1 a {
-        background: none;
-        background-image: url("img/logozwart.png");
-        background-repeat: no-repeat;
-        background-size: 80px 80px;
+      background: none;
+      background-image: url("img/logozwart.png");
+      background-repeat: no-repeat;
+      background-size: 80px 80px;
     }
 
     .message {
-        border: 2px solid $main_accent;
-        color: $main_accent;
+      border: 2px solid $main_accent;
+      color: $main_accent;
     }
 
     #login_error {
-        border: 2px solid $donkerrood;
-        color: $donkerrood;
-        background: rgba(255, 0, 0, 0.3);
+      border: 2px solid $modal_error;
+      color: $modal_error;
+      background: rgba(255, 0, 0, 0.3);
     }
 
     #registerform {
+      #user_name_fields {
+        display: flex;
+      }
 
-        #user_name_fields {
-            display: flex;
-          }
+      #reg_first_name_label {
+        width: 47%;
+      }
 
-        #reg_first_name_label {
-            width: 47%;
-        }
-
-        #reg_last_name_label {
-            width: 47%;
-            margin-left: 6%;
-        }
+      #reg_last_name_label {
+        width: 47%;
+        margin-left: 6%;
+      }
     }
 
     #loginform,
     #registerform,
     #lostpasswordform {
+      padding: 0;
+      box-shadow: none;
 
-    padding: 0;
-    box-shadow: none;
-
-    p label {
+      p label {
         color: $zwartKdg;
-    }
+      }
 
-    input {
+      input {
         border: 1px solid;
         padding: 2px;
         box-shadow: 1px 1px;
       }
 
-    #wp-submit {
+      #wp-submit {
         background-color: $main_accent;
         border: none;
         border-radius: 0;
@@ -93,45 +90,45 @@ body {
         font-size: 15px;
 
         &:hover {
-            color: $zwartKdg;
+          color: $zwartKdg;
         }
       }
     }
 
     #nav a {
-        font-weight: bold;
+      font-weight: bold;
     }
 
     #backtoblog a {
-        font-size: 20px;
+      font-size: 20px;
     }
   }
 }
 
 body.login-action-register {
-    background-size: 350px 600px;
+  background-size: 350px 600px;
 }
 
 @mixin tablet {
-    .login {
-        background: none;
-        background-position: left bottom;
+  .login {
+    background: none;
+    background-position: left bottom;
 
-        #login {
-            width: 90%;
-            margin-left: 15px;
-        }
+    #login {
+      width: 90%;
+      margin-left: 15px;
     }
+  }
 }
 
 @mixin phone {
-    .login {
-        background: none;
-        padding-left: 5px;
+  .login {
+    background: none;
+    padding-left: 5px;
 
-        #login {
-            width: 90%;
-            margin-left: 15px;
-        }
+    #login {
+      width: 90%;
+      margin-left: 15px;
     }
+  }
 }

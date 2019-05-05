@@ -1,3 +1,9 @@
- #profielMain {
-     width: 85%;
- }
+#profielMain {
+  width: 85%;
+}
+
+#profile-meta-data {
+  > div:last-of-type {
+    margin-bottom: 20px;
+  }
+}
