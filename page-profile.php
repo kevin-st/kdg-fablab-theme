@@ -37,6 +37,12 @@
       <div class="content-profile">
         <section>
           <h3>Persoonlijke gegevens</h3>
+          <div>
+            <p>
+              <span class="profile-value-label">Gebruikersnaam:</span>
+              <span class="profile-value"><?php echo $user->user_nicename; ?></span>
+            </p>
+          </div>
           <div class="disp-f col-2-of-2">
             <div class="col-1-of-2">
               <p>
@@ -52,18 +58,23 @@
             </div>
           </div>
 
-          <div>
-            <p>
-              <span class="profile-value-label">E-mailadres:</span>
-              <span class="profile-value"><?php echo $user->user_email; ?></span>
-            </p>
-          </div>
-
-          <div>
-            <p>
-              <span class="profile-value-label">Telefoonnummer:</span>
-              <span class="profile-value"><?php echo $tel_number; ?></span>
-            </p>
+          <div class="disp-f col-2-of-2">
+            <div class="col-1-of-2">
+              <div>
+                <p>
+                  <span class="profile-value-label">E-mailadres:</span>
+                  <span class="profile-value"><?php echo $user->user_email; ?></span>
+                </p>
+              </div>
+            </div>
+            <div class="col-1-of-2">
+              <div>
+                <p>
+                  <span class="profile-value-label">Telefoonnummer:</span>
+                  <span class="profile-value"><?php echo $tel_number; ?></span>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
