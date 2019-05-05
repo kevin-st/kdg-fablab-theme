@@ -740,6 +740,9 @@ body.login-action-register {
     padding-left: 15px;
     background: rgba(255, 0, 0, 0.3);
   }
+.modal > p {
+    margin: 10px 0 !important;
+  }
 html body {
   margin: 0px;
   padding: 0;
@@ -1346,62 +1349,6 @@ padding-top: 20px;
   color: #34bedc;
   text-decoration: none;
 }
-.widgettitle {
-  display: none;
-}
-.sidebar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-.sidebar ul .menu-item {
-      float: left;
-      margin-right: 15px;
-      background-color: #34bedc;
-    }
-.sidebar ul .menu-item a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-.sidebar ul .menu-item a:hover {
-          color: #1d1d1b;
-        }
-.content-profile h3 {
-    font-family: "KdG", "proximanova", sans-serif;
-  }
-.content-profile p,
-  .content-profile h3 {
-    margin: 0;
-  }
-.content-profile p {
-    line-height: 1.8;
-  }
-.content-profile section,
-    .content-profile section > div {
-      margin: 20px 0;
-    }
-.profile-value-label {
-  display: block;
-  line-height: 1.26;
-}
-@media (max-width: 700px) {
-  #profielMain {
-    min-height: 620px;
-  }
-
-  .sidebar {
-    width: 100%;
-  }
-
-  #profielMain .menu-item {
-    width: 85%;
-    margin-bottom: 15px;
-  }
-  }
 .intro404{
   width: 70%;
   margin: 100px auto 0px auto;
@@ -1471,6 +1418,55 @@ margin-top: 50px;
 #profielMain {
   width: 85%;
 }
+#profielMain .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+#profielMain .menu .menu-item {
+      float: left;
+      margin-right: 15px;
+      background-color: #34bedc;
+    }
+#profielMain .menu .menu-item a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+#profielMain .menu .menu-item a:hover {
+          color: #1d1d1b;
+        }
+.content-profile h3 {
+    font-family: "KdG", "proximanova", sans-serif;
+  }
+.content-profile p,
+  .content-profile h3 {
+    margin: 0;
+  }
+.content-profile p {
+    line-height: 1.8;
+  }
+.content-profile section,
+    .content-profile section > div {
+      margin: 20px 0;
+    }
+.profile-value-label {
+  display: block;
+  line-height: 1.26;
+}
+@media (max-width: 700px) {
+  #profielMain {
+    min-height: 620px;
+  }
+
+  #profielMain .menu-item {
+    width: 85%;
+    margin-bottom: 15px;
+  }
+  }
 #profile-meta-data > div:last-of-type {
     margin-bottom: 20px;
   }

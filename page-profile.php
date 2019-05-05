@@ -23,9 +23,12 @@
   $who_are_you = isset($user_meta['who_are_you'][0]) ? $user_meta['who_are_you'][0] : "";
 ?>
 <main id="profielMain">
-  <div>
-    <?php get_sidebar("profile"); ?>
-    <div>
+    <?php
+      wp_nav_menu([
+        "theme_location" => "profile_navigation"
+      ]);
+    ?>
+    <div class="content-profile">
       <?php
         while(have_posts()) {
           the_post();
@@ -38,7 +41,7 @@
           if ($_SESSION['sent']) {
             $_SESSION['sent'] = FALSE;
       ?>
-        <div class="modal-<?php echo isset($_SESSION['msg-type']) ? $_SESSION['msg-type'] : ""; ?>">
+        <div class="modal modal-<?php echo isset($_SESSION['msg-type']) ? $_SESSION['msg-type'] : ""; ?>">
           <p><?php echo isset($_SESSION['msg']) ? $_SESSION['msg'] : "Er ging iets mis."; ?></p>
         </div>
       <?php
@@ -46,7 +49,7 @@
         }
       ?>
 
-      <div class="content-profile">
+      <div id="user-info">
         <section>
           <h3>Persoonlijke gegevens</h3>
           <div>
@@ -147,8 +150,8 @@
         </section>
       </div>
     </div>
-  </div>
 </main>
 <?php
   get_footer();
-?>
+
+  // do not close php tags at the end of a file

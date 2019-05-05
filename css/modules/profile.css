@@ -1,5 +1,68 @@
 #profielMain {
   width: 85%;
+
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    .menu-item {
+      float: left;
+      margin-right: 15px;
+      background-color: $main_accent;
+
+      a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+
+        &:hover {
+          color: $zwartKdg;
+        }
+      }
+    }
+  }
+}
+
+.content-profile {
+  h3 {
+    font-family: "KdG", "proximanova", sans-serif;
+  }
+
+  p,
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  section {
+    &,
+    > div {
+      margin: 20px 0;
+    }
+  }
+}
+
+.profile-value-label {
+  display: block;
+  line-height: 1.26;
+}
+
+@mixin phone {
+  #profielMain {
+    min-height: 620px;
+  }
+
+  #profielMain .menu-item {
+    width: 85%;
+    margin-bottom: 15px;
+  }
 }
 
 #profile-meta-data {

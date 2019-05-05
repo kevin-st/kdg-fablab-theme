@@ -167,93 +167,99 @@
   $who_are_you = isset($user_meta['who_are_you'][0]) ? $user_meta['who_are_you'][0] : "";
 ?>
 <main id="profielMain">
-  <?php get_sidebar("profile"); ?>
-  <h1><?php the_title(); ?></h1>
-  <form id="profile-meta-data" action="<?php the_permalink(); ?>" method="post">
+  <?php
+    wp_nav_menu([
+      "theme_location" => "profile_navigation"
+    ]);
+  ?>
+  <div id="user-info">
+    <h1><?php the_title(); ?></h1>
+    <form id="profile-meta-data" action="<?php the_permalink(); ?>" method="post">
 
-    <div class="disp-f col-2-of-2">
-      <div class="col-1-of-2">
-        <div class="input-group mr-med">
-          <label>Voornaam:</label>
-          <input class="<?php echo ($first_name_error !== "") ? "error" : ""; ?>" type="text" name="first_name" value="<?php echo $first_name; ?>" />
-          <span class="error-message <?php echo ($first_name_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $first_name_error; ?></span>
+      <div class="disp-f col-2-of-2">
+        <div class="col-1-of-2">
+          <div class="input-group mr-med">
+            <label>Voornaam:</label>
+            <input class="<?php echo ($first_name_error !== "") ? "error" : ""; ?>" type="text" name="first_name" value="<?php echo $first_name; ?>" />
+            <span class="error-message <?php echo ($first_name_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $first_name_error; ?></span>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <div class="input-group">
+            <label>Achternaam:</label>
+            <input class="<?php echo ($last_name_error !== "") ? "error" : ""; ?>" type="text" name="last_name" value="<?php echo $last_name; ?>" />
+            <span class="error-message <?php echo ($last_name_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $last_name_error; ?></span>
+          </div>
         </div>
       </div>
-      <div class="col-1-of-2">
-        <div class="input-group">
-          <label>Achternaam:</label>
-          <input class="<?php echo ($last_name_error !== "") ? "error" : ""; ?>" type="text" name="last_name" value="<?php echo $last_name; ?>" />
-          <span class="error-message <?php echo ($last_name_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $last_name_error; ?></span>
-        </div>
-      </div>
-    </div>
 
-    <div class="disp-f col-2-of-2">
-      <div class="col-1-of-2">
-        <div class="input-group mr-med">
-          <label>E-mailadres:</label>
-          <input class="<?php echo ($email_error !== "") ? "error" : ""; ?>" type="text" name="email" value="<?php echo $email; ?>"/>
-          <span class="error-message <?php echo ($email_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $email_error; ?></span>
+      <div class="disp-f col-2-of-2">
+        <div class="col-1-of-2">
+          <div class="input-group mr-med">
+            <label>E-mailadres:</label>
+            <input class="<?php echo ($email_error !== "") ? "error" : ""; ?>" type="text" name="email" value="<?php echo $email; ?>"/>
+            <span class="error-message <?php echo ($email_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $email_error; ?></span>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <div class="input-group">
+            <label>Telefoonnummer:</label>
+            <input class="<?php echo ($tel_number_error !== "") ? "error" : ""; ?>" type="text" name="tel_number" value="<?php echo $tel_number; ?>"/>
+            <span class="error-message <?php echo ($tel_number_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $tel_number_error; ?></span>
+          </div>
         </div>
       </div>
-      <div class="col-1-of-2">
-        <div class="input-group">
-          <label>Telefoonnummer:</label>
-          <input class="<?php echo ($tel_number_error !== "") ? "error" : ""; ?>" type="text" name="tel_number" value="<?php echo $tel_number; ?>"/>
-          <span class="error-message <?php echo ($tel_number_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $tel_number_error; ?></span>
-        </div>
-      </div>
-    </div>
 
-    <div class="input-group">
-      <label>Adres:</label>
-      <input class="<?php echo ($address_error !== "") ? "error" : ""; ?>" type="text" name="address" value="<?php echo $address; ?>"/>
-      <span class="error-message <?php echo ($address_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $address_error; ?></span>
-    </div>
-
-    <div class="disp-f col-2-of-2">
-      <div class="col-1-of-2">
-        <div class="input-group mr-med">
-          <label>Postcode:</label>
-          <input class="<?php echo ($postal_code_error !== "") ? "error" : ""; ?>" type="text" name="postal_code" value="<?php echo $postal_code; ?>"/>
-          <span class="error-message <?php echo ($postal_code_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $postal_code_error; ?></span>
-        </div>
-      </div>
-      <div class="col-1-of-2">
-        <div class="input-group">
-          <label>Gemeente:</label>
-          <input class="<?php echo ($city_error !== "") ? "error" : ""; ?>" type="text" name="city" value="<?php echo $city; ?>"/>
-          <span class="error-message <?php echo ($city_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $city_error; ?></span>
-        </div>
-      </div>
-    </div>
-
-    <?php if ($who_are_you === "bedrijf") { ?>
       <div class="input-group">
-        <label>Naam bedrijf:</label>
-        <input class="<?php echo ($company_name_error !== "") ? "error" : ""; ?>" type="text" name="company_name" value="<?php echo $company_name; ?>"/>
-        <span class="error-message <?php echo ($company_name_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $company_name_error; ?></span>
+        <label>Adres:</label>
+        <input class="<?php echo ($address_error !== "") ? "error" : ""; ?>" type="text" name="address" value="<?php echo $address; ?>"/>
+        <span class="error-message <?php echo ($address_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $address_error; ?></span>
       </div>
-      <div class="input-group">
-        <label>BTW-nummer:</label>
-        <input class="<?php echo ($VAT_number_error !== "") ? "error" : ""; ?>" type="text" name="VAT_number" value="<?php echo $VAT_number; ?>"/>
-        <span class="error-message <?php echo ($VAT_number_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $VAT_number_error; ?></span>
-      </div>
-    <?php } ?>
 
-    <!-- <div class="input-group">
-      <label>Wie ben je?</label>
-      <select class="<?php // echo ($who_are_you_error !== "") ? "error" : ""; ?>" name="who_are_you">
-        <option value="" <?php // if ($who_are_you == "") echo "selected"; ?>> Kiezen </option>
-        <option value="student" <?php // if ($who_are_you == "student") echo "selected"; ?>>Student</option>
-        <option value="bedrijf" <?php // if ($who_are_you == "bedrijf") echo "selected"; ?>>Bedrijf</option>
-        <option value="particulier" <?php // if ($who_are_you == "particulier") echo "selected"; ?>>Particulier</option>
-      </select>
-      <span class="error-message <?php // echo ($who_are_you_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php // echo $who_are_you_error; ?></span>
-    </div>
-    -->
-    <input class="btn btn-submit" type="submit" name="submit" value="Profiel bijwerken" />
-  </form>
+      <div class="disp-f col-2-of-2">
+        <div class="col-1-of-2">
+          <div class="input-group mr-med">
+            <label>Postcode:</label>
+            <input class="<?php echo ($postal_code_error !== "") ? "error" : ""; ?>" type="text" name="postal_code" value="<?php echo $postal_code; ?>"/>
+            <span class="error-message <?php echo ($postal_code_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $postal_code_error; ?></span>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <div class="input-group">
+            <label>Gemeente:</label>
+            <input class="<?php echo ($city_error !== "") ? "error" : ""; ?>" type="text" name="city" value="<?php echo $city; ?>"/>
+            <span class="error-message <?php echo ($city_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $city_error; ?></span>
+          </div>
+        </div>
+      </div>
+
+      <?php if ($who_are_you === "bedrijf") { ?>
+        <div class="input-group">
+          <label>Naam bedrijf:</label>
+          <input class="<?php echo ($company_name_error !== "") ? "error" : ""; ?>" type="text" name="company_name" value="<?php echo $company_name; ?>"/>
+          <span class="error-message <?php echo ($company_name_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $company_name_error; ?></span>
+        </div>
+        <div class="input-group">
+          <label>BTW-nummer:</label>
+          <input class="<?php echo ($VAT_number_error !== "") ? "error" : ""; ?>" type="text" name="VAT_number" value="<?php echo $VAT_number; ?>"/>
+          <span class="error-message <?php echo ($VAT_number_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $VAT_number_error; ?></span>
+        </div>
+      <?php } ?>
+
+      <!-- <div class="input-group">
+        <label>Wie ben je?</label>
+        <select class="<?php // echo ($who_are_you_error !== "") ? "error" : ""; ?>" name="who_are_you">
+          <option value="" <?php // if ($who_are_you == "") echo "selected"; ?>> Kiezen </option>
+          <option value="student" <?php // if ($who_are_you == "student") echo "selected"; ?>>Student</option>
+          <option value="bedrijf" <?php // if ($who_are_you == "bedrijf") echo "selected"; ?>>Bedrijf</option>
+          <option value="particulier" <?php // if ($who_are_you == "particulier") echo "selected"; ?>>Particulier</option>
+        </select>
+        <span class="error-message <?php // echo ($who_are_you_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php // echo $who_are_you_error; ?></span>
+      </div>
+      -->
+      <input class="btn btn-submit" type="submit" name="submit" value="Profiel bijwerken" />
+    </form>
+  </div>
 </main>
 <?php
   get_footer();

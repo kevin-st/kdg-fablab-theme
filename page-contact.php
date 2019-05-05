@@ -82,7 +82,7 @@
         if ($_SESSION['sent']) {
           $_SESSION['sent'] = FALSE;
     ?>
-      <div class="modal-<?php echo isset($_SESSION['msg-type']) ? $_SESSION['msg-type'] : ""; ?>">
+      <div class="modal modal-<?php echo isset($_SESSION['msg-type']) ? $_SESSION['msg-type'] : ""; ?>">
         <p><?php echo isset($_SESSION['msg']) ? $_SESSION['msg'] : "Er ging iets mis."; ?></p>
       </div>
     <?php

@@ -14,4 +14,8 @@
     padding-left: 15px;
     background: $modal_error_bg;
   }
+
+  > p {
+    margin: 10px 0 !important;
+  }
 }
