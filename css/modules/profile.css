@@ -55,19 +55,34 @@
   line-height: 1.26;
 }
 
-@mixin phone {
-  #profielMain {
-    min-height: 620px;
-  }
+@mixin pc {
+    #profielMain .menu .menu-item {
+        width: 30%;
+    }
+}
 
-  #profielMain .menu-item {
-    width: 85%;
-    margin-bottom: 15px;
-  }
+@mixin tablet {
+    #profielMain .menu .menu-item {
+        float: none;
+        margin-bottom: 10px;
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@mixin phone {
+    #profielMain {
+        min-height: 620px;
+    }
+
+    #profielMain .menu-item {
+        width: 85%;
+        margin-bottom: 15px;
+    }
 }
 
 #profile-meta-data {
-  > div:last-of-type {
-    margin-bottom: 20px;
-  }
+    > div:last-of-type {
+        margin-bottom: 20px;
+      }
 }
