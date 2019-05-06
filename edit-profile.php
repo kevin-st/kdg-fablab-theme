@@ -167,11 +167,6 @@
   $who_are_you = isset($user_meta['who_are_you'][0]) ? $user_meta['who_are_you'][0] : "";
 ?>
 <main id="profielMain">
-  <?php
-    wp_nav_menu([
-      "theme_location" => "profile_navigation"
-    ]);
-  ?>
   <div id="user-info">
     <h1><?php the_title(); ?></h1>
     <form id="profile-meta-data" action="<?php the_permalink(); ?>" method="post">
@@ -212,7 +207,7 @@
 
       <div class="input-group">
         <label>Adres:</label>
-        <input class="<?php echo ($address_error !== "") ? "error" : ""; ?>" type="text" name="address" value="<?php echo $address; ?>"/>
+        <input class="<?php echo ($address_error !== "") ? "error" : ""; ?>" id="adres" type="text" name="address" value="<?php echo $address; ?>"/>
         <span class="error-message <?php echo ($address_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $address_error; ?></span>
       </div>
 
@@ -257,7 +252,7 @@
         <span class="error-message <?php // echo ($who_are_you_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php // echo $who_are_you_error; ?></span>
       </div>
       -->
-      <input class="btn btn-submit" type="submit" name="submit" value="Profiel bijwerken" />
+      <input class="btn btn-submit editBtn" type="submit" name="submit" value="Aanpassingen opslaan" />
     </form>
   </div>
 </main>

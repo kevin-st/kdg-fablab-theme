@@ -23,11 +23,6 @@
   $who_are_you = isset($user_meta['who_are_you'][0]) ? $user_meta['who_are_you'][0] : "";
 ?>
 <main id="profielMain">
-    <?php
-      wp_nav_menu([
-        "theme_location" => "profile_navigation"
-      ]);
-    ?>
     <div class="content-profile">
       <?php
         while(have_posts()) {
@@ -48,6 +43,12 @@
           }
         }
       ?>
+      
+      <?php
+      wp_nav_menu([
+        "theme_location" => "profile_navigation"
+      ]);
+        ?>
 
       <div id="user-info">
         <section>

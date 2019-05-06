@@ -11,6 +11,7 @@
       float: left;
       margin-right: 15px;
       background-color: $main_accent;
+      width: 20%;
 
       a {
         display: block;
