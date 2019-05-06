@@ -181,7 +181,7 @@
         </div>
         <div class="col-1-of-2">
           <div class="input-group">
-            <label>Achternaam:</label>
+            <label class="extra">Achternaam:</label>
             <input class="<?php echo ($last_name_error !== "") ? "error" : ""; ?>" type="text" name="last_name" value="<?php echo $last_name; ?>" />
             <span class="error-message <?php echo ($last_name_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $last_name_error; ?></span>
           </div>

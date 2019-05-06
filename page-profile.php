@@ -66,7 +66,7 @@
                 <span class="profile-value"><?php echo $first_name; ?></span>
               </p>
             </div>
-            <div class="col-1-of-2">
+            <div class="col-1-of-2 extra">
               <p>
                 <span class="profile-value-label">Achternaam:</span>
                 <span class="profile-value"><?php echo $last_name; ?></span>
@@ -83,7 +83,7 @@
                 </p>
               </div>
             </div>
-            <div class="col-1-of-2">
+            <div class="col-1-of-2 extra">
               <div>
                 <p>
                   <span class="profile-value-label">Telefoonnummer:</span>
@@ -121,7 +121,7 @@
                 <span class="profile-value"><?php echo $postal_code; ?></span>
               </p>
             </div>
-            <div class="col-1-of-2">
+            <div class="col-1-of-2 extra">
               <p>
                 <span class="profile-value-label">Gemeente:</span>
                 <span class="profile-value"><?php echo $city; ?></span>
