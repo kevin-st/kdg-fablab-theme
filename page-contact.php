@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+  /* Template Name: Contact template */
+  
+  get_header();
+?>
 <?php
   /*
     REMOVE THIS COMMENT

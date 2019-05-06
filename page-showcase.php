@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+  /* Template Name: Showcase template */
+  get_header();
+?>
 <?php
   /*
     REMOVE THIS COMMENT

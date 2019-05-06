@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+  /* Template Name: Reserveren Template */
+  
+  get_header();
+?>
 <?php
   /*
     REMOVE THIS COMMENT
