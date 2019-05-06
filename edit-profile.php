@@ -252,7 +252,7 @@
         <span class="error-message <?php // echo ($who_are_you_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php // echo $who_are_you_error; ?></span>
       </div>
       -->
-      <input class="btn btn-submit" type="submit" name="submit" value="Profiel bijwerken" />
+      <input class="btn btn-submit editBtn" type="submit" name="submit" value="Aanpassingen opslaan" />
     </form>
   </div>
 </main>
