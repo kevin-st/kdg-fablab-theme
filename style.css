@@ -1411,6 +1411,9 @@ margin-top: 50px;
 #profielMain .menu .menu-item a:hover {
           color: #1d1d1b;
         }
+.content-profile > h1 > span {
+      font-family: "iconfont";
+    }
 .content-profile h3 {
     font-family: "KdG", "proximanova", sans-serif;
   }
@@ -1430,35 +1433,35 @@ margin-top: 50px;
   line-height: 1.26;
 }
 @media (max-width:1050px) {
-    #profielMain .menu .menu-item {
-        width: 30%;
-    }
+  #profielMain .menu .menu-item {
+    width: 30%;
+  }
   }
 @media (max-width: 960px) {
-    #profielMain .menu .menu-item {
-        float: none;
-        margin-bottom: 10px;
-        width: 100%;
-        margin-right: 0;
-    }
-    
-    .extra {
-        margin-top: 17px;
-    }
+  #profielMain .menu .menu-item {
+    float: none;
+    margin-bottom: 10px;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .extra {
+    margin-top: 17px;
+  }
   }
 @media (max-width: 700px) {
-    #profielMain {
-        min-height: 620px;
-    }
+  #profielMain {
+    min-height: 620px;
+  }
 
-    #profielMain .menu-item {
-        width: 85%;
-        margin-bottom: 15px;
-    }
+  #profielMain .menu-item {
+    width: 85%;
+    margin-bottom: 15px;
+  }
   }
 #profile-meta-data > div:last-of-type {
-        margin-bottom: 20px;
-      }
+    margin-bottom: 20px;
+  }
 .editBtn {
     font-size: 16px;
     width: 50%;

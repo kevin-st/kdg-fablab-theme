@@ -28,7 +28,10 @@
         while(have_posts()) {
           the_post();
         ?>
-        <h1><?php the_title(); ?></h1>
+        <h1>
+          <?php the_title(); ?>
+          <span><a href="<?php echo site_url("/mijn-profiel/edit"); ?>">u</a></span>
+        </h1>
         <?php
         }
 
@@ -43,7 +46,7 @@
           }
         }
       ?>
-      
+
       <?php
       wp_nav_menu([
         "theme_location" => "profile_navigation"

@@ -29,6 +29,12 @@
 }
 
 .content-profile {
+  & > h1 {
+    & > span {
+      font-family: "iconfont";
+    }
+  }
+
   h3 {
     font-family: "KdG", "proximanova", sans-serif;
   }
@@ -56,37 +62,37 @@
 }
 
 @mixin pc {
-    #profielMain .menu .menu-item {
-        width: 30%;
-    }
+  #profielMain .menu .menu-item {
+    width: 30%;
+  }
 }
 
 @mixin tablet {
-    #profielMain .menu .menu-item {
-        float: none;
-        margin-bottom: 10px;
-        width: 100%;
-        margin-right: 0;
-    }
-    
-    .extra {
-        margin-top: 17px;
-    }
+  #profielMain .menu .menu-item {
+    float: none;
+    margin-bottom: 10px;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .extra {
+    margin-top: 17px;
+  }
 }
 
 @mixin phone {
-    #profielMain {
-        min-height: 620px;
-    }
+  #profielMain {
+    min-height: 620px;
+  }
 
-    #profielMain .menu-item {
-        width: 85%;
-        margin-bottom: 15px;
-    }
+  #profielMain .menu-item {
+    width: 85%;
+    margin-bottom: 15px;
+  }
 }
 
 #profile-meta-data {
-    > div:last-of-type {
-        margin-bottom: 20px;
-      }
+  > div:last-of-type {
+    margin-bottom: 20px;
+  }
 }
