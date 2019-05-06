@@ -38,7 +38,11 @@
     <div role="button" class="detailBtn">
       <!-- url fix redirect when not logged in -->
       <a class="btn btn-dark " href="<?php
-        $redirect_to = esc_url(add_query_arg("id", $title, site_url('/reserveren/')));
+        $redirect_to = esc_url(add_query_arg([
+          "id" => $title,
+          "type" => "machine"
+        ], site_url('/reserveren/')));
+        
         if (is_user_logged_in()) {
           // redirect to reservation page
           echo $redirect_to;
