@@ -1,49 +1,19 @@
-/*@font-face {
+@font-face {
   font-family: "KdG";
-  src: url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.woff")
-      format("woff"),
-    url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.ttf")
-      format("truetype");
+  src: url("fonts/KdG-Regular.woff") format("woff"),
+    url("fonts/KdG-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "iconfont";
-  src: url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/iconfont.woff")
-    format("woff");
+  src: url("fonts/iconfont.woff") format("woff");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "proximanova";
-  src: url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.woff")
-      format("woff"),
-    url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.ttf")
-      format("truetype");
-  font-weight: normal;
-}*/
-
-@font-face {
-  font-family: "KdG";
-  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.woff")
-      format("woff"),
-    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.ttf")
-      format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "iconfont";
-  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/iconfont.woff")
-    format("woff");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "proximanova";
-  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.woff")
-      format("woff"),
-    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.ttf")
-      format("truetype");
+  src: url("fonts/proxima-nova-w8.woff") format("woff"),
+    url("fonts/proxima-nova-w8.ttf") format("truetype");
   font-weight: normal;
 }

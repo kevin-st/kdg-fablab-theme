@@ -15,50 +15,21 @@
   $variable name: value
     -> e.g. $mainBtnColor: #000;
 */
-/*@font-face {
-  font-family: "KdG";
-  src: url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.woff")
-      format("woff"),
-    url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.ttf")
-      format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "iconfont";
-  src: url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/iconfont.woff")
-    format("woff");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "proximanova";
-  src: url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.woff")
-      format("woff"),
-    url("http://1819.k3.po2.mtantwerp.eu/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.ttf")
-      format("truetype");
-  font-weight: normal;
-}*/
 @font-face {
   font-family: "KdG";
-  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.woff")
-      format("woff"),
-    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/KdG-Regular.ttf")
-      format("truetype");
+  src: url("fonts/KdG-Regular.woff") format("woff"),
+    url("fonts/KdG-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "iconfont";
-  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/iconfont.woff")
-    format("woff");
+  src: url("fonts/iconfont.woff") format("woff");
   font-weight: normal;
 }
 @font-face {
   font-family: "proximanova";
-  src: url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.woff")
-      format("woff"),
-    url("http://local.kdg-fablab.test/wp-content/themes/kdg-fablab-theme/fonts/proxima-nova-w8.ttf")
-      format("truetype");
+  src: url("fonts/proxima-nova-w8.woff") format("woff"),
+    url("fonts/proxima-nova-w8.ttf") format("truetype");
   font-weight: normal;
 }
 /*
@@ -178,6 +149,10 @@
   }
 .attach-to-bottom {
   bottom: 0;
+}
+.valencia {
+  -webkit-filter: sepia(0.15) saturate(1.5) contrast(0.9);
+  filter: sepia(0.15) saturate(1.5) contrast(0.9);
 }
 /* modules */
 /* example module:
@@ -463,17 +438,13 @@ footer>#socials>a{
     margin: 5%;
   }
   }
-main{
+main {
   margin: 0 auto;
   padding-top: 160px;
   padding-bottom: 230px;
 }
-body{
-  font-family: 'proximanova';
-}
-.valencia {
-    -webkit-filter: sepia(0.15) saturate(1.5) contrast(0.9);
-    filter: sepia(0.15) saturate(1.5) contrast(0.9);
+body {
+  font-family: "proximanova";
 }
 /* example module */
 /*

@@ -136,3 +136,8 @@
 .attach-to-bottom {
   bottom: 0;
 }
+
+.valencia {
+  -webkit-filter: sepia(0.15) saturate(1.5) contrast(0.9);
+  filter: sepia(0.15) saturate(1.5) contrast(0.9);
+}
