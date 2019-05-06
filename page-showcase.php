@@ -17,8 +17,6 @@
    */
 ?>
 
-
-<body>
 <main class="content-show">
 
   <?php
@@ -45,7 +43,6 @@
     </div>
 
 </main>
-</body>
 
 <?php
   get_footer();
