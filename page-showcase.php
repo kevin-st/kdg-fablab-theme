@@ -18,10 +18,13 @@
 <body>
 <main class="content-show">
 
-    <h1>Showcase</h1>
-
-    <p>Zoek je inspiratie? Kijk dan even hieronder.</p>
-    <p>Heb je zelf iets leuks gemaakt dat je wil delen? Zet je post dan op Instagram met <a class="href_Showcase" href="https://www.instagram.com/explore/tags/kdgfablab/">#kdgfablab</a> en inspireer anderen.</p><br>
+  <?php
+    while(have_posts()) {
+      the_post();
+  ?>
+    <h1><?php the_title(); ?></h1>
+    <?php the_content(); ?>
+  <?php } ?>
 
     <div class="feed">
         <!-- <div>tag needs to be here for now - don't delete -->
