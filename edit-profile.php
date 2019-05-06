@@ -167,11 +167,6 @@
   $who_are_you = isset($user_meta['who_are_you'][0]) ? $user_meta['who_are_you'][0] : "";
 ?>
 <main id="profielMain">
-  <?php
-    wp_nav_menu([
-      "theme_location" => "profile_navigation"
-    ]);
-  ?>
   <div id="user-info">
     <h1><?php the_title(); ?></h1>
     <form id="profile-meta-data" action="<?php the_permalink(); ?>" method="post">
