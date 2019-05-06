@@ -207,7 +207,7 @@
 
       <div class="input-group">
         <label>Adres:</label>
-        <input class="<?php echo ($address_error !== "") ? "error" : ""; ?>" type="text" name="address" value="<?php echo $address; ?>"/>
+        <input class="<?php echo ($address_error !== "") ? "error" : ""; ?>" id="adres" type="text" name="address" value="<?php echo $address; ?>"/>
         <span class="error-message <?php echo ($address_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $address_error; ?></span>
       </div>
 

@@ -1447,3 +1447,30 @@ margin-top: 50px;
     width: 50%;
     margin-left: 25%;
 }
+#profile-meta-data {
+    width: 70%;
+}
+@media (max-width: 960px) {
+    #profile-meta-data {
+        width: 100%;
+    }
+  }
+@media (max-width: 700px) {
+    .disp-f {
+        display: block;
+    }
+    
+    .input-group {
+        width: 200%;
+    }
+    
+    #adres {
+        width: 50%;
+    }
+    
+    .editBtn {
+        width: 100%;
+        margin-left: 0;
+    }
+  }
+
