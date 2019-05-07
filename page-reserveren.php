@@ -5,7 +5,7 @@
   $reservation_item = isset($_SESSION["reservation"]["reservation-item"]) ? $_SESSION["reservation"]["reservation-item"] : NULL;
 
   // check if a certain step has errors
-  $init_step_error = "";
+  $init_step_error = $first_step_ws_error = "";
 
   echo "<pre>";
   echo "SESSIE";
@@ -32,11 +32,15 @@
       } // End of initial step
       else if ($current_step === 1) {
         if ($reservation_type === "workshop") {
-          $_SESSION["reservation"]["reservation-item"] = $reservation_item = $_POST["reservation-item"];
+          if (!empty($_POST["reservation-item"])) {
+            $_SESSION["reservation"]["reservation-item"] = $reservation_item = $_POST["reservation-item"];
+          } else {
+            $first_step_ws_error = "Kies een workshop";
+          }
         }
       } // End of first step
 
-      if (empty($init_step_error)) {
+      if (empty($init_step_error) && empty($first_step_ws_error)) {
         // update the current step value
         $_SESSION["reservation"]["reservation-step"] = $current_step = $next_step;
       }
@@ -92,7 +96,8 @@
       </div>
       <div class="input-group">
         <label for="reservation-item">Welke workshop wilt u reserveren?</label>
-        <select id="reservation-item" name="reservation-item">
+        <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($first_step_ws_error)) ? "error" : ""; ?>">
+          <option value="">-- Kiezen --</option>
           <?php
             $all_workshops = new WP_Query([
               "posts_per_page" => -1,
@@ -110,6 +115,7 @@
             }
           ?>
         </select>
+        <span class="error-message <?php echo ($first_step_ws_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $first_step_ws_error; ?></span>
       </div>
       <input type="hidden" name="step" value="3" />
       <input class="btn btn-submit" name="submit" type="submit" value="Volgende" />
