@@ -78,9 +78,9 @@
         <div class="input-group">
           <label for="reservation-type">Wat wilt u reserveren?</label>
           <select id="reservation-type" for="reservation-type" name="reservation-type" class="<?php echo (!empty($init_step_error)) ? "error" : "" ; ?>">
-            <option value="">-- Kiezen --</option>
-            <option value="machine">Toestel</option>
-            <option value="workshop">Workshop</option>
+            <option value="" <?php echo ($reservation_type == "") ? "selected" : ""; ?>>-- Kiezen --</option>
+            <option value="machine" <?php echo ($reservation_type == "machine") ? "selected" : ""; ?>>Toestel</option>
+            <option value="workshop" <?php echo ($reservation_type == "workshop") ? "selected" : ""; ?>>Workshop</option>
           </select>
           <span class="error-message <?php echo ($init_step_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $init_step_error; ?></span>
         </div>
@@ -102,7 +102,7 @@
       <div class="input-group">
         <label for="reservation-item">Welke workshop wilt u reserveren?</label>
         <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($first_step_ws_error)) ? "error" : ""; ?>">
-          <option value="">-- Kiezen --</option>
+          <option value="" <?php echo ($reservation_item == "") ? "selected" : ""; ?>>-- Kiezen --</option>
           <?php
             $all_workshops = new WP_Query([
               "posts_per_page" => -1,
@@ -113,7 +113,7 @@
               $all_workshops->the_post();
               $title = get_the_title();
           ?>
-          <option value="<?php echo $title; ?>">
+          <option value="<?php echo $title; ?>" <?php echo ($reservation_item == $title) ? "selected" : ""; ?>>
             <?php echo $title; ?>
           </option>
           <?php
