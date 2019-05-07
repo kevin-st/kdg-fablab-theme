@@ -519,6 +519,20 @@ body {
     background-color: #1d1d1b;
     color: #fff;
   }
+.btn-blue {
+    background-color: #34bedc;
+    color: #fff;
+  }
+.btn-blue:hover {
+      color: #1d1d1b;
+    }
+.btn-submit {
+    cursor: pointer;
+    border: none;
+    display: block;
+    padding: 14px 20px;
+    width: 100%;
+  }
 .btn:hover {
     color: #34bedc;
   }
@@ -536,18 +550,6 @@ body {
     width: 100%
 }
   }
-.btn-submit {
-    background-color: #34bedc;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-    display: block;
-    padding: 14px 20px;
-    width: 100%;
-  }
-.btn-submit:hover {
-      color: #1d1d1b;
-    }
 @media (max-width:1350px) {
   .morenewsBtn {
     width: 100%;

@@ -73,6 +73,23 @@
     color: $wit;
   }
 
+  &-blue {
+    background-color: $main_accent;
+    color: $wit;
+
+    &:hover {
+      color: $zwartKdg;
+    }
+  }
+
+  &-submit {
+    cursor: pointer;
+    border: none;
+    display: block;
+    padding: 14px 20px;
+    width: 100%;
+  }
+
   &:hover {
     color: $main_accent;
   }
@@ -90,20 +107,6 @@
   @mixin tablet {
     margin-right: 0;
     width: 100%;
-  }
-
-  &-submit {
-    background-color: $main_accent;
-    color: $wit;
-    cursor: pointer;
-    border: none;
-    display: block;
-    padding: 14px 20px;
-    width: 100%;
-
-    &:hover {
-      color: $zwartKdg;
-    }
   }
 }
 

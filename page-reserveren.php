@@ -85,7 +85,7 @@
           <span class="error-message <?php echo ($init_step_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $init_step_error; ?></span>
         </div>
         <input type="hidden" name="step" value="1" />
-        <input class="btn btn-submit" type="submit" name="submit" value="Volgende" />
+        <input class="btn btn-blue btn-submit" type="submit" name="submit" value="Volgende" />
         <!-- End of initial step -->
       <?php } ?>
 
@@ -125,10 +125,10 @@
       <input type="hidden" name="step" value="3" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">
-          <input class="btn btn-submit" name="submit" type="submit" value="Vorige" />
+          <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
         </div>
         <div class="col-1-of-2">
-          <input class="btn btn-submit" name="submit" type="submit" value="Volgende" />
+          <input class="btn btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
         </div>
       </div>
 
@@ -150,10 +150,10 @@
         </div>
         <div class="disp-f col-2-of-2">
           <div class="col-1-of-2">
-            <input class="btn btn-submit" name="submit" type="submit" value="Vorige" />
+            <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
           </div>
           <div class="col-1-of-2">
-            <input class="btn btn-submit" name="submit" type="submit" value="Volgende" />
+            <input class="btn btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
           </div>
       <?php } ?>
       <!-- End of Third step workshop -->
