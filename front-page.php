@@ -7,16 +7,16 @@
         -> in case of KdG Fablab: Nieuws
     */
   ?>
-  
+
   <div class="CTA">
     <?php
-      $last_added_machine = new WP_Query([
+      $newest_workshop = new WP_Query([
         "posts_per_page" => 1, // control number of posts with this -> -1 is all posts
         "post_type" => "workshop"
       ]);
 
-      while($last_added_machine->have_posts()) {
-        $last_added_machine->the_post();
+      while($newest_workshop->have_posts()) {
+        $newest_workshop->the_post();
     ?>
     <div id="background">
       <a class="CTAtext" href="<?php the_permalink(); ?>">
