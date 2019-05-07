@@ -47,7 +47,12 @@
     }
     else {
       // submit value is previous
-      $current_step -= 1;
+      if ($reservation_type === "workshop" && $current_step === 3) {
+        $_SESSION["reservation"]["reservation-step"] = $current_step = 1;
+      } else {
+        $current_step -= 1;
+        $_SESSION["reservation"]["reservation-step"] = $current_step;
+      }
     }
   }
 
@@ -118,7 +123,15 @@
         <span class="error-message <?php echo ($first_step_ws_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $first_step_ws_error; ?></span>
       </div>
       <input type="hidden" name="step" value="3" />
-      <input class="btn btn-submit" name="submit" type="submit" value="Volgende" />
+      <div class="disp-f col-2-of-2">
+        <div class="col-1-of-2">
+          <input class="btn btn-submit" name="submit" type="submit" value="Vorige" />
+        </div>
+        <div class="col-1-of-2">
+          <input class="btn btn-submit" name="submit" type="submit" value="Volgende" />
+        </div>
+      </div>
+
       <!-- End of first step workshop -->
       <?php } ?>
 
@@ -135,6 +148,13 @@
             <?php echo $reservation_item; ?>
           </p>
         </div>
+        <div class="disp-f col-2-of-2">
+          <div class="col-1-of-2">
+            <input class="btn btn-submit" name="submit" type="submit" value="Vorige" />
+          </div>
+          <div class="col-1-of-2">
+            <input class="btn btn-submit" name="submit" type="submit" value="Volgende" />
+          </div>
       <?php } ?>
       <!-- End of Third step workshop -->
 
