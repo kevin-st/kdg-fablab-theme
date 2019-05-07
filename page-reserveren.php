@@ -1,30 +1,42 @@
 <?php
   /* Template Name: Reserveren Template */
-  $step = 0;
+  $current_step = "0";
+  $reservation_type = isset($_SESSION["reservation"]["reservation-type"]) ? $_SESSION["reservation"]["reservation-type"] : NULL;
 
-  if ($_POST === []) {
-    echo "POST is leeg";
-  } else {
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
+  echo "<pre>";
+  echo "SESSIE";
+  var_dump($_SESSION);
+  echo "</pre>";
+
+  echo "<pre>";
+  echo "POST";
+  var_dump($_POST);
+  echo "</pre>";
+
+  if (isset($_POST["submit"])) {
+
+    // When submit value is next
+    if (strtolower($_POST["submit"]) === "volgende") {
+      $next_step = isset($_POST["step"]) ? $_POST["step"] : NULL;
+
+      // Initial step
+      if ($current_step === "0") {
+        if (isset($_POST["reservation-type"])) {
+          $_SESSION["reservation"]["reservation-type"] = $_POST["reservation-type"];
+          $reservation_type = $_SESSION["reservation"]["reservation-type"];
+          $current_step = $next_step;
+        }
+      }
+      // End of initial step
+
+    }
+    else {
+
+    }
+
   }
 
   get_header();
-?>
-<?php
-  /*
-    REMOVE THIS COMMENT
-
-    content for generic page goes here (layout can be used accross multiple pages):
-    -> e.g.
-      - About us
-      - Biography of an author
-      - ...
-
-    creating a custom page:
-    -> https://developer.wordpress.org/themes/template-files-section/page-template-files/#creating-custom-page-templates-for-global-use
-   */
 ?>
 <main>
   <div class="title-content">
@@ -41,47 +53,38 @@
   <div class="page-reserveren-content">
     <form id="reservation-form" action="<?php the_permalink(); ?>" method="post">
 
-      <?php if ($step === 0) { ?>
+      <?php if ($current_step === "0") { ?>
+        <!-- Initial step -->
         <div class="input-group">
-          <label for="reservation-item">Wat wilt u reserveren?</label>
-          <select name="reservation-item">
-            <optgroup label="Toestellen">
-              <?php
-                $machines_query = new WP_Query([
-                  "posts_per_page" => -1,
-                  "post_type" => "machine"
-                ]);
-
-                while($machines_query->have_posts()) {
-                  $machines_query->the_post();
-              ?>
-              <option><?php the_title(); ?></option>
-              <?php
-                }
-              ?>
-            </optgroup>
-            <optgroup label="Workshops">
-              <?php
-                $workshops_query = new WP_Query([
-                  "posts_per_page" => -1,
-                  "post_type" => "workshop"
-                ]);
-
-                while($workshops_query->have_posts()) {
-                  $workshops_query->the_post();
-              ?>
-              <option><?php the_title(); ?></option>
-              <?php
-                }
-              ?>
-            </optgroup>
+          <label for="reservation-type">Wat wilt u reserveren?</label>
+          <select for="reservation-type" name="reservation-type">
+            <option value="">-- Kiezen --</option>
+            <option value="machine">Toestel</option>
+            <option value="workshop">Workshop</option>
           </select>
         </div>
-        <div class="input-group">
-          <input type="date" name="reservation-date" value="" />
-        </div>
-
+        <input type="hidden" name="step" value="1" />
         <input class="btn btn-submit" type="submit" name="submit" value="Volgende" />
+        <!-- End of initial step -->
+      <?php } ?>
+
+
+      <?php echo "current step is: " . $current_step; ?>
+      <?php if ($current_step === "1" && $reservation_type === "workshop") { ?>
+      <div class="reservation-info">
+        <p>
+          <span class="fw-b">Reservatie voor:</span>
+          <?php echo $reservation_type; ?>
+        </p>
+      </div>
+      <!-- First step workshop -->
+      <div class="input-group">
+        <label for="reservation-item">Welke workshop wilt u reserveren?</label>
+        <select for="reservation-item">
+
+        </select>
+      </div>
+      <!-- End of first step workshop -->
       <?php } ?>
 
 

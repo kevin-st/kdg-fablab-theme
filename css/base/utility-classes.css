@@ -133,6 +133,12 @@
   }
 }
 
+.fw {
+  &-b {
+    font-weight: bold;
+  }
+}
+
 .attach-to-bottom {
   bottom: 0;
 }

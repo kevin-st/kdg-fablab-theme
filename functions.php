@@ -103,8 +103,6 @@
       if (!isset($args['img'])) {
         if (get_field('pagina_banner')) {
           $args['img'] = get_field('pagina_banner')['sizes']['pageBanner'];
-        }
-      }
     ?>
       <div class="page-banner p-rel">
         <img class="col-2-of-2 valencia" src="<?php echo $args['img']; ?>" alt="page-banner">
@@ -113,6 +111,8 @@
         <?php } ?>
       </div>
     <?php
+        }
+      }
     }
 
     /**
