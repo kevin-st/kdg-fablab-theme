@@ -1,0 +1,11 @@
+#reserverenMain {
+  width: 85%;
+}
+
+#reservation-form {
+    width: 40%;
+}
+
+.btnVolgende:hover {
+    color: $zwartKdg;
+}
