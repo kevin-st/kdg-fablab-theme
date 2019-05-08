@@ -1503,22 +1503,21 @@ margin-top: 50px;
   width: 85%;
 }
 /* PROGRESS BAR */
-.container {
-        width: 100%;
-        margin-bottom: 10%;
+.progressbar-container {
+  width: 100%;
+  margin-bottom: 10%;
+}
+.progressbar-container > .progressbar {
+    counter-reset: step;
+    color: #1d1d1b;
+  }
+.progressbar-container > .progressbar li {
+      list-style-type: none;
+      float: left;
+      position: relative;
+      text-align: center;
     }
-.progressbar {
-        counter-reset: step;
-        color: #1d1d1b;
-    }
-.progressbar li {
-        list-style-type: none;
-        float: left;
-        width: 33.33%;
-        position: relative;
-        text-align: center;
-    }
-.progressbar li:before {
+.progressbar-container > .progressbar li:before {
         content: counter(step);
         counter-increment: step;
         width: 30px;
@@ -1530,9 +1529,9 @@ margin-top: 50px;
         margin: 0 auto 10px auto;
         border-radius: 50%;
         background-color: white;
-    }
-.progressbar li:after {
-        content: '';
+      }
+.progressbar-container > .progressbar li:after {
+        content: "";
         position: absolute;
         width: 100%;
         height: 1px;
@@ -1540,70 +1539,79 @@ margin-top: 50px;
         top: 15px;
         left: -50%;
         z-index: -1;
-    }
-.progressbar li:first-child:after {
-        content: none;
-    }
-.progressbar li.active:before {
-        border-color: #34bedc;
-        background-color: #34bedc;
-    }
-.progressbar li.active + li:after {
-        background-color: #34bedc;
-    }
+      }
+.progressbar-container > .progressbar li:first-child:after {
+          content: none;
+        }
+.progressbar-container > .progressbar li:first-child:nth-last-child(3),
+          .progressbar-container > .progressbar li:first-child:nth-last-child(3) ~ li {
+            width: 33.33%;
+          }
+.progressbar-container > .progressbar li:first-child:nth-last-child(4),
+          .progressbar-container > .progressbar li:first-child:nth-last-child(4) ~ li {
+            width: 25%;
+          }
+.progressbar-container > .progressbar li.progressbar-active:before {
+          color: #fff;
+          border-color: #34bedc;
+          background-color: #34bedc;
+        }
+.progressbar-container > .progressbar li.progressbar-active + li:after {
+          background-color: #34bedc;
+        }
 #reservation-form {
-    width: 40%;
-    margin-left: 30%;
+  width: 40%;
+  margin-left: 30%;
 }
 .btn-previous {
-    width: 95%;
+  width: 95%;
 }
 .btn-next {
-    margin-left: 5%;
-    width: 95%;
+  margin-left: 5%;
+  width: 95%;
 }
 .btn-blue:hover {
-    color: #1d1d1b;
+  color: #1d1d1b;
 }
 @media (max-width: 960px) {
-    #reservation-form {
-        width: 60%;
-        margin-top: 20%;
-        margin-left: 22%;
-    }
-    
-    .disp-f {
-        display: block;
-    }
-    
-    .btn-previous {
-        width: 200%;
-    }
+  #reservation-form {
+    width: 60%;
+    margin-top: 20%;
+    margin-left: 22%;
+  }
 
-    .btn-next {
-        margin-left: 0;
-        margin-top: 10%;
-        width: 200%;
-    }
+  .disp-f {
+    display: block;
+  }
+
+  .btn-previous {
+    width: 200%;
+  }
+
+  .btn-next {
+    margin-left: 0;
+    margin-top: 10%;
+    width: 200%;
+  }
   }
 @media (max-width: 700px) {
-    #reservation-form {
-        width: 40%;
-        margin-top: 30%;
-        margin-left: 10%;
-    }
-    
-    .btn-next1 {
-        margin-right: 0;
-        width: 200%;
-    }
-    
-    .btn-previous {
-        width: 400%;
-    }
+  #reservation-form {
+    width: 40%;
+    margin-top: 30%;
+    margin-left: 10%;
+  }
 
-    .btn-next {
-        width: 400%;
-    }
+  .btn-next1 {
+    margin-right: 0;
+    width: 200%;
+  }
+
+  .btn-previous {
+    width: 400%;
+  }
+
+  .btn-next {
+    width: 400%;
+  }
   }
 

@@ -94,15 +94,35 @@
       }
     ?>
   </div>
-  
-  <div class="container">
-       <ul class="progressbar">
-           <li class="active">Toestel of workshop</li>
-           <li>Details reservatie</li>
-           <li>Bevestiging</li>
-       </ul>
-   </div>
-  
+
+  <div class="progressbar-container">
+    <ul class="progressbar">
+      <li class="<?php echo ($current_step === 0) ? "progressbar-active" : ""; ?>">
+        Toestel of workshop
+      </li>
+      <?php if ($reservation_type === NULL || $current_step === 0) { ?>
+      <li>Details reservatie</li>
+    <?php } else if ($current_step > 0 && $reservation_type === "machine") { ?>
+
+      <li class="<?php echo ($current_step === 1) ? "progressbar-active" : ""; ?>">
+        Kies een toestel
+      </li>
+      <li class="<?php echo ($current_step === 2) ? "progressbar-active" : ""; ?>">
+        Kies een tijdstip
+      </li>
+
+    <?php } else if ($current_step > 0 && $reservation_type === "workshop") { ?>
+      <li class="<?php echo ($current_step === 1) ? "progressbar-active" : ""; ?>">
+        Kies een workshop
+      </li>
+
+      <?php } ?>
+      <li class="<?php echo ($current_step === 3) ? "progressbar-active" : ""; ?>">
+        Bevestiging
+      </li>
+   </ul>
+  </div>
+
   <div class="page-reserveren-content">
     <form id="reservation-form" action="<?php the_permalink(); ?>" method="post" novalidate>
       <pre>
