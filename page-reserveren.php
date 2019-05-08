@@ -245,8 +245,34 @@
         <?php echo $reservation_item; ?>
         <span class="fw-b">Datum:</span>
         <?php echo $reservation_date; ?>
-        <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
       </pre>
+      <?php
+        $date_str_repr = ucwords(date_i18n("l, j F Y", strtotime($reservation_date)));
+        $day_of_week = strtolower(date("l", strtotime($reservation_date)));
+
+        // get the start and end hour of the day the user has selected
+        // these values are setup in the admin
+        $start_hour_selected_day = get_option("kdg_fablab_rs_opening_hours")[$day_of_week]["start"];
+        $end_hour_selected_day = get_option("kdg_fablab_rs_opening_hours")[$day_of_week]["end"];
+
+        // get datetimes from found hours
+        $start_date = new DateTime($day_of_week . " " . $start_hour_selected_day);
+        $end_date = new DateTime($day_of_week . " " . $end_hour_selected_day);
+
+        // count the amount of minutes between the two dates
+        $diff_in_min = $start_date->diff($end_date);
+        $diff_in_min = ($diff_in_min->h * 60) + $diff_in_min->i;
+
+        // get the amount of timeslots available based on the timeslot setting in the admin
+        // amount of minutes divided by timeslot setting = amount of timeslots available for this day
+      ?>
+      <h3><?php echo $date_str_repr; ?></h3>
+      <table id="time-select-field">
+        <tbody>
+
+        </tbody>
+      </table>
+      <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
       <!-- End of second step machine -->
       <?php } ?>
 
