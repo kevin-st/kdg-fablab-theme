@@ -71,6 +71,7 @@
   &-dark {
     background-color: $zwartKdg;
     color: $wit;
+    width: 80%;
   }
 
   &-blue {
