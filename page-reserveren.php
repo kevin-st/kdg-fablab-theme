@@ -85,7 +85,7 @@
           <span class="error-message <?php echo ($init_step_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $init_step_error; ?></span>
         </div>
         <input type="hidden" name="step" value="1" />
-        <input class="btn btn-blue btn-submit btnVolgende" type="submit" name="submit" value="Volgende" />
+        <input class="btn btn-blue btn-submit" type="submit" name="submit" value="Volgende" />
         <!-- End of initial step -->
       <?php } ?>
 

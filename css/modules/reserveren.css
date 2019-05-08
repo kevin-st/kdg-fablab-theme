@@ -6,6 +6,16 @@
     width: 40%;
 }
 
-.btnVolgende:hover {
+.btn-blue:hover {
     color: $zwartKdg;
 }
+
+.btn-dark {
+    width: 90%;
+}
+
+.btn-blue {
+    width: 90%;
+    margin-left: 10%;
+}
+
