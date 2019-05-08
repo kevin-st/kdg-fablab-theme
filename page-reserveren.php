@@ -3,9 +3,10 @@
   $current_step = isset($_SESSION["reservation"]["reservation-step"]) ? intval($_SESSION["reservation"]["reservation-step"]) : 0;
   $reservation_type = isset($_SESSION["reservation"]["reservation-type"]) ? $_SESSION["reservation"]["reservation-type"] : NULL;
   $reservation_item = isset($_SESSION["reservation"]["reservation-item"]) ? $_SESSION["reservation"]["reservation-item"] : NULL;
+  $reservation_date = isset($_SESSION["reservation"]["reservation-date"]) ? $_SESSION["reservation"]["reservation-date"] : NULL;
 
   // check if a certain step has errors
-  $init_step_error = $first_step_ws_error = "";
+  $init_step_error = $first_step_ws_error = $first_step_machine_error = $first_step_machine_date_error = "";
 
   echo "<pre>";
   echo "SESSIE";
@@ -26,21 +27,44 @@
       if ($current_step === 0) {
         if (!empty($_POST["reservation-type"])) {
           $_SESSION["reservation"]["reservation-type"] = $reservation_type = $_POST["reservation-type"];
+
+          // reset reservation item when set in session
+          // so it doesn't conflict with the other category when cycling through the process
+          $_SESSION["reservation"]["reservation-item"] = $reservation_item = "";
         } else {
           $init_step_error = "Maak een keuze";
         }
       } // End of initial step
       else if ($current_step === 1) {
+        // set the reservation-item
+        if (!empty($_POST["reservation-item"])) {
+          $_SESSION["reservation"]["reservation-item"] = $reservation_item = $_POST["reservation-item"];
+        }
+
+        // when reservation-item is not filled in and type is workshop
         if ($reservation_type === "workshop") {
-          if (!empty($_POST["reservation-item"])) {
-            $_SESSION["reservation"]["reservation-item"] = $reservation_item = $_POST["reservation-item"];
-          } else {
+          if (empty($reservation_item)) {
             $first_step_ws_error = "Kies een workshop";
+          }
+        } else if ($reservation_type === "machine") {
+          if (!empty($_POST["reservation-date"])) {
+            $_SESSION["reservation"]["reservation-date"] = $reservation_date = $_POST["reservation-date"];
+          }
+
+          if (empty($reservation_item)) {
+            $first_step_machine_error = "Kies een toestel";
+          }
+
+          if (empty($reservation_date)) {
+            $first_step_machine_date_error = "Selecteer een datum";
           }
         }
       } // End of first step
 
-      if (empty($init_step_error) && empty($first_step_ws_error)) {
+      if (
+        empty($init_step_error) && empty($first_step_ws_error)
+        && empty($first_step_machine_error) && empty($first_step_machine_date_error)
+      ) {
         // update the current step value
         $_SESSION["reservation"]["reservation-step"] = $current_step = $next_step;
       }
@@ -49,7 +73,7 @@
       // submit value is previous
       if ($reservation_type === "workshop" && $current_step === 3) {
         $_SESSION["reservation"]["reservation-step"] = $current_step = 1;
-      } else {
+      } else if ($current_step > 0) {
         $current_step -= 1;
         $_SESSION["reservation"]["reservation-step"] = $current_step;
       }
@@ -71,34 +95,33 @@
     ?>
   </div>
   <div class="page-reserveren-content">
-    <form id="reservation-form" action="<?php the_permalink(); ?>" method="post">
+    <form id="reservation-form" action="<?php the_permalink(); ?>" method="post" novalidate>
+      <pre>
+        <?php echo "De huidige stap is: " . $current_step; ?>
+      </pre>
 
       <?php if ($current_step === 0) { ?>
-        <!-- Initial step -->
-        <div class="input-group">
-          <label for="reservation-type">Wat wilt u reserveren?</label>
-          <select id="reservation-type" for="reservation-type" name="reservation-type" class="<?php echo (!empty($init_step_error)) ? "error" : "" ; ?>">
-            <option value="" <?php echo ($reservation_type == "") ? "selected" : ""; ?>>-- Kiezen --</option>
-            <option value="machine" <?php echo ($reservation_type == "machine") ? "selected" : ""; ?>>Toestel</option>
-            <option value="workshop" <?php echo ($reservation_type == "workshop") ? "selected" : ""; ?>>Workshop</option>
-          </select>
-          <span class="error-message <?php echo ($init_step_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $init_step_error; ?></span>
-        </div>
-        <input type="hidden" name="step" value="1" />
-        <input class="btn btn-blue btn-submit" type="submit" name="submit" value="Volgende" />
-        <!-- End of initial step -->
+      <!-- Initial step -->
+      <div class="input-group">
+        <label for="reservation-type">Wat wilt u reserveren?</label>
+        <select id="reservation-type" for="reservation-type" name="reservation-type" class="<?php echo (!empty($init_step_error)) ? "error" : "" ; ?>">
+          <option value="" <?php echo ($reservation_type == "") ? "selected" : ""; ?>>-- Kiezen --</option>
+          <option value="machine" <?php echo ($reservation_type == "machine") ? "selected" : ""; ?>>Toestel</option>
+          <option value="workshop" <?php echo ($reservation_type == "workshop") ? "selected" : ""; ?>>Workshop</option>
+        </select>
+        <span class="error-message <?php echo ($init_step_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $init_step_error; ?></span>
+      </div>
+      <input type="hidden" name="step" value="1" />
+      <input class="btn btn-blue btn-submit" type="submit" name="submit" value="Volgende" />
+      <!-- End of initial step -->
       <?php } ?>
 
-
-      <?php echo "De huidige stap is: " . $current_step; ?>
       <?php if ($current_step === 1 && $reservation_type === "workshop") { ?>
       <!-- First step workshop -->
-      <div class="reservation-info">
-        <p>
-          <span class="fw-b">Reservatie voor:</span>
-          <?php echo $reservation_type; ?>
-        </p>
-      </div>
+      <pre class="reservation-info">
+        <span class="fw-b">Reservatie voor:</span>
+        <?php echo $reservation_type; ?>
+      </pre>
       <div class="input-group">
         <label for="reservation-item">Welke workshop wilt u reserveren?</label>
         <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($first_step_ws_error)) ? "error" : ""; ?>">
@@ -131,32 +154,91 @@
           <input class="btn btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
         </div>
       </div>
-
       <!-- End of first step workshop -->
       <?php } ?>
 
+      <?php if ($current_step === 1 && $reservation_type === "machine") { ?>
+      <!-- First step machine -->
+      <pre class="reservation-info">
+        <span class="fw-b">Reservatie voor:</span>
+        <?php echo $reservation_type; ?>
+      </pre>
+      <div class="input-group">
+        <label for="reservation-item">Welk toestel wilt u reserveren?</label>
+        <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($first_step_machine_error)) ? "error" : ""; ?>">
+          <option value="" <?php echo ($reservation_item == "") ? "selected" : ""; ?>>-- Kiezen --</option>
+          <?php
+            $all_machines = new WP_Query([
+              "posts_per_page" => -1,
+              "post_type" => "machine"
+            ]);
 
-      <!-- Third step workshop -->
-      <?php if ($current_step === 3 && $reservation_type === "workshop") { ?>
-        <div class="reservation-info">
-          <p>
-            <span class="fw-b">Reservatie voor:</span>
-            <?php echo $reservation_type; ?>
-          </p>
-          <p>
-            <span class="fw-b">Workshop:</span>
-            <?php echo $reservation_item; ?>
-          </p>
+            while($all_machines->have_posts()) {
+              $all_machines->the_post();
+              $title = get_the_title();
+          ?>
+          <option value="<?php echo $title; ?>" <?php echo ($reservation_item == $title) ? "selected" : ""; ?>>
+            <?php echo $title; ?>
+          </option>
+          <?php
+            }
+          ?>
+        </select>
+        <span class="error-message <?php echo (!empty($first_step_machine_error)) ? 'disp-b' : 'disp-n'; ?>">
+          <?php echo $first_step_machine_error; ?>
+        </span>
+      </div>
+      <div class="input-group">
+        <label for="reservation-date">Selecteer de datum waarop u het toestel wilt reserveren.</label>
+        <input id="reservation-date" name="reservation-date" type="date" value="<?php echo $reservation_date; ?>" class="<?php echo (!empty($first_step_machine_date_error)) ? "error" : ""; ?>" />
+        <span class="error-message <?php echo (!empty($first_step_machine_date_error)) ? "disp-b" : "disp-n"; ?>">
+          <?php echo $first_step_machine_date_error; ?>
+        </span>
+      </div>
+      <input type="hidden" name="step" value="2" />
+      <div class="disp-f col-2-of-2">
+        <div class="col-1-of-2">
+          <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
         </div>
-        <div class="disp-f col-2-of-2">
-          <div class="col-1-of-2">
-            <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
-          </div>
-          <div class="col-1-of-2">
-            <input class="btn btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
-          </div>
+        <div class="col-1-of-2">
+          <input class="btn btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
+        </div>
+      </div>
+      <!-- End of first step machine -->
       <?php } ?>
+
+      <?php if ($current_step === 2 && $reservation_type === "machine") { ?>
+      <!-- Second step machine -->
+      <pre class="reservation-info">
+        <span class="fw-b">Reservatie voor:</span>
+        <?php echo $reservation_type; ?>
+        <span class="fw-b">Toestel:</span>
+        <?php echo $reservation_item; ?>
+        <span class="fw-b">Datum:</span>
+        <?php echo $reservation_date; ?>
+        <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
+      </pre>
+      <!-- End of second step machine -->
+      <?php } ?>
+
+      <?php if ($current_step === 3 && $reservation_type === "workshop") { ?>
+      <!-- Third step workshop -->
+      <pre class="reservation-info">
+        <span class="fw-b">Reservatie voor:</span>
+        <?php echo $reservation_type; ?>
+        <span class="fw-b">Workshop:</span>
+        <?php echo $reservation_item; ?>
+      </pre>
+      <div class="disp-f col-2-of-2">
+        <div class="col-1-of-2">
+          <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
+        </div>
+        <div class="col-1-of-2">
+          <input class="btn btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
+        </div>
+      </div>
       <!-- End of Third step workshop -->
+      <?php } ?>
 
     </form>
   </div>
