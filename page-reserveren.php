@@ -117,7 +117,7 @@
       </li>
 
       <?php } ?>
-      <li class="<?php echo ($current_step === 3) ? "progressbar-active" : ""; ?>">
+      <li class="<?php echo (($current_step === 3 && $reservation_type === "workshop") || ($current_step === 4 && $reservation_type === "machine")) ? "progressbar-active" : ""; ?>">
         Bevestiging
       </li>
    </ul>
