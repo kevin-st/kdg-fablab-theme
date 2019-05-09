@@ -265,38 +265,36 @@
         $amount_of_rows = ceil($amount_of_timeslots / $amount_of_columns);
       ?>
       <h3><?php echo $date_str_repr; ?></h3>
-      <div class="input-group">
-        <div class="time-slots-container">
-          <?php
-            $current_time = $start_hour_selected_day;
+      <div class="time-slots-container">
+        <?php
+          $current_time = $start_hour_selected_day;
 
-            for ($row = 0; $row < $amount_of_rows; $row++) {
-              echo '<div class="disp-f">';
-              for ($column = 0; $column < $amount_of_timeslots; $column++) {
-                if ($column !== 0 && $column%$amount_of_columns === 0) {
-                  $amount_of_timeslots -= $amount_of_columns;
-                  break;
-                }
-          ?>
-          <div class="time-slot">
-            <p class="time-slot-title"><?php echo $current_time; ?></p>
-            <label>
-              <input type="checkbox" name="reservation-time-slots[]" value="<?php echo $current_time; ?>" />
-              reserveren
-            </label>
-          </div>
-          <?php
-              $current_time = date('H:i', strtotime("+". $time_slot_setting ." minutes", strtotime($current_time)));
+          for ($row = 0; $row < $amount_of_rows; $row++) {
+            echo '<div class="disp-f">';
+            for ($column = 0; $column < $amount_of_timeslots; $column++) {
+              if ($column !== 0 && $column%$amount_of_columns === 0) {
+                $amount_of_timeslots -= $amount_of_columns;
+                break;
               }
-
-              echo '</div>';
-            }
-          ?>
+        ?>
+        <div class="time-slot">
+          <p class="time-slot-title"><?php echo $current_time; ?></p>
+          <label>
+            <input type="checkbox" name="reservation-time-slots[]" value="<?php echo $current_time; ?>" />
+            reserveren
+          </label>
         </div>
-        <span class="error-message <?php echo (!empty($second_step_machine_time_slots_error)) ? "disp-b" : "disp-n"; ?>">
-          <?php echo $second_step_machine_time_slots_error; ?>
-        </span>
+        <?php
+            $current_time = date('H:i', strtotime("+". $time_slot_setting ." minutes", strtotime($current_time)));
+            }
+
+            echo '</div>';
+          }
+        ?>
       </div>
+      <span class="error-message <?php echo (!empty($second_step_machine_time_slots_error)) ? "disp-b" : "disp-n"; ?>">
+        <?php echo $second_step_machine_time_slots_error; ?>
+      </span>
       <input type="hidden" name="step" value="3" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">

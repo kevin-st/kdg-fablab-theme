@@ -27,16 +27,13 @@
     max-height: 60px;
   }
 
-  .required,
-  .error-message {
-    color: $rood;
-  }
-
   .error {
     border: 1px solid $rood;
-
-    &-message {
-      font-size: 12px;
-    }
   }
+}
+
+.required,
+.error-message {
+  color: $rood;
+  font-size: 12px;
 }
