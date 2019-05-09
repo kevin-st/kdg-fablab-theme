@@ -243,7 +243,7 @@
         $day_of_week = strtolower(date("l", strtotime($reservation_date)));
 
         // get the start and end hour of the day the user has selected
-        // these values are setup in the admin
+        // these values are set in the admin
         $start_hour_selected_day = get_option("kdg_fablab_rs_opening_hours")[$day_of_week]["start"];
         $end_hour_selected_day = get_option("kdg_fablab_rs_opening_hours")[$day_of_week]["end"];
 
@@ -257,18 +257,34 @@
 
         // get the amount of timeslots available based on the timeslot setting in the admin
         // amount of minutes divided by timeslot setting = amount of timeslots available for this day
-        $amount_of_timeslots = $diff_in_min / get_option("kdg_fablab_rs_time_slot");
+        $time_slot_setting = get_option("kdg_fablab_rs_time_slot");
+        $amount_of_timeslots = $diff_in_min / $time_slot_setting;
+
+        // get amount of rows in grid
+        $amount_of_rows = ceil($amount_of_timeslots / 5);
       ?>
       <h3><?php echo $date_str_repr; ?></h3>
       <div class="time-slots-container">
-        <?php for ($row = 0; $row < $amount_of_timeslots; $row++) { ?>
-          <div class="time-slot">
-            <p class="time-slot-title">tijdslot <?php echo $row; ?></p>
-            <label for="time_slot_<?php echo $row; ?>">
-              <input id="time_slot_<?php echo $row; ?>" type="checkbox" name="time_slots[]" value="<?php echo $row; ?>" />
-            </label>
-          </div>
-        <?php }?>
+        <?php
+          for ($row = 0; $row < $amount_of_rows; $row++) {
+            echo '<div class="disp-f">';
+            for ($column = 0; $column < $amount_of_timeslots; $column++) {
+              if ($column !== 0 && $column%5 === 0) {
+                $amount_of_timeslots -= 5;
+                break;
+              }
+        ?>
+        <div class="time-slot">
+          <p class="time-slot-title">tijdslot <?php echo $row; ?></p>
+          <label for="time_slot_<?php echo $row; ?>">
+            <input id="time_slot_<?php echo $row; ?>" type="checkbox" name="time_slots[]" value="<?php echo $row; ?>" />
+          </label>
+        </div>
+        <?php
+            }
+            echo '</div>';
+          }
+        ?>
       </div>
       <input type="hidden" name="step" value="3" />
       <div class="disp-f col-2-of-2">
