@@ -297,7 +297,7 @@
 
       <?php if ($current_step === 3) { ?>
       <!-- Third step -->
-      <h2>Bevestiging reservatie</h2>
+      <h2>Is dit in orde?</h2>
       <div class="reservation-info">
         <div role="type">
           <h3>Type reservatie</h3>
