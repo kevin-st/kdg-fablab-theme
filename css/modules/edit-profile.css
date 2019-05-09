@@ -12,20 +12,21 @@
     #profile-meta-data {
         width: 100%;
     }
-}
-
-@mixin phone {
-    .disp-f {
-        display: block;
-    }
     
-    .input-group {
+    .input-class {
         width: 200%;
     }
     
     #adres {
         width: 50%;
     }
+}
+
+@mixin phone {
+    .disp-f {
+        display: block;
+    }
+
     
     .editBtn {
         width: 100%;
