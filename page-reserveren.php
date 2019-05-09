@@ -238,14 +238,6 @@
 
       <?php if ($current_step === 2 && $reservation_type === "machine") { ?>
       <!-- Second step machine -->
-      <pre class="reservation-info">
-        <span class="fw-b">Reservatie voor:</span>
-        <?php echo $reservation_type; ?>
-        <span class="fw-b">Toestel:</span>
-        <?php echo $reservation_item; ?>
-        <span class="fw-b">Datum:</span>
-        <?php echo $reservation_date; ?>
-      </pre>
       <?php
         $date_str_repr = ucwords(date_i18n("l, j F Y", strtotime($reservation_date)));
         $day_of_week = strtolower(date("l", strtotime($reservation_date)));
@@ -265,23 +257,35 @@
 
         // get the amount of timeslots available based on the timeslot setting in the admin
         // amount of minutes divided by timeslot setting = amount of timeslots available for this day
+        $amount_of_timeslots = $diff_in_min / get_option("kdg_fablab_rs_time_slot");
       ?>
       <h3><?php echo $date_str_repr; ?></h3>
-      <table id="time-select-field">
-        <tbody>
-
-        </tbody>
-      </table>
-      <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
+      <div class="time-slots-container">
+        <?php for ($row = 0; $row < $amount_of_timeslots; $row++) { ?>
+          <div class="time-slot">
+            <p class="time-slot-title">tijdslot <?php echo $row; ?></p>
+            <label for="time_slot_<?php echo $row; ?>">
+              <input id="time_slot_<?php echo $row; ?>" type="checkbox" name="time_slots[]" value="<?php echo $row; ?>" />
+            </label>
+          </div>
+        <?php }?>
+      </div>
+      <input type="hidden" name="step" value="3" />
+      <div class="disp-f col-2-of-2">
+        <div class="col-1-of-2">
+          <input class="btn btn-dark btn-submit btn-previous" name="submit" type="submit" value="Vorige" />
+        </div>
+        <div class="col-1-of-2">
+          <input class="btn btn-blue btn-submit btn-next" name="submit" type="submit" value="Volgende" />
+        </div>
+      </div>
       <!-- End of second step machine -->
       <?php } ?>
 
-      <?php if ($current_step === 3 && $reservation_type === "workshop") { ?>
-      <!-- Third step workshop -->
+      <?php if ($current_step === 3) { ?>
+      <!-- Third step -->
       <pre class="reservation-info">
         <span class="fw-b">Reservatie voor:</span>
-        <?php echo $reservation_type; ?>
-        <span class="fw-b">Workshop:</span>
         <?php echo $reservation_item; ?>
       </pre>
       <div class="disp-f col-2-of-2">
@@ -292,7 +296,7 @@
           <input class="btn btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
         </div>
       </div>
-      <!-- End of Third step workshop -->
+      <!-- End of third step -->
       <?php } ?>
 
     </form>
