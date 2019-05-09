@@ -142,10 +142,6 @@
 
       <?php if ($current_step === 1 && $reservation_type === "workshop") { ?>
       <!-- First step workshop -->
-      <pre class="reservation-info">
-        <span class="fw-b">Reservatie voor:</span>
-        <?php echo $reservation_type; ?>
-      </pre>
       <div class="input-group">
         <label for="reservation-item">Welke workshop wilt u reserveren?</label>
         <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($first_step_error)) ? "error" : ""; ?>">
