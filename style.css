@@ -582,16 +582,16 @@ body {
 .input-group textarea {
     max-height: 60px;
   }
-.required,
-.error-message {
-  color: #ff0000;
-}
-.error {
-  border: 1px solid #ff0000;
-}
-.error-message {
-    font-size: 12px;
+.input-group .required,
+  .input-group .error-message {
+    color: #ff0000;
   }
+.input-group .error {
+    border: 1px solid #ff0000;
+  }
+.input-group .error-message {
+      font-size: 12px;
+    }
 body.login-action-register {
     /*background-image: url("img/fablab_reg_form.jpg");*/
     background-repeat: no-repeat;

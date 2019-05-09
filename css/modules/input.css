@@ -26,17 +26,17 @@
   textarea {
     max-height: 60px;
   }
-}
 
-.required,
-.error-message {
-  color: $rood;
-}
+  .required,
+  .error-message {
+    color: $rood;
+  }
 
-.error {
-  border: 1px solid $rood;
+  .error {
+    border: 1px solid $rood;
 
-  &-message {
-    font-size: 12px;
+    &-message {
+      font-size: 12px;
+    }
   }
 }
