@@ -1574,6 +1574,9 @@ margin-top: 50px;
 .btn-blue:hover {
   color: #1d1d1b;
 }
+pre {
+    margin-left: -57px;
+}
 @media (max-width: 960px) {
   #reservation-form {
     width: 60%;
