@@ -266,9 +266,10 @@
       ?>
       <h3><?php echo $date_str_repr; ?></h3>
       <div class="time-slots-container">
+        <p>Selecteer één of meerdere tijdsloten waarop u het toestel wilt reserveren.</p>
         <?php
           $current_time = $start_hour_selected_day;
-
+    
           for ($row = 0; $row < $amount_of_rows; $row++) {
             echo '<div class="disp-f">';
             for ($column = 0; $column < $amount_of_timeslots; $column++) {
@@ -280,7 +281,7 @@
         <div class="time-slot">
           <p class="time-slot-title"><?php echo $current_time; ?></p>
           <label>
-            <input type="checkbox" name="reservation-time-slots[]" value="<?php echo $current_time; ?>" />
+            <input type="checkbox" name="reservation-time-slots[]" value="<?php echo $current_time; ?>" <?php echo (in_array($current_time, $reservation_time_slots)) ? "checked" : ""; ?> />
             reserveren
           </label>
         </div>
