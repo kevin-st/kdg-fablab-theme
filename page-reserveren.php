@@ -55,9 +55,6 @@
           $second_step_machine_time_slots_error = "Selecteer één of meerdere tijdsloten voor uw reservatie";
         }
       } // End of second step
-      else if ($current_step === 3) {
-
-      }
 
       if (
         empty($init_step_error) && empty($first_step_error)
@@ -68,13 +65,33 @@
         $_SESSION["reservation"]["reservation-step"] = $current_step = $next_step;
       }
     }
-    else {
+    else if (strtolower($_POST["submit"]) === "vorige") {
       // submit value is previous
       if ($reservation_type === "workshop" && $current_step === 3) {
         $_SESSION["reservation"]["reservation-step"] = $current_step = 1;
       } else if ($current_step > 0) {
         $current_step -= 1;
         $_SESSION["reservation"]["reservation-step"] = $current_step;
+      }
+    } else if (strtolower($_POST["submit"]) === "indienen") {
+      $success = wp_insert_post([
+        "post_author" => get_current_user_id(),
+        "post_title" => "Reservatie voor " . $reservation_item,
+        "post_status" => "publish",
+        "post_type" => "reservation",
+        "meta_input" => [
+          "reservation_type" => $reservation_type,
+          "reservation_date" => $reservation_date,
+          "reservation_item" => $reservation_item,
+          "reservation_time_slots" => $reservation_time_slots
+        ]
+      ]);
+
+      if ($success) {
+        // unset reservation session
+        $_SESSION["reservation"] = [];
+
+        // redirect to overview user reservations
       }
     }
   }
