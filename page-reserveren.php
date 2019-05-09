@@ -312,10 +312,10 @@
       </pre>
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">
-          <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
+          <input class="btn btn-dark btn-submit btn-previous" name="submit" type="submit" value="Vorige" />
         </div>
         <div class="col-1-of-2">
-          <input class="btn btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
+          <input class="btn btn-blue btn-submit btn-next" name="submit" type="submit" value="Volgende" />
         </div>
       </div>
       <!-- End of third step -->
