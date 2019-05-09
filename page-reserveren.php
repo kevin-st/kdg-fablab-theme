@@ -55,6 +55,9 @@
           $second_step_machine_time_slots_error = "Selecteer één of meerdere tijdsloten voor uw reservatie";
         }
       } // End of second step
+      else if ($current_step === 3) {
+
+      }
 
       if (
         empty($init_step_error) && empty($first_step_error)
@@ -121,10 +124,6 @@
 
   <div class="page-reserveren-content">
     <form id="reservation-form" action="<?php the_permalink(); ?>" method="post" novalidate>
-      <pre>
-        <?php echo "De huidige stap is: " . $current_step; ?>
-      </pre>
-
       <?php if ($current_step === 0) { ?>
       <!-- Initial step -->
       <div class="input-group">
@@ -306,16 +305,47 @@
 
       <?php if ($current_step === 3) { ?>
       <!-- Third step -->
-      <pre class="reservation-info">
-        <span class="fw-b">Reservatie voor:</span>
-        <?php echo $reservation_item; ?>
-      </pre>
+      <h2>Bevestiging reservatie</h2>
+      <div class="reservation-info">
+        <div role="type">
+          <h3>Type reservatie</h3>
+          <p><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></p>
+        </div>
+        <div class="disp-f col-2-of-2" role="info">
+          <div class="col-1-of-2">
+            <h3><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></h3>
+            <p><?php echo $reservation_item; ?></p>
+          </div>
+          <div class="col-1-of-2">
+            <h3>Datum</h3>
+            <?php
+              if ($reservation_type === "machine") {
+                echo date_i18n("d F Y", strtotime($reservation_date));
+                echo "<h4>Tijdstippen</h4>";
+
+                foreach ($reservation_time_slots as $time_slot) {
+                  echo "<p>". $time_slot ."</p>";
+                }
+              } else {
+                $workshop = get_page_by_title($reservation_item, OBJECT, "workshop");
+
+                echo the_field("workshop_datum", $workshop->ID);
+                echo "<h4>Tijdstip</h4>";
+                echo the_field("start_tijd", $workshop->ID);
+                echo " - ";
+                echo the_field("eind_tijd", $workshop->ID);
+              }
+            ?>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" name="step" value="final" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">
           <input class="btn btn-dark btn-submit btn-previous" name="submit" type="submit" value="Vorige" />
         </div>
         <div class="col-1-of-2">
-          <input class="btn btn-blue btn-submit btn-next" name="submit" type="submit" value="Volgende" />
+          <input class="btn btn-blue btn-submit btn-next" name="submit" type="submit" value="Indienen" />
         </div>
       </div>
       <!-- End of third step -->
