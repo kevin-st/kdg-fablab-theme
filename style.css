@@ -1572,6 +1572,38 @@ margin-top: 50px;
 .btn-blue:hover {
   color: #1d1d1b;
 }
+.time-slots-container {
+    margin-left: 0%;
+}
+.time-slot {
+    border: 1px solid #ccc;
+    margin: 5px 5px 0 0;
+    padding: 10px;
+}
+.time-slot label {
+        display: inline-block;
+        color: white;
+     }
+.time-slot .labelReserveren {
+        background-color: #1d1d1b;
+        padding: 15px;
+        margin: 0;
+    }
+.time-slot .labelReserveren:hover {
+        background-color: #34bedc;
+     }
+.time-slot input:checked {
+      color: red;
+    }
+.time-slot input[type="checkbox"] {
+        visibility: hidden;
+    }
+.time-slot input[type="checkbox"]:checked + .labelReserveren {
+        background-color: #34bedc;
+    }
+.message {
+    margin: 10px 0 10px 0;
+}
 @media (max-width: 960px) {
   #reservation-form {
     width: 60%;

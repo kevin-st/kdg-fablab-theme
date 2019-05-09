@@ -95,6 +95,47 @@
   color: $zwartKdg;
 }
 
+.time-slots-container {
+    margin-left: 0%;
+}
+
+.time-slot {
+    border: 1px solid $grey;
+    margin: 5px 5px 0 0;
+    padding: 10px;
+    
+    label {
+        display: inline-block;
+        color: white;
+     }
+    
+    .labelReserveren {
+        background-color: $zwartKdg;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .labelReserveren:hover {
+        background-color: $main_accent;
+     }
+    
+    input:checked {
+      color: red;
+    }
+    
+    input[type="checkbox"] {
+        visibility: hidden;
+    } 
+    
+    input[type="checkbox"]:checked + .labelReserveren {
+        background-color: $main_accent;
+    }
+}
+
+.message {
+    margin: 10px 0 10px 0;
+}
+
 @mixin tablet {
   #reservation-form {
     width: 60%;

@@ -282,7 +282,7 @@
           <p class="time-slot-title"><?php echo $current_time; ?></p>
           <label>
             <input type="checkbox" name="reservation-time-slots[]" value="<?php echo $current_time; ?>" <?php echo (in_array($current_time, $reservation_time_slots)) ? "checked" : ""; ?> />
-            reserveren
+              <p class="labelReserveren">reserveren</p>
           </label>
         </div>
         <?php
@@ -293,7 +293,7 @@
           }
         ?>
       </div>
-      <span class="error-message <?php echo (!empty($second_step_machine_time_slots_error)) ? "disp-b" : "disp-n"; ?>">
+      <span class="error-message message <?php echo (!empty($second_step_machine_time_slots_error)) ? "disp-b" : "disp-n"; ?>">
         <?php echo $second_step_machine_time_slots_error; ?>
       </span>
       <input type="hidden" name="step" value="3" />
