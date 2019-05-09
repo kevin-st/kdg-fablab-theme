@@ -34,7 +34,7 @@ article {
 
 .thumbnail {
   margin-right: 15px;
-  height: 250px;
+  height: 100%;
   width: 250px;
   overflow: hidden;
 
@@ -58,6 +58,12 @@ article {
   > p {
     text-align: justify;
     line-height: 1.5;
+  }
+
+  @mixin tablet {
+    > div.disp-f {
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -96,9 +102,14 @@ article {
   padding-right: 15px;
 }
 
-.thumbnaillink{
+.thumbnaillink {
   margin: 0;
   padding: 0;
+  height: 250px;
+
+  @mixin tablet {
+    width: 100%;
+  }
 }
 
 @mixin pcXL {
@@ -109,7 +120,6 @@ article {
 
   .thumbnail {
     margin: 0;
-    height: 350px;
     width: 100%;
     overflow: hidden;
   }
@@ -145,11 +155,9 @@ article {
 }
 
 @mixin tablet {
-  .disp-f {
-    flex-wrap: wrap;
-  }
-
   #mainFrontpage {
+    flex-wrap: wrap;
+
     section {
       width: 100%;
 

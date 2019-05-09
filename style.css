@@ -747,7 +747,7 @@ article {
 }
 .thumbnail {
   margin-right: 15px;
-  height: 250px;
+  height: 100%;
   width: 250px;
   overflow: hidden;
 }
@@ -769,6 +769,11 @@ article {
 .content > p {
     text-align: justify;
     line-height: 1.5;
+  }
+@media (max-width: 960px) {
+    .content > div.disp-f {
+      flex-wrap: wrap;
+    }
   }
 /*.buttons {
   position: absolute;
@@ -803,10 +808,16 @@ article {
   text-align: center;
   padding-right: 15px;
 }
-.thumbnaillink{
+.thumbnaillink {
   margin: 0;
   padding: 0;
+  height: 250px;
 }
+@media (max-width: 960px) {
+.thumbnaillink {
+    width: 100%
+}
+  }
 @media (max-width:1350px) {
   article {
     display: flex;
@@ -815,7 +826,6 @@ article {
 
   .thumbnail {
     margin: 0;
-    height: 350px;
     width: 100%;
     overflow: hidden;
   }
@@ -850,9 +860,10 @@ article {
   }
   }
 @media (max-width: 960px) {
-  .disp-f {
+  #mainFrontpage {
     flex-wrap: wrap;
   }
+
     #mainFrontpage section {
       width: 100%;
     }
@@ -1467,36 +1478,31 @@ margin-top: 50px;
     margin-bottom: 20px;
   }
 .editBtn {
-    font-size: 16px;
-    width: 50%;
-    margin-left: 25%;
+  font-size: 16px;
+  width: 50%;
+  margin-left: 25%;
 }
 #profile-meta-data {
-    width: 70%;
+  width: 70%;
 }
 @media (max-width: 960px) {
-    #profile-meta-data {
-        width: 100%;
-    }
-    
-    .input-class {
-        width: 200%;
-    }
-    
-    #adres {
-        width: 50%;
-    }
+  #profile-meta-data {
+    width: 100%;
+  }
+
+  .input-class {
+    width: 200%;
+  }
+
+  #adres {
+    width: 50%;
+  }
   }
 @media (max-width: 700px) {
-    .disp-f {
-        display: block;
-    }
-
-    
-    .editBtn {
-        width: 100%;
-        margin-left: 0;
-    }
+  .editBtn {
+    width: 100%;
+    margin-left: 0;
+  }
   }
 #reserverenMain {
   width: 85%;
@@ -1504,15 +1510,20 @@ margin-top: 50px;
 /* PROGRESS BAR */
 .progressbar-container {
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 50px;
 }
+@media (max-width: 700px) {
+.progressbar-container {
+    display: none
+}
+  }
 .progressbar-container > .progressbar {
     counter-reset: step;
+    padding: 0;
     color: #1d1d1b;
   }
 .progressbar-container > .progressbar li {
       list-style-type: none;
-      float: left;
       position: relative;
       text-align: center;
     }
@@ -1559,90 +1570,72 @@ margin-top: 50px;
           background-color: #34bedc;
         }
 #reservation-form {
-  width: 40%;
-  margin-left: 30%;
+  width: 70%;
+  margin: 0 auto;
 }
-.btn-previous {
-  width: 95%;
-}
-.btn-next {
-  margin-left: 5%;
-  width: 95%;
-}
-.btn-blue:hover {
-  color: #1d1d1b;
-}
-.time-slots-container {
-    margin-bottom: 25px;
-}
-.time-slot {
-    border: 1px solid #ccc;
-    margin: 5px 5px 0 0;
-    padding: 10px;
-}
-.time-slot label {
-        display: inline-block;
-        color: white;
-     }
-.time-slot .labelReserveren {
-        background-color: #1d1d1b;
-        padding: 15px;
-        margin: 0;
+#reservation-form div.col-2-of-2 > div + .col-1-of-2 {
+      margin-left: 2%;
     }
-.time-slot .labelReserveren:hover {
-        background-color: #34bedc;
-     }
-.time-slot input:checked {
-      color: red;
+#reservation-form > div.input-group:nth-child(2), #reservation-form > div.reservation-info:nth-child(2) {
+      margin-bottom: 15px;
     }
-.time-slot input[type="checkbox"] {
-        visibility: hidden;
-    }
-.time-slot input[type="checkbox"]:checked + .labelReserveren {
-        background-color: #34bedc;
-    }
-.message {
-    margin: 10px 0 10px 0;
-}
 @media (max-width: 960px) {
-  #reservation-form {
-    width: 60%;
-    margin-top: 20%;
-    margin-left: 22%;
-  }
-
-  .disp-f {
-    display: block;
-  }
-
-  .btn-previous {
-    width: 200%;
-  }
-
-  .btn-next {
-    margin-left: 0;
-    margin-top: 10%;
-    width: 200%;
-  }
+    #reservation-form > div.disp-f {
+      flex-wrap: nowrap;
+    }
   }
 @media (max-width: 700px) {
-  #reservation-form {
-    width: 40%;
-    margin-top: 30%;
-    margin-left: 10%;
-  }
+#reservation-form {
+    margin: 0;
+    width: 100%
+}
 
-  .btn-next1 {
-    margin-right: 0;
-    width: 200%;
-  }
+    #reservation-form div.disp-f {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+      #reservation-form div.col-2-of-2 > div {
+        width: 100%;
+      }
 
-  .btn-previous {
-    width: 400%;
-  }
+        #reservation-form div.col-2-of-2 > div:first-child {
+          margin-bottom: 10px;
+        }
 
-  .btn-next {
-    width: 400%;
+      #reservation-form div.col-2-of-2 > div + .col-1-of-2 {
+        margin-left: 0;
+      }
   }
+.time-slots-container {
+  margin-bottom: 25px;
+}
+.time-slot {
+  border: 1px solid #ccc;
+  margin: 5px 5px 0 0;
+  padding: 10px;
+}
+.time-slot label {
+    display: inline-block;
+    color: white;
   }
+.time-slot .labelReserveren {
+    background-color: #1d1d1b;
+    padding: 15px;
+    margin: 0;
+  }
+.time-slot .labelReserveren:hover {
+    background-color: #34bedc;
+  }
+.time-slot input:checked {
+    color: red;
+  }
+.time-slot input[type="checkbox"] {
+    visibility: hidden;
+  }
+.time-slot input[type="checkbox"]:checked + .labelReserveren {
+    background-color: #34bedc;
+  }
+.message {
+  margin: 10px 0 10px 0;
+}
 

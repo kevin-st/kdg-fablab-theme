@@ -5,15 +5,19 @@
 /* PROGRESS BAR */
 .progressbar-container {
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 50px;
+
+  @mixin phone {
+    display: none;
+  }
 
   > .progressbar {
     counter-reset: step;
+    padding: 0;
     color: $zwartKdg;
 
     li {
       list-style-type: none;
-      float: left;
       position: relative;
       text-align: center;
 
@@ -78,103 +82,90 @@
 }
 
 #reservation-form {
-  width: 40%;
-  margin-left: 30%;
-}
+  width: 70%;
+  margin: 0 auto;
 
-.btn-previous {
-  width: 95%;
-}
+  div.col-2-of-2 {
+    > div + .col-1-of-2 {
+      margin-left: 2%;
+    }
+  }
 
-.btn-next {
-  margin-left: 5%;
-  width: 95%;
-}
+  > div.input-group,
+  > div.reservation-info {
+    &:nth-child(2) {
+      margin-bottom: $med;
+    }
+  }
 
-.btn-blue:hover {
-  color: $zwartKdg;
+  @mixin tablet {
+    > div.disp-f {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @mixin phone {
+    margin: 0;
+    width: 100%;
+
+    div.disp-f {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    div.col-2-of-2 {
+      > div {
+        width: 100%;
+
+        &:first-child {
+          margin-bottom: 10px;
+        }
+      }
+
+      > div + .col-1-of-2 {
+        margin-left: 0;
+      }
+    }
+  }
 }
 
 .time-slots-container {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .time-slot {
-    border: 1px solid $grey;
-    margin: 5px 5px 0 0;
-    padding: 10px;
-    
-    label {
-        display: inline-block;
-        color: white;
-     }
-    
-    .labelReserveren {
-        background-color: $zwartKdg;
-        padding: 15px;
-        margin: 0;
-    }
+  border: 1px solid $grey;
+  margin: 5px 5px 0 0;
+  padding: 10px;
 
-    .labelReserveren:hover {
-        background-color: $main_accent;
-     }
-    
-    input:checked {
-      color: red;
-    }
-    
-    input[type="checkbox"] {
-        visibility: hidden;
-    } 
-    
-    input[type="checkbox"]:checked + .labelReserveren {
-        background-color: $main_accent;
-    }
+  label {
+    display: inline-block;
+    color: white;
+  }
+
+  .labelReserveren {
+    background-color: $zwartKdg;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .labelReserveren:hover {
+    background-color: $main_accent;
+  }
+
+  input:checked {
+    color: red;
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  input[type="checkbox"]:checked + .labelReserveren {
+    background-color: $main_accent;
+  }
 }
 
 .message {
-    margin: 10px 0 10px 0;
-}
-
-@mixin tablet {
-  #reservation-form {
-    width: 60%;
-    margin-top: 20%;
-    margin-left: 22%;
-  }
-
-  .disp-f {
-    display: block;
-  }
-
-  .btn-previous {
-    width: 200%;
-  }
-
-  .btn-next {
-    margin-left: 0;
-    margin-top: 10%;
-    width: 200%;
-  }
-}
-
-@mixin phone {
-  #reservation-form {
-    width: 40%;
-    margin-top: 30%;
-    margin-left: 10%;
-  }
-
-  .btn-next1 {
-    margin-right: 0;
-    width: 200%;
-  }
-
-  .btn-previous {
-    width: 400%;
-  }
-
-  .btn-next {
-    width: 400%;
-  }
+  margin: 10px 0 10px 0;
 }

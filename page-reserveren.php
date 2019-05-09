@@ -95,7 +95,7 @@
   </div>
 
   <div class="progressbar-container">
-    <ul class="progressbar">
+    <ul class="disp-f progressbar m-0">
       <li class="<?php echo ($current_step === 0) ? "progressbar-active" : ""; ?>">
         Toestel of workshop
       </li>
@@ -136,7 +136,7 @@
         <span class="error-message <?php echo ($init_step_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $init_step_error; ?></span>
       </div>
       <input type="hidden" name="step" value="1" />
-      <input class="btn btn-blue btn-submit btn-next1" type="submit" name="submit" value="Volgende" />
+      <input class="btn-blue btn-submit" type="submit" name="submit" value="Volgende" />
       <!-- End of initial step -->
       <?php } ?>
 
@@ -172,10 +172,10 @@
       <input type="hidden" name="step" value="3" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">
-          <input class="btn btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
+          <input class="btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
         </div>
         <div class="col-1-of-2">
-          <input class="btn btn-blue btn-submit btn-next" name="submit" type="submit" value="Volgende" />
+          <input class="btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
         </div>
       </div>
       <!-- End of first step workshop -->
@@ -183,10 +183,6 @@
 
       <?php if ($current_step === 1 && $reservation_type === "machine") { ?>
       <!-- First step machine -->
-      <pre class="reservation-info">
-        <span class="fw-b">Reservatie voor:</span>
-        <?php echo $reservation_type; ?>
-      </pre>
       <div class="input-group">
         <label for="reservation-item">Welk toestel wilt u reserveren?</label>
         <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($first_step_error)) ? "error" : ""; ?>">
@@ -222,10 +218,10 @@
       <input type="hidden" name="step" value="2" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">
-          <input class="btn btn-dark btn-submit btn-previous" name="submit" type="submit" value="Vorige" />
+          <input class="btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
         </div>
         <div class="col-1-of-2">
-          <input class="btn btn-blue btn-submit btn-next" name="submit" type="submit" value="Volgende" />
+          <input class="btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
         </div>
       </div>
       <!-- End of first step machine -->
@@ -294,10 +290,10 @@
       <input type="hidden" name="step" value="3" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">
-          <input class="btn btn-dark btn-submit btn-previous" name="submit" type="submit" value="Vorige" />
+          <input class="btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
         </div>
         <div class="col-1-of-2">
-          <input class="btn btn-blue btn-submit btn-next" name="submit" type="submit" value="Volgende" />
+          <input class="btn-blue btn-submit" name="submit" type="submit" value="Volgende" />
         </div>
       </div>
       <!-- End of second step machine -->
@@ -342,10 +338,10 @@
       <input type="hidden" name="step" value="final" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">
-          <input class="btn btn-dark btn-submit btn-previous" name="submit" type="submit" value="Vorige" />
+          <input class="btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
         </div>
         <div class="col-1-of-2">
-          <input class="btn btn-blue btn-submit btn-next" name="submit" type="submit" value="Indienen" />
+          <input class="btn-blue btn-submit" name="submit" type="submit" value="Indienen" />
         </div>
       </div>
       <!-- End of third step -->
