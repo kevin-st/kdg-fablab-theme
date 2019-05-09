@@ -129,7 +129,7 @@
                   <span class="error-message <?php echo $question_has_error ? 'disp-b' : 'disp-n'; ?>"><?php echo $user_question_error; ?></span>
                 </div>
 
-                <input class="btn-submit p-abs attach-to-bottom" name="submit" type="submit" value="Versturen">
+                <input class="btn-submit p-abs attach-to-bottom btn-blue" name="submit" type="submit" value="Versturen">
             </form>
         </div>
 

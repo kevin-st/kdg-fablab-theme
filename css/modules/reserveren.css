@@ -95,6 +95,10 @@
   color: $zwartKdg;
 }
 
+pre {
+    margin-left: -57px;
+}
+
 @mixin tablet {
   #reservation-form {
     width: 60%;

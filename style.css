@@ -1480,19 +1480,20 @@ margin-top: 50px;
     #profile-meta-data {
         width: 100%;
     }
-  }
-@media (max-width: 700px) {
-    .disp-f {
-        display: block;
-    }
     
-    .input-group {
+    .input-class {
         width: 200%;
     }
     
     #adres {
         width: 50%;
     }
+  }
+@media (max-width: 700px) {
+    .disp-f {
+        display: block;
+    }
+
     
     .editBtn {
         width: 100%;
@@ -1572,6 +1573,9 @@ margin-top: 50px;
 }
 .btn-blue:hover {
   color: #1d1d1b;
+}
+pre {
+    margin-left: -57px;
 }
 @media (max-width: 960px) {
   #reservation-form {
