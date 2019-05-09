@@ -261,27 +261,33 @@
         $amount_of_timeslots = $diff_in_min / $time_slot_setting;
 
         // get amount of rows in grid
-        $amount_of_rows = ceil($amount_of_timeslots / 5);
+        $amount_of_columns = 5;
+        $amount_of_rows = ceil($amount_of_timeslots / $amount_of_columns);
       ?>
       <h3><?php echo $date_str_repr; ?></h3>
       <div class="time-slots-container">
         <?php
+          $current_time = $start_hour_selected_day;
+
           for ($row = 0; $row < $amount_of_rows; $row++) {
             echo '<div class="disp-f">';
             for ($column = 0; $column < $amount_of_timeslots; $column++) {
-              if ($column !== 0 && $column%5 === 0) {
-                $amount_of_timeslots -= 5;
+              if ($column !== 0 && $column%$amount_of_columns === 0) {
+                $amount_of_timeslots -= $amount_of_columns;
                 break;
               }
         ?>
         <div class="time-slot">
-          <p class="time-slot-title">tijdslot <?php echo $row; ?></p>
-          <label for="time_slot_<?php echo $row; ?>">
-            <input id="time_slot_<?php echo $row; ?>" type="checkbox" name="time_slots[]" value="<?php echo $row; ?>" />
+          <p class="time-slot-title"><?php echo $current_time; ?></p>
+          <label>
+            <input type="checkbox" name="time_slots[]" value="<?php echo $row; ?>" />
+            reserveren
           </label>
         </div>
         <?php
+            $current_time = date('H:i', strtotime("+". $time_slot_setting ." minutes", strtotime($current_time)));
             }
+
             echo '</div>';
           }
         ?>
