@@ -28,10 +28,6 @@
       if ($current_step === 0) {
         if (!empty($_POST["reservation-type"])) {
           $_SESSION["reservation"]["reservation-type"] = $reservation_type = $_POST["reservation-type"];
-
-          // reset reservation item when set in session
-          // so it doesn't conflict with the other category when cycling through the process
-          $_SESSION["reservation"]["reservation-item"] = $reservation_item = "";
         } else {
           $init_step_error = "Maak een keuze";
         }
@@ -269,7 +265,7 @@
         <p>Selecteer één of meerdere tijdsloten waarop u het toestel wilt reserveren.</p>
         <?php
           $current_time = $start_hour_selected_day;
-    
+
           for ($row = 0; $row < $amount_of_rows; $row++) {
             echo '<div class="disp-f">';
             for ($column = 0; $column < $amount_of_timeslots; $column++) {
