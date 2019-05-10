@@ -1026,6 +1026,8 @@ iframe {
         margin-right: 20px;
       }
 @media (max-width:1300px) {
+  }
+@media (max-width:1350px) {
 #mainToestellen .toestelContent {
         width: 100%;
         margin-bottom: 65px;
@@ -1038,6 +1040,10 @@ iframe {
         #mainToestellen .toestelContent .buttons {
           position: absolute;
         }
+            
+            #mainToestellen .toestelContent .buttons .btn-dark {
+              width: 100%;
+              }
   }
 @media (max-width: 960px) {
 #mainToestellen .toestelContent {
