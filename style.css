@@ -909,18 +909,9 @@ article {
   }
   }
 @media (max-width: 700px) {
-  /*.buttons {
-    flex-wrap: wrap;
-  }*/
-
-  /*.btn {
-    width: 100%;
-    margin: 5px 0;
-  }*/
-
-  /*.content > .buttons > .btn:nth-of-type(2) {
-    margin-left: 0%;
-  }*/
+  .CTA {
+    display: none;
+  }
   }
 #contactMain {
   width: 85%;
