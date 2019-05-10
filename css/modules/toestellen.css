@@ -1,3 +1,61 @@
+#mainToestellen {
+  width: 85%;
+    
+  .toestelContent {
+      width: 50%;
+      display: flex;
+      margin-right: 60px;
+      
+      .thumbnail {
+        display: inline-block;
+        height: 100%;
+          
+          img {
+            width: 100%;
+            height: 100%;
+            }
+      }
+      
+      .img-thumb {
+        width: 70%;
+        margin-right: 20px;
+      }
+      
+      @mixin pcbig {
+        width: 100%;
+        margin-bottom: 65px;
+        margin-right: 0;
+        
+          
+        .buttons {
+          position: absolute;
+        }
+      }
+      
+      @mixin tablet {
+          display: block;
+          
+          .buttons {
+            position: static;
+          }
+          
+          .img-thumb {
+              width: 100%;
+              margin-right: 0;
+          }
+      }
+      
+      
+  }
+}
+
+@mixin pcbig {
+    .toestelContent {
+      width: 100%;
+    }
+}
+
+/*
 #toestelImg {
   width: 100%;
   margin: 0;
@@ -32,7 +90,6 @@
 }
 
 #mainToestellen .thumbnail {
-  /*width: 45%;*/
     
   img {
     height: 100%;
@@ -103,22 +160,6 @@
   #mainToestellen .toestelContent:nth-of-type(even) {
     margin-left: 0%;
   }
-
-  /*#mainToestellen .buttons{
-    position: relative;
-
-  }
-
-  #mainToestellen .btn{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: block;
-  }
-
-  #mainToestellen .btn:nth-of-type(even){
-    right: 0;
-  }*/
 }
 
 @mixin phone {
@@ -130,21 +171,11 @@
   #mainToestellen .content {
     width: 100%;
     margin-left: 0%;
+    margin-top: -25px;
   }
 
   #mainToestellen .excerpt {
     min-height: auto;
   }
-
-  #mainToestellen .title {
-    
-  }
-
-  /*#mainToestellen .buttons{
-    position: relative;
-  }
-
-  #mainToestellen .btn{
-    position: relative;
-  }*/
 }
+*/
