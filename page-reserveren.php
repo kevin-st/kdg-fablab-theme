@@ -42,7 +42,14 @@
 
         if ($reservation_type === "machine") {
           if (!empty($_POST["reservation-date"])) {
-            $_SESSION["reservation"]["reservation-date"] = $reservation_date = $_POST["reservation-date"];
+            $opening_hours = get_option("kdg_fablab_rs_opening_hours");
+            $selected_day = strtolower(date("l", strtotime($_POST["reservation-date"])));
+            echo "Vandaag (". $selected_day .") is gezet: " . isset($opening_hours[$selected_day]["is_closed"]);
+            if (isset($opening_hours[$selected_day]["is_closed"])) {
+              $first_step_machine_date_error = "Op deze dag kan niet gereserveerd worden";
+            } else {
+              $_SESSION["reservation"]["reservation-date"] = $reservation_date = $_POST["reservation-date"];
+            }
           } else {
             $first_step_machine_date_error = "Selecteer een datum";
           }
