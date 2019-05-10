@@ -1470,6 +1470,9 @@ margin-top: 50px;
     width: 100%;
     margin-right: 0;
   }
+    #user-info .disp-f {
+      display: block;
+    }
 
   .extra {
     margin-top: 17px;
@@ -1592,7 +1595,7 @@ margin-top: 50px;
 #reservation-form div.col-2-of-2 > div + .col-1-of-2 {
       margin-left: 2%;
     }
-#reservation-form > div.input-group:nth-child(2), #reservation-form > div.reservation-info:nth-child(2) {
+#reservation-form > div.input-group:nth-child(2) {
       margin-bottom: 15px;
     }
 @media (max-width: 960px) {

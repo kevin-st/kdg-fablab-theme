@@ -322,18 +322,17 @@
       <?php if ($current_step === 3) { ?>
       <!-- Third step -->
       <h2>Is dit in orde?</h2>
-      <div class="reservation-info">
-        <div role="type">
-          <h3>Type reservatie</h3>
-          <p><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></p>
-        </div>
-        <div class="disp-f col-2-of-2" role="info">
+    
+      <div class="disp-f col-2-of-2" role="info">
           <div class="col-1-of-2">
-            <h3><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></h3>
-            <p><?php echo $reservation_item; ?></p>
+              <h3>Type reservatie</h3>
+      <p><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></p>
+             
+              <h3><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></h3>
+              <p><?php echo $reservation_item; ?></p>  
           </div>
           <div class="col-1-of-2">
-            <h3>Datum</h3>
+              <h3>Datum</h3>
             <?php
               if ($reservation_type === "machine") {
                 echo date_i18n("d F Y", strtotime($reservation_date));
@@ -353,8 +352,8 @@
               }
             ?>
           </div>
-        </div>
       </div>
+      
       <input type="hidden" name="step" value="final" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">

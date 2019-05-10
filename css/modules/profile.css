@@ -74,6 +74,12 @@
     width: 100%;
     margin-right: 0;
   }
+    
+  #user-info {
+    .disp-f {
+      display: block;
+    }
+  }
 
   .extra {
     margin-top: 17px;
