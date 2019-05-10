@@ -14,8 +14,8 @@
     width: 100%;
       
       .disp-f {
-    flex-direction: column; 
-  }
+        flex-direction: column; 
+      }
       
       .col-1-of-2 {
         width: 100%;
@@ -25,9 +25,6 @@
           }
       }
   }
-
-  
-
   
 }
 
