@@ -272,7 +272,7 @@
         $amount_of_timeslots = $diff_in_min / $time_slot_setting;
 
         // get amount of rows in grid
-        $amount_of_columns = 5;
+        $amount_of_columns = 6;
         $amount_of_rows = ceil($amount_of_timeslots / $amount_of_columns);
       ?>
       <h3><?php echo $date_str_repr; ?></h3>

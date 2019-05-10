@@ -30,7 +30,6 @@
         ?>
         <h1>
           <?php the_title(); ?>
-          <span><a href="<?php echo site_url("/mijn-profiel/edit"); ?>">u</a></span>
         </h1>
         <?php
         }

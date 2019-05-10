@@ -1625,19 +1625,34 @@ margin-top: 50px;
 .time-slots-container {
   margin-bottom: 25px;
 }
+.time-slots-container >.disp-f {
+    justify-content: space-between;
+  }
+.time-slots-container >.disp-f:last-child {
+       justify-content: flex-start;
+    }
 .time-slot {
   border: 1px solid #ccc;
-  margin: 5px 5px 0 0;
   padding: 10px;
+  width: 150px;
+  box-sizing: border-box;
 }
 .time-slot label {
     display: inline-block;
     color: white;
+    width: 100%;
   }
 .time-slot .labelReserveren {
     background-color: #1d1d1b;
     padding: 15px;
     margin: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
   }
 .time-slot .labelReserveren:hover {
     background-color: #34bedc;
@@ -1646,7 +1661,7 @@ margin-top: 50px;
     color: red;
   }
 .time-slot input[type="checkbox"] {
-    visibility: hidden;
+    display: none;
   }
 .time-slot input[type="checkbox"]:checked + .labelReserveren {
     background-color: #34bedc;
