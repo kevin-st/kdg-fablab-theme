@@ -1,3 +1,8 @@
+/*#mainNieuws {
+    width: 85%;
+  padding-bottom: 250px;
+}*/
+
 .newsButtons{
   width: 100%;
 }
@@ -14,10 +19,10 @@
 .newsContent:nth-of-type(even){
   margin-left: 6% ;
 }
-
+/*
 .newsContent>.thumbnail{
   width: 48% ;
-}
+}*/
 
 .newsContent>.content{
   width: 50% ;

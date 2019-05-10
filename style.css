@@ -750,7 +750,7 @@ article {
 }
 .thumbnail {
   margin-right: 15px;
-  /*height: 100%;*/
+  height: 100%;
   width: 250px;
   overflow: hidden;
 }
@@ -1029,10 +1029,7 @@ iframe {
 #mainToestellen .toestelContent:nth-of-type(even) {
   margin-left: 6%;
 }
-#mainToestellen .thumbnail {
-  width: 45%;
-  
-}
+/*width: 45%;*/
 #mainToestellen .thumbnail img {
     height: 100%;
   }
@@ -1042,6 +1039,9 @@ iframe {
 #mainToestellen h1 {
   margin: 0;
 }
+.opdeling h1 {
+    margin-top: 0;
+  }
 @media (max-width:1350px) {
   #mainToestellen .toestelContent {
     flex-wrap: wrap;
@@ -1049,6 +1049,7 @@ iframe {
 
   #mainToestellen .thumbnail {
     width: 100%;
+    height: 50%;
   }
 
   #mainToestellen .content {
@@ -1066,6 +1067,7 @@ iframe {
 
   #mainToestellen .thumbnail {
     width: 48%;
+      height: 100%;
   }
       
     #mainToestellen .thumbnail img {
@@ -1109,6 +1111,7 @@ iframe {
 @media (max-width: 700px) {
   #mainToestellen .thumbnail {
     width: 100%;
+    height: 50%;
   }
 
   #mainToestellen .content {
@@ -1121,7 +1124,7 @@ iframe {
   }
 
   #mainToestellen .title {
-padding-top: 20px;
+    
   }
 
   /*#mainToestellen .buttons{
@@ -1132,6 +1135,10 @@ padding-top: 20px;
     position: relative;
   }*/
   }
+/*#mainNieuws {
+    width: 85%;
+  padding-bottom: 250px;
+}*/
 .newsButtons{
   width: 100%;
 }
@@ -1145,9 +1152,10 @@ padding-top: 20px;
 .newsContent:nth-of-type(even){
   margin-left: 6% ;
 }
+/*
 .newsContent>.thumbnail{
   width: 48% ;
-}
+}*/
 .newsContent>.content{
   width: 50% ;
   margin-left: 2%
