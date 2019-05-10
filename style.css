@@ -733,7 +733,7 @@ h1 {
 }
 #mainFrontpage {
   width: 85%;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 250px;
 }
 #mainFrontpage section {
@@ -784,33 +784,33 @@ article {
 }*/
 .CTA {
   position: relative;
-  width: 100%;
-  margin: 0;
-}
-#background {
-  width: 100%;
   background-color: #34bedc;
-  height: 80px;
+  top: -50px;
   -webkit-transform: rotate(-1deg);
           transform: rotate(-1deg);
+}
+/*
+#background {
+  width: 100%;
+  background-color: $main_accent;
+  transform: rotate(-1deg);
   position: absolute;
   top: -50px;
-  left: 0px;
-  display: inline-block;
-  z-index: 2;
-}
+}*/
 .CTAtext {
-  width: 100%;
   font-size: 20px;
   font-weight: 900;
   line-height: 80px;
   text-decoration: none;
   color: #1d1d1b;
+  display: flex;
+  justify-content: center;
 }
+/*
 .centerText {
   text-align: center;
   padding-right: 15px;
-}
+}*/
 .thumbnaillink {
   margin: 0;
   padding: 0;
@@ -857,10 +857,6 @@ article {
   /*.content > .buttons > .btn:nth-of-type(2) {
     margin-left: 2%;
   }*/
-
-  .title {
-    padding-top: 20px;
-  }
   }
 @media (max-width: 960px) {
   #mainFrontpage {

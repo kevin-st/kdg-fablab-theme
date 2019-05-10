@@ -18,17 +18,12 @@
       while($newest_workshop->have_posts()) {
         $newest_workshop->the_post();
     ?>
-    <div id="background">
       <a class="CTAtext" href="<?php the_permalink(); ?>">
-        <div class="centerText">
-        <span>Reserveer je plaats tijdens onze nieuwste workshop:</span>
-             <span class="title"><?php the_title(); ?></span>
-          </div>
+        <span>Reserveer je plaats tijdens onze nieuwste workshop: <?php the_title(); ?></span>
           <?php
             }
           ?>
       </a>
-    </div>
   </div>
   <main id="mainFrontpage" class="disp-f">
 

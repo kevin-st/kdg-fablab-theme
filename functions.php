@@ -107,7 +107,11 @@
       <div class="page-banner p-rel">
         <img class="col-2-of-2 valencia" src="<?php echo $args['img']; ?>" alt="page-banner">
         <?php if (is_front_page()) { ?>
-        <a class="introbtn" href="<?php echo site_url('login') ?>">Reserveer nu!</a>
+        <a 
+        class="introbtn" 
+        href="<?php echo is_user_logged_in() ? site_url('reserveren') : site_url('login'); ?>">
+        Reserveer nu!
+        </a>
         <?php } ?>
       </div>
     <?php

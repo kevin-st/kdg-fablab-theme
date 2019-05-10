@@ -16,7 +16,7 @@ h1 {
 
 #mainFrontpage {
   width: 85%;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 250px;
 
   section {
@@ -77,34 +77,34 @@ article {
 }*/
 .CTA {
   position: relative;
-  width: 100%;
-  margin: 0;
+  background-color: $main_accent;
+  top: -50px;
+  transform: rotate(-1deg);
 }
+/*
 #background {
   width: 100%;
   background-color: $main_accent;
-  height: 80px;
   transform: rotate(-1deg);
   position: absolute;
   top: -50px;
-  left: 0px;
-  display: inline-block;
-  z-index: 2;
-}
+}*/
 
 .CTAtext {
-  width: 100%;
   font-size: 20px;
   font-weight: 900;
   line-height: 80px;
   text-decoration: none;
   color: $zwartKdg;
+  display: flex;
+  justify-content: center;
 }
 
+/*
 .centerText {
   text-align: center;
   padding-right: 15px;
-}
+}*/
 
 .thumbnaillink {
   margin: 0;
@@ -153,9 +153,6 @@ article {
     margin-left: 2%;
   }*/
 
-  .title {
-    padding-top: 20px;
-  }
 }
 
 @mixin tablet {
