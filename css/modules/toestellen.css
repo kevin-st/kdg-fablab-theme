@@ -68,6 +68,10 @@
 
   #mainToestellen .thumbnail {
     width: 48%;
+      
+    img {
+      height: 350px;
+    }
   }
 
   #mainToestellen .content {
