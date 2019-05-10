@@ -33,6 +33,11 @@
 
 #mainToestellen .thumbnail {
   width: 45%;
+    
+  img {
+    height: 100%;
+  }
+  
 }
 
 #mainToestellen .content {

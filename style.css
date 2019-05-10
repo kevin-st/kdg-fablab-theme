@@ -1044,7 +1044,11 @@ iframe {
 }
 #mainToestellen .thumbnail {
   width: 45%;
+  
 }
+#mainToestellen .thumbnail img {
+    height: 100%;
+  }
 #mainToestellen .content {
   width: 55%;
 }
