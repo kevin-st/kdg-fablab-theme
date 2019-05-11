@@ -22,6 +22,8 @@
         <span>Reserveer je plaats tijdens onze nieuwste workshop: <?php the_title(); ?></span>
           <?php
             }
+
+            wp_reset_postdata();
           ?>
       </a>
   </div>
@@ -38,28 +40,28 @@
           while($homepage_news->have_posts()) {
             $homepage_news->the_post();
         ?>
-        <a class="thumbnaillink" href="<?php the_permalink(); ?>">
-          <?php if (has_post_thumbnail()) { ?>
-           <div class="thumbnail">
-             <?php the_post_thumbnail(); ?>
-           </div>
-           <?php } else { ?>
-           <img class="thumbnail valencia" src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news">
-          <?php } ?>
-        </a>
+        <div class="img-thumb">
+          <?php $post_thumbnail_url = get_the_post_thumbnail_url(); ?>
+          <a
+            href="<?php the_permalink(); ?>"
+            class="thumbnail valencia"
+            style="background-image: url('<?php echo ($post_thumbnail_url) ? $post_thumbnail_url : get_theme_file_uri('img/default_news.jpg'); ?>');"
+          >
+          </a>
+        </div>
           <div class="content">
-            <h2 class="title"><?php the_title(); ?></h2>
+            <h2 class="title"><?php echo wp_trim_words(get_the_title(), 5); ?></h2>
 
              <p class="excerpt">
               <?php
                 if (has_excerpt()) {
                   echo get_the_excerpt();
                 } else {
-                  echo wp_trim_words(get_the_content(), 30); // control number of words
+                  echo wp_trim_words(get_the_content(), 25); // control number of words
                 }
               ?>
              </p>
-             <div class="buttons-frontpage disp-f col-2-of-2 ">
+             <div class="buttons disp-f col-2-of-2 ">
                <a class="btn btn-dark" href="<?php the_permalink(); ?>">Lees verder</a>
                <a class="btn btn-dark" href="<?php echo get_permalink(get_option("page_for_posts")); ?>">Meer nieuws</a>
              </div>
@@ -68,6 +70,8 @@
 
         <?php
           }
+
+          wp_reset_postdata();
         ?>
       </article>
     </section>
@@ -83,15 +87,15 @@
           while($last_added_machine->have_posts()) {
             $last_added_machine->the_post();
         ?>
-        <a class="thumbnaillink" href="<?php the_permalink(); ?>">
-           <?php if (has_post_thumbnail()) { ?>
-            <div class="thumbnail">
-              <?php the_post_thumbnail(); ?>
-            </div>
-            <?php } else { ?>
-            <img class="thumbnail valencia" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
-           <?php } ?>
+        <div class="img-thumb">
+          <?php $post_thumbnail_url = get_the_post_thumbnail_url(); ?>
+          <a
+            href="<?php the_permalink(); ?>"
+            class="thumbnail valencia"
+            style="background-image: url('<?php echo ($post_thumbnail_url === false) ? get_theme_file_uri('img/default_machine.jpg') : $post_thumbnail_url; ?>');"
+          >
           </a>
+        </div>
            <div class="content">
            <h2 class="title"><?php the_title(); ?></h2>
            <p class="excerpt">
@@ -99,11 +103,11 @@
               if (has_excerpt()) {
                 echo get_the_excerpt();
               } else {
-                echo wp_trim_words(get_the_content(), 30); // control number of words
+                echo wp_trim_words(get_the_content(), 25); // control number of words
               }
             ?>
            </p>
-           <div class="buttons-frontpage disp-f col-2-of-2">
+           <div class="buttons disp-f col-2-of-2">
              <a class="btn btn-dark" href="<?php the_permalink(); ?>">Lees meer</a>
              <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
            </div>
@@ -111,6 +115,8 @@
            </div>
         <?php
           }
+
+          wp_reset_postdata();
         ?>
       </article>
     </section>

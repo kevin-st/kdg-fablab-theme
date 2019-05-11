@@ -71,7 +71,10 @@
   &-dark {
     background-color: $zwartKdg;
     color: $wit;
-    width: 80%;
+
+    &:hover {
+      color: $main_accent;
+    }
   }
 
   &-blue {
@@ -83,16 +86,16 @@
     }
   }
 
+  &-fw {
+    width: 100%;
+  }
+
   &-submit {
     cursor: pointer;
     border: none;
     display: block;
     padding: 14px 20px;
     width: 100%;
-  }
-
-  &:hover {
-    color: $main_accent;
   }
 
   &:last-child {

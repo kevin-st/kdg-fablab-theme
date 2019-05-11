@@ -30,7 +30,8 @@
 }
 
 .input-group textarea {
-  margin-bottom: 100px;
+  /*margin-bottom: 100px;*/
+  resize: none;
 }
 
 iframe {

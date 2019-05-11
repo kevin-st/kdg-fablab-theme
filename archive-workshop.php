@@ -1,22 +1,23 @@
 <?php get_header(); ?>
 
-<main id="mainToestellen" class=" disp-f">
-  <section role="machines">
-    <h1>Onze WORKSHOPS</h1>
-    <article class="disp-f">
+<main id="mainArchive">
+    <h1>Onze workshops</h1>
+    <div role="workshops" class="disp-f">
       <?php
         while(have_posts()) {
           the_post();
           $title = strtolower(str_replace(" ", "-", get_the_title()));
       ?>
-      <div class="toestelContent">
-        <?php if (has_post_thumbnail()) { ?>
-        <a href="<?php the_permalink(); ?>" class="thumbnail">
-          <?php the_post_thumbnail(); ?>
-        </a>
-        <?php } else { ?>
-          <img class="thumbnail valencia" src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine">
-        <?php } ?>
+      <article class="workshop disp-f">
+        <div class="img-thumb">
+          <?php $post_thumbnail_url = get_the_post_thumbnail_url(); ?>
+          <a
+            href="<?php the_permalink(); ?>"
+            class="thumbnail valencia"
+            style="background-image: url('<?php echo ($post_thumbnail_url) ? $post_thumbnail_url : get_theme_file_uri('img/default_workshop.jpg'); ?>');"
+          >
+          </a>
+        </div>
         <div class="content">
           <h2 class="title"><?php the_title(); ?></h2>
           <p class="excerpt">
@@ -24,7 +25,7 @@
               if (has_excerpt()) {
                 echo get_the_excerpt();
               } else {
-                echo wp_trim_words(get_the_content(), 35); // control number of words
+                echo wp_trim_words(get_the_content(), 20); // control number of words
               }
             ?>
           </p>
@@ -45,11 +46,11 @@
             ?>">Reserveren</a> <!-- Moet nog nagekeken worden, reservatie plugin -->
           </div>
         </div>
-      </div>
+      </article>
       <?php
         }
       ?>
-    </article>
+    </div>
     <div class="pagination">
       <?php
         echo paginate_links();

@@ -1,0 +1,107 @@
+#mainSingle {
+  width: 80%;
+
+  article {
+    justify-content: space-between;
+    width: 100%;
+
+    .img-thumb {
+      min-height: 500px;
+      width: 45%;
+
+      a {
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+
+        @mixin tablet {
+          background-size: 100% 100%;
+        }
+      }
+
+      @mixin tablet {
+        margin-bottom: 5%;
+        min-height: 350px;
+        width: 100%;
+      }
+
+      @mixin phone {
+        min-height: 250px;
+      }
+
+      @mixin phone-small {
+        min-height: 150px;
+      }
+    }
+
+    .content {
+      width: 50%;
+      position: relative;
+
+      .title {
+        margin-top: 0;
+      }
+
+      &-text {
+        line-height: 1.5;
+        text-align: justify;
+
+        @mixin tablet {
+          min-height: 150px;
+        }
+
+        @mixin phone {
+          min-height: 200px;
+        }
+      }
+
+      .buttons {
+        > a {
+          @mixin tablet {
+            width: 100%;
+          }
+
+          @mixin phone {
+            &:nth-child(2) {
+              margin-top: 5%;
+            }
+          }
+        }
+
+        @mixin pcXL {
+          position: absolute;
+        }
+
+        @mixin tablet {
+          flex-wrap: wrap;
+          position: static;
+        }
+      }
+
+      @mixin tablet {
+        width: 100%;
+      }
+    }
+
+    @mixin tablet {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.breadcrumbs {
+  width: 100%;
+  margin: 50px 0;
+  cursor: pointer;
+
+  > a {
+    text-decoration: none;
+    color: $zwartKdg;
+  }
+
+  @mixin phone {
+    display: none;
+  }
+}

@@ -1,60 +1,49 @@
 <?php get_header() ?>
-<?php
-  /*
-    used for displaying a single post
-
-    in this case: a post with type of machine
-  */
-?>
-<main class="detail ">
+<main id="mainSingle">
+  <div role="breadcrumbs" class="breadcrumbs">
+    <a href="<?php echo site_url('/toestellen/'); ?>">Toestellen</a>
+    &gt; <?php strtolower(the_title()) ?>
+  </div>
   <?php
     while(have_posts()) {
       the_post();
       $title = strtolower(str_replace(" ", "-", get_the_title()));
   ?>
-  <div role="breadcrumbs" class="breadcrumbs">
-    <a href="<?php echo site_url('/toestellen/'); ?>">Toestellen</a>
-    > <?php strtolower(the_title()) ?>
-  </div>
-
-  <div class="contentdetail">
-    <div role="thumbnail" class="thumbnail">
-      <?php
-        if (has_post_thumbnail()) {
-          echo the_post_thumbnail();
-        } else {
-      ?>
-      <img src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="machine"/>
-      <?php
-        }
-      ?>
+  <article class="disp-f">
+    <div class="img-thumb">
+      <?php $post_thumbnail_url = get_the_post_thumbnail_url(); ?>
+      <a
+        href="<?php the_permalink(); ?>"
+        class="thumbnail valencia"
+        style="background-image: url('<?php echo ($post_thumbnail_url) ? $post_thumbnail_url : get_theme_file_uri('img/default_machine.jpg'); ?>');"
+      >
+      </a>
     </div>
-    <div class="opdeling">
+    <div class="content">
       <h1 role="title" class="title"><?php the_title(); ?></h1>
+      <div class="content-text">
+        <?php the_content(); ?>
+      </div>
+      <div class="buttons disp-f col-2-of-2">
+        <a class="btn btn-blue " href="<?php
+          $redirect_to = esc_url(add_query_arg([
+            "id" => $title,
+            "type" => "machine"
+          ], site_url('/reserveren/')));
 
-    <div role="content" class="content">
-      <p><?php the_content(); ?></p>
+          if (is_user_logged_in()) {
+            // redirect to reservation page
+            echo $redirect_to;
+          } else {
+            echo esc_url(add_query_arg("redirect_to", $redirect_to, wp_login_url()));
+          }
+          ?>">
+          Reserveer dit toestel!
+          </a>
+          <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Terug naar toestellen</a>
+      </div>
     </div>
-    <div role="button" class="detailBtn">
-      <!-- url fix redirect when not logged in -->
-      <a class="btn btn-dark " href="<?php
-        $redirect_to = esc_url(add_query_arg([
-          "id" => $title,
-          "type" => "machine"
-        ], site_url('/reserveren/')));
-        
-        if (is_user_logged_in()) {
-          // redirect to reservation page
-          echo $redirect_to;
-        } else {
-          echo esc_url(add_query_arg("redirect_to", $redirect_to, wp_login_url()));
-        }
-      ?>">Reserveer dit toestel!</a> <!-- Moet nog nagekeken worden, reservatie plugin -->
-      <a class="btn btn-dark " href="<?php echo get_post_type_archive_link("machine"); ?>">Terug naar toestellen</a>
-    </div>
-    </div>
-  </div>
-
+  </article>
   <?php
     }
   ?>

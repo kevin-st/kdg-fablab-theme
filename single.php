@@ -1,51 +1,33 @@
 <?php get_header(); ?>
-<?php
-  /*
-    REMOVE THIS COMMENT
-
-    content for a single item goes here:
-    - this template is used for a single blog post
-    - can also include custom items
-      -> e.g. machines for a "single-machine(.php)"
-   */
-?>
-<main class="detail">
-  <?php
-    while(have_posts()) {
-      the_post();
-  ?>
+<main id="mainSingle">
   <div role="breadcrumbs" class="breadcrumbs">
     <a href="<?php echo site_url('/nieuws/'); ?>">Laatste nieuws</a>
     > <?php strtolower(the_title()) ?>
   </div>
-  <div class="contentdetail">
-    <div role="thumbnail" class="thumbnail">
-      <?php
-        if (has_post_thumbnail()) {
-          echo the_post_thumbnail();
-        } else {
-      ?>
-      <img src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="news"/>
-      <?php
-        }
-      ?>
+  <?php
+    while(have_posts()) {
+      the_post();
+  ?>
+  <article class="disp-f">
+    <div class="img-thumb">
+      <?php $post_thumbnail_url = get_the_post_thumbnail_url(); ?>
+      <a
+        href="<?php the_permalink(); ?>"
+        class="thumbnail valencia"
+        style="background-image: url('<?php echo ($post_thumbnail_url) ? $post_thumbnail_url : get_theme_file_uri('img/default_news.jpg'); ?>');"
+      >
+      </a>
     </div>
-    <div class="opdeling">
-      <div role="title" class="title">
-        <h1 role="title-content" ><?php the_title(); ?></h1>
-        <p>
-          <span role="date"><?php the_date(); ?></span>
-          <span role="time"><?php the_time(); ?></span>
-        </p>
+    <div class="content">
+      <h1 role="title" class="title"><?php the_title(); ?></h1>
+      <div class="content-text">
+        <?php the_content(); ?>
       </div>
-      <div role="content" class="content">
-        <p><?php the_content(); ?></p>
-      </div>
-      <div role="button" class="detailBtn">
-        <a class="btn btn-dark " href="<?php echo site_url('/nieuws/'); ?>">Terug naar nieuwsberichten</a>
+      <div class="buttons disp-f col-2-of-2">
+        <a class="btn btn-blue btn-fw" href="<?php echo site_url('/nieuws') ?>">Terug naar nieuwsoverzicht</a>
       </div>
     </div>
-  </div>
+  </article>
 
 
 

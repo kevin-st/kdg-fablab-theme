@@ -23,21 +23,17 @@
 */
 @import "modules/header";
 @import "modules/footer";
-@import "modules/general";
+@import "modules/archive";
 @import "modules/btn";
 @import "modules/input";
 @import "modules/login";
 @import "modules/modal";
 @import "modules/frontpage";
 @import "modules/contact";
-@import "modules/toestellen";
-@import "modules/nieuws";
-@import "modules/single-machine";
-@import "modules/detail-nieuws";
 @import "modules/showcase";
+@import "modules/single";
 @import "modules/404";
 @import "modules/pagination";
 @import "modules/profile";
 @import "modules/edit-profile";
 @import "modules/reserveren";
-
