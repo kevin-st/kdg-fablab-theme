@@ -53,7 +53,10 @@
             if (isset($opening_hours[$selected_day]["is_closed"])) {
               $first_step_machine_date_error = "Op deze dag kan niet gereserveerd worden";
             } else {
-              if ($_POST["reservation-date"] >= new DateTime()) {
+              $selected_date_time = new DateTime($_POST["reservation-date"]);
+              $now = new DateTime();
+
+              if ($selected_date_time >= $now) {
                 // set if selected date is greater than or equal to now
                 $_SESSION["reservation"]["reservation-date"] = $reservation_date = $_POST["reservation-date"];
               } else {
