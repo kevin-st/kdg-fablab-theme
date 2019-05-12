@@ -130,13 +130,9 @@
 
 .time-slots-container {
   margin-bottom: 25px;
-    
-  >.disp-f {
-    justify-content: space-between;
-    
-    &:last-child {
-       justify-content: flex-start;
-    }
+
+  > div[role="time-slots"].disp-f {
+    flex-wrap: wrap;
   }
 }
 

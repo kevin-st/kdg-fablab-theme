@@ -49,7 +49,7 @@
           if (!empty($_POST["reservation-date"])) {
             $opening_hours = get_option("kdg_fablab_rs_opening_hours");
             $selected_day = strtolower(date("l", strtotime($_POST["reservation-date"])));
-            echo "Vandaag (". $selected_day .") is gezet: " . isset($opening_hours[$selected_day]["is_closed"]);
+
             if (isset($opening_hours[$selected_day]["is_closed"])) {
               $first_step_machine_date_error = "Op deze dag kan niet gereserveerd worden";
             } else {
@@ -103,7 +103,20 @@
         // unset reservation session
         $_SESSION["reservation"] = [];
 
-        // redirect to overview user reservations
+        // set sent variable session
+        $sent = $_SESSION['sent'] = TRUE;
+
+        if ($sent) {
+          $_SESSION['msg-type'] = "success";
+          $_SESSION['msg'] = "Je reservatie is succesvol ingediend.";
+
+          // redirect to overview user reservations
+          wp_redirect(site_url("mijn-profiel/reservaties"));
+          exit;
+        } else {
+          $_SESSION['msg-type'] = "error";
+          $_SESSION['msg'] = "Er ging iets mis tijdens het verzenden. Probeer het later nog een keer.";
+        }
       }
     }
   }
@@ -275,39 +288,28 @@
         // amount of minutes divided by timeslot setting = amount of timeslots available for this day
         $time_slot_setting = get_option("kdg_fablab_rs_time_slot");
         $amount_of_timeslots = $diff_in_min / $time_slot_setting;
-
-        // get amount of rows in grid
-        $amount_of_columns = 6;
-        $amount_of_rows = ceil($amount_of_timeslots / $amount_of_columns);
       ?>
       <h3><?php echo $date_str_repr; ?></h3>
       <div class="time-slots-container">
         <p>Selecteer één of meerdere tijdsloten waarop u het toestel wilt reserveren.</p>
-        <?php
-          $current_time = $start_hour_selected_day;
+        <div role="time-slots" class="disp-f">
+          <?php
+            $current_time = $start_hour_selected_day;
 
-          for ($row = 0; $row < $amount_of_rows; $row++) {
-            echo '<div class="disp-f">';
-            for ($column = 0; $column < $amount_of_timeslots; $column++) {
-              if ($column !== 0 && $column%$amount_of_columns === 0) {
-                $amount_of_timeslots -= $amount_of_columns;
-                break;
-              }
-        ?>
-        <div class="time-slot">
-          <p class="time-slot-title"><?php echo $current_time; ?></p>
-          <label>
-            <input type="checkbox" name="reservation-time-slots[]" value="<?php echo $current_time; ?>" <?php echo (in_array($current_time, $reservation_time_slots)) ? "checked" : ""; ?> />
-              <p class="labelReserveren">reserveren</p>
-          </label>
-        </div>
-        <?php
-            $current_time = date('H:i', strtotime("+". $time_slot_setting ." minutes", strtotime($current_time)));
+            for ($i = 0; $i < $amount_of_timeslots; $i++) {
+          ?>
+          <div class="time-slot">
+            <p class="time-slot-title"><?php echo $current_time; ?></p>
+            <label>
+              <input type="checkbox" name="reservation-time-slots[]" value="<?php echo $current_time; ?>" <?php echo (in_array($current_time, $reservation_time_slots)) ? "checked" : ""; ?> />
+                <p class="labelReserveren">reserveren</p>
+            </label>
+          </div>
+          <?php
+              $current_time = date('H:i', strtotime("+". $time_slot_setting ." minutes", strtotime($current_time)));
             }
-
-            echo '</div>';
-          }
-        ?>
+          ?>
+        </div>
       </div>
       <span class="error-message message <?php echo (!empty($second_step_machine_time_slots_error)) ? "disp-b" : "disp-n"; ?>">
         <?php echo $second_step_machine_time_slots_error; ?>
@@ -326,39 +328,51 @@
 
       <?php if ($current_step === 3) { ?>
       <!-- Third step -->
+      <?php
+        if (isset($_SESSION['sent'])) {
+          if ($_SESSION['sent']) {
+            $_SESSION['sent'] = FALSE;
+      ?>
+        <div class="modal modal-<?php echo isset($_SESSION['msg-type']) ? $_SESSION['msg-type'] : ""; ?>">
+          <p><?php echo isset($_SESSION['msg']) ? $_SESSION['msg'] : "Er ging iets mis."; ?></p>
+        </div>
+      <?php
+          }
+        }
+      ?>
+
       <h2>Is dit in orde?</h2>
-    
       <div class="disp-f col-2-of-2" role="info">
-          <div class="col-1-of-2">
-              <h3>Type reservatie</h3>
-      <p><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></p>
-             
-              <h3><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></h3>
-              <p><?php echo $reservation_item; ?></p>  
-          </div>
-          <div class="col-1-of-2">
-              <h3>Datum</h3>
-            <?php
-              if ($reservation_type === "machine") {
-                echo date_i18n("d F Y", strtotime($reservation_date));
-                echo "<h4>Tijdstippen</h4>";
+        <div class="col-1-of-2">
+          <h3>Type reservatie</h3>
+          <p><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></p>
 
-                foreach ($reservation_time_slots as $time_slot) {
-                  echo "<p>". $time_slot ."</p>";
-                }
-              } else {
-                $workshop = get_page_by_title($reservation_item, OBJECT, "workshop");
+          <h3><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></h3>
+          <p><?php echo $reservation_item; ?></p>
+        </div>
+        <div class="col-1-of-2">
+          <h3>Datum</h3>
+          <?php
+            if ($reservation_type === "machine") {
+              echo date_i18n("d F Y", strtotime($reservation_date));
+              echo "<h4>Tijdstippen</h4>";
 
-                echo the_field("workshop_datum", $workshop->ID);
-                echo "<h4>Tijdstip</h4>";
-                echo the_field("start_tijd", $workshop->ID);
-                echo " - ";
-                echo the_field("eind_tijd", $workshop->ID);
+              foreach ($reservation_time_slots as $time_slot) {
+                echo "<p>". $time_slot ."</p>";
               }
-            ?>
-          </div>
+            } else {
+              $workshop = get_page_by_title($reservation_item, OBJECT, "workshop");
+
+              echo the_field("workshop_datum", $workshop->ID);
+              echo "<h4>Tijdstip</h4>";
+              echo the_field("start_tijd", $workshop->ID);
+              echo " - ";
+              echo the_field("eind_tijd", $workshop->ID);
+            }
+          ?>
+        </div>
       </div>
-      
+
       <input type="hidden" name="step" value="final" />
       <div class="disp-f col-2-of-2">
         <div class="col-1-of-2">

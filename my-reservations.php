@@ -11,6 +11,18 @@
 ?>
 <main>
   <h1>Dit is het overzicht van mijn reservaties.</h1>
+  <?php
+    if (isset($_SESSION['sent'])) {
+      if ($_SESSION['sent']) {
+        $_SESSION['sent'] = FALSE;
+  ?>
+    <div class="modal modal-<?php echo isset($_SESSION['msg-type']) ? $_SESSION['msg-type'] : ""; ?>">
+      <p><?php echo isset($_SESSION['msg']) ? $_SESSION['msg'] : "Er ging iets mis."; ?></p>
+    </div>
+  <?php
+      }
+    }
+  ?>
 </main>
 <?php
   get_footer();

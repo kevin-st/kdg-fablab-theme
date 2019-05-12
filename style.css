@@ -1714,12 +1714,9 @@ iframe {
 .time-slots-container {
   margin-bottom: 25px;
 }
-.time-slots-container >.disp-f {
-    justify-content: space-between;
+.time-slots-container > div[role="time-slots"].disp-f {
+    flex-wrap: wrap;
   }
-.time-slots-container >.disp-f:last-child {
-       justify-content: flex-start;
-    }
 .time-slot {
   border: 1px solid #ccc;
   padding: 10px;
