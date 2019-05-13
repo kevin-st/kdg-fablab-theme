@@ -469,8 +469,9 @@ footer>#socials>a{
     #mainArchive > div .workshop,
     #mainArchive > div .nieuwsartikel,
     #mainArchive > div .reservation {
-      width: 50%;
+      width: 45%;
       margin-bottom: 3%;
+      margin-right: 10px;
     }
 #mainArchive > div .toestel .img-thumb, #mainArchive > div .workshop .img-thumb, #mainArchive > div .nieuwsartikel .img-thumb {
         height: 250px;
@@ -563,18 +564,28 @@ footer>#socials>a{
 #mainArchive > div .nieuwsartikel .buttons > a {
         width: 100%;
       }
+#mainArchive > div .reservation {
+      border: 2px solid #1d1d1b;
+      box-shadow: 0 0 2px 2px grey;
+      padding-left: 10px;
+    }
 #mainArchive > div .reservation-type {
         background-color: #34bedc;
         color: #fff;
         font-size: 18px;
         font-weight: normal;
         padding: 5px;
+        text-transform: uppercase;
+        margin-left: 10px;
       }
 @media (max-width: 960px) {
 #mainArchive > div .reservation {
           width: 100%
-        
-      
+    }
+  }
+@media (max-width: 700px) {
+#mainArchive > div .reservation {
+          padding: 5px
     }
   }
 /* example module */

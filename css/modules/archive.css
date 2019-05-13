@@ -13,8 +13,9 @@
     .workshop,
     .nieuwsartikel,
     .reservation {
-      width: 50%;
+      width: 45%;
       margin-bottom: 3%;
+      margin-right: 10px;
     }
 
     .toestel,
@@ -108,19 +109,27 @@
     }
 
     .reservation {
+      border: 2px solid $zwartKdg;
+      box-shadow: 0 0 2px 2px grey;
+      padding-left: 10px;
+        
       &-type {
         background-color: $main_accent;
         color: $wit;
         font-size: 18px;
         font-weight: normal;
         padding: $small;
+        text-transform: uppercase;
+        margin-left: 10px;
       }
         
       @mixin tablet {
           width: 100%;
       }
         
-      
+      @mixin phone {
+          padding: 5px;
+      }
     }
   }
 }
