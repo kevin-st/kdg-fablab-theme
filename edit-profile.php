@@ -169,7 +169,7 @@
 <main id="profielMain">
   <div id="user-info">
     <h1><?php the_title(); ?></h1>
-    <a class="link-delete" href="url">Profiel verwijderen</a>
+    <?php echo do_shortcode( '[plugin_delete_me /]' ); ?>
     <form id="profile-meta-data" action="<?php the_permalink(); ?>" method="post">
 
       <div class="disp-f col-2-of-2">
