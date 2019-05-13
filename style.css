@@ -570,6 +570,13 @@ footer>#socials>a{
         font-weight: normal;
         padding: 5px;
       }
+@media (max-width: 960px) {
+#mainArchive > div .reservation {
+          width: 100%
+        
+      
+    }
+  }
 /* example module */
 /*
   define a button class with some subclasses:
