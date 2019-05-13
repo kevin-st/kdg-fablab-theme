@@ -31,7 +31,7 @@
       }
     }
   ?>
-  <div role="reservations" class="disp-f disp-block">
+  <div role="reservations" class="disp-f">
     <?php
       $all_reservations_current_user = new WP_Query([
         "post_type" => "reservation",
