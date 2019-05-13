@@ -47,10 +47,10 @@
       ?>
 
       <?php
-      wp_nav_menu([
-        "theme_location" => "profile_navigation"
-      ]);
-        ?>
+        wp_nav_menu([
+          "theme_location" => "profile_navigation"
+        ]);
+      ?>
 
       <div id="user-info">
         <section>

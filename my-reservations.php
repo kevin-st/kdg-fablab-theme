@@ -9,9 +9,17 @@
 
   get_header();
 ?>
-<main>
-  <h1>Dit is het overzicht van mijn reservaties.</h1>
+<main id="mainArchive">
   <?php
+    while(have_posts()) {
+      the_post();
+    ?>
+    <h1>
+      <?php the_title(); ?>
+    </h1>
+    <?php
+    }
+
     if (isset($_SESSION['sent'])) {
       if ($_SESSION['sent']) {
         $_SESSION['sent'] = FALSE;
@@ -23,6 +31,59 @@
       }
     }
   ?>
+  <div role="reservations" class="disp-f">
+    <?php
+      $all_reservations_current_user = new WP_Query([
+        "post_type" => "reservation",
+        "posts_per_page" => -1,
+        "author" => get_current_user_id()
+      ]);
+
+      while($all_reservations_current_user->have_posts()) {
+        $all_reservations_current_user->the_post();
+    ?>
+    <article class="reservation">
+      <?php
+        // declare variables for current post
+        $reservation_type = get_post_meta($post->ID, "reservation_type", true);
+        $reservation_date = NULL;
+        $reservation_time_slots = NULL;
+
+        if ($reservation_type === "machine") {
+          $reservation_date = date_i18n("d F Y", strtotime(get_post_meta($post->ID, "reservation_date", true)));
+          $reservation_time_slots = get_post_meta($post->ID, "reservation_time_slots", true);
+        } else {
+          // fetch the name of the current reservation item
+          $reservation_item = get_post_meta($post->ID, "reservation_item", true);
+          // fetch the workshop by the found name
+          $workshop = get_page_by_title($reservation_item, OBJECT, "workshop");
+
+          // set the reservation date
+          $reservation_date = get_field("workshop_datum", $workshop->ID);
+          // set the time slots
+          $reservation_time_slots[] = get_field("start_tijd", $workshop->ID);
+          $reservation_time_slots[] = get_field("eind_tijd", $workshop->ID);
+        }
+      ?>
+      <h2>
+        <?php the_title(); ?>
+        <span class="reservation-type">
+          <?php echo ($reservation_type === "workshop") ? $reservation_type : "toestel"; ?>
+        </span>
+      </h2>
+      <p>
+        <span>Datum:</span>
+        <?php echo $reservation_date; ?>
+      </p>
+      <p>
+        <span>Tijdstippen:</span>
+        <?php echo implode(" - ", $reservation_time_slots); ?>
+      </p>
+    </article>
+    <?php
+      }
+    ?>
+  </div>
 </main>
 <?php
   get_footer();

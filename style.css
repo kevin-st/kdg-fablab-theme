@@ -461,12 +461,14 @@ footer>#socials>a{
 }
 #mainArchive > div[role="machines"],
     #mainArchive > div[role="workshops"],
-    #mainArchive > div[role="news"] {
+    #mainArchive > div[role="news"],
+    #mainArchive > div[role="reservations"] {
       flex-wrap: wrap;
     }
 #mainArchive > div .toestel,
     #mainArchive > div .workshop,
-    #mainArchive > div .nieuwsartikel {
+    #mainArchive > div .nieuwsartikel,
+    #mainArchive > div .reservation {
       width: 50%;
       margin-bottom: 3%;
     }
@@ -561,64 +563,13 @@ footer>#socials>a{
 #mainArchive > div .nieuwsartikel .buttons > a {
         width: 100%;
       }
-/*#mainToestellen {
-  width: 85%;
-
-  .toestelContent {
-    width: 50%;
-    display: flex;
-    margin-right: 60px;
-
-    .thumbnail {
-      display: inline-block;
-      height: 100%;
-
-      img {
-        width: 100%;
-        height: 100%;
+#mainArchive > div .reservation-type {
+        background-color: #34bedc;
+        color: #fff;
+        font-size: 18px;
+        font-weight: normal;
+        padding: 5px;
       }
-    }
-
-    .img-thumb {
-      width: 70%;
-      margin-right: 20px;
-    }
-
-    @mixin pcbig {
-    }
-
-    @mixin pcXL {
-      width: 100%;
-      margin-bottom: 65px;
-      margin-right: 0;
-
-      .buttons {
-        .btn-dark {
-          width: 100%;
-        }
-      }
-    }
-
-    @mixin tablet {
-      display: block;
-
-      .buttons {
-        position: static;
-      }
-
-      .img-thumb {
-        width: 100%;
-        margin-right: 0;
-      }
-    }
-  }
-}
-
-@mixin pcbig {
-  .toestelContent {
-    width: 100%;
-  }
-}*/
 /* example module */
 /*
   define a button class with some subclasses:
