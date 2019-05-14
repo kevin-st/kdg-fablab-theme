@@ -12,8 +12,7 @@
         <div id="vormgeving2"></div>
         <div id="logonaam">
           <a href="<?php echo site_url(); ?>">
-            <img src="<?php echo get_theme_file_uri("img/logowit.png"); ?>" alt="fablab icon">
-            <h1>FabLab</h1>
+            <img src="<?php echo get_theme_file_uri("img/KdG_label_FabLab_wit.png"); ?>" alt="fablab icon">
           </a>
         </div>
         <div class="burgerbtn">
