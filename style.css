@@ -72,6 +72,10 @@ h2 {
   font-weight: normal;
   font-size: 1.4em;
 }
+h3 {
+  font-weight: normal;
+  font-size: 22px;
+}
 main {
   margin: 0 auto;
   padding-top: 160px;
@@ -1496,6 +1500,7 @@ iframe {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    margin-bottom: 35px;
   }
 #profielMain .menu .menu-item {
       float: left;
@@ -1526,13 +1531,18 @@ iframe {
 .content-profile p {
     line-height: 1.8;
   }
-.content-profile section,
-    .content-profile section > div {
+.content-profile section {
+      
+    margin-bottom: 35px;
+  }
+.content-profile section > div {
       margin: 20px 0;
     }
 .profile-value-label {
   display: block;
   line-height: 1.26;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 @media (max-width: 1050px) {
   #profielMain .menu .menu-item {

@@ -57,20 +57,20 @@
           <h3>Persoonlijke gegevens</h3>
           <div>
             <p>
-              <span class="profile-value-label">Gebruikersnaam:</span>
+              <span class="profile-value-label">Gebruikersnaam</span>
               <span class="profile-value"><?php echo $user->user_nicename; ?></span>
             </p>
           </div>
           <div class="disp-f col-2-of-2">
             <div class="col-1-of-2">
               <p>
-                <span class="profile-value-label">Voornaam:</span>
+                <span class="profile-value-label">Voornaam</span>
                 <span class="profile-value"><?php echo $first_name; ?></span>
               </p>
             </div>
             <div class="col-1-of-2 extra">
               <p>
-                <span class="profile-value-label">Achternaam:</span>
+                <span class="profile-value-label">Achternaam</span>
                 <span class="profile-value"><?php echo $last_name; ?></span>
               </p>
             </div>
@@ -80,7 +80,7 @@
             <div class="col-1-of-2">
               <div>
                 <p>
-                  <span class="profile-value-label">E-mailadres:</span>
+                  <span class="profile-value-label">E-mailadres</span>
                   <span class="profile-value"><?php echo $user->user_email; ?></span>
                 </p>
               </div>
@@ -88,7 +88,7 @@
             <div class="col-1-of-2 extra">
               <div>
                 <p>
-                  <span class="profile-value-label">Telefoonnummer:</span>
+                  <span class="profile-value-label">Telefoonnummer</span>
                   <span class="profile-value"><?php echo $tel_number; ?></span>
                 </p>
               </div>
@@ -102,14 +102,14 @@
           <div class="disp-f col-2-of-2">
             <div class="col-1-of-2">
               <p>
-                <span class="profile-value-label">Adres:</span>
+                <span class="profile-value-label">Adres</span>
                 <span class="profile-value"><?php echo $address; ?></span>
               </p>
             </div>
             <?php if ($who_are_you === "bedrijf") { ?>
             <div class="col-1-of-2">
               <p>
-                <span class="profile-value-label">Naam bedrijf:</span>
+                <span class="profile-value-label">Naam bedrijf</span>
                 <span class="profile-value"><?php echo $company_name; ?></span>
               </p>
             </div>
@@ -119,13 +119,13 @@
           <div class="disp-f col-2-of-2">
             <div class="col-1-of-2">
               <p>
-                <span class="profile-value-label">Postcode:</span>
+                <span class="profile-value-label">Postcode</span>
                 <span class="profile-value"><?php echo $postal_code; ?></span>
               </p>
             </div>
             <div class="col-1-of-2 extra">
               <p>
-                <span class="profile-value-label">Gemeente:</span>
+                <span class="profile-value-label">Gemeente</span>
                 <span class="profile-value"><?php echo $city; ?></span>
               </p>
             </div>
@@ -137,14 +137,14 @@
           <div class="disp-f col-2-of-2">
             <div class="col-1-of-2">
               <p>
-                <span class="profile-value-label">Wie je bent:</span>
+                <span class="profile-value-label">Wie je bent</span>
                 <span class="profile-value"><?php echo $who_are_you; ?></span>
               </p>
             </div>
             <?php if ($who_are_you === "bedrijf") { ?>
             <div class="col-1-of-2">
               <p>
-                <span class="profile-value-label">BTW-nummer:</span>
+                <span class="profile-value-label">BTW-nummer</span>
                 <span class="profile-value"><?php echo $VAT_number; ?></span>
               </p>
             </div>
