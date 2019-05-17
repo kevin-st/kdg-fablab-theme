@@ -117,8 +117,8 @@
     }
 
     .reservation {
-      border: 2px solid $zwartKdg;
-      box-shadow: 0 0 2px 2px grey;
+      border: 2px solid $grey;
+      
       padding-left: 10px;
         
       &-type {

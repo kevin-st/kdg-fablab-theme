@@ -178,6 +178,10 @@ header {
   #vormgeving2 {
     display: none;
   }
+    
+  #logonaam a {
+    width: 35%;
+  }
 
   header {
     .menu {
@@ -255,5 +259,12 @@ header {
   }
   .introbtn {
     display: none;
+  }
+}
+
+@mixin phone {
+  #logonaam a {
+    width: 50%;
+    margin-left: 10px;
   }
 }
