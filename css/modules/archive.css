@@ -63,13 +63,16 @@
         position: relative;
           
         .title {
+          display: flex;
+          justify-content: space-between;
+            
           .date {
-            margin-left: 15px;
-            background-color: $main_accent;
-            color: white;
-            padding: 5px;
-            box-sizing: border-box;
-            font-size: 0.8em;
+           margin-left: 15px;
+           background-color: $main_accent;
+           color: white;
+           padding: 2px 5px 1px 5px;
+           box-sizing: border-box;
+           font-size: 0.6em;
           }
         }
 

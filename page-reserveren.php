@@ -351,15 +351,15 @@
       ?>
 
       <h2>Bevestig <?php echo ($reservation_type === "workshop") ? $reservation_type : "toestel"; ?></h2>
-      <div class="disp-f col-2-of-2" role="info">
-        <div class="col-1-of-2">
+      <div class="disp-f col-4-of-4" role="info">
+        <div class="col-1-of-4">
           <h3>Type reservatie</h3>
           <p><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></p>
 
           <h3><?php echo ($reservation_type === "workshop") ? ucwords($reservation_type) : "Toestel"; ?></h3>
           <p><?php echo $reservation_item; ?></p>
         </div>
-        <div class="col-1-of-2">
+        <div class="col-1-of-4">
           <h3>Datum</h3>
           <?php
             if ($reservation_type === "machine") {
@@ -383,11 +383,11 @@
       </div>
 
       <input type="hidden" name="step" value="final" />
-      <div class="disp-f col-2-of-2">
-        <div class="col-1-of-2">
+      <div class="disp-f col-4-of-4">
+        <div class="col-1-of-4">
           <input class="btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
         </div>
-        <div class="col-1-of-2">
+        <div class="col-1-of-4">
           <input class="btn-blue btn-submit" name="submit" type="submit" value="Indienen" />
         </div>
       </div>
