@@ -1500,7 +1500,6 @@ iframe {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    margin-bottom: 35px;
   }
 #profielMain .menu .menu-item {
       float: left;
@@ -1538,6 +1537,9 @@ iframe {
 .content-profile section > div {
       margin: 20px 0;
     }
+.content-profile #user-info {
+    margin-top: 48px;
+  }
 .profile-value-label {
   display: block;
   line-height: 1.26;

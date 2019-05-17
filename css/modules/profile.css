@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    margin-bottom: 35px;
 
     .menu-item {
       float: left;
@@ -55,6 +54,10 @@
     }
       
     margin-bottom: 35px;
+  }
+    
+  #user-info {
+    margin-top: 48px;
   }
 }
 
