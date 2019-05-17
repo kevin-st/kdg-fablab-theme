@@ -255,8 +255,8 @@ header .current-menu-item,
   margin: 9px 40px;
 }
 #logonaam img {
-  height: 70px;
-  margin-top: 15px;
+  height: 80%;
+  width: 80%;
 }
 #logonaam h1 {
   font-family: "KdG";
@@ -465,13 +465,19 @@ footer>#socials>a{
     #mainArchive > div[role="reservations"] {
       flex-wrap: wrap;
     }
+#mainArchive > div[role="reservations"] {
+      justify-content: space-between;
+    }
 #mainArchive > div .toestel,
     #mainArchive > div .workshop,
     #mainArchive > div .nieuwsartikel,
     #mainArchive > div .reservation {
-      width: 45%;
+      width: 48%;
       margin-bottom: 3%;
-      margin-right: 10px;
+    }
+#mainArchive > div .reservation {
+      box-sizing: border-box;
+      
     }
 #mainArchive > div .toestel .img-thumb, #mainArchive > div .workshop .img-thumb, #mainArchive > div .nieuwsartikel .img-thumb {
         height: 250px;

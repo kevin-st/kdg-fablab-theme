@@ -8,14 +8,22 @@
     &[role="reservations"] {
       flex-wrap: wrap;
     }
+      
+    &[role="reservations"] {
+      justify-content: space-between;
+    }
 
     .toestel,
     .workshop,
     .nieuwsartikel,
     .reservation {
-      width: 45%;
+      width: 48%;
       margin-bottom: 3%;
-      margin-right: 10px;
+    }
+      
+    .reservation {
+      box-sizing: border-box;
+      
     }
 
     .toestel,
