@@ -350,7 +350,7 @@
         }
       ?>
 
-      <h2>Is dit in orde?</h2>
+      <h2>Bevestig <?php echo ($reservation_type === "workshop") ? $reservation_type : "toestel"; ?></h2>
       <div class="disp-f col-2-of-2" role="info">
         <div class="col-1-of-2">
           <h3>Type reservatie</h3>
