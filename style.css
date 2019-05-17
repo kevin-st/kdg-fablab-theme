@@ -533,6 +533,14 @@ footer>#socials>a{
         width: 50%;
         position: relative;
       }
+#mainArchive > div .toestel .content .title .date, #mainArchive > div .workshop .content .title .date, #mainArchive > div .nieuwsartikel .content .title .date {
+            margin-left: 15px;
+            background-color: #34bedc;
+            color: white;
+            padding: 5px;
+            box-sizing: border-box;
+            font-size: 0.8em;
+          }
 #mainArchive > div .toestel .content .excerpt, #mainArchive > div .workshop .content .excerpt, #mainArchive > div .nieuwsartikel .content .excerpt {
           line-height: 1.5;
           text-align: justify;

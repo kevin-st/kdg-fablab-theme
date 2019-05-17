@@ -61,6 +61,17 @@
       .content {
         width: 50%;
         position: relative;
+          
+        .title {
+          .date {
+            margin-left: 15px;
+            background-color: $main_accent;
+            color: white;
+            padding: 5px;
+            box-sizing: border-box;
+            font-size: 0.8em;
+          }
+        }
 
         .excerpt {
           line-height: 1.5;
