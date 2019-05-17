@@ -31,7 +31,14 @@ body {
 
 h1 {
   font-family: "KdG", sans-serif;
-  font-size: 35px;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+h2 {
+  color: #34bedc;
+  font-weight: normal;
+  font-size: 1.4em;
 }
 
 main {

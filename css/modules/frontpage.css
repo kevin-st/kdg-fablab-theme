@@ -32,8 +32,8 @@
   }
 
   .img-thumb {
-    margin-right: $med;
-    width: 45%;
+    margin-right: 25px;
+    width: 42%;
 
     .thumbnail {
       background-repeat: no-repeat;
@@ -114,7 +114,6 @@
 
   .CTAtext {
     font-size: 20px;
-    font-weight: 900;
     line-height: 80px;
     text-decoration: none;
     color: $zwartKdg;

@@ -64,7 +64,13 @@ body {
 }
 h1 {
   font-family: "KdG", sans-serif;
-  font-size: 35px;
+  font-size: 30px;
+  font-weight: normal;
+}
+h2 {
+  color: #34bedc;
+  font-weight: normal;
+  font-size: 1.4em;
 }
 main {
   margin: 0 auto;
@@ -910,8 +916,8 @@ body.login-action-register {
   }
   }
 #mainFrontpage .img-thumb {
-    margin-right: 15px;
-    width: 45%;
+    margin-right: 25px;
+    width: 42%;
   }
 #mainFrontpage .img-thumb .thumbnail {
       background-repeat: no-repeat;
@@ -993,7 +999,6 @@ body.login-action-register {
 }
 .CTA .CTAtext {
     font-size: 20px;
-    font-weight: 900;
     line-height: 80px;
     text-decoration: none;
     color: #1d1d1b;
