@@ -50,7 +50,7 @@
           </a>
         </div>
           <div class="content">
-            <h2 class="title"><?php echo wp_trim_words(get_the_title(), 5); ?></h2>
+            <h2 class="title"><?php echo wp_trim_words(get_the_title(), 5); ?><span class="date"><?php the_date(); ?></span></h2>
 
              <p class="excerpt">
               <?php

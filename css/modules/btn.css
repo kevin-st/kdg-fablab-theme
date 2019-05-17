@@ -80,6 +80,7 @@
   &-blue {
     background-color: $main_accent;
     color: $wit;
+    /* font-family: "proximanova", sans-serif;*/
 
     &:hover {
       color: $zwartKdg;

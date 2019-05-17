@@ -691,6 +691,7 @@ footer>#socials>a{
     background-color: #34bedc;
     color: #fff;
   }
+/* font-family: "proximanova", sans-serif;*/
 .btn-blue:hover {
       color: #1d1d1b;
     }
@@ -950,6 +951,14 @@ body.login-action-register {
 #mainFrontpage .content .title {
       margin-top: 0;
     }
+#mainFrontpage .content .title .date {
+          margin-left: 15px;
+          background-color: #34bedc;
+          color: white;
+          padding: 5px;
+          box-sizing: border-box;
+          font-size: 0.8em;
+      }
 #mainFrontpage .content .excerpt {
       line-height: 1.5;
       text-align: justify;
