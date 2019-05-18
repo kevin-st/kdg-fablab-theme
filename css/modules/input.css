@@ -16,6 +16,8 @@
     background-color: $smokewhite;
     border: 1px solid $grey;
 
+    font: normal 13px "proximanova";
+
     margin-top: 8px;
     padding: 12px 20px;
 

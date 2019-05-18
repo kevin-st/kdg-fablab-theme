@@ -8,7 +8,7 @@
     &[role="reservations"] {
       flex-wrap: wrap;
     }
-      
+
     &[role="reservations"] {
       justify-content: space-between;
     }
@@ -20,10 +20,9 @@
       width: 48%;
       margin-bottom: 3%;
     }
-      
+
     .reservation {
       box-sizing: border-box;
-      
     }
 
     .toestel,
@@ -60,19 +59,22 @@
 
       .content {
         width: 50%;
-        position: relative;
-          
+
+        &,
         .title {
-          display: flex;
-          justify-content: space-between;
-            
+          position: relative;
+        }
+
+        .title {
           .date {
-           margin-left: 15px;
-           background-color: $main_accent;
-           color: white;
-           padding: 2px 5px 1px 5px;
-           box-sizing: border-box;
-           font-size: 0.6em;
+            background-color: $main_accent;
+            bottom: 4px;
+            box-sizing: border-box;
+            color: white;
+            font-size: 0.6em;
+            padding: 2px 5px 1px 5px;
+            position: absolute;
+            right: 0;
           }
         }
 
@@ -132,9 +134,9 @@
 
     .reservation {
       border: 2px solid $grey;
-      
+
       padding-left: 10px;
-        
+
       &-type {
         background-color: $main_accent;
         color: $wit;
@@ -144,13 +146,13 @@
         text-transform: uppercase;
         margin-left: 10px;
       }
-        
+
       @mixin tablet {
-          width: 100%;
+        width: 100%;
       }
-        
+
       @mixin phone {
-          padding: 5px;
+        padding: 5px;
       }
     }
   }

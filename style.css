@@ -60,7 +60,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "proximanova", sans-serif;
+  font-family: "proximanova", sans-serif !important;
 }
 h1 {
   font-family: "KdG", sans-serif;
@@ -300,7 +300,7 @@ header .current-menu-item,
   width: 200px;
   text-decoration: none;
   border: 4px solid #1d1d1b;
-  background-color: rgba(29,29,27, 0.3);
+  background-color: rgba(29,29,27, 0.6);
   color: #fff;
   padding: 20px;
   letter-spacing: 1.5px;
@@ -343,7 +343,7 @@ header .current-menu-item,
   #vormgeving2 {
     display: none;
   }
-    
+
   #logonaam a {
     width: 35%;
   }
@@ -500,7 +500,6 @@ footer>#socials>a{
     }
 #mainArchive > div .reservation {
       box-sizing: border-box;
-      
     }
 #mainArchive > div .toestel .img-thumb, #mainArchive > div .workshop .img-thumb, #mainArchive > div .nieuwsartikel .img-thumb {
         height: 250px;
@@ -534,19 +533,24 @@ footer>#socials>a{
   }
 #mainArchive > div .toestel .content, #mainArchive > div .workshop .content, #mainArchive > div .nieuwsartikel .content {
         width: 50%;
-        position: relative;
       }
-#mainArchive > div .toestel .content .title, #mainArchive > div .workshop .content .title, #mainArchive > div .nieuwsartikel .content .title {
-          display: flex;
-          justify-content: space-between;
+#mainArchive > div .toestel .content,
+        #mainArchive > div .toestel .content .title,
+        #mainArchive > div .workshop .content,
+        #mainArchive > div .workshop .content .title,
+        #mainArchive > div .nieuwsartikel .content,
+        #mainArchive > div .nieuwsartikel .content .title {
+          position: relative;
         }
 #mainArchive > div .toestel .content .title .date, #mainArchive > div .workshop .content .title .date, #mainArchive > div .nieuwsartikel .content .title .date {
-           margin-left: 15px;
-           background-color: #34bedc;
-           color: white;
-           padding: 2px 5px 1px 5px;
-           box-sizing: border-box;
-           font-size: 0.6em;
+            background-color: #34bedc;
+            bottom: 4px;
+            box-sizing: border-box;
+            color: white;
+            font-size: 0.6em;
+            padding: 2px 5px 1px 5px;
+            position: absolute;
+            right: 0;
           }
 #mainArchive > div .toestel .content .excerpt, #mainArchive > div .workshop .content .excerpt, #mainArchive > div .nieuwsartikel .content .excerpt {
           line-height: 1.5;
@@ -607,7 +611,7 @@ footer>#socials>a{
       }
 #mainArchive > div .reservation {
       border: 2px solid #ccc;
-      
+
       padding-left: 10px;
     }
 #mainArchive > div .reservation-type {
@@ -621,12 +625,12 @@ footer>#socials>a{
       }
 @media (max-width: 960px) {
 #mainArchive > div .reservation {
-          width: 100%
+        width: 100%
     }
   }
 @media (max-width: 700px) {
 #mainArchive > div .reservation {
-          padding: 5px
+        padding: 5px
     }
   }
 /* example module */
@@ -694,7 +698,12 @@ footer>#socials>a{
   text-decoration: none;
   text-align: center;
 }
-/*height: 20px;*/
+.btn,
+  .btn-dark,
+  .btn-blue,
+  .btn-submit {
+    font: normal 13px "proximanova";
+  }
 .btn-dark {
     background-color: #1d1d1b;
     color: #fff;
@@ -706,7 +715,6 @@ footer>#socials>a{
     background-color: #34bedc;
     color: #fff;
   }
-/* font-family: "proximanova", sans-serif;*/
 .btn-blue:hover {
       color: #1d1d1b;
     }
@@ -755,6 +763,8 @@ footer>#socials>a{
 
     background-color: #f5f5f5;
     border: 1px solid #ccc;
+
+    font: normal 13px "proximanova";
 
     margin-top: 8px;
     padding: 12px 20px;
@@ -960,19 +970,24 @@ body.login-action-register {
   }
   }
 #mainFrontpage .content {
-    position: relative;
     width: 50%;
   }
+#mainFrontpage .content,
+    #mainFrontpage .content .title {
+      position: relative;
+    }
 #mainFrontpage .content .title {
       margin-top: 0;
     }
 #mainFrontpage .content .title .date {
-          margin-left: 15px;
-          background-color: #34bedc;
-          color: white;
-          padding: 2px 5px 1px 5px;
-          box-sizing: border-box;
-          font-size: 0.6em;
+        background-color: #34bedc;
+        bottom: 4px;
+        box-sizing: border-box;
+        color: white;
+        font-size: 0.6em;
+        padding: 2px 5px 1px 5px;
+        position: absolute;
+        right: 0;
       }
 #mainFrontpage .content .excerpt {
       line-height: 1.5;
@@ -1038,198 +1053,6 @@ body.login-action-register {
     display: none
 }
   }
-/*
-.title {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#mainFrontpage {
-  width: 85%;
-  padding-top: 20px;
-  padding-bottom: 250px;
-
-  section {
-    width: 50%;
-
-    &[role="machines"] {
-      margin-left: 4%;
-    }
-  }
-
-  .thumbnail {
-    height: 100%;
-  }
-}
-
-article {
-  max-width: 100%;
-}
-
-/*
-.thumbnail {
-  margin-right: 15px;
-  height: 100%;
-  width: 250px;
-  overflow: hidden;
-
-  > img {
-    object-fit: cover;
-    width: 100%;
-
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
-
-.content {
-  position: relative;
-  width: 70%;
-
-  > h2 {
-    margin: 0;
-  }
-
-  > p {
-    text-align: justify;
-    line-height: 1.5;
-  }
-
-  @mixin tablet {
-    > div.disp-f {
-      flex-wrap: wrap;
-    }
-  }
-}
-
-/*.buttons {
-  position: absolute;
-  bottom: 0;
-}
-.CTA {
-
-}
-/*
-#background {
-  width: 100%;
-  background-color: $main_accent;
-  transform: rotate(-1deg);
-  position: absolute;
-  top: -50px;
-}
-
-
-
-/*
-.centerText {
-  text-align: center;
-  padding-right: 15px;
-}
-
-.thumbnaillink {
-  margin: 0;
-  padding: 0;
-  height: 250px;
-
-  @mixin tablet {
-    width: 100%;
-  }
-}
-
-@mixin pcXL {
-  article {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .thumbnail {
-    margin: 0;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .excerpt {
-    min-height: 170px;
-  }
-
-  .content {
-    position: relative;
-    width: 100%;
-    /*display: flex;
-    flex-wrap: wrap;
-  }
-  .title,
-  .excerpt,
-  /*.buttons {
-    width: 100%;
-  }
-
-  /*.buttons {
-    display: flex;
-    position: relative;
-  }*/
-/*.content > .buttons > .btn:nth-of-type(2) {
-    margin-left: 2%;
-  }
-
-}
-
-@mixin tablet {
-  #mainFrontpage {
-    flex-wrap: wrap;
-
-    section {
-      width: 100%;
-
-      &[role="machines"] {
-        margin-left: 0;
-      }
-    }
-  }
-
-  .excerpt {
-    min-height: auto;
-  }
-  .CTA {
-    position: relative;
-    width: 100%;
-    margin: 0;
-  }
-
-  .CTAtext {
-    width: 100%;
-    font-size: 20px;
-    font-weight: 900;
-    line-height: auto;
-    text-decoration: none;
-    color: $zwartKdg;
-  }
-  .centerText {
-    position: relative;
-  }
-
-  .centerText > span:nth-of-type(1) {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 30px;
-  }
-
-  .centerText > span:nth-of-type(2) {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    text-align: right;
-    right: 30px;
-    top: 25px;
-  }
-}
-
-@mixin phone {
-  .CTA {
-    display: none;
-  }
-}*/
 #contactMain {
   width: 85%;
 }

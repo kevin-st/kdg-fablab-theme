@@ -56,19 +56,25 @@
   }
 
   .content {
-    position: relative;
     width: 50%;
+
+    &,
+    .title {
+      position: relative;
+    }
 
     .title {
       margin-top: 0;
-        
+
       .date {
-          margin-left: 15px;
-          background-color: $main_accent;
-          color: white;
-          padding: 2px 5px 1px 5px;
-          box-sizing: border-box;
-          font-size: 0.6em;
+        background-color: $main_accent;
+        bottom: 4px;
+        box-sizing: border-box;
+        color: white;
+        font-size: 0.6em;
+        padding: 2px 5px 1px 5px;
+        position: absolute;
+        right: 0;
       }
     }
 
@@ -134,197 +140,3 @@
     display: none;
   }
 }
-
-/*
-.title {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#mainFrontpage {
-  width: 85%;
-  padding-top: 20px;
-  padding-bottom: 250px;
-
-  section {
-    width: 50%;
-
-    &[role="machines"] {
-      margin-left: 4%;
-    }
-  }
-
-  .thumbnail {
-    height: 100%;
-  }
-}
-
-article {
-  max-width: 100%;
-}
-
-/*
-.thumbnail {
-  margin-right: 15px;
-  height: 100%;
-  width: 250px;
-  overflow: hidden;
-
-  > img {
-    object-fit: cover;
-    width: 100%;
-
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
-
-.content {
-  position: relative;
-  width: 70%;
-
-  > h2 {
-    margin: 0;
-  }
-
-  > p {
-    text-align: justify;
-    line-height: 1.5;
-  }
-
-  @mixin tablet {
-    > div.disp-f {
-      flex-wrap: wrap;
-    }
-  }
-}
-
-/*.buttons {
-  position: absolute;
-  bottom: 0;
-}
-.CTA {
-
-}
-/*
-#background {
-  width: 100%;
-  background-color: $main_accent;
-  transform: rotate(-1deg);
-  position: absolute;
-  top: -50px;
-}
-
-
-
-/*
-.centerText {
-  text-align: center;
-  padding-right: 15px;
-}
-
-.thumbnaillink {
-  margin: 0;
-  padding: 0;
-  height: 250px;
-
-  @mixin tablet {
-    width: 100%;
-  }
-}
-
-@mixin pcXL {
-  article {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .thumbnail {
-    margin: 0;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .excerpt {
-    min-height: 170px;
-  }
-
-  .content {
-    position: relative;
-    width: 100%;
-    /*display: flex;
-    flex-wrap: wrap;
-  }
-  .title,
-  .excerpt,
-  /*.buttons {
-    width: 100%;
-  }
-
-  /*.buttons {
-    display: flex;
-    position: relative;
-  }*/
-
-/*.content > .buttons > .btn:nth-of-type(2) {
-    margin-left: 2%;
-  }
-
-}
-
-@mixin tablet {
-  #mainFrontpage {
-    flex-wrap: wrap;
-
-    section {
-      width: 100%;
-
-      &[role="machines"] {
-        margin-left: 0;
-      }
-    }
-  }
-
-  .excerpt {
-    min-height: auto;
-  }
-  .CTA {
-    position: relative;
-    width: 100%;
-    margin: 0;
-  }
-
-  .CTAtext {
-    width: 100%;
-    font-size: 20px;
-    font-weight: 900;
-    line-height: auto;
-    text-decoration: none;
-    color: $zwartKdg;
-  }
-  .centerText {
-    position: relative;
-  }
-
-  .centerText > span:nth-of-type(1) {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 30px;
-  }
-
-  .centerText > span:nth-of-type(2) {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    text-align: right;
-    right: 30px;
-    top: 25px;
-  }
-}
-
-@mixin phone {
-  .CTA {
-    display: none;
-  }
-}*/
