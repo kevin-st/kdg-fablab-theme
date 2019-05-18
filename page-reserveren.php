@@ -70,7 +70,7 @@
         } else if ($reservation_type === "workshop") {
           $workshop = get_page_by_title($reservation_item, OBJECT, "workshop");
 
-          $_SESSION["reservation"]["reservation-date"] = $reservation_date = get_field("workshop_datum", $workshop->ID);
+          $_SESSION["reservation"]["reservation-date"] = $reservation_date = date("Y-m-d", strtotime(get_field("workshop_datum", $workshop->ID, false)));
           $_SESSION["reservation"]["reservation-time-slots"] = $reservation_time_slots = [ get_field("start_tijd", $workshop->ID), get_field("eind_tijd", $workshop->ID)];
         }
       } // End of first step
