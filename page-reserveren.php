@@ -67,6 +67,11 @@
           } else {
             $first_step_machine_date_error = "Selecteer een datum";
           }
+        } else if ($reservation_type === "workshop") {
+          $workshop = get_page_by_title($reservation_item, OBJECT, "workshop");
+
+          $_SESSION["reservation"]["reservation-date"] = $reservation_date = get_field("workshop_datum", $workshop->ID);
+          $_SESSION["reservation"]["reservation-time-slots"] = $reservation_time_slots = [ get_field("start_tijd", $workshop->ID), get_field("eind_tijd", $workshop->ID)];
         }
       } // End of first step
       else if ($current_step === 2) {
@@ -362,21 +367,11 @@
         <div class="col-1-of-4">
           <h3>Datum</h3>
           <?php
-            if ($reservation_type === "machine") {
-              echo date_i18n("d F Y", strtotime($reservation_date));
-              echo "<h4>Tijdstippen</h4>";
+            echo date_i18n("d F Y", strtotime($reservation_date));
+            echo "<h4>Tijdstippen</h4>";
 
-              foreach ($reservation_time_slots as $time_slot) {
-                echo "<p>". $time_slot ."</p>";
-              }
-            } else {
-              $workshop = get_page_by_title($reservation_item, OBJECT, "workshop");
-
-              echo the_field("workshop_datum", $workshop->ID);
-              echo "<h4>Tijdstip</h4>";
-              echo the_field("start_tijd", $workshop->ID);
-              echo " - ";
-              echo the_field("eind_tijd", $workshop->ID);
+            foreach ($reservation_time_slots as $time_slot) {
+              echo "<p>". $time_slot ."</p>";
             }
           ?>
         </div>
