@@ -1036,6 +1036,7 @@ body.login-action-register {
 .CTA {
   position: relative;
   background-color: #34bedc;
+  left: -1px;
   top: -30px;
   -webkit-transform: rotate(-1deg);
           transform: rotate(-1deg);

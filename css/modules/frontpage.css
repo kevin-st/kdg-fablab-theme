@@ -124,6 +124,7 @@
 .CTA {
   position: relative;
   background-color: $main_accent;
+  left: -1px;
   top: -30px;
   transform: rotate(-1deg);
 
