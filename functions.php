@@ -59,7 +59,7 @@
       add_theme_support("title-tag");
       add_theme_support("post-thumbnails");
       add_theme_support("customize-selective-refresh-widgets");
-      add_image_size('pageBanner', 1500, 350, true);
+      add_image_size('pageBanner', 1500, 550, true);
 
       // function(name_for_wordpress, human_readable_name);
       register_nav_menu('main_navigation', 'Hoofdnavigatie');
@@ -107,8 +107,8 @@
       <div class="page-banner p-rel">
         <img class="col-2-of-2 valencia" src="<?php echo $args['img']; ?>" alt="page-banner">
         <?php if (is_front_page()) { ?>
-        <a 
-        class="introbtn" 
+        <a
+        class="introbtn"
         href="<?php echo is_user_logged_in() ? site_url('reserveren') : site_url('login'); ?>">
         Reserveer nu!
         </a>
