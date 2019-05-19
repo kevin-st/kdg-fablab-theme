@@ -109,7 +109,8 @@
           "reservation_type" => $reservation_type,
           "reservation_date" => $reservation_date,
           "reservation_item" => $reservation_item,
-          "reservation_time_slots" => $reservation_time_slots
+          "reservation_time_slots" => $reservation_time_slots,
+          "reservation_approved" => -1
         ]
       ]);
 
