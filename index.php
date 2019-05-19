@@ -18,7 +18,7 @@
         </a>
       </div>
       <div class="content">
-        <h2 class="title"><?php echo wp_trim_words(get_the_title(), 5); ?><span class="date"><?php echo get_the_date(); ?></span></h2>
+        <h2 class="title disp-f"><?php echo wp_trim_words(get_the_title(), 5); ?><span class="date"><?php echo get_the_date(); ?></span></h2>
         <p class="excerpt">
         <?php
           if (has_excerpt()) {

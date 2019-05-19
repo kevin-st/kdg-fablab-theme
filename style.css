@@ -533,24 +533,18 @@ footer>#socials>a{
   }
 #mainArchive > div .toestel .content, #mainArchive > div .workshop .content, #mainArchive > div .nieuwsartikel .content {
         width: 50%;
+        position: relative;
       }
-#mainArchive > div .toestel .content,
-        #mainArchive > div .toestel .content .title,
-        #mainArchive > div .workshop .content,
-        #mainArchive > div .workshop .content .title,
-        #mainArchive > div .nieuwsartikel .content,
-        #mainArchive > div .nieuwsartikel .content .title {
-          position: relative;
+#mainArchive > div .toestel .content .title, #mainArchive > div .workshop .content .title, #mainArchive > div .nieuwsartikel .content .title {
+          justify-content: space-between;
         }
 #mainArchive > div .toestel .content .title .date, #mainArchive > div .workshop .content .title .date, #mainArchive > div .nieuwsartikel .content .title .date {
+            align-self: flex-start;
             background-color: #34bedc;
-            bottom: 4px;
             box-sizing: border-box;
             color: white;
             font-size: 0.6em;
             padding: 2px 5px 1px 5px;
-            position: absolute;
-            right: 0;
           }
 #mainArchive > div .toestel .content .excerpt, #mainArchive > div .workshop .content .excerpt, #mainArchive > div .nieuwsartikel .content .excerpt {
           line-height: 1.5;
@@ -971,23 +965,19 @@ body.login-action-register {
   }
 #mainFrontpage .content {
     width: 50%;
+    position: relative;
   }
-#mainFrontpage .content,
-    #mainFrontpage .content .title {
-      position: relative;
-    }
 #mainFrontpage .content .title {
       margin-top: 0;
+      justify-content: space-between;
     }
 #mainFrontpage .content .title .date {
+        align-self: flex-start;
         background-color: #34bedc;
-        bottom: 4px;
         box-sizing: border-box;
         color: white;
         font-size: 0.6em;
         padding: 2px 5px 1px 5px;
-        position: absolute;
-        right: 0;
       }
 #mainFrontpage .content .excerpt {
       line-height: 1.5;

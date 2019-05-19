@@ -59,22 +59,18 @@
 
       .content {
         width: 50%;
-
-        &,
-        .title {
-          position: relative;
-        }
+        position: relative;
 
         .title {
+          justify-content: space-between;
+
           .date {
+            align-self: flex-start;
             background-color: $main_accent;
-            bottom: 4px;
             box-sizing: border-box;
             color: white;
             font-size: 0.6em;
             padding: 2px 5px 1px 5px;
-            position: absolute;
-            right: 0;
           }
         }
 
