@@ -1,6 +1,13 @@
 <?php
   /* Template Name: Mijn reservaties template */
 
+  // when reservation plugin is not activated, don't show the content of this page
+  include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+  if (!is_plugin_active("kdg-fablab-reservation-system/kdg-fablab-reservation-system.php")) {
+    wp_redirect(site_url('/mijn-profiel'));
+  }
+
   // when not logged in, don't show the content of this page
   if (!is_user_logged_in()) {
     wp_redirect(home_url());

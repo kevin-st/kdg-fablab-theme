@@ -1,5 +1,11 @@
 <?php /* Template Name: Reserveren Template */ ?>
 <?php
+  include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+  if (!is_plugin_active("kdg-fablab-reservation-system/kdg-fablab-reservation-system.php")) {
+    wp_redirect(home_url());
+  }
+
   if (!is_user_logged_in()) {
     wp_redirect(home_url());
     exit;
@@ -10,9 +16,19 @@
   $reservation_item = isset($_SESSION["reservation"]["reservation-item"]) ? $_SESSION["reservation"]["reservation-item"] : NULL;
   $reservation_date = isset($_SESSION["reservation"]["reservation-date"]) ? $_SESSION["reservation"]["reservation-date"] : NULL;
   $reservation_time_slots = isset($_SESSION["reservation"]["reservation-time-slots"]) ? $_SESSION["reservation"]["reservation-time-slots"] : [];
+  $errors = "";
 
-  // check if a certain step has errors
-  $init_step_error = $first_step_error = $first_step_machine_date_error = $second_step_machine_time_slots_error = "";
+  if (isset($_POST["submit"])) {
+    // check if a certain step has errors
+    $errors = KdGFablab_RS::kdg_fablab_rs_reservation_process($_POST, $current_step);
+
+    // get updated values
+    $current_step = KdGFablab_RS::kdg_fablab_rs_get_reservation_step();
+    $reservation_type = KdGFablab_RS::kdg_fablab_rs_get_reservation_type();
+    $reservation_item = KdGFablab_RS::kdg_fablab_rs_get_reservation_item();
+    $reservation_date = KdGFablab_RS::kdg_fablab_rs_get_reservation_date();
+    $reservation_time_slots = KdGFablab_RS::kdg_fablab_rs_get_reservation_time_slots();
+  }
 
   echo "<pre>";
   echo "SESSIE";
@@ -23,132 +39,6 @@
   echo "POST";
   var_dump($_POST);
   echo "</pre>";
-
-  if (isset($_POST["submit"])) {
-    // When submit value is next
-    if (strtolower($_POST["submit"]) === "volgende") {
-      $next_step = isset($_POST["step"]) ? intval($_POST["step"]) : 0;
-
-      // Initial step
-      if ($current_step === 0) {
-        if (!empty($_POST["reservation-type"])) {
-          $_SESSION["reservation"]["reservation-type"] = $reservation_type = $_POST["reservation-type"];
-        } else {
-          $init_step_error = "Maak een keuze";
-        }
-      } // End of initial step
-      else if ($current_step === 1) {
-        // set the reservation-item
-        if (!empty($_POST["reservation-item"])) {
-          $_SESSION["reservation"]["reservation-item"] = $reservation_item = $_POST["reservation-item"];
-        } else {
-          $first_step_error = "Kies een " . (($reservation_type === "workshop") ? $reservation_type : "toestel");
-        }
-
-        if ($reservation_type === "machine") {
-          if (!empty($_POST["reservation-date"])) {
-            $opening_hours = get_option("kdg_fablab_rs_opening_hours");
-            $selected_day = strtolower(date("l", strtotime($_POST["reservation-date"])));
-
-            if (isset($opening_hours[$selected_day]["is_closed"])) {
-              $first_step_machine_date_error = "Op deze dag kan niet gereserveerd worden";
-            } else {
-              $selected_date_time = new DateTime($_POST["reservation-date"]);
-              $now = new DateTime();
-
-              if ($selected_date_time >= $now) {
-                // set if selected date is greater than or equal to now
-                $_SESSION["reservation"]["reservation-date"] = $reservation_date = $_POST["reservation-date"];
-              } else {
-                // date is past, set error
-                $first_step_machine_date_error = "Je kan geen datum in het verleden selecteren";
-              }
-            }
-          } else {
-            $first_step_machine_date_error = "Selecteer een datum";
-          }
-        } else if ($reservation_type === "workshop") {
-          $workshop = get_page_by_title($reservation_item, OBJECT, "workshop");
-
-          $_SESSION["reservation"]["reservation-date"] = $reservation_date = date("Y-m-d", strtotime(get_field("workshop_datum", $workshop->ID, false)));
-          $_SESSION["reservation"]["reservation-time-slots"] = $reservation_time_slots = [ get_field("start_tijd", $workshop->ID), get_field("eind_tijd", $workshop->ID)];
-        }
-      } // End of first step
-      else if ($current_step === 2) {
-        if (isset($_POST["reservation-time-slots"]) && count($_POST["reservation-time-slots"]) > 0) {
-          $_SESSION["reservation"]["reservation-time-slots"] = $reservation_time_slots = $_POST["reservation-time-slots"];
-        } else {
-          $second_step_machine_time_slots_error = "Selecteer één of meerdere tijdsloten voor uw reservatie";
-        }
-      } // End of second step
-
-      if (
-        empty($init_step_error) && empty($first_step_error)
-        && empty($first_step_machine_date_error)
-        && empty($second_step_machine_time_slots_error)
-      ) {
-        // update the current step value
-        $_SESSION["reservation"]["reservation-step"] = $current_step = $next_step;
-      }
-    }
-    else if (strtolower($_POST["submit"]) === "vorige") {
-      // submit value is previous
-      if ($reservation_type === "workshop" && $current_step === 3) {
-        $_SESSION["reservation"]["reservation-step"] = $current_step = 1;
-      } else if ($current_step > 0) {
-        $current_step -= 1;
-        $_SESSION["reservation"]["reservation-step"] = $current_step;
-      }
-    } else if (strtolower($_POST["submit"]) === "indienen") {
-      $success = wp_insert_post([
-        "post_author" => get_current_user_id(),
-        "post_title" => "Reservatie voor " . $reservation_item,
-        "post_status" => "publish",
-        "post_type" => "reservation",
-        "meta_input" => [
-          "reservation_type" => $reservation_type,
-          "reservation_date" => $reservation_date,
-          "reservation_item" => $reservation_item,
-          "reservation_time_slots" => $reservation_time_slots,
-          "reservation_approved" => -1
-        ]
-      ]);
-
-      if ($success) {
-        // send e-mail to admin
-        $to = get_option("admin_email");
-        $subject = "Iemand diende een nieuwe reservatie in op " . get_bloginfo("name");
-
-        $message = get_option("kdg_fablab_rs_email_content_on_submission");
-
-        $message = str_replace("BLOGNAME", get_bloginfo("name"), $message);
-        $message = str_replace("NEW_RESERVATIONS_URL", KdGFablab_RS_Constants::get_new_reservations_url(), $message);
-
-        // update success
-        $success = wp_mail($to, $subject, strip_tags($message));
-      }
-
-      if ($success) {
-        // unset reservation session
-        $_SESSION["reservation"] = [];
-
-        // set sent variable session
-        $sent = $_SESSION['sent'] = TRUE;
-
-        if ($sent) {
-          $_SESSION['msg-type'] = "success";
-          $_SESSION['msg'] = "Je reservatie is succesvol ingediend.";
-
-          // redirect to overview user reservations
-          wp_redirect(site_url("mijn-profiel/reservaties"));
-          exit;
-        } else {
-          $_SESSION['msg-type'] = "error";
-          $_SESSION['msg'] = "Er ging iets mis tijdens het verzenden. Probeer het later nog een keer.";
-        }
-      }
-    }
-  }
 
   get_header();
 ?>
@@ -199,12 +89,12 @@
       <!-- Initial step -->
       <div class="input-group">
         <label for="reservation-type">Wat wilt u reserveren?</label>
-        <select id="reservation-type" for="reservation-type" name="reservation-type" class="<?php echo (!empty($init_step_error)) ? "error" : "" ; ?>">
+        <select id="reservation-type" for="reservation-type" name="reservation-type" class="<?php echo (!empty($errors)) ? "error" : "" ; ?>">
           <option value="" <?php echo ($reservation_type == "") ? "selected" : ""; ?>>-- Kiezen --</option>
           <option value="machine" <?php echo ($reservation_type == "machine") ? "selected" : ""; ?>>Toestel</option>
           <option value="workshop" <?php echo ($reservation_type == "workshop") ? "selected" : ""; ?>>Workshop</option>
         </select>
-        <span class="error-message <?php echo ($init_step_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $init_step_error; ?></span>
+        <span class="error-message <?php echo ($errors !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $errors; ?></span>
       </div>
       <input type="hidden" name="step" value="1" />
       <input class="btn-blue btn-submit" type="submit" name="submit" value="Volgende" />
@@ -215,7 +105,7 @@
       <!-- First step workshop -->
       <div class="input-group">
         <label for="reservation-item">Welke workshop wilt u reserveren?</label>
-        <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($first_step_error)) ? "error" : ""; ?>">
+        <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($errors)) ? "error" : ""; ?>">
           <option value="" <?php echo ($reservation_item == "") ? "selected" : ""; ?>>-- Kiezen --</option>
           <?php
             $all_workshops = new WP_Query([
@@ -234,7 +124,9 @@
             }
           ?>
         </select>
-        <span class="error-message <?php echo ($first_step_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $first_step_error; ?></span>
+        <span class="error-message <?php echo (!empty($errors) && isset($errors["item-error"])) ? 'disp-b' : 'disp-n'; ?>">
+          <?php echo (isset($errors["item-error"])) ? $errors["item-error"] : ""; ?>
+        </span>
       </div>
       <input type="hidden" name="step" value="3" />
       <div class="disp-f col-2-of-2">
@@ -252,7 +144,7 @@
       <!-- First step machine -->
       <div class="input-group">
         <label for="reservation-item">Welk toestel wilt u reserveren?</label>
-        <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($first_step_error)) ? "error" : ""; ?>">
+        <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($errors) && isset($errors["item-error"])) ? "error" : ""; ?>">
           <option value="" <?php echo ($reservation_item == "") ? "selected" : ""; ?>>-- Kiezen --</option>
           <?php
             $all_machines = new WP_Query([
@@ -271,15 +163,15 @@
             }
           ?>
         </select>
-        <span class="error-message <?php echo (!empty($first_step_error)) ? 'disp-b' : 'disp-n'; ?>">
-          <?php echo $first_step_error; ?>
+        <span class="error-message <?php echo (!empty($errors) && isset($errors["item-error"])) ? 'disp-b' : 'disp-n'; ?>">
+          <?php echo (isset($errors["item-error"])) ? $errors["item-error"] : ""; ?>
         </span>
       </div>
       <div class="input-group">
         <label for="reservation-date">Selecteer de datum waarop u het toestel wilt reserveren.</label>
-        <input id="reservation-date" name="reservation-date" type="date" value="<?php echo $reservation_date; ?>" class="<?php echo (!empty($first_step_machine_date_error)) ? "error" : ""; ?>" />
-        <span class="error-message <?php echo (!empty($first_step_machine_date_error)) ? "disp-b" : "disp-n"; ?>">
-          <?php echo $first_step_machine_date_error; ?>
+        <input id="reservation-date" name="reservation-date" type="date" value="<?php echo $reservation_date; ?>" class="<?php echo (!empty($errors) && isset($errors["date-error"])) ? "error" : ""; ?>" />
+        <span class="error-message <?php echo (!empty($errors) && isset($errors["date-error"])) ? "disp-b" : "disp-n"; ?>">
+          <?php echo (isset($errors["date-error"])) ? $errors["date-error"] : ""; ?>
         </span>
       </div>
       <input type="hidden" name="step" value="2" />
@@ -340,8 +232,8 @@
           ?>
         </div>
       </div>
-      <span class="error-message message <?php echo (!empty($second_step_machine_time_slots_error)) ? "disp-b" : "disp-n"; ?>">
-        <?php echo $second_step_machine_time_slots_error; ?>
+      <span class="error-message message <?php echo (!empty($errors)) ? "disp-b" : "disp-n"; ?>">
+        <?php echo $errors; ?>
       </span>
       <input type="hidden" name="step" value="3" />
       <div class="disp-f col-2-of-2">
