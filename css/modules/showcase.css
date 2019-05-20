@@ -27,6 +27,11 @@
   text-decoration: none;
 }
 
+.crt-widget div {
+  box-sizing: content-box !important;
+  width: 100%;
+}
+
 .crt-feed-window {
   margin-left: 15%;
   height: auto;
@@ -38,29 +43,14 @@
   }
 }
 
-@mixin pcXXL {
-  .crt-widget div {
-    box-sizing: content-box !important;
-    width: 100%;
-  }
-}
-
 @media only screen and (max-width: 1428px) {
-  .crt-feed-window {
-    margin-left: 10%;
-  }
-    
   .crt-widget div {
     box-sizing: border-box !important;
   }
-    
-  .crt-widget div {
-    width: 95%;
+
+  .crt-feed-window {
+    margin-left: 0%;
   }
-}
-
-
-@mixin pcXL {
     
 }
 
