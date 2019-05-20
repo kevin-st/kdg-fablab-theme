@@ -804,9 +804,9 @@ body.login-action-register {
   }
 .login #login h1 a {
       background: none;
-      background-image: url("img/logozwart.png");
+      background-image: url("img/KdG_label_FabLab_zwart.png");
       background-repeat: no-repeat;
-      background-size: 80px 80px;
+      background-size: 83px 33px;
     }
 .login #login .message {
       border: 2px solid #34bedc;
