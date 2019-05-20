@@ -115,6 +115,20 @@
       ]);
 
       if ($success) {
+        // send e-mail to admin
+        $to = get_option("admin_email");
+        $subject = "Iemand diende een nieuwe reservatie in op " . get_bloginfo("name");
+
+        $message = get_option("kdg_fablab_rs_email_content_on_submission");
+
+        $message = str_replace("BLOGNAME", get_bloginfo("name"), $message);
+        $message = str_replace("NEW_RESERVATIONS_URL", KdGFablab_RS_Constants::get_new_reservations_url(), $message);
+
+        // update success
+        $success = wp_mail($to, $subject, strip_tags($message));
+      }
+
+      if ($success) {
         // unset reservation session
         $_SESSION["reservation"] = [];
 
