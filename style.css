@@ -1157,6 +1157,9 @@ iframe {
   color: #34bedc;
   text-decoration: none;
 }
+.crt-grid-post .crt-social-icon {
+    opacity: 0;
+}
 #mainSingle {
   width: 80%;
 }

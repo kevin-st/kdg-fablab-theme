@@ -26,3 +26,7 @@
   color: $main_accent;
   text-decoration: none;
 }
+
+.crt-grid-post .crt-social-icon {
+    opacity: 0;
+}
