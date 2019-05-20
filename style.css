@@ -1157,6 +1157,10 @@ iframe {
   color: #34bedc;
   text-decoration: none;
 }
+.crt-widget div {
+  box-sizing: content-box !important;
+  width: 100%;
+}
 .crt-feed-window {
   margin-left: 15%;
   height: auto;
@@ -1164,27 +1168,16 @@ iframe {
 .crt-grid-post .crt-social-icon i {
     opacity: 0;
   }
-@media (max-width: 1600px) {
-  .crt-widget div {
-    box-sizing: content-box !important;
-    width: 100%;
-  }
-  }
 @media only screen and (max-width: 1428px) {
-  .crt-feed-window {
-    margin-left: 10%;
-  }
-    
   .crt-widget div {
     box-sizing: border-box !important;
   }
+
+  .crt-feed-window {
+    margin-left: 0%;
+  }
     
-  .crt-widget div {
-    width: 95%;
-  }
 }
-@media (max-width: 1350px) {
-  }
 .crt-grid-post .crt-social-icon:before,
   .crt-grid-post .crt-social-icon:after {
     content: "";
