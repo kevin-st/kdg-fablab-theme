@@ -27,6 +27,35 @@
   text-decoration: none;
 }
 
-.crt-grid-post .crt-social-icon {
+.crt-grid-post {
+  
+  .crt-social-icon i {
     opacity: 0;
+  }
+    
+}
+
+.crt-grid-post .crt-social-icon {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+  }
+    
+  &:before {
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    margin-left: -2px;
+  }
+
+  &:after {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    margin-top: -2px;
+  }
 }

@@ -1157,9 +1157,29 @@ iframe {
   color: #34bedc;
   text-decoration: none;
 }
-.crt-grid-post .crt-social-icon {
+.crt-grid-post .crt-social-icon i {
     opacity: 0;
-}
+  }
+.crt-grid-post .crt-social-icon:before,
+  .crt-grid-post .crt-social-icon:after {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+  }
+.crt-grid-post .crt-social-icon:before {
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    margin-left: -2px;
+  }
+.crt-grid-post .crt-social-icon:after {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    margin-top: -2px;
+  }
 #mainSingle {
   width: 80%;
 }
