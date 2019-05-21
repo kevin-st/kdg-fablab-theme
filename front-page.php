@@ -27,17 +27,37 @@
         ]
       ]);
 
-      while($newest_workshop->have_posts()) {
-        $newest_workshop->the_post();
+      // when workshops are found
+      if ($newest_workshop->have_posts()) {
+        while($newest_workshop->have_posts()) {
+          $newest_workshop->the_post();
     ?>
       <a class="CTAtext" href="<?php the_permalink(); ?>">
         <span>Reserveer je plaats tijdens onze nieuwste workshop: <?php the_title(); ?></span>
-          <?php
-            }
-
-            wp_reset_postdata();
-          ?>
       </a>
+    <?php
+        }
+      } else {
+        // no workshops are found, add extra query
+        $random_machine = new WP_Query([
+          "posts_per_page" => 1, // control number of posts with this -> -1 is all posts
+          "post_type" => "machine",
+          "orderby" => "rand",
+          "order" => "ASC"
+        ]);
+
+        while($random_machine->have_posts()) {
+          $random_machine->the_post();
+    ?>
+      <a class="CTAtext" href="<?php the_permalink(); ?>">
+        <span>Benieuwd naar de <?php the_title(); ?>? Lees er hier meer over!</span>
+      </a>
+    <?php
+      }
+    }
+
+    wp_reset_postdata();
+    ?>
   </div>
   <main id="mainFrontpage" class="disp-f">
 
