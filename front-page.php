@@ -10,9 +10,20 @@
 
   <div class="CTA">
     <?php
+      $today = date("Ymd");
       $newest_workshop = new WP_Query([
         "posts_per_page" => 1, // control number of posts with this -> -1 is all posts
-        "post_type" => "workshop"
+        "post_type" => "workshop",
+        "meta_key" => "workshop_datum",
+        "orderby" => "meta_value_num",
+        "order" => "ASC",
+        "meta_query" => [
+          array(
+            "key" => "workshop_datum",
+            "compare" => ">=",
+            "value" => $today
+          )
+        ]
       ]);
 
       while($newest_workshop->have_posts()) {

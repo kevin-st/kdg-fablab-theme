@@ -4,10 +4,10 @@
   padding-top: 0;
 
   section {
-    width: 50%;
+    width: 45%;
 
     &[role="news"] {
-      margin-right: 2%;
+      margin-right: 5%;
 
       @mixin tablet {
         margin-right: 0;
@@ -33,7 +33,7 @@
 
   .img-thumb {
     margin-right: 25px;
-    width: 42%;
+    width: 50%;
 
     .thumbnail {
       background-repeat: no-repeat;

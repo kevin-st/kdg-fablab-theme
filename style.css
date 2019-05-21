@@ -911,10 +911,10 @@ body.login-action-register {
   padding-top: 0;
 }
 #mainFrontpage section {
-    width: 50%;
+    width: 45%;
   }
 #mainFrontpage section[role="news"] {
-      margin-right: 2%;
+      margin-right: 5%;
     }
 @media (max-width: 960px) {
 #mainFrontpage section[role="news"] {
@@ -941,7 +941,7 @@ body.login-action-register {
   }
 #mainFrontpage .img-thumb {
     margin-right: 25px;
-    width: 42%;
+    width: 50%;
   }
 #mainFrontpage .img-thumb .thumbnail {
       background-repeat: no-repeat;
