@@ -94,20 +94,24 @@
       margin-left: 2%;
     }
   }
+    
+  .col-1-of-4 {
+      padding-right: 5%;
+  }
 
   > div.input-group {
     &:nth-child(2) {
       margin-bottom: $med;
     }
   }
-
+/*
   @mixin tablet {
     > div.disp-f {
       flex-wrap: nowrap;
     }
-  }
+  }*/
 
-  @mixin phone {
+  @mixin tablet {
     margin: 0;
     width: 100%;
 
@@ -129,6 +133,18 @@
         margin-left: 0;
       }
     }
+      
+    .btn-save {
+       margin-top: 5%; 
+    }
+      
+    .btn-save, .btn-back {
+        width: 200%;
+    }
+  }
+    
+  @mixin phone {
+      margin-left: 25%;
   }
 }
 

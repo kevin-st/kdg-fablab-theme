@@ -1574,15 +1574,19 @@ iframe {
 #reservation-form div.col-2-of-2 > div + .col-1-of-4 {
       margin-left: 2%;
     }
+#reservation-form .col-1-of-4 {
+      padding-right: 5%;
+  }
 #reservation-form > div.input-group:nth-child(2) {
       margin-bottom: 15px;
     }
-@media (max-width: 960px) {
-    #reservation-form > div.disp-f {
+/*
+  @mixin tablet {
+    > div.disp-f {
       flex-wrap: nowrap;
     }
-  }
-@media (max-width: 700px) {
+  }*/
+@media (max-width: 960px) {
 #reservation-form {
     margin: 0;
     width: 100%
@@ -1603,6 +1607,19 @@ iframe {
       #reservation-form div.col-2-of-2 > div + .col-1-of-2 {
         margin-left: 0;
       }
+      
+    #reservation-form .btn-save {
+       margin-top: 5%; 
+    }
+      
+    #reservation-form .btn-save, #reservation-form .btn-back {
+        width: 200%;
+    }
+  }
+@media (max-width: 700px) {
+#reservation-form {
+      margin-left: 25%
+}
   }
 .time-slots-container {
   margin-bottom: 25px;
