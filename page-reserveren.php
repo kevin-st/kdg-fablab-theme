@@ -274,7 +274,7 @@
         <div class="col-1-of-4">
           <h3>Datum</h3>
           <?php
-            echo date_i18n("d F Y", strtotime($reservation_date));
+            echo "<p>". date_i18n("d F Y", strtotime($reservation_date)) ."</p>";
             echo "<h3>Tijdstippen</h3>";
 
             foreach ($reservation_time_slots as $time_slot) {
@@ -285,12 +285,12 @@
       </div>
 
       <input type="hidden" name="step" value="final" />
-      <div class="disp-f col-4-of-4">
+      <div role="buttons" class="disp-f col-4-of-4">
         <div class="col-1-of-4">
-          <input class="btn-dark btn-submit btn-back" name="submit" type="submit" value="Vorige" />
+          <input class="btn-dark btn-submit" name="submit" type="submit" value="Vorige" />
         </div>
         <div class="col-1-of-4">
-          <input class="btn-blue btn-submit btn-save" name="submit" type="submit" value="Indienen" />
+          <input class="btn-blue btn-submit" name="submit" type="submit" value="Indienen" />
         </div>
       </div>
       <!-- End of third step -->

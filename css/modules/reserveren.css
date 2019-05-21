@@ -89,14 +89,22 @@
     > div + .col-1-of-2 {
       margin-left: 2%;
     }
-      
-     > div + .col-1-of-4 {
-      margin-left: 2%;
-    }
   }
-    
-  .col-1-of-4 {
-      padding-right: 5%;
+
+  div.col-4-of-4 {
+    .col-1-of-4 {
+      > h3 {
+        margin-top: 0;
+      }
+    }
+
+    > div + .col-1-of-4 {
+      margin-left: 2%;
+
+      @mixin tablet {
+        margin-left: 0;
+      }
+    }
   }
 
   > div.input-group {
@@ -104,7 +112,7 @@
       margin-bottom: $med;
     }
   }
-/*
+  /*
   @mixin tablet {
     > div.disp-f {
       flex-wrap: nowrap;
@@ -116,7 +124,6 @@
     width: 100%;
 
     div.disp-f {
-      flex-direction: column;
       flex-wrap: wrap;
     }
 
@@ -133,13 +140,21 @@
         margin-left: 0;
       }
     }
-      
-    .btn-save {
-       margin-top: 15%; 
-    }
-      
-    .btn-save, .btn-back {
-        width: 400%;
+
+    div.col-4-of-4 {
+      > .col-1-of-4 {
+        width: 100%;
+      }
+
+      &[role="buttons"] {
+        margin-top: $med;
+
+        & > .col-1-of-4 {
+          &:nth-child(2) {
+            margin-top: $med;
+          }
+        }
+      }
     }
   }
 }
@@ -188,6 +203,10 @@
 
   input[type="checkbox"]:checked + .labelReserveren {
     background-color: $main_accent;
+  }
+
+  @mixin phone {
+    width: 50%;
   }
 }
 

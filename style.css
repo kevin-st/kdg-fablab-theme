@@ -1571,11 +1571,16 @@ iframe {
 #reservation-form div.col-2-of-2 > div + .col-1-of-2 {
       margin-left: 2%;
     }
-#reservation-form div.col-2-of-2 > div + .col-1-of-4 {
+#reservation-form div.col-4-of-4 .col-1-of-4 > h3 {
+        margin-top: 0;
+      }
+#reservation-form div.col-4-of-4 > div + .col-1-of-4 {
       margin-left: 2%;
     }
-#reservation-form .col-1-of-4 {
-      padding-right: 5%;
+@media (max-width: 960px) {
+#reservation-form div.col-4-of-4 > div + .col-1-of-4 {
+        margin-left: 0
+    }
   }
 #reservation-form > div.input-group:nth-child(2) {
       margin-bottom: 15px;
@@ -1593,7 +1598,6 @@ iframe {
 }
 
     #reservation-form div.disp-f {
-      flex-direction: column;
       flex-wrap: wrap;
     }
       #reservation-form div.col-2-of-2 > div {
@@ -1607,14 +1611,16 @@ iframe {
       #reservation-form div.col-2-of-2 > div + .col-1-of-2 {
         margin-left: 0;
       }
-      
-    #reservation-form .btn-save {
-       margin-top: 15%; 
-    }
-      
-    #reservation-form .btn-save, #reservation-form .btn-back {
-        width: 400%;
-    }
+      #reservation-form div.col-4-of-4 > .col-1-of-4 {
+        width: 100%;
+      }
+
+      #reservation-form div.col-4-of-4[role="buttons"] {
+        margin-top: 15px;
+      }
+          #reservation-form div.col-4-of-4[role="buttons"] > .col-1-of-4:nth-child(2) {
+            margin-top: 15px;
+          }
   }
 .time-slots-container {
   margin-bottom: 25px;
@@ -1656,6 +1662,11 @@ iframe {
   }
 .time-slot input[type="checkbox"]:checked + .labelReserveren {
     background-color: #34bedc;
+  }
+@media (max-width: 700px) {
+.time-slot {
+    width: 50%
+}
   }
 .message {
   margin: 10px 0 10px 0;
