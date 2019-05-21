@@ -21,7 +21,8 @@
           array(
             "key" => "workshop_datum",
             "compare" => ">=",
-            "value" => $today
+            "value" => $today,
+            "type" => "numeric"
           )
         ]
       ]);
