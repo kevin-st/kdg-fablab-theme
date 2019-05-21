@@ -135,16 +135,12 @@
     }
       
     .btn-save {
-       margin-top: 5%; 
+       margin-top: 15%; 
     }
       
     .btn-save, .btn-back {
-        width: 200%;
+        width: 400%;
     }
-  }
-    
-  @mixin phone {
-      margin-left: 25%;
   }
 }
 

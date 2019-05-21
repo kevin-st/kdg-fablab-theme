@@ -1609,17 +1609,12 @@ iframe {
       }
       
     #reservation-form .btn-save {
-       margin-top: 5%; 
+       margin-top: 15%; 
     }
       
     #reservation-form .btn-save, #reservation-form .btn-back {
-        width: 200%;
+        width: 400%;
     }
-  }
-@media (max-width: 700px) {
-#reservation-form {
-      margin-left: 25%
-}
   }
 .time-slots-container {
   margin-bottom: 25px;
