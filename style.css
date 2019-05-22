@@ -1304,29 +1304,106 @@ iframe {
     display: none
 }
   }
+#main404 .error404 {
+    width: 100%;
+    margin-left: 25%;
+    margin-top: 4%;
+    margin-right: 25%;
+  }
+@media (max-width: 1100px) {
+#main404 .error404 {
+     margin-left: 20%
+  }
+  }
+@media (max-width: 1050px) {
+#main404 .error404 {
+     margin-left: 15%
+  }
+  }
+@media (max-width: 700px) {
+#main404 .error404 {
+      display: block
+  }
+  }
+#main404 .error404 .img404 {
+      width: 20%;
+    }
+#main404 .error404 .img404 .img_404 {
+        height: 20%;
+      }
+@media (max-width: 700px) {
+#main404 .error404 .img404 .img_404 {
+          width: 100%;
+          margin-left: 120%
+      }
+  }
+@media (max-width: 1100px) {
+#main404 .error404 .img404 {
+        margin-right: 5%
+    }
+  }
+@media (max-width: 960px) {
+#main404 .error404 .img404 {
+        margin-right: 10%
+    }
+  }
+#main404 .error404 .tekst404 {
+      width: 30%;
+      margin-right: 50%;
+    }
+@media (max-width: 1100px) {
+#main404 .error404 .tekst404 {
+        width: 35%;
+        margin-right: 45%
+    }
+  }
+@media (max-width: 1050px) {
+#main404 .error404 .tekst404 {
+        width: 45%;
+        margin-right: 35%
+    }
+  }
+@media (max-width: 960px) {
+#main404 .error404 .tekst404 {
+        width: 55%;
+        margin-right: 25%
+    }
+  }
+@media (max-width: 700px) {
+#main404 .error404 .tekst404 {
+        width: 70%;
+        text-align: center
+    }
+  }
+/*
 .intro404{
   width: 70%;
   margin: 100px auto 0px auto;
   text-align:justify;
 }
+
 .content404{
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
 .img_404{
   width: 20%;
   height: 20%;
 }
+
 .introContent_404{
   width: 80%;
   padding: 0 5%;
 }
-@media (max-width: 1350px) {
+
+@mixin pcXL{
   .intro404{
     width: 85%;
   }
-  }
-@media (max-width: 1100px) {
+}
+
+@mixin pcmed{
 
   .img_404{
     width: 30%;
@@ -1337,8 +1414,9 @@ iframe {
   .introContent_404{
     width: 70%;
   }
-  }
-@media (max-width: 960px) {
+}
+
+@mixin tablet{
   .introContent_404{
     width: 100%
   }
@@ -1353,7 +1431,8 @@ iframe {
     margin: 50px auto 0px auto;
     text-align:justify;
   }
-  }
+}
+*/
 .pagination {
   margin-top: 50px;
 }

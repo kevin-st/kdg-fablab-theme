@@ -1,3 +1,76 @@
+#main404 {
+  .error404 {
+    width: 100%;
+    margin-left: 25%;
+    margin-top: 4%;
+    margin-right: 25%;
+      
+    @mixin pcmed {
+     margin-left: 20%;   
+    }
+      
+    @mixin pc {
+     margin-left: 15%;   
+    }
+    
+    @mixin phone {
+      display: block;
+    }
+      
+    .img404 {
+      width: 20%;
+        
+      .img_404 {
+        height: 20%;
+          
+        @mixin phone {
+          width: 100%;
+          margin-left: 120%;
+        }
+      }
+        
+      @mixin pcmed {
+        margin-right: 5%;
+      }
+
+      @mixin tablet {
+        margin-right: 10%;
+      }
+    }
+
+    .tekst404 {
+      width: 30%;
+      margin-right: 50%;
+        
+      @mixin pcmed {
+        width: 35%;
+        margin-right: 45%;
+      }
+        
+      @mixin pc {
+        width: 45%;
+        margin-right: 35%;
+      }
+        
+      @mixin tablet {
+        width: 55%;
+        margin-right: 25%;
+      }
+        
+      @mixin phone {
+        width: 70%;
+        text-align: center;
+      }
+    }
+  }
+  
+}
+
+
+
+
+
+/*
 .intro404{
   width: 70%;
   margin: 100px auto 0px auto;
@@ -54,3 +127,4 @@
     text-align:justify;
   }
 }
+*/
