@@ -1,6 +1,6 @@
 <?php
   kdg_fablab_reset_reservation_process();
-  
+
   get_header();
 ?>
 
@@ -13,12 +13,16 @@
     ?>
     <article class="nieuwsartikel disp-f">
       <div class="img-thumb">
-        <?php $post_thumbnail_url = get_the_post_thumbnail_url(); ?>
-        <a
-          href="<?php the_permalink(); ?>"
-          class="thumbnail valencia"
-          style="background-image: url('<?php echo ($post_thumbnail_url) ? $post_thumbnail_url : get_theme_file_uri('img/default_news.jpg'); ?>');"
-        >
+        <a href="<?php the_permalink(); ?>" class="thumbnail valencia">
+          <?php
+            if (has_post_thumbnail()) {
+              the_post_thumbnail();
+            } else {
+          ?>
+          <img src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="nieuwsartikel" />
+          <?php
+            }
+          ?>
         </a>
       </div>
       <div class="content">
