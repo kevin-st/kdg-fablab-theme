@@ -1,5 +1,8 @@
-<?php get_header(); ?>
+<?php
+  kdg_fablab_reset_reservation_process();
 
+  get_header();
+?>
 <main id="mainArchive">
   <h1>Onze toestellen</h1>
   <div role="machines" class="disp-f">

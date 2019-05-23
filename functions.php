@@ -149,4 +149,13 @@
       return $items;
     }
 
+    /**
+     * Reset the reservation session
+     */
+    function kdg_fablab_reset_reservation_process() {
+      if (isset($_SESSION["reservation"])) {
+        $_SESSION["reservation"] = [];
+      }
+    }
+
     // do not close php tags at the end of a file
