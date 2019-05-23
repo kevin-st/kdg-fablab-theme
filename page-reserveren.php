@@ -30,7 +30,7 @@
     $reservation_time_slots = KdGFablab_RS::kdg_fablab_rs_get_reservation_time_slots();
   }
 
-  echo "<pre>";
+  /*echo "<pre>";
   echo "SESSIE";
   var_dump($_SESSION);
   echo "</pre>";
@@ -38,7 +38,7 @@
   echo "<pre>";
   echo "POST";
   var_dump($_POST);
-  echo "</pre>";
+  echo "</pre>";*/
 
   get_header();
 ?>
@@ -108,9 +108,21 @@
         <select id="reservation-item" name="reservation-item" class="<?php echo (!empty($errors)) ? "error" : ""; ?>">
           <option value="" <?php echo ($reservation_item == "") ? "selected" : ""; ?>>-- Kiezen --</option>
           <?php
+            $today = date("Ymd");
             $all_workshops = new WP_Query([
-              "posts_per_page" => -1,
-              "post_type" => "workshop"
+              "posts_per_page" => -1, // control number of posts with this -> -1 is all posts
+              "post_type" => "workshop",
+              "meta_key" => "workshop_datum",
+              "orderby" => "meta_value_num",
+              "order" => "ASC",
+              "meta_query" => [
+                array(
+                  "key" => "workshop_datum",
+                  "compare" => ">=",
+                  "value" => $today,
+                  "type" => "numeric"
+                )
+              ]
             ]);
 
             while($all_workshops->have_posts()) {
