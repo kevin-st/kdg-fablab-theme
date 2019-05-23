@@ -77,16 +77,23 @@
   font-weight: bold;
 }
 
-@mixin pc {
+@mixin pcbig {
   #profielMain .menu .menu-item {
-    width: 30%;
+    width: 23%;
+  }
+}
+
+@mixin pcmed {
+  #profielMain .menu .menu-item {
+    width: 40%;
+    margin-bottom: 10px;
   }
 }
 
 @mixin tablet {
   #profielMain .menu .menu-item {
     float: none;
-    margin-bottom: 10px;
+    
     width: 100%;
     margin-right: 0;
   }
