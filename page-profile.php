@@ -7,6 +7,8 @@
     exit;
   }
 
+  kdg_fablab_reset_reservation_process();
+
   get_header();
 
   $user = wp_get_current_user();

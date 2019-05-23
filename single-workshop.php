@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+  kdg_fablab_reset_reservation_process();
+  
+  get_header();
+?>
 <main id="mainSingle">
   <div role="breadcrumbs" class="breadcrumbs">
     <a href="<?php echo site_url('/workshops/'); ?>">Workshops</a>

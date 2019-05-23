@@ -1,5 +1,7 @@
 <?php
   /* Template Name: Showcase template */
+  kdg_fablab_reset_reservation_process();
+  
   get_header();
 ?>
 <?php

@@ -14,6 +14,8 @@
     exit;
   }
 
+  kdg_fablab_reset_reservation_process();
+
   get_header();
 ?>
 <main id="mainArchive">
