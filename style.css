@@ -510,9 +510,22 @@ footer>#socials>a{
           background-repeat: no-repeat;
           background-size: 100% 100%;
           display: inline-block;
-          width: 100%;
-          height: 100%;
         }
+#mainArchive > div .toestel .img-thumb .thumbnail,
+          #mainArchive > div .toestel .img-thumb .thumbnail > img,
+          #mainArchive > div .workshop .img-thumb .thumbnail,
+          #mainArchive > div .workshop .img-thumb .thumbnail > img,
+          #mainArchive > div .nieuwsartikel .img-thumb .thumbnail,
+          #mainArchive > div .nieuwsartikel .img-thumb .thumbnail > img {
+            width: 100%;
+            height: 100%;
+          }
+#mainArchive > div .toestel .img-thumb .thumbnail > img, #mainArchive > div .workshop .img-thumb .thumbnail > img, #mainArchive > div .nieuwsartikel .img-thumb .thumbnail > img {
+            -o-object-fit: cover;
+               object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+          }
 @media (max-width: 1350px) {
 #mainArchive > div .toestel .img-thumb, #mainArchive > div .workshop .img-thumb, #mainArchive > div .nieuwsartikel .img-thumb {
           height: 100%
@@ -948,14 +961,15 @@ body.login-action-register {
       background-repeat: no-repeat;
       background-size: 100% 100%;
       display: inline-block;
-      width: 100%;
-      height: 100%;
     }
+#mainFrontpage .img-thumb .thumbnail,
+      #mainFrontpage .img-thumb .thumbnail > img {
+        width: 100%;
+        height: 100%;
+      }
 #mainFrontpage .img-thumb .thumbnail > img {
         -o-object-fit: cover;
            object-fit: cover;
-        width: 100%;
-        height: 100%;
         max-width: 100%;
         max-height: 100%;
       }
