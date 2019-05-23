@@ -7,6 +7,7 @@
     &[role="news"],
     &[role="reservations"] {
       flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     &[role="reservations"] {
@@ -31,7 +32,7 @@
       .img-thumb {
         height: 250px;
         margin-right: 2%;
-        width: 40%;
+        width: 50%;
 
         .thumbnail {
           &,

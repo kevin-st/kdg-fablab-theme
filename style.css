@@ -487,6 +487,7 @@ footer>#socials>a{
     #mainArchive > div[role="news"],
     #mainArchive > div[role="reservations"] {
       flex-wrap: wrap;
+      justify-content: space-between;
     }
 #mainArchive > div[role="reservations"] {
       justify-content: space-between;
@@ -504,7 +505,7 @@ footer>#socials>a{
 #mainArchive > div .toestel .img-thumb, #mainArchive > div .workshop .img-thumb, #mainArchive > div .nieuwsartikel .img-thumb {
         height: 250px;
         margin-right: 2%;
-        width: 40%;
+        width: 50%;
       }
 #mainArchive > div .toestel .img-thumb .thumbnail,
           #mainArchive > div .toestel .img-thumb .thumbnail > img,
