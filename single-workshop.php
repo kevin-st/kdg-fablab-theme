@@ -12,6 +12,11 @@
     while(have_posts()) {
       the_post();
       $title = strtolower(str_replace(" ", "-", get_the_title()));
+      // get the date of the workshop formatted as Ymd
+      $date = DateTime::createFromFormat("Ymd", get_field("workshop_datum", $post->ID, FALSE));
+      // convert date to readable format
+      $date_nice_format = $date->format("d/m/Y");
+      $today = new DateTime();
   ?>
   <article class="disp-f">
     <div class="img-thumb">
@@ -33,6 +38,7 @@
         <?php the_content(); ?>
       </div>
       <div class="buttons disp-f col-2-of-2">
+        <?php if ($date >= $today) { ?>
         <a class="btn btn-blue " href="<?php
           $redirect_to = esc_url(add_query_arg([
             "id" => $title,
@@ -48,7 +54,8 @@
           ?>">
           Schrijf nu in!
           </a>
-          <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("workshop"); ?>">Terug naar workshops</a>
+          <?php } ?>
+          <a class="btn btn<?php echo ($date <= $today) ? "-fw btn-blue" : "-dark" ; ?>" href="<?php echo get_post_type_archive_link("workshop"); ?>">Terug naar workshops</a>
       </div>
     </div>
   </article>
