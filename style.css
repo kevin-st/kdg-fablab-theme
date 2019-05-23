@@ -506,11 +506,6 @@ footer>#socials>a{
         margin-right: 2%;
         width: 40%;
       }
-#mainArchive > div .toestel .img-thumb .thumbnail, #mainArchive > div .workshop .img-thumb .thumbnail, #mainArchive > div .nieuwsartikel .img-thumb .thumbnail {
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          display: inline-block;
-        }
 #mainArchive > div .toestel .img-thumb .thumbnail,
           #mainArchive > div .toestel .img-thumb .thumbnail > img,
           #mainArchive > div .workshop .img-thumb .thumbnail,
@@ -957,11 +952,6 @@ body.login-action-register {
     margin-right: 25px;
     width: 50%;
   }
-#mainFrontpage .img-thumb .thumbnail {
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      display: inline-block;
-    }
 #mainFrontpage .img-thumb .thumbnail,
       #mainFrontpage .img-thumb .thumbnail > img {
         width: 100%;
@@ -1232,18 +1222,17 @@ iframe {
       min-height: 500px;
       width: 45%;
     }
-#mainSingle article .img-thumb a {
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-      }
-@media (max-width: 960px) {
-#mainSingle article .img-thumb a {
-          background-size: 100% 100%
-      }
-  }
+#mainSingle article .img-thumb .thumbnail,
+        #mainSingle article .img-thumb .thumbnail > img {
+          width: 100%;
+          height: 100%;
+        }
+#mainSingle article .img-thumb .thumbnail > img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          max-width: 100%;
+          max-height: 100%;
+        }
 @media (max-width: 960px) {
 #mainSingle article .img-thumb {
         margin-bottom: 5%;
