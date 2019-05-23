@@ -1,6 +1,6 @@
 <?php
   kdg_fablab_reset_reservation_process();
-  
+
   get_header();
 ?>
 <?php
@@ -76,12 +76,16 @@
           $homepage_news->the_post();
       ?>
       <div class="img-thumb">
-        <?php $post_thumbnail_url = get_the_post_thumbnail_url(); ?>
-        <a
-          href="<?php the_permalink(); ?>"
-          class="thumbnail valencia"
-          style="background-image: url('<?php echo ($post_thumbnail_url) ? $post_thumbnail_url : get_theme_file_uri('img/default_news.jpg'); ?>');"
-        >
+        <a href="<?php the_permalink(); ?>" class="thumbnail valencia">
+          <?php
+            if (has_post_thumbnail()) {
+              the_post_thumbnail();
+            } else {
+          ?>
+          <img src="<?php echo get_theme_file_uri("img/default_news.jpg"); ?>" alt="nieuwsartikel" />
+          <?php
+            }
+          ?>
         </a>
       </div>
       <div class="content">
@@ -121,36 +125,40 @@
         $last_added_machine->the_post();
     ?>
     <div class="img-thumb">
-      <?php $post_thumbnail_url = get_the_post_thumbnail_url(); ?>
-      <a
-        href="<?php the_permalink(); ?>"
-        class="thumbnail valencia"
-        style="background-image: url('<?php echo ($post_thumbnail_url === false) ? get_theme_file_uri('img/default_machine.jpg') : $post_thumbnail_url; ?>');"
-      >
-      </a>
-      </div>
-      <div class="content">
-        <h2 class="title"><?php the_title(); ?></h2>
-        <p class="excerpt">
+      <a href="<?php the_permalink(); ?>" class="thumbnail valencia">
         <?php
-          if (has_excerpt()) {
-            echo get_the_excerpt();
+          if (has_post_thumbnail()) {
+            the_post_thumbnail();
           } else {
-            echo wp_trim_words(get_the_content(), 25); // control number of words
+        ?>
+        <img src="<?php echo get_theme_file_uri("img/default_machine.jpg"); ?>" alt="toestel" />
+        <?php
           }
         ?>
-        </p>
-        <div class="buttons disp-f col-2-of-2">
-          <a class="btn btn-dark" href="<?php the_permalink(); ?>">Lees meer</a>
-          <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
-        </div>
-
-      </div>
+      </a>
+    </div>
+    <div class="content">
+      <h2 class="title"><?php the_title(); ?></h2>
+      <p class="excerpt">
       <?php
+        if (has_excerpt()) {
+          echo get_the_excerpt();
+        } else {
+          echo wp_trim_words(get_the_content(), 25); // control number of words
         }
-
-        wp_reset_postdata();
       ?>
+      </p>
+      <div class="buttons disp-f col-2-of-2">
+        <a class="btn btn-dark" href="<?php the_permalink(); ?>">Lees meer</a>
+        <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Meer toestellen</a>
+      </div>
+
+    </div>
+    <?php
+      }
+
+      wp_reset_postdata();
+    ?>
     </article>
   </section>
 </main>
