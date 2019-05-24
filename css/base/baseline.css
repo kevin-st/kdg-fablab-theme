@@ -54,6 +54,10 @@ main {
 
 .img-thumb{
   overflow: hidden;
+    img{
+      transition: 0.4s;
+      transform: scale(1);
+    }
     img:hover{
       transform: scale(1.1);
       transition: 1s;

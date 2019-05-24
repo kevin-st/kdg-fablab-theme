@@ -84,6 +84,11 @@ main {
 .img-thumb{
   overflow: hidden;
 }
+.img-thumb img{
+      transition: 0.4s;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
 .img-thumb img:hover{
       -webkit-transform: scale(1.1);
               transform: scale(1.1);
