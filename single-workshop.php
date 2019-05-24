@@ -17,6 +17,9 @@
       // convert date to readable format
       $date_nice_format = $date->format("d/m/Y");
       $today = new DateTime();
+
+      $start_hour = get_field("start_tijd");
+      $end_hour = get_field("eind_tijd");
   ?>
   <article class="disp-f">
     <div class="img-thumb">
@@ -33,10 +36,14 @@
       </a>
     </div>
     <div class="content">
-      <h1 role="title" class="title disp-f">
+      <h1 role="title" class="title disp-f mb-sm">
         <?php the_title(); ?>
         <span class="date"><?php echo $date_nice_format; ?></span>
       </h1>
+      <p class="c-blue m-0">
+        <?php echo $start_hour; ?> -
+        <?php echo $end_hour; ?>
+      </p>
       <div class="content-text">
         <?php the_content(); ?>
       </div>

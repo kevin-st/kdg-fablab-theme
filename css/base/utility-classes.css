@@ -127,12 +127,14 @@
   &-1-of-4 {
     width: 25%;
   }
-    
-  &-1-of-2, &-2-of-4 {
+
+  &-1-of-2,
+  &-2-of-4 {
     width: 50%;
   }
 
-  &-2-of-2, &-4-of-4 {
+  &-2-of-2,
+  &-4-of-4 {
     width: 100%;
   }
 }
@@ -140,6 +142,12 @@
 .fw {
   &-b {
     font-weight: bold;
+  }
+}
+
+.c {
+  &-blue {
+    color: $main_accent;
   }
 }
 
