@@ -1094,7 +1094,7 @@ body.login-action-register {
   margin-bottom: 50px;
 }
 .contactForm {
-  margin-left: 145px;
+  margin-left: 7%;
   width: 100%;
 }
 .contactForm form {
@@ -1102,7 +1102,9 @@ body.login-action-register {
     position: relative;
   }
 .profile-picture {
-  width: 30%;
+  width: 40%;
+  max-height: 450px;
+  min-height: 300px;
   overflow: hidden;
 }
 .profile-picture img {

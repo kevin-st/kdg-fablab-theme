@@ -8,7 +8,7 @@
 }
 
 .contactForm {
-  margin-left: 145px;
+  margin-left: 7%;
   width: 100%;
 
   form {
@@ -17,8 +17,11 @@
   }
 }
 
+
 .profile-picture {
-  width: 30%;
+  width: 40%;
+  max-height: 450px;
+  min-height: 300px;
   overflow: hidden;
 
   img {
