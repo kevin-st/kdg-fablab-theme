@@ -116,9 +116,8 @@
   @mixin tablet {
     flex-wrap: wrap;
   }
-
-  @mixin phone-small {
-    padding-top: 50px;
+  @mixin phone{
+    padding-top: 130px;
   }
 }
 
