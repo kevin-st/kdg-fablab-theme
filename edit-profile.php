@@ -170,7 +170,11 @@
 ?>
 <main id="profielMain">
   <div id="user-info">
-    <h1><?php the_title(); ?></h1>
+    <div class="disp-f">
+      <a id="pijllink" href="<?php site_url("/mijn-profiel"); ?>"><img id="pijl" src="<?php echo get_theme_file_uri("img/pijl.png");?>" alt="teruggaan"></a>
+      <h1><?php the_title(); ?></h1>
+    </div>
+
     <?php echo do_shortcode( '[plugin_delete_me /]' ); ?>
     <form id="profile-meta-data" action="<?php the_permalink(); ?>" method="post">
 
@@ -255,7 +259,10 @@
         <span class="error-message <?php // echo ($who_are_you_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php // echo $who_are_you_error; ?></span>
       </div>
       -->
-      <input class="btn btn-submit editBtn btn-blue" type="submit" name="submit" value="Aanpassingen opslaan" />
+      <div class="disp-f" id="editBtn">
+        <input class="btn btn-submit editBtn btn-blue" type="submit" name="submit" value="Aanpassingen opslaan" />
+      </div>
+
     </form>
   </div>
 </main>

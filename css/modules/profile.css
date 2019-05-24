@@ -1,5 +1,5 @@
 #profielMain {
-  width: 85%;
+  width: 75%;
 
   .menu {
     list-style-type: none;
@@ -22,13 +22,13 @@
 
         &:hover {
           color: $zwartKdg;
-            
+
             > img {
                 filter: brightness(0) invert(0);
             }
         }
       }
-        
+
       img {
         filter: brightness(0) invert(1);
         margin-right: 10px;
@@ -61,10 +61,10 @@
     > div {
       margin: 20px 0;
     }
-      
+
     margin-bottom: 35px;
   }
-    
+
   #user-info {
     margin-top: 48px;
   }
@@ -93,11 +93,11 @@
 @mixin tablet {
   #profielMain .menu .menu-item {
     float: none;
-    
+
     width: 100%;
     margin-right: 0;
   }
-    
+
   #user-info {
     .disp-f {
       display: block;
