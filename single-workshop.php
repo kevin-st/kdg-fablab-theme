@@ -33,7 +33,10 @@
       </a>
     </div>
     <div class="content">
-      <h1 role="title" class="title"><?php the_title(); ?></h1>
+      <h1 role="title" class="title disp-f">
+        <?php the_title(); ?>
+        <span class="date"><?php echo $date_nice_format; ?></span>
+      </h1>
       <div class="content-text">
         <?php the_content(); ?>
       </div>
