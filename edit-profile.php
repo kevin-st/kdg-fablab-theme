@@ -207,7 +207,7 @@
         <div class="col-1-of-2">
           <div class="input-group input-class">
             <label>Telefoonnummer:</label>
-            <input class="<?php echo ($tel_number_error !== "") ? "error" : ""; ?>" type="text" name="tel_number" value="<?php echo $tel_number; ?>"/>
+            <input class="<?php echo ($tel_number_error !== "") ? "error" : ""; ?>" type="text" name="tel_number" value="<?php echo $tel_number; ?>" placeholder="+32499999999"/>
             <span class="error-message <?php echo ($tel_number_error !== "") ? 'disp-b' : 'disp-n'; ?>"><?php echo $tel_number_error; ?></span>
           </div>
         </div>
