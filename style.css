@@ -1220,7 +1220,7 @@ iframe {
     width: 100%;
   }
 #mainSingle article .img-thumb {
-      min-height: 500px;
+      max-height: 500px;
       width: 45%;
     }
 #mainSingle article .img-thumb .thumbnail,
@@ -1272,6 +1272,9 @@ iframe {
           min-height: 200px
       }
   }
+#mainSingle article .content .buttons {
+        bottom: -40px;
+      }
 @media (max-width: 960px) {
 #mainSingle article .content .buttons > a {
             width: 100%
