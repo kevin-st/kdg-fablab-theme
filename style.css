@@ -706,6 +706,7 @@ footer>#socials>a{
   padding: 15px;
   text-decoration: none;
   text-align: center;
+  transition: 0.25s;
 }
 .btn,
   .btn-dark,
@@ -719,6 +720,7 @@ footer>#socials>a{
   }
 .btn-dark:hover {
       color: #34bedc;
+
     }
 .btn-blue {
     background-color: #34bedc;
