@@ -81,6 +81,14 @@ main {
   padding-top: 160px;
   padding-bottom: 230px;
 }
+.img-thumb{
+  overflow: hidden;
+}
+.img-thumb img:hover{
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+      transition: 1s;
+    }
 /*
   add css classes which can be used frequently:
 

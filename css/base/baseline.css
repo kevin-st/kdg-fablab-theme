@@ -52,6 +52,16 @@ main {
   padding-bottom: 230px;
 }
 
+.img-thumb{
+  overflow: hidden;
+    img:hover{
+      transform: scale(1.1);
+      transition: 1s;
+    }
+}
+
+
+
 @define-mixin phone-small /* of een andere naam */ {
   @media (max-width: 420px) {
     @mixin-content;
