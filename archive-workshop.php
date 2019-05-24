@@ -32,7 +32,11 @@
           </a>
         </div>
         <div class="content">
-          <h2 class="title disp-f"><?php the_title(); ?><span class="date"><?php echo $date_nice_format; ?></span></h2>
+          <a href="<?php the_permalink(); ?>">
+            <h2 class="title disp-f"><?php the_title(); ?>
+              <span class="date"><?php echo $date_nice_format; ?></span>
+            </h2>
+          </a>
           <p class="excerpt">
             <?php
               if (has_excerpt()) {
