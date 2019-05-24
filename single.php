@@ -6,7 +6,7 @@
 <main id="mainSingle">
   <div role="breadcrumbs" class="breadcrumbs">
     <a href="<?php echo site_url('/nieuws/'); ?>">Laatste nieuws</a>
-    > <?php strtolower(the_title()) ?>
+    > <span class="c-blue"> <?php strtolower(the_title()) ?></span>
   </div>
   <?php
     while(have_posts()) {

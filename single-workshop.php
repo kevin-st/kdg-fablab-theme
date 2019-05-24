@@ -6,7 +6,7 @@
 <main id="mainSingle">
   <div role="breadcrumbs" class="breadcrumbs">
     <a href="<?php echo site_url('/workshops/'); ?>">Workshops</a>
-    &gt; <?php strtolower(the_title()) ?>
+    &gt; <span class="c-blue"> <?php strtolower(the_title()) ?> </span>
   </div>
   <?php
     while(have_posts()) {
