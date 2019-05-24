@@ -49,6 +49,7 @@ header {
       color: $wit;
       display: block;
       padding: 0 2%;
+      transition: 0.3s;
     }
   }
 
@@ -68,6 +69,7 @@ header {
 
   .menu-item:hover a {
     color: $main_accent;
+    transition: 0.3s;
   }
 
   .current-menu-item {
