@@ -60,7 +60,9 @@ main {
     }
 }
 
-
+a{
+  text-decoration: none;
+}
 
 @define-mixin phone-small /* of een andere naam */ {
   @media (max-width: 420px) {

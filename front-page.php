@@ -89,7 +89,12 @@
         </a>
       </div>
       <div class="content">
-        <h2 class="title disp-f"><?php echo wp_trim_words(get_the_title(), 5); ?><span class="date"><?php the_date(); ?></span></h2>
+        <a href="<?php the_permalink(); ?>">
+          <h2 class="title disp-f"><?php echo wp_trim_words(get_the_title(), 5); ?>
+            <span class="date"><?php the_date(); ?></span>
+          </h2>
+        </a>
+
         <p class="excerpt">
         <?php
           if (has_excerpt()) {
@@ -138,7 +143,10 @@
       </a>
     </div>
     <div class="content">
-      <h2 class="title"><?php the_title(); ?></h2>
+      <a href="<?php the_permalink(); ?>">
+        <h2 class="title"><?php the_title(); ?>
+        </h2>
+      </a>
       <p class="excerpt">
       <?php
         if (has_excerpt()) {

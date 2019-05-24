@@ -89,6 +89,9 @@ main {
               transform: scale(1.1);
       transition: 1s;
     }
+a{
+  text-decoration: none;
+}
 /*
   add css classes which can be used frequently:
 
