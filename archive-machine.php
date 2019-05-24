@@ -26,7 +26,10 @@
         </a>
       </div>
       <div class="content">
-        <h2 class="title"><?php the_title(); ?></h2>
+        <a href="<?php the_permalink(); ?>">
+          <h2 class="title"><?php the_title(); ?>
+          </h2>
+        </a>
         <p class="excerpt">
           <?php
             if (has_excerpt()) {

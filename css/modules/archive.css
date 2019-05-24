@@ -90,7 +90,7 @@
           }
         }
 
-        > h2 {
+         h2 {
           margin-top: 0;
 
           @mixin phone {

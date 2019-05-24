@@ -585,11 +585,11 @@ footer>#socials>a{
             min-height: 80px
         }
   }
-#mainArchive > div .toestel .content > h2, #mainArchive > div .workshop .content > h2, #mainArchive > div .nieuwsartikel .content > h2 {
+#mainArchive > div .toestel .content h2, #mainArchive > div .workshop .content h2, #mainArchive > div .nieuwsartikel .content h2 {
           margin-top: 0;
         }
 @media (max-width: 700px) {
-#mainArchive > div .toestel .content > h2, #mainArchive > div .workshop .content > h2, #mainArchive > div .nieuwsartikel .content > h2 {
+#mainArchive > div .toestel .content h2, #mainArchive > div .workshop .content h2, #mainArchive > div .nieuwsartikel .content h2 {
             margin-top: 10px
         }
   }
