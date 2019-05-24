@@ -428,6 +428,12 @@ header .current-menu-item,
     width: 50%;
     margin-left: 10px;
   }
+
+
+
+  .page-banner > img {
+    display: none;
+  }
   }
 html { height: 100%; }
 body {
@@ -1032,9 +1038,9 @@ body.login-action-register {
     flex-wrap: wrap
 }
   }
-@media (max-width: 420px) {
+@media (max-width: 700px) {
 #mainFrontpage {
-    padding-top: 50px
+    padding-top: 130px
 }
   }
 .CTA {

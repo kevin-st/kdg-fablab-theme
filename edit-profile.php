@@ -169,11 +169,12 @@
   $who_are_you = isset($user_meta['who_are_you'][0]) ? $user_meta['who_are_you'][0] : "";
 ?>
 <main id="profielMain">
+  <div class="disp-f">
+    <a id="pijllink" href="<?php echo site_url("/mijn-profiel"); ?>"><img id="pijl" src="<?php echo get_theme_file_uri("img/pijl.png");?>" alt="teruggaan"></a>
+    <h1><?php the_title(); ?></h1>
+  </div>
   <div id="user-info">
-    <div class="disp-f">
-      <a id="pijllink" href="<?php echo site_url("/mijn-profiel"); ?>"><img id="pijl" src="<?php echo get_theme_file_uri("img/pijl.png");?>" alt="teruggaan"></a>
-      <h1><?php the_title(); ?></h1>
-    </div>
+
 
     <?php echo do_shortcode( '[plugin_delete_me /]' ); ?>
     <form id="profile-meta-data" action="<?php the_permalink(); ?>" method="post">
