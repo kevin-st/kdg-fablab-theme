@@ -22,6 +22,7 @@
   <?php
     while(have_posts()) {
       the_post();
+
     ?>
     <div class="disp-f">
       <a id="pijllink" href="<?php echo site_url("/mijn-profiel"); ?>"><img id="pijl" src="<?php echo get_theme_file_uri("img/pijl.png");?>" alt="teruggaan"></a>
@@ -51,6 +52,7 @@
 
       while($all_reservations_current_user->have_posts()) {
         $all_reservations_current_user->the_post();
+        $title = strtolower(str_replace(" ", "-", get_the_title()));
     ?>
     <article class="reservation">
       <?php
@@ -75,12 +77,14 @@
           $reservation_time_slots[] = get_field("eind_tijd", $workshop->ID);
         }
       ?>
-      <h2>
-        <?php the_title(); ?>
-        <span class="reservation-type">
-          <?php echo ($reservation_type === "workshop") ? $reservation_type : "toestel"; ?>
-        </span>
-      </h2>
+      <a href="<?php echo site_url('/toestellen/'.$title); ?>">
+        <h2>
+          <?php the_title(); ?>
+          <span class="reservation-type">
+            <?php echo ($reservation_type === "workshop") ? $reservation_type : "toestel"; ?>
+          </span>
+        </h2>
+      </a>
       <p>
         <span>Datum:</span>
         <?php echo $reservation_date; ?>
