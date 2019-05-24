@@ -6,7 +6,7 @@
     width: 100%;
 
     .img-thumb {
-      min-height: 500px;
+      max-height: 500px;
       width: 45%;
 
       .thumbnail {
@@ -60,6 +60,7 @@
       }
 
       .buttons {
+        bottom: -40px;
         > a {
           @mixin tablet {
             width: 100%;

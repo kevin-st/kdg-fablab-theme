@@ -48,7 +48,7 @@
           ?>">
           Reserveer dit toestel!
           </a>
-          <a class="btn btn-dark" href="<?php echo get_post_type_archive_link("machine"); ?>">Terug naar toestellen</a>
+          <a class="btn btn-blue" href="<?php echo get_post_type_archive_link("machine"); ?>">Terug naar toestellen</a>
       </div>
     </div>
   </article>
