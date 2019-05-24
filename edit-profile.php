@@ -171,7 +171,7 @@
 <main id="profielMain">
   <div id="user-info">
     <div class="disp-f">
-      <a id="pijllink" href="<?php site_url("/mijn-profiel"); ?>"><img id="pijl" src="<?php echo get_theme_file_uri("img/pijl.png");?>" alt="teruggaan"></a>
+      <a id="pijllink" href="<?php echo site_url("/mijn-profiel"); ?>"><img id="pijl" src="<?php echo get_theme_file_uri("img/pijl.png");?>" alt="teruggaan"></a>
       <h1><?php the_title(); ?></h1>
     </div>
 
