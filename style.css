@@ -1587,7 +1587,30 @@ iframe {
   align-self:flex-end;
   margin-bottom: 18px;
   margin-right: 18px;
-
+}
+#pijllink:hover{
+      -webkit-animation: pijlhover 1s infinite;
+              animation: pijlhover 1s infinite;
+  }
+@-webkit-keyframes pijlhover {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-15px);
+            transform: translateX(-15px);
+  }
+}
+@keyframes pijlhover {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-15px);
+            transform: translateX(-15px);
+  }
 }
 #profile-meta-data {
 

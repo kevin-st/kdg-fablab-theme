@@ -21,6 +21,18 @@
   margin-bottom: 18px;
   margin-right: 18px;
 
+  &:hover{
+      animation: pijlhover 1s infinite;
+  }
+}
+
+@keyframes pijlhover {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-15px);
+  }
 }
 
 #profile-meta-data {
