@@ -8,12 +8,30 @@
       </div>
       <div class="openingsuren">
         <h2>Openingsuren</h2>
-        <?php $openinghours = get_option('kdg_fablab_rs_opening_hours');
-        var_dump($openinghours);
-        ?>
         <ul>
-          <li>lalala</li>
-          <li>lololo</li>
+        <?php
+          $opening_hours = get_option('kdg_fablab_rs_opening_hours');
+
+          foreach($opening_hours as $opening_hour => $opening_hour_value) {
+        ?>
+          <li>
+            <?php
+              echo (date_i18n("l", strtotime($opening_hour)));
+
+              if (isset($opening_hour_value["is_closed"])) {
+            ?>
+            <span>Gesloten</span>
+            <?php
+              } else {
+            ?>
+            <span><?php echo $opening_hour_value["start"]; ?> - <?php echo $opening_hour_value["end"]; ?></span>
+            <?php
+              }
+            ?>
+          </li>
+        <?php
+          }
+        ?>
         </ul>
       </div>
       <div id="socials">
