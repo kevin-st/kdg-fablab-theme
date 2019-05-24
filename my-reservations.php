@@ -76,8 +76,10 @@
           $reservation_time_slots[] = get_field("start_tijd", $workshop->ID);
           $reservation_time_slots[] = get_field("eind_tijd", $workshop->ID);
         }
+
+        $goToUrl = '/'.(($reservation_type === "workshop") ? "workshops" : "toestellen").'/'.$title;
       ?>
-      <a href="<?php echo site_url('/toestellen/'.$title); ?>">
+      <a href="<?php echo site_url($goToUrl); ?>">
         <h2>
           <?php the_title(); ?>
           <span class="reservation-type">
