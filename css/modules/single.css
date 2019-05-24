@@ -44,6 +44,17 @@
 
       .title {
         margin-top: 0;
+        justify-content: space-between;
+
+        .date {
+          align-self: flex-start;
+          background-color: $main_accent;
+          box-sizing: border-box;
+          color: white;
+          font-size: 0.6em;
+          font-family: "proximanova";
+          padding: 2px 5px 1px 5px;
+        }
       }
 
       &-text {

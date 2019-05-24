@@ -1294,7 +1294,17 @@ iframe {
     }
 #mainSingle article .content .title {
         margin-top: 0;
+        justify-content: space-between;
       }
+#mainSingle article .content .title .date {
+          align-self: flex-start;
+          background-color: #34bedc;
+          box-sizing: border-box;
+          color: white;
+          font-size: 0.6em;
+          font-family: "proximanova";
+          padding: 2px 5px 1px 5px;
+        }
 #mainSingle article .content-text {
         line-height: 1.5;
         text-align: justify;
