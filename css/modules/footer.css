@@ -16,48 +16,105 @@ footer{
   display: flex;
   justify-content: space-between;
   color: $wit;
-  padding: 2%;
+  padding: 2% 10%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+
+  @mixin tablet{
+    padding: 2% 4%;
+  }
+
+  @mixin phone{
+    padding: 2% 4% 10% 4%;
+  }
 }
 footer>#adres{
-  line-height: 5px;
-  width: 25%;
+  width: 33%;
+  @mixin pcXXL{
+    width: 25%;
+  }
+  @mixin phone{
+    width: 100%;
+  }
 }
 
-footer>#adres>h1{
+footer>#adres .adrestext{
+  line-height: 1.5;
+  >h1, p{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+footer>#adres h1{
   font-size: 1em;
 }
 
-footer>#adres>p{
+footer>#adres p{
   font-size: 1em;
 }
 
 footer>.openingsuren{
-  width: 50%;
+  width: 34%;
+  justify-content: center;
+  @mixin pcXXL{
+    width: 50%;
+  }
+
+  @mixin phone{
+    width: 100%;
+  }
+    .opening{
+      width: 50%;
+      line-height: 1.5;
+
+      @mixin pcbig{
+        width: 65%;
+      }
+
+      @mixin pcmed{
+        width: 80%;
+      }
+
+      @mixin tablet{
+        width: 60%;
+      }
+
+      @mixin phone{
+        width: 100%;
+      }
+
+      ul{
+        list-style-type: none;
+        padding: 0;
+
+        li{
+          display: flex;
+          justify-content: space-between;
+
+        }
+      }
+    }
 }
 
 footer>#socials{
-  height: 100;
-  width: 25%;
+  height: 100px;
+  width: 33%;
+  justify-content: flex-end;
+  @mixin pcXXL{
+    width: 25%;
+  }
+  @mixin phone{
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 
-footer h2{
-
-}
-
-footer>#socials>a>img{
+footer>#socials a img{
   height: 30px;
   padding: 10px;
 }
 
-footer>#socials>a{
+footer>#socials a{
   text-decoration: none;
-}
-
-@mixin tablet {
-  footer>#socials{
-    margin: 5%;
-  }
-  footer>#adres{
-    margin: 5%;
-  }
 }

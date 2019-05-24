@@ -49,7 +49,11 @@ h3 {
 main {
   margin: 0 auto;
   padding-top: 160px;
-  padding-bottom: 230px;
+  padding-bottom: 500px;
+
+  @mixin phone{
+    padding-bottom: 600px;
+  }
 }
 
 .img-thumb{
