@@ -323,6 +323,7 @@ header .current-menu-item,
 }
 .introbtn:hover {
   color: #34bedc;
+  transition: 0.5s;
 }
 .page-banner > img {
   max-height: 500px;

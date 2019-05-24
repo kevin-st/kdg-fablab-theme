@@ -143,6 +143,7 @@ header {
 
 .introbtn:hover {
   color: $main_accent;
+  transition: 0.5s;
 }
 
 .page-banner > img {
