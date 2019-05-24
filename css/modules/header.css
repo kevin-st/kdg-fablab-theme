@@ -127,7 +127,7 @@ header {
 .introbtn {
   width: 200px;
   text-decoration: none;
-  border: 4px solid $zwartKdg;
+  border: 2px solid $zwartKdg;
   background-color: rgba($zwartKdg, 0.6);
   color: $wit;
   padding: 20px;
