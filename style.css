@@ -1481,18 +1481,22 @@ iframe {
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        transition: 0.3s;
       }
 #profielMain .menu .menu-item a:hover {
           color: #1d1d1b;
+          transition: 1s;
         }
 #profielMain .menu .menu-item a:hover > img {
                 -webkit-filter: brightness(0) invert(0);
                         filter: brightness(0) invert(0);
+                transition:  1s;
             }
 #profielMain .menu .menu-item img {
         -webkit-filter: brightness(0) invert(1);
                 filter: brightness(0) invert(1);
         margin-right: 10px;
+        transition:  0.3s;
       }
 .content-profile > h1 > span {
       font-family: "iconfont";

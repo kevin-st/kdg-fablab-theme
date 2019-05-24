@@ -13,18 +13,23 @@
       background-color: $main_accent;
       width: 20%;
 
+
       a {
         display: block;
         color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        transition: 0.3s;
 
         &:hover {
           color: $zwartKdg;
+          transition: 1s;
+
 
             > img {
                 filter: brightness(0) invert(0);
+                transition:  1s;
             }
         }
       }
@@ -32,6 +37,7 @@
       img {
         filter: brightness(0) invert(1);
         margin-right: 10px;
+        transition:  0.3s;
       }
     }
   }
