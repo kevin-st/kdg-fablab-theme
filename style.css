@@ -1067,7 +1067,11 @@ body.login-action-register {
 #mainFrontpage .img-thumb {
     margin-right: 25px;
     width: 50%;
+    max-height: 350px;
   }
+#mainFrontpage .img-thumb .thumbnail {
+      display: block;
+    }
 #mainFrontpage .img-thumb .thumbnail,
       #mainFrontpage .img-thumb .thumbnail > img {
         width: 100%;

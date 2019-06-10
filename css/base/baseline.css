@@ -22,6 +22,58 @@
     .p-bottom-lg { padding-bottom: 15px; }
   }
 */
+
+
+@define-mixin phone-small /* of een andere naam */ {
+  @media (max-width: 420px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin phone /* of een andere naam */ {
+  @media (max-width: 700px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin tablet /* of een andere naam */ {
+  @media (max-width: 960px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin pc /* of een andere naam */ {
+  @media (max-width: 1050px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin pcmed /* of een andere naam */ {
+  @media (max-width: 1100px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin pcbig /* of een andere naam */ {
+  @media (max-width: 1300px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin pcXL /* of een andere naam */ {
+  @media (max-width: 1350px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin pcXXL /* of een andere naam */ {
+  @media (max-width: 1600px) {
+    @mixin-content;
+  }
+}
+
+
+
 html,
 body {
   margin: 0;
@@ -70,52 +122,4 @@ main {
 
 a{
   text-decoration: none;
-}
-
-@define-mixin phone-small /* of een andere naam */ {
-  @media (max-width: 420px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin phone /* of een andere naam */ {
-  @media (max-width: 700px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin tablet /* of een andere naam */ {
-  @media (max-width: 960px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin pc /* of een andere naam */ {
-  @media (max-width: 1050px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin pcmed /* of een andere naam */ {
-  @media (max-width: 1100px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin pcbig /* of een andere naam */ {
-  @media (max-width: 1300px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin pcXL /* of een andere naam */ {
-  @media (max-width: 1350px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin pcXXL /* of een andere naam */ {
-  @media (max-width: 1600px) {
-    @mixin-content;
-  }
 }
